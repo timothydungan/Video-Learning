@@ -1,0 +1,14 @@
+/*
+Project: BYOL Redesign
+Author: Timothy Dungan
+Author URI: https://www.timothydungan.com
+*/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
+/* Global ------------------------ */
+html {
+  box-sizing: border-box;
+}
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}

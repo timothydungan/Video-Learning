@@ -1,0 +1,21 @@
+// !compileOnSave
+// compileOnSave: false
+// main: style.scss
+
+// ================ COLOR STYLES ===============
+$black: #262B2F;
+$white: #FFFFFF;
+$green: #60C48E;
+$cream: #DEFEB3;
+$red:   #A12839;
+$teal:  #307379;
+
+$page-bg-color:     $green;
+$text-link-color:   $cream;
+$text-color:        $black;
+$titling-color:     $black;
+$nav-bg-color:      $black;
+$cta-bg-color:      $red;
+$cta-text-color:    $white;
+$cta-button-border: $cream;
+$overlay-color:     $white;
