@@ -3,14 +3,14 @@ Project: BYOL Redesign
 Author: Timothy Dungan
 Author URI: https://www.timothydungan.com
 */
-@import url("https://fonts.googleapis.com/css?family=Maven+Pro");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
 /* Global ------------------------ */
 *, *:after, *:before {
   box-sizing: border-box;
 }
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
   border: 0;
   font-family: inherit;
   font-size: 100%;
@@ -41,11 +41,11 @@ html {
   box-sizing: border-box;
 }
 
-/* Specific ------------------------ */
+/* Page -------------------------- */
 body {
   background-color: #60C48E;
-  font-family: "Maven Pro", sans-serif;
-  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
 }
 
 a {
@@ -56,4 +56,25 @@ a {
 a:focus, a:hover, a:active {
   outline: thin dotted;
   text-decoration: underline;
+}
+
+/* Sidebar ----------------------- */
+.col-aside-right {
+  width: 420px;
+  padding: 20px 70px;
+}
+
+.lesson-name-wrapper {
+  background-color: #262B2F;
+  width: 280px;
+}
+
+.lesson-name-wrapper span {
+  background-color: #707070;
+  color: #FFFFFF;
+  width: 100%;
+  padding: 10px;
+  font-weight: bold;
+  display: block;
+  text-transform: uppercase;
 }

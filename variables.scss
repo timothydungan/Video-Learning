@@ -9,17 +9,27 @@ $green: #60C48E;
 $cream: #DEFEB3;
 $red:   #A12839;
 $teal:  #307379;
+$gray:  #707070;
 
-$page-bg-color:     $green;
-$text-link-color:   $cream;
-$text-color:        $black;
-$titling-color:     $black;
-$nav-bg-color:      $black;
-$cta-bg-color:      $red;
-$cta-text-color:    $white;
-$cta-button-border: $cream;
-$overlay-color:     $white;
+$page-bg-color:             $green;
+$text-link-color:           $cream;
+$text-color:                $black;
+$titling-color:             $black;
+$nav-bg-color:              $black;
+$cta-bg-color:              $red;
+$cta-text-color:            $white;
+$cta-button-border:         $cream;
+$overlay-color:             $white;
+$lesson-name-wrapper-span:  $gray;
+$lesson-name-wrapper-color: $white;
 
 // ================ FONT STYLES ================
-$main-text-font: "Maven Pro", sans-serif;
-$main-text-size: 16px;
+$main-text-font: "Open Sans", sans-serif;
+$main-text-size: 14px;
+
+// ============== SIDEBAR STYLES ===============
+$sidebar-width:                    420px;
+$col-aside-right-paddding:         20px 70px;
+$lesson-name-wrapper-width:        280px;
+$lesson-name-wrapper-span-width:   100%;
+$lesson-name-wrapper-span-padding: 10px;

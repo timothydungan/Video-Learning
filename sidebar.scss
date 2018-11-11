@@ -1,0 +1,26 @@
+// !compileOnSave
+// compileOnSave: false
+// main: style.scss
+
+
+/* Sidebar ----------------------- */
+
+.col-aside-right {
+  width:   $sidebar-width;
+  padding: $col-aside-right-paddding;
+}
+
+.lesson-name-wrapper {
+  background-color: $black;
+  width:            $lesson-name-wrapper-width;
+}
+
+.lesson-name-wrapper span {
+  background-color: $lesson-name-wrapper-span;
+  color:            $lesson-name-wrapper-color;
+  width:            $lesson-name-wrapper-span-width;
+  padding:          $lesson-name-wrapper-span-padding;
+  font-weight:      bold;
+  display:          block;
+  text-transform:   uppercase;
+}
