@@ -6,12 +6,16 @@
 /* Sidebar ----------------------- */
 
 .col-aside-right {
-  width:   $sidebar-width;
-  padding: $col-aside-right-paddding;
+  width:               $sidebar-width;
+  padding:             $col-aside-right-padding;
+  background-image:    url("./images/col-aside-right-bg.svg");
+  background-repeat:   no-repeat;
+  background-position: center;
+  background-size:     100% 100%;
 }
 
 .lesson-name-wrapper {
-  background-color: $black;
+  background-color: $lesson-name-wrapper-bg;
   width:            $lesson-name-wrapper-width;
 }
 
@@ -23,4 +27,25 @@
   font-weight:      bold;
   display:          block;
   text-transform:   uppercase;
+}
+
+ol#lesson-links {
+  list-style:    none;
+  counter-reset: li;
+}
+
+ol#lesson-links li {
+  margin-left: 40px;
+  counter-increment: li;
+}
+
+ol#lesson-links li::before {
+  content: counter(li);
+  color: $white;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1.5em;
+  margin-right: 0.5em;
+  text-align: right;
+  direction: rtl;
 }

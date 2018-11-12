@@ -58,15 +58,32 @@ a:focus, a:hover, a:active {
   text-decoration: underline;
 }
 
+/* Main Content ------------------ */
+.col-main {
+  width: 948px;
+}
+
+.video-wrapper {
+  padding: 20px 75px;
+  background-image: url("./images/video-wrapper-bg.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
 /* Sidebar ----------------------- */
 .col-aside-right {
   width: 420px;
-  padding: 20px 70px;
+  padding: 20px 75px;
+  background-image: url("./images/col-aside-right-bg.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
 }
 
 .lesson-name-wrapper {
   background-color: #262B2F;
-  width: 280px;
+  width: 270px;
 }
 
 .lesson-name-wrapper span {
@@ -77,4 +94,25 @@ a:focus, a:hover, a:active {
   font-weight: bold;
   display: block;
   text-transform: uppercase;
+}
+
+ol#lesson-links {
+  list-style: none;
+  counter-reset: li;
+}
+
+ol#lesson-links li {
+  margin-left: 40px;
+  counter-increment: li;
+}
+
+ol#lesson-links li::before {
+  content: counter(li);
+  color: #FFFFFF;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1.5em;
+  margin-right: 0.5em;
+  text-align: right;
+  direction: rtl;
 }

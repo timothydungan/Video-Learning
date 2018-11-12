@@ -22,14 +22,19 @@ $cta-button-border:         $cream;
 $overlay-color:             $white;
 $lesson-name-wrapper-span:  $gray;
 $lesson-name-wrapper-color: $white;
+$lesson-name-wrapper-bg:    $black;
 
 // ================ FONT STYLES ================
 $main-text-font: "Open Sans", sans-serif;
 $main-text-size: 14px;
 
+// ============== CONTENT STYLES ===============
+$col-main-width:   948px;
+$col-main-padding: 20px 75px;
+
 // ============== SIDEBAR STYLES ===============
 $sidebar-width:                    420px;
-$col-aside-right-paddding:         20px 70px;
-$lesson-name-wrapper-width:        280px;
+$col-aside-right-padding:          20px 75px;
+$lesson-name-wrapper-width:        270px;
 $lesson-name-wrapper-span-width:   100%;
 $lesson-name-wrapper-span-padding: 10px;

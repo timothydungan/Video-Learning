@@ -1,0 +1,18 @@
+// !compileOnSave
+// compileOnSave: false
+// main: style.scss
+
+
+/* Main Content ------------------ */
+
+.col-main {
+  width:               $col-main-width;
+}
+
+.video-wrapper {
+  padding:             $col-main-padding;
+  background-image:    url("./images/video-wrapper-bg.svg");
+  background-repeat:   no-repeat;
+  background-position: center;
+  background-size:     100% 100%;
+}
