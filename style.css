@@ -108,6 +108,10 @@ a:focus, a:hover, a:active {
   line-height: 4em;
 }
 
+.discussion, .transcription {
+  background-color: #FFFFFF;
+}
+
 /* Sidebar ----------------------- */
 .col-aside-right {
   width: 420px;
