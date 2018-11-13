@@ -5,14 +5,41 @@
 
 /* Main Content ------------------ */
 
+.page-title h1 {
+  font-family: $page-title-font;
+  font-size:   $page-title-size;
+  width:       $col-main-width;
+  color:       $titling-color;
+}
+
+.page-inner {
+  display: inline-flex;
+  width:   $container-width;
+}
+
 .col-main {
-  width:               $col-main-width;
+  width:        $col-main-width;
+  margin-right: $col-gutter;
 }
 
 .video-wrapper {
-  padding:             $col-main-padding;
+  width:               $col-main-width;
+  height:              $col-main-height;
+  margin:              0;
   background-image:    url("./images/video-wrapper-bg.svg");
   background-repeat:   no-repeat;
   background-position: center;
   background-size:     100% 100%;
+}
+
+.video-player {
+  transform: translate($video-player-transform-translate);
+}
+
+.video-title {
+  color:       $video-caption-color;
+  font-style:  italic;
+  font-size:   10px;
+  text-align:  center;
+  line-height: 4em;
 }

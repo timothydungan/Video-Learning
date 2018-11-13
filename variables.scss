@@ -20,17 +20,27 @@ $cta-bg-color:              $red;
 $cta-text-color:            $white;
 $cta-button-border:         $cream;
 $overlay-color:             $white;
+$video-caption-color:       $white;
 $lesson-name-wrapper-span:  $gray;
 $lesson-name-wrapper-color: $white;
 $lesson-name-wrapper-bg:    $black;
+$lesson-link-number-color:  $white;
 
 // ================ FONT STYLES ================
 $main-text-font: "Open Sans", sans-serif;
 $main-text-size: 14px;
+$page-title-font: "M PLUS Rounded 1c", sans-serif;
+$page-title-size: 40px;
+
+// ================ PAGE STYLES ================
+$container-width: 1400px;
 
 // ============== CONTENT STYLES ===============
-$col-main-width:   948px;
-$col-main-padding: 20px 75px;
+$col-main-width:                   948px;
+$col-main-height:                  502px;
+$col-main-padding:                 20px 75px;
+$col-gutter:                       35px;
+$video-player-transform-translate: 68px, 16px;
 
 // ============== SIDEBAR STYLES ===============
 $sidebar-width:                    420px;

@@ -4,6 +4,7 @@ Author: Timothy Dungan
 Author URI: https://www.timothydungan.com
 */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:900");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
 /* Global ------------------------ */
 *, *:after, *:before {
@@ -58,17 +59,53 @@ a:focus, a:hover, a:active {
   text-decoration: underline;
 }
 
+.wrapper {
+  max-width: 100%;
+  width: 1400px;
+  left: 50%;
+  margin-right: -50%;
+  transform: translateX(-50%);
+  position: absolute;
+}
+
 /* Main Content ------------------ */
+.page-title h1 {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 40px;
+  width: 948px;
+  color: #262B2F;
+}
+
+.page-inner {
+  display: inline-flex;
+  width: 1400px;
+}
+
 .col-main {
   width: 948px;
+  margin-right: 35px;
 }
 
 .video-wrapper {
-  padding: 20px 75px;
+  width: 948px;
+  height: 502px;
+  margin: 0;
   background-image: url("./images/video-wrapper-bg.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
+}
+
+.video-player {
+  transform: translate(68px, 16px);
+}
+
+.video-title {
+  color: #FFFFFF;
+  font-style: italic;
+  font-size: 10px;
+  text-align: center;
+  line-height: 4em;
 }
 
 /* Sidebar ----------------------- */
@@ -91,7 +128,6 @@ a:focus, a:hover, a:active {
   color: #FFFFFF;
   width: 100%;
   padding: 10px;
-  font-weight: bold;
   display: block;
   text-transform: uppercase;
 }

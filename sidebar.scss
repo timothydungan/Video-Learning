@@ -24,7 +24,6 @@
   color:            $lesson-name-wrapper-color;
   width:            $lesson-name-wrapper-span-width;
   padding:          $lesson-name-wrapper-span-padding;
-  font-weight:      bold;
   display:          block;
   text-transform:   uppercase;
 }
@@ -35,17 +34,17 @@ ol#lesson-links {
 }
 
 ol#lesson-links li {
-  margin-left: 40px;
+  margin-left:       40px;
   counter-increment: li;
 }
 
 ol#lesson-links li::before {
-  content: counter(li);
-  color: $white;
-  display: inline-block;
-  width: 1em;
+  content:      counter(li);
+  color:        $lesson-link-number-color;
+  display:      inline-block;
+  width:        1em;
   margin-left: -1.5em;
   margin-right: 0.5em;
-  text-align: right;
-  direction: rtl;
+  text-align:   right;
+  direction:    rtl;
 }
