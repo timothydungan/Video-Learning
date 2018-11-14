@@ -5,6 +5,10 @@
 
 /* Main Content ------------------ */
 
+.page-title {
+  width: $col-main-width;
+}
+
 .page-title h1 {
   font-family: $page-title-font;
   font-size:   $page-title-size;
