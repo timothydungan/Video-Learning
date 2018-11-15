@@ -142,6 +142,7 @@ a:focus, a:hover, a:active {
 
 .course-titling strong {
   font-weight: bold;
+  letter-spacing: .1em;
 }
 
 .extra-info {
@@ -158,6 +159,15 @@ a:focus, a:hover, a:active {
 
 .video-numbering {
   text-align: right;
+}
+
+.talk-print-wrapper {
+  width: 812px;
+  padding: 20px 65px 10%;
+  background-image: url("./images/talk-print-bg.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
 }
 
 .discussion, .transcription {

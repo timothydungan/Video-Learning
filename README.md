@@ -1,6 +1,6 @@
 # Video-Learning
 
-One Paragraph of project description goes here
+This is a small section of the student-facing part of a video learning (or video tutorial) site. It allows students to watch the course videos in order or navigate to specific lessons. It's also set up for student/teacher discussions of each lesson as well as video transcripts.
 
 ## Getting Started
 
