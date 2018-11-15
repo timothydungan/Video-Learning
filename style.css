@@ -41,6 +41,9 @@ html {
   overflow-y: scroll;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -62,15 +65,16 @@ a:focus, a:hover, a:active {
 }
 
 .wrapper {
+  position: relative;
   max-width: 100%;
   width: 1400px;
   left: 50%;
   margin-right: -50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-  position: relative;
 }
 
-/* Main Content ------------------ */
 .page-title {
   width: 948px;
 }
@@ -82,27 +86,38 @@ a:focus, a:hover, a:active {
   color: #262B2F;
 }
 
-.page-inner {
+.page-wrap, .page-title-wrap, .footer-wrap, .entry-cta-wrap {
   display: inline-flex;
   width: 1400px;
 }
 
+/* Main Content ------------------ */
 .col-main {
   width: 948px;
   margin-right: 35px;
 }
 
-.video-wrapper {
+.video-wrapper, .course-titling-wrapper {
   width: 948px;
-  height: 502px;
   margin: 0;
-  background-image: url("./images/video-wrapper-bg.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
 }
 
-.video-player {
+.video-wrapper {
+  background-image: url("./images/video-wrapper-bg.svg");
+  height: 502px;
+}
+
+.course-titling-wrapper {
+  background-image: url("./images/course-titling-wrapper-bg.svg");
+  height: 128px;
+}
+
+.video-player, .course-title-wrap {
+  -webkit-transform: translate(68px, 16px);
+  -ms-transform: translate(68px, 16px);
   transform: translate(68px, 16px);
 }
 
@@ -112,6 +127,37 @@ a:focus, a:hover, a:active {
   font-size: 10px;
   text-align: center;
   line-height: 4em;
+}
+
+.course-title-wrap {
+  padding-top: 1em;
+  width: 812px;
+}
+
+.course-titling {
+  color: #FFFFFF;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+
+.course-titling strong {
+  font-weight: bold;
+}
+
+.extra-info {
+  display: inline-flex;
+}
+
+.course-title {
+  width: 650px;
+}
+
+.video-count {
+  width: 150px;
+}
+
+.video-numbering {
+  text-align: right;
 }
 
 .discussion, .transcription {

@@ -5,39 +5,33 @@
 
 /* Main Content ------------------ */
 
-.page-title {
-  width: $col-main-width;
-}
-
-.page-title h1 {
-  font-family: $page-title-font;
-  font-size:   $page-title-size;
-  width:       $col-main-width;
-  color:       $titling-color;
-}
-
-.page-inner {
-  display: inline-flex;
-  width:   $container-width;
-}
-
 .col-main {
   width:        $col-main-width;
   margin-right: $col-gutter;
 }
 
-.video-wrapper {
+.video-wrapper, .course-titling-wrapper {
   width:               $col-main-width;
-  height:              $col-main-height;
   margin:              0;
-  background-image:    url("./images/video-wrapper-bg.svg");
   background-repeat:   no-repeat;
   background-position: center;
   background-size:     100% 100%;
 }
 
-.video-player {
-  transform: translate($video-player-transform-translate);
+.video-wrapper {
+  background-image:    url("./images/video-wrapper-bg.svg");
+  height:              $video-player-wrapper-height;
+}
+
+.course-titling-wrapper {
+  background-image:    url("./images/course-titling-wrapper-bg.svg");
+  height:              $course-titling-wrapper-height;
+}
+
+.video-player, .course-title-wrap {
+  -webkit-transform: translate($polygon-inner-transform-translate);
+      -ms-transform: translate($polygon-inner-transform-translate);
+          transform: translate($polygon-inner-transform-translate);
 }
 
 .video-title {
@@ -46,6 +40,37 @@
   font-size:   10px;
   text-align:  center;
   line-height: 4em;
+}
+
+.course-title-wrap {
+  padding-top: 1em;
+  width: 812px;
+}
+
+.course-titling {
+  color:       $white;
+  font-size:   20px;
+  line-height: 1.5em;
+}
+
+.course-titling strong {
+  font-weight: bold;
+}
+
+.extra-info {
+  display: inline-flex;
+}
+
+.course-title {
+  width: 650px;
+}
+
+.video-count {
+  width: 150px;
+}
+
+.video-numbering {
+  text-align: right;
 }
 
 .discussion, .transcription {
