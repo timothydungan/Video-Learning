@@ -162,8 +162,8 @@ a:focus, a:hover, a:active {
 }
 
 .talk-print-wrapper {
-  width: 812px;
-  padding: 20px 65px 10%;
+  width: 948px;
+  padding: 20px 75px 10%;
   background-image: url("./images/talk-print-bg.svg");
   background-repeat: no-repeat;
   background-position: center;
