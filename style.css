@@ -1,13 +1,13 @@
 /*
-Project: BYOL Redesign
-Author: Timothy Dungan
-Author URI: https://www.timothydungan.com
+Project                   : BYOL Redesign
+Author                    : Timothy Dungan
+Author URI                : https://www.timothydungan.com
 */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 @import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:900");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
 /* Global ------------------------ */
-*, *:before, *:after {
+*, * :before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -59,7 +59,7 @@ a {
   text-decoration: none;
 }
 
-a:focus, a:hover, a:active {
+a :focus, a:hover, a:active {
   outline: thin dotted;
   text-decoration: underline;
 }
@@ -177,7 +177,7 @@ a:focus, a:hover, a:active {
 /* Sidebar ----------------------- */
 .col-aside-right {
   width: 420px;
-  padding: 20px 75px;
+  padding: 20px 75px 4%;
   background-image: url("./images/col-aside-right-bg.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -208,7 +208,7 @@ ol#lesson-links li {
   counter-increment: li;
 }
 
-ol#lesson-links li::before {
+ol#lesson-links li ::before {
   content: counter(li);
   color: #FFFFFF;
   display: inline-block;
@@ -217,4 +217,30 @@ ol#lesson-links li::before {
   margin-right: 0.5em;
   text-align: right;
   direction: rtl;
+}
+
+/* Footer ------------------------ */
+footer {
+  height: 310px;
+  background-color: #262B2F;
+  margin-top: 50px;
+}
+
+.footer-left-col, .footer-right-col {
+  width: 50%;
+  text-align: center;
+}
+
+footer ul {
+  list-style: none;
+  display: inline-flex;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+footer .fa {
+  font-size: 30px;
+  font-style: normal;
+  padding: 10px;
 }

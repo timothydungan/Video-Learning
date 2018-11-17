@@ -1,53 +1,57 @@
 // !compileOnSave
-// compileOnSave: false
-// main: style.scss
+// compileOnSave                  : false
+// main                           : style.scss
 
 // ================ COLOR STYLES ===============
-$black: #262B2F;
-$white: #FFFFFF;
-$green: #60C48E;
-$cream: #DEFEB3;
-$red:   #A12839;
-$teal:  #307379;
-$gray:  #707070;
+$black                            : #262B2F;
+$white                            : #FFFFFF;
+$green                            : #60C48E;
+$cream                            : #DEFEB3;
+$red                              : #A12839;
+$teal                             : #307379;
+$gray                             : #707070;
 
-$page-bg-color:             $green;
-$text-link-color:           $cream;
-$text-color:                $black;
-$titling-color:             $black;
-$nav-bg-color:              $black;
-$cta-bg-color:              $red;
-$cta-text-color:            $white;
-$cta-button-border:         $cream;
-$overlay-color:             $white;
-$video-caption-color:       $white;
-$lesson-name-wrapper-span:  $gray;
-$lesson-name-wrapper-color: $white;
-$lesson-name-wrapper-bg:    $black;
-$lesson-link-number-color:  $white;
-$discussion-bg-color:       $white;
-$transcription-bg-color:    $white;
+$page-bg-color                    : $green;
+$text-link-color                  : $cream;
+$text-color                       : $black;
+$titling-color                    : $black;
+$nav-bg-color                     : $black;
+$cta-bg-color                     : $red;
+$cta-text-color                   : $white;
+$cta-button-border                : $cream;
+$overlay-color                    : $white;
+$video-caption-color              : $white;
+$lesson-name-wrapper-span         : $gray;
+$lesson-name-wrapper-color        : $white;
+$lesson-name-wrapper-bg           : $black;
+$lesson-link-number-color         : $white;
+$discussion-bg-color              : $white;
+$talk-print-bg-color              : $white;
 
 // ================ FONT STYLES ================
-$main-text-font: "Open Sans", sans-serif;
-$main-text-size: 14px;
-$page-title-font: "M PLUS Rounded 1c", sans-serif;
-$page-title-size: 40px;
+$main-text-font                   : "Open Sans", sans-serif;
+$main-text-size                   : 14px;
+$page-title-font                  : "M PLUS Rounded 1c", sans-serif;
+$page-title-size                  : 40px;
 
 // ================ PAGE STYLES ================
-$container-width: 1400px;
+$container-width                  : 1400px;
 
 // ============== CONTENT STYLES ===============
-$col-main-width:                    948px;
-$col-main-padding:                  20px 75px;
-$col-gutter:                        35px;
+$col-main-width                   : 948px;
+$col-main-padding                 : 20px 75px;
+$col-gutter                       : 35px;
 $polygon-inner-transform-translate: 68px, 16px;
-$video-player-wrapper-height:       502px;
-$course-titling-wrapper-height:     128px;
+$video-player-wrapper-height      : 502px;
+$course-titling-wrapper-height    : 128px;
 
 // ============== SIDEBAR STYLES ===============
-$sidebar-width:                    420px;
-$col-aside-right-padding:          20px 75px 4%;
-$lesson-name-wrapper-width:        270px;
-$lesson-name-wrapper-span-width:   100%;
-$lesson-name-wrapper-span-padding: 10px;
+$sidebar-width                    : 420px;
+$col-aside-right-padding          : 20px 75px 4%;
+$lesson-name-wrapper-width        : 270px;
+$lesson-name-wrapper-span-width   : 100%;
+$lesson-name-wrapper-span-padding : 10px;
+
+// ============== FOOTER STYLES ================
+$footer-height                    : 310px;
+$footer-bg-color                  : $black;
