@@ -111,7 +111,8 @@ ul#menu {
 }
 
 #menu li.button-down {
-  height: 89px;
+  height: 60px;
+  margin: 0 13px;
 }
 
 #menu li.button-up {
@@ -125,11 +126,11 @@ ul#menu {
 }
 
 #menu li.button-down div {
-  line-height: 120px;
+  line-height: 60px;
 }
 
 #menu li.button-up div {
-  line-height: 33px;
+  line-height: 30px;
 }
 
 #menu li.button-down:before, #menu li.button-up:before {
@@ -144,15 +145,17 @@ ul#menu {
 
 #menu li.button-down:before {
   transform: rotateX(-90deg) perspective(180px) rotateX(90deg);
+  transform-origin: top;
 }
 
 #menu li.button-up:before {
   transform: rotateX(90deg) perspective(180px) rotateX(-90deg);
+  transform-origin: bottom;
 }
 
 #menu li div a {
   outline: 0;
-  padding: 20px;
+  padding: 0 20px;
 }
 
 #menu li div a:hover {
