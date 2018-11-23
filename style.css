@@ -138,19 +138,25 @@ ul#menu {
   position: absolute;
   width: 100%;
   height: 100%;
-  transform-origin: center bottom;
-  border: 2px solid #DEFEB3;
+  border-left: 1px solid #DEFEB3;
+  border-right: 1px solid #DEFEB3;
   left: 0;
 }
 
 #menu li.button-down:before {
   transform: rotateX(-90deg) perspective(180px) rotateX(90deg);
-  transform-origin: top;
+  transform-origin: center top;
+  border-left: 0;
+  border-right: 0;
+}
+
+#menu li.search:before {
+  border-right: 1px solid #DEFEB3;
 }
 
 #menu li.button-up:before {
   transform: rotateX(90deg) perspective(180px) rotateX(-90deg);
-  transform-origin: bottom;
+  transform-origin: center bottom;
 }
 
 #menu li div a {
@@ -158,12 +164,9 @@ ul#menu {
   padding: 0 20px;
 }
 
-#menu li div a:hover {
+#menu li div a:hover, #menu li div a:active, #menu li div a:focus {
   text-decoration: none;
-}
-
-#menu li.button-down:hover:before, #menu li.button-up:hover:before {
-  box-shadow: inset 0 0 0 2px #DEFEB3;
+  font-style: oblique;
 }
 
 .page-title {
