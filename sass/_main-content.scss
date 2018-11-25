@@ -1,53 +1,53 @@
 // !compileOnSave
-// compileOnSave     : false
-// main              : style.scss
+// compileOnSave      : false
+// main               : ../style.scss
 
 
 /* Main Content ------------------ */
 
 .col-main {
-  width              : $col-main-width;
-  margin-right       : $col-gutter;
+  width               : $col-main-width;
+  margin-right        : $col-gutter;
 }
 
 .video-wrapper, .course-titling-wrapper {
-  width              : $col-main-width;
-  margin             : 0;
-  background-repeat  : no-repeat;
-  background-position: center;
-  background-size    : 100% 100%;
+  width               : $col-main-width;
+  margin              : 0;
+  background-repeat   : no-repeat;
+  background-position : center;
+  background-size     : 100% 100%;
 }
 
 .video-wrapper {
-  background-image   : url("data:image/svg+xml;utf8,
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 948 502.096'>
+  background-image    : url("data:image/svg+xml;utf8,
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 948 502.096' preserveAspectRatio='none'>
       <defs>
         <style>
           .cls-1 {
-            fill: %23262b2f;
+            fill      : %23262b2f;
           }
         </style>
       </defs>
       <path id='Path_35' data-name='Path 35' class='cls-1' d='M328,685h812l68-22.513-68-460.86L734,182.9,328,201.626l-68,460.86Z' transform='translate(-260 -182.904)'/>
     </svg>");
-  height             : $video-player-wrapper-height;
+  height              : $video-player-wrapper-height;
 }
 
 .course-titling-wrapper {
-  background-image   : url("data:image/svg+xml;utf8,
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 948 128'>
+  background-image    : url("data:image/svg+xml;utf8,
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 948 128' preserveAspectRatio='none'>
       <defs>
         <style>
           .cls-1 {
-            fill: %23307379;
+            fill      : %23307379;
           }
 
           .cls-2, .cls-3 {
-            stroke: none;
+            stroke    : none;
           }
 
           .cls-3 {
-            fill: %23262b2f;
+            fill      : %23262b2f;
           }
         </style>
       </defs>
@@ -56,70 +56,70 @@
         <path class='cls-3' d='M 1205.710205078125 1019.377807617188 L 1138.274658203125 1038.645141601563 L 1138.140014648438 1038.68359375 L 1138 1038.68359375 L 326 1038.68359375 L 325.851806640625 1038.68359375 L 325.7099609375 1038.640625 L 262.2220458984375 1019.40185546875 L 326.577392578125 1124.710815429688 L 732 1144.682373046875 L 1137.439331054688 1124.7099609375 L 1205.710205078125 1019.377807617188 M 260 1017.68359375 L 326 1037.68359375 L 1138 1037.68359375 L 1208 1017.68359375 L 1138 1125.68359375 L 732 1145.68359375 L 326 1125.68359375 L 260 1017.68359375 Z'/>
       </g>
     </svg>");
-  height             : $course-titling-wrapper-height;
+  height              : $course-titling-wrapper-height;
 }
 
 .video-player, .course-title-wrap {
-  -webkit-transform  : translate($polygon-inner-transform-translate);
-      -ms-transform  : translate($polygon-inner-transform-translate);
-          transform  : translate($polygon-inner-transform-translate);
+  -webkit-transform   : translate($polygon-inner-transform-translate);
+      -ms-transform   : translate($polygon-inner-transform-translate);
+          transform   : translate($polygon-inner-transform-translate);
 }
 
 .video-title {
-  color              : $video-caption-color;
-  font-style         : italic;
-  font-size          : 10px;
-  text-align         : center;
-  line-height        : 4em;
+  color               : $video-caption-color;
+  font-style          : italic;
+  font-size           : 10px;
+  text-align          : center;
+  line-height         : 4em;
 }
 
 .course-title-wrap {
-  padding-top        : 1em;
-  width              : 812px;
+  padding-top         : 1em;
+  width               : 812px;
 }
 
 .course-titling {
-  color              : $white;
-  font-size          : 20px;
-  line-height        : 1.5em;
+  color               : $white;
+  font-size           : 20px;
+  line-height         : 1.5em;
 }
 
 .course-titling strong {
-  font-weight        : bold;
-  letter-spacing     : .1em;
+  font-weight         : bold;
+  letter-spacing      : .1em;
 }
 
 .extra-info {
-  display            : inline-flex;
+  display             : inline-flex;
 }
 
 .course-title {
-  width              : 650px;
+  width               : 650px;
 }
 
 .video-count {
-  width              : 150px;
+  width               : 150px;
 }
 
 .video-numbering {
-  text-align         : right;
+  text-align          : right;
 }
 
 .talk-print-wrapper {
-  width              : 948px;
-  padding            : 20px 75px 10%;
-  background-image   : url("data:image/svg+xml;utf8,
+  width               : 948px;
+  padding             : 20px 75px 10%;
+  background-image    : url("data:image/svg+xml;utf8,
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 948 512' preserveAspectRatio='none'>
       <defs>
         <style>
           .cls-1 {
-            fill: %23fff;
+            fill      : %23fff;
           }
           .cls-2, .cls-3 {
-            stroke: none;
+            stroke    : none;
           }
           .cls-3 {
-            fill: none;
+            fill      : none;
           }
         </style>
       </defs>
@@ -128,11 +128,11 @@
         <path class='cls-3' d='M 734 1018.684814453125 L 328.16796875 1038.676513671875 L 261.11328125 1058.398559570313 L 328.8662109375 1528.683837890625 L 1139.1337890625 1528.683837890625 L 1206.88671875 1058.398559570313 L 1139.83203125 1038.676513671875 L 734 1018.684814453125 M 734 1017.68359375 L 1140 1037.68359375 L 1208 1057.68359375 L 1140 1529.683837890625 L 328 1529.683837890625 L 260 1057.68359375 L 328 1037.68359375 L 734 1017.68359375 Z'/>
       </g>
     </svg>");
-  background-repeat  : no-repeat;
-  background-position: center;
-  background-size    : 100% 100%;
+  background-repeat   : no-repeat;
+  background-position : center;
+  background-size     : 100% 100%;
 }
 
 .discussion, .transcription {
-  background-color   : $talk-print-bg-color;
+  background-color    : $talk-print-bg-color;
 }

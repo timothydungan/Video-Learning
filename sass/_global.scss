@@ -1,0 +1,46 @@
+// !compileOnSave
+// compileOnSave     : false
+// main              : ../style.scss
+
+
+/* Global ------------------------ */
+*, *:before, *:after {
+  -webkit-box-sizing      : border-box;
+     -moz-box-sizing      : border-box;
+          box-sizing      : border-box;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	border                  : 0;
+	font-family             : inherit;
+	font-size               : 100%;
+	font-style              : inherit;
+	font-weight             : inherit;
+	margin                  : 0;
+	outline                 : 0;
+	padding                 : 0;
+	vertical-align          : baseline;
+  text-rendering          : geometricPrecision;
+}
+
+article, aside, details, figcaption, figure, footer, header, nav, section, div {
+	           display      : block;
+	-webkit-box-sizing      : border-box;
+	   -moz-box-sizing      : border-box;
+	        box-sizing      : border-box;
+}
+
+audio, canvas, video {
+	display                 : inline-block;
+	max-width               : 100%;
+}
+
+html {
+	overflow-y              : scroll;
+	-webkit-text-size-adjust: 100%;
+	    -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+        -webkit-box-sizing: border-box;
+      	   -moz-box-sizing: border-box;
+      	        box-sizing: border-box;
+}
