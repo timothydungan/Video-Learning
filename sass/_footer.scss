@@ -9,15 +9,15 @@ footer {
   height           : $footer-height;
   background-color : $footer-bg-color;
   margin-top       : 50px;
-}
 
-.footer-left-col, .footer-right-col {
-  width            : 50%;
-  text-align       : center;
-}
+  .footer-left-col, .footer-right-col {
+    width          : 50%;
+    text-align     : center;
+  }
 
-footer .fa {
-  font-size        : 30px;
-  font-style       : normal;
-  padding          : 10px;
+  .fa {
+    font-size      : 30px;
+    font-style     : normal;
+    padding        : 10px;
+  }
 }

@@ -60,7 +60,7 @@ a {
   text-decoration: none;
 }
 
-a :focus, a:hover, a:active {
+a:focus, a:hover, a:active {
   outline: thin dotted;
   text-decoration: underline;
 }
@@ -114,6 +114,7 @@ header ul, footer ul {
   margin-top: 50px;
 }
 
+/* CTAs -------------------------- */
 .main-cta {
   width: 440px;
   height: 163px;
@@ -137,6 +138,11 @@ header ul, footer ul {
   transform: translateY(-50%);
 }
 
+.cta-pitch .cta-pitch-title {
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
 .signup-button-left {
   font-size: 20px;
   font-weight: bold;
@@ -148,42 +154,29 @@ header ul, footer ul {
   transform: translateY(-50%);
 }
 
-.cta-pitch-title {
-  font-size: 30px;
-  text-transform: uppercase;
-}
-
 /* Main Content ------------------ */
 .col-main {
   width: 948px;
   margin-right: 32px;
 }
 
-.video-wrapper, .course-titling-wrapper {
+.col-main .video-wrapper {
+  height: 502px;
   width: 948px;
   margin: 0;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
+  background-image: url("data:image/svg+xml;utf8,\a       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 948 502.096' preserveAspectRatio='none'>\a         <defs>\a           <style>\a             .cls-1 {\a               fill        : %23262b2f;\a             }\a           </style>\a         </defs>\a         <path id='Path_35' data-name='Path 35' class='cls-1' d='M328,685h812l68-22.513-68-460.86L734,182.9,328,201.626l-68,460.86Z' transform='translate(-260 -182.904)'/>\a       </svg>");
 }
 
-.video-wrapper {
-  background-image: url("data:image/svg+xml;utf8,\a     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 948 502.096' preserveAspectRatio='none'>\a       <defs>\a         <style>\a           .cls-1 {\a             fill      : %23262b2f;\a           }\a         </style>\a       </defs>\a       <path id='Path_35' data-name='Path 35' class='cls-1' d='M328,685h812l68-22.513-68-460.86L734,182.9,328,201.626l-68,460.86Z' transform='translate(-260 -182.904)'/>\a     </svg>");
-  height: 502px;
-}
-
-.course-titling-wrapper {
-  background-image: url("data:image/svg+xml;utf8,\a     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 948 128' preserveAspectRatio='none'>\a       <defs>\a         <style>\a           .cls-1 {\a             fill      : %23307379;\a           }\a \a           .cls-2, .cls-3 {\a             stroke    : none;\a           }\a \a           .cls-3 {\a             fill      : %23262b2f;\a           }\a         </style>\a       </defs>\a       <g id='Path_57' data-name='Path 57' class='cls-1' transform='translate(-260 -1017.684)'>\a         <path class='cls-2' d='M 732 1145.182983398438 L 326.2886657714844 1125.197143554688 L 261.1109008789063 1018.542663574219 L 325.8549499511719 1038.162109375 L 325.9258728027344 1038.18359375 L 326 1038.18359375 L 1138 1038.18359375 L 1138.069946289063 1038.18359375 L 1138.137451171875 1038.164306640625 L 1206.855102539063 1018.530639648438 L 1137.7197265625 1125.19677734375 L 732 1145.182983398438 Z'/>\a         <path class='cls-3' d='M 1205.710205078125 1019.377807617188 L 1138.274658203125 1038.645141601563 L 1138.140014648438 1038.68359375 L 1138 1038.68359375 L 326 1038.68359375 L 325.851806640625 1038.68359375 L 325.7099609375 1038.640625 L 262.2220458984375 1019.40185546875 L 326.577392578125 1124.710815429688 L 732 1144.682373046875 L 1137.439331054688 1124.7099609375 L 1205.710205078125 1019.377807617188 M 260 1017.68359375 L 326 1037.68359375 L 1138 1037.68359375 L 1208 1017.68359375 L 1138 1125.68359375 L 732 1145.68359375 L 326 1125.68359375 L 260 1017.68359375 Z'/>\a       </g>\a     </svg>");
-  height: 128px;
-}
-
-.video-player, .course-title-wrap {
+.col-main .video-wrapper .video-player {
   -webkit-transform: translate(68px, 16px);
   -ms-transform: translate(68px, 16px);
   transform: translate(68px, 16px);
 }
 
-.video-title {
+.col-main .video-wrapper .video-title {
   color: #FFFFFF;
   font-style: italic;
   font-size: 10px;
@@ -191,48 +184,61 @@ header ul, footer ul {
   line-height: 4em;
 }
 
-.course-title-wrap {
-  padding-top: 1em;
-  width: 812px;
+.col-main .course-titling-wrapper {
+  height: 128px;
+  width: 948px;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml;utf8,\a       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 948 128' preserveAspectRatio='none'>\a         <defs>\a           <style>\a             .cls-1 {\a               fill        : %23307379;\a             }\a \a             .cls-2, .cls-3 {\a               stroke      : none;\a             }\a \a             .cls-3 {\a               fill        : %23262b2f;\a             }\a           </style>\a         </defs>\a         <g id='Path_57' data-name='Path 57' class='cls-1' transform='translate(-260 -1017.684)'>\a           <path class='cls-2' d='M 732 1145.182983398438 L 326.2886657714844 1125.197143554688 L 261.1109008789063 1018.542663574219 L 325.8549499511719 1038.162109375 L 325.9258728027344 1038.18359375 L 326 1038.18359375 L 1138 1038.18359375 L 1138.069946289063 1038.18359375 L 1138.137451171875 1038.164306640625 L 1206.855102539063 1018.530639648438 L 1137.7197265625 1125.19677734375 L 732 1145.182983398438 Z'/>\a           <path class='cls-3' d='M 1205.710205078125 1019.377807617188 L 1138.274658203125 1038.645141601563 L 1138.140014648438 1038.68359375 L 1138 1038.68359375 L 326 1038.68359375 L 325.851806640625 1038.68359375 L 325.7099609375 1038.640625 L 262.2220458984375 1019.40185546875 L 326.577392578125 1124.710815429688 L 732 1144.682373046875 L 1137.439331054688 1124.7099609375 L 1205.710205078125 1019.377807617188 M 260 1017.68359375 L 326 1037.68359375 L 1138 1037.68359375 L 1208 1017.68359375 L 1138 1125.68359375 L 732 1145.68359375 L 326 1125.68359375 L 260 1017.68359375 Z'/>\a         </g>\a       </svg>");
 }
 
-.course-titling {
+.col-main .course-titling-wrapper .course-title-wrap {
+  padding-top: 1em;
+  width: 812px;
+  -webkit-transform: translate(68px, 16px);
+  -ms-transform: translate(68px, 16px);
+  transform: translate(68px, 16px);
+}
+
+.col-main .course-titling-wrapper .course-titling {
   color: #FFFFFF;
   font-size: 20px;
   line-height: 1.5em;
 }
 
-.course-titling strong {
+.col-main .course-titling-wrapper .course-titling strong {
   font-weight: bold;
   letter-spacing: .1em;
 }
 
-.extra-info {
-  display: inline-flex;
-}
-
-.course-title {
+.col-main .course-titling-wrapper .course-title {
   width: 650px;
 }
 
-.video-count {
+.col-main .course-titling-wrapper .extra-info {
+  display: inline-flex;
+}
+
+.col-main .course-titling-wrapper .video-count {
   width: 150px;
 }
 
-.video-numbering {
+.col-main .course-titling-wrapper .video-numbering {
   text-align: right;
 }
 
-.talk-print-wrapper {
+.col-main .talk-print-wrapper {
   width: 948px;
   padding: 20px 75px 10%;
-  background-image: url("data:image/svg+xml;utf8,\a     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 948 512' preserveAspectRatio='none'>\a       <defs>\a         <style>\a           .cls-1 {\a             fill      : %23fff;\a           }\a           .cls-2, .cls-3 {\a             stroke    : none;\a           }\a           .cls-3 {\a             fill      : none;\a           }\a         </style>\a       </defs>\a       <g id='Path_67' data-name='Path 67' class='cls-1' transform='translate(1208 1529.684) rotate(180)'>\a         <path class='cls-2' d='M 1139.566772460938 1529.183837890625 L 328.4331665039063 1529.183837890625 L 260.5567016601563 1058.041015625 L 328.0837707519531 1038.180053710938 L 734 1018.184204101563 L 1139.916259765625 1038.180053710938 L 1207.443237304688 1058.041015625 L 1139.566772460938 1529.183837890625 Z'/>\a         <path class='cls-3' d='M 734 1018.684814453125 L 328.16796875 1038.676513671875 L 261.11328125 1058.398559570313 L 328.8662109375 1528.683837890625 L 1139.1337890625 1528.683837890625 L 1206.88671875 1058.398559570313 L 1139.83203125 1038.676513671875 L 734 1018.684814453125 M 734 1017.68359375 L 1140 1037.68359375 L 1208 1057.68359375 L 1140 1529.683837890625 L 328 1529.683837890625 L 260 1057.68359375 L 328 1037.68359375 L 734 1017.68359375 Z'/>\a       </g>\a     </svg>");
+  background-image: url("data:image/svg+xml;utf8,\a         <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 948 512' preserveAspectRatio='none'>\a           <defs>\a             <style>\a               .cls-1 {\a                 fill      : %23fff;\a               }\a               .cls-2, .cls-3 {\a                 stroke    : none;\a               }\a               .cls-3 {\a                 fill      : none;\a               }\a             </style>\a           </defs>\a           <g id='Path_67' data-name='Path 67' class='cls-1' transform='translate(1208 1529.684) rotate(180)'>\a             <path class='cls-2' d='M 1139.566772460938 1529.183837890625 L 328.4331665039063 1529.183837890625 L 260.5567016601563 1058.041015625 L 328.0837707519531 1038.180053710938 L 734 1018.184204101563 L 1139.916259765625 1038.180053710938 L 1207.443237304688 1058.041015625 L 1139.566772460938 1529.183837890625 Z'/>\a             <path class='cls-3' d='M 734 1018.684814453125 L 328.16796875 1038.676513671875 L 261.11328125 1058.398559570313 L 328.8662109375 1528.683837890625 L 1139.1337890625 1528.683837890625 L 1206.88671875 1058.398559570313 L 1139.83203125 1038.676513671875 L 734 1018.684814453125 M 734 1017.68359375 L 1140 1037.68359375 L 1208 1057.68359375 L 1140 1529.683837890625 L 328 1529.683837890625 L 260 1057.68359375 L 328 1037.68359375 L 734 1017.68359375 Z'/>\a           </g>\a         </svg>");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
 }
 
-.discussion, .transcription {
+.col-main .talk-print-wrapper .discussion, .col-main .talk-print-wrapper .transcription {
   background-color: #FFFFFF;
 }
 
@@ -242,54 +248,26 @@ ul#menu {
   right: 0;
 }
 
-#menu li {
+ul#menu li {
   cursor: pointer;
 }
 
-#menu li.button-down, #menu li.button-up {
+ul#menu li.button-down {
   position: relative;
-  -webkit-transform: rotateX(180deg);
-  -ms-transform: rotateX(180deg);
-  transform: rotateX(180deg);
-}
-
-#menu li.button-down {
   height: 60px;
   margin: 0 13px;
-}
-
-#menu li.button-up {
-  height: 45px;
-}
-
-#menu li.button-down div, #menu li.button-up div {
-  width: 100%;
-  z-index: 1;
   -webkit-transform: rotateX(180deg);
   -ms-transform: rotateX(180deg);
   transform: rotateX(180deg);
 }
 
-#menu li.button-down div {
-  line-height: 60px;
-}
-
-#menu li.button-up div {
-  line-height: 30px;
-}
-
-#menu li.button-down:before, #menu li.button-up:before {
+ul#menu li.button-down:before {
   content: '';
   position: absolute;
   width: 100%;
   height: 100%;
-  border-left: 1px solid #DEFEB3;
-  border-right: 1px solid #DEFEB3;
   left: 0;
-}
-
-#menu li.button-down:before {
-  border-left: 0;
+  border-left: 1px solid #DEFEB3;
   border-right: 0;
   -webkit-transform: rotateX(-90deg) perspective(180px) rotateX(90deg);
   -ms-transform: rotateX(-90deg) perspective(180px) rotateX(90deg);
@@ -299,25 +277,21 @@ ul#menu {
   transform-origin: center top;
 }
 
-#menu li.search:before {
-  border-right: 1px solid #DEFEB3;
+ul#menu li.button-down div {
+  width: 100%;
+  z-index: 1;
+  line-height: 60px;
+  -webkit-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  transform: rotateX(180deg);
 }
 
-#menu li.button-up:before {
-  -webkit-transform: rotateX(90deg) perspective(180px) rotateX(-90deg);
-  -ms-transform: rotateX(90deg) perspective(180px) rotateX(-90deg);
-  transform: rotateX(90deg) perspective(180px) rotateX(-90deg);
-  -webkit-transform-origin: center bottom;
-  -ms-transform-origin: center bottom;
-  transform-origin: center bottom;
-}
-
-#menu li div a {
+ul#menu li.button-down div a {
   outline: 0;
   padding: 30px 20px;
 }
 
-#menu li div a:hover, #menu li div a:active, #menu li div a:focus {
+ul#menu li.button-down div a:hover, ul#menu li.button-down div a:active, ul#menu li.button-down div a:focus {
   text-shadow: 1px 0px 20px #FFFFFF;
   text-decoration: none;
   font-style: oblique;
@@ -326,28 +300,85 @@ ul#menu {
   transform: skewX(-10deg);
 }
 
-#menu li div a:hover .fa, #menu li div a:active .fa, #menu li div a:focus .fa {
+ul#menu li.button-down div a:hover .fa, ul#menu li.button-down div a:active .fa, ul#menu li.button-down div a:focus .fa {
   -webkit-transform: skewX(-10deg);
   -ms-transform: skewX(-10deg);
   transform: skewX(-10deg);
+}
+
+ul#menu li.button-up {
+  height: 45px;
+  position: relative;
+  -webkit-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+}
+
+ul#menu li.button-up:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  border-left: 1px solid #DEFEB3;
+  border-right: 0;
+  -webkit-transform: rotateX(90deg) perspective(180px) rotateX(-90deg);
+  -ms-transform: rotateX(90deg) perspective(180px) rotateX(-90deg);
+  transform: rotateX(90deg) perspective(180px) rotateX(-90deg);
+  -webkit-transform-origin: center bottom;
+  -ms-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+
+ul#menu li.button-up div {
+  width: 100%;
+  z-index: 1;
+  line-height: 30px;
+  -webkit-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+}
+
+ul#menu li.button-up div a {
+  outline: 0;
+  padding: 30px 20px;
+}
+
+ul#menu li.button-up div a:hover, ul#menu li.button-up div a:active, ul#menu li.button-up div a:focus {
+  text-shadow: 1px 0px 20px #FFFFFF;
+  text-decoration: none;
+  font-style: oblique;
+  -webkit-transform: skewX(-10deg);
+  -ms-transform: skewX(-10deg);
+  transform: skewX(-10deg);
+}
+
+ul#menu li.button-up div a:hover .fa, ul#menu li.button-up div a:active .fa, ul#menu li.button-up div a:focus .fa {
+  -webkit-transform: skewX(-10deg);
+  -ms-transform: skewX(-10deg);
+  transform: skewX(-10deg);
+}
+
+ul#menu li.search:before {
+  border-right: 1px solid #DEFEB3;
 }
 
 /* Sidebar ----------------------- */
 .col-aside-right {
   width: 420px;
   padding: 20px 75px 4%;
-  background-image: url("data:image/svg+xml;utf8,\a     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 2364.373' preserveAspectRatio='none'>\a       <defs>\a         <style>\a           .cls-1 {\a             fill     : %23262b2f;\a           }\a         </style>\a       </defs>\a       <path id='Path_44' data-name='Path 44' class='cls-1' d='M1648,202l-68,2325.191L1438.344,2546.4,1296,2527.191,1228,202l68-19.974h284Z' transform='translate(-1228 -182.025)'/>\a     </svg>");
+  background-image: url("data:image/svg+xml;utf8,\a     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 2364.373' preserveAspectRatio='none'>\a       <defs>\a         <style>\a           .cls-1 {\a             fill        : %23262b2f;\a           }\a         </style>\a       </defs>\a       <path id='Path_44' data-name='Path 44' class='cls-1' d='M1648,202l-68,2325.191L1438.344,2546.4,1296,2527.191,1228,202l68-19.974h284Z' transform='translate(-1228 -182.025)'/>\a     </svg>");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
 }
 
-.lesson-name-wrapper {
+.col-aside-right .lesson-name-wrapper {
   background-color: #262B2F;
   width: 270px;
 }
 
-.lesson-name-wrapper span {
+.col-aside-right .lesson-name-wrapper span {
   background-color: #707070;
   color: #FFFFFF;
   width: 100%;
@@ -356,17 +387,17 @@ ul#menu {
   text-transform: uppercase;
 }
 
-ol#lesson-links {
+.col-aside-right ol {
   list-style: none;
   counter-reset: li;
 }
 
-ol#lesson-links li {
+.col-aside-right ol li {
   margin-left: 40px;
   counter-increment: li;
 }
 
-ol#lesson-links li ::before {
+.col-aside-right ol li ::before {
   content: counter(li);
   color: #FFFFFF;
   display: inline-block;
@@ -384,7 +415,7 @@ footer {
   margin-top: 50px;
 }
 
-.footer-left-col, .footer-right-col {
+footer .footer-left-col, footer .footer-right-col {
   width: 50%;
   text-align: center;
 }

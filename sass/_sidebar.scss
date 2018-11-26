@@ -1,60 +1,60 @@
 // !compileOnSave
-// compileOnSave     : false
-// main              : ../style.scss
+// compileOnSave        : false
+// main                 : ../style.scss
 
 
 /* Sidebar ----------------------- */
 
 .col-aside-right {
-  width              : $sidebar-width;
-  padding            : $col-aside-right-padding;
-  background-image   : url("data:image/svg+xml;utf8,
+  width                 : $sidebar-width;
+  padding               : $col-aside-right-padding;
+  background-image      : url("data:image/svg+xml;utf8,
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 2364.373' preserveAspectRatio='none'>
       <defs>
         <style>
           .cls-1 {
-            fill     : %23262b2f;
+            fill        : %23262b2f;
           }
         </style>
       </defs>
       <path id='Path_44' data-name='Path 44' class='cls-1' d='M1648,202l-68,2325.191L1438.344,2546.4,1296,2527.191,1228,202l68-19.974h284Z' transform='translate(-1228 -182.025)'/>
     </svg>");
-  background-repeat  : no-repeat;
-  background-position: center;
-  background-size    : 100% 100%;
-}
+  background-repeat     : no-repeat;
+  background-position   : center;
+  background-size       : 100% 100%;
 
-.lesson-name-wrapper {
-  background-color   : $lesson-name-wrapper-bg;
-  width              : $lesson-name-wrapper-width;
-}
+  .lesson-name-wrapper {
+    background-color    : $lesson-name-wrapper-bg;
+    width               : $lesson-name-wrapper-width;
 
-.lesson-name-wrapper span {
-  background-color   : $lesson-name-wrapper-span;
-  color              : $lesson-name-wrapper-color;
-  width              : $lesson-name-wrapper-span-width;
-  padding            : $lesson-name-wrapper-span-padding;
-  display            : block;
-  text-transform     : uppercase;
-}
+    span {
+      background-color  : $lesson-name-wrapper-span;
+      color             : $lesson-name-wrapper-color;
+      width             : $lesson-name-wrapper-span-width;
+      padding           : $lesson-name-wrapper-span-padding;
+      display           : block;
+      text-transform    : uppercase;
+    }
+  }
 
-ol#lesson-links {
-  list-style         : none;
-  counter-reset      : li;
-}
+  ol {
+    list-style          : none;
+    counter-reset       : li;
 
-ol#lesson-links li {
-  margin-left        : 40px;
-  counter-increment  : li;
-}
+    li {
+      margin-left       : 40px;
+      counter-increment : li;
 
-ol#lesson-links li   ::before {
-  content            : counter(li);
-  color              : $lesson-link-number-color;
-  display            : inline-block;
-  width              : 1em;
-  margin-left        : -1.5em;
-  margin-right       : 0.5em;
-  text-align         : right;
-  direction          : rtl;
+      ::before {
+        content         : counter(li);
+        color           : $lesson-link-number-color;
+        display         : inline-block;
+        width           : 1em;
+        margin-left     : -1.5em;
+        margin-right    : 0.5em;
+        text-align      : right;
+        direction       : rtl;
+      }
+    }
+  }
 }
