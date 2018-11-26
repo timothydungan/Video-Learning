@@ -65,19 +65,6 @@ a:focus, a:hover, a:active {
   text-decoration: underline;
 }
 
-.top-wrap {
-  background-color: #262B2F;
-  height: 60px;
-}
-
-header ul, footer ul {
-  list-style: none;
-  display: inline-flex;
-  text-align: center;
-  padding: 0;
-  margin: 0;
-}
-
 .wrapper {
   position: relative;
   max-width: 100%;
@@ -89,29 +76,166 @@ header ul, footer ul {
   transform: translateX(-50%);
 }
 
-.main-header {
+.page-title-wrap {
   display: inline-flex;
+  width: 1400px;
+  margin-top: 50px;
 }
 
-.logo {
-  padding: 10px 0;
-}
-
-.page-title {
+.page-title-wrap .page-title {
   width: 948px;
   margin-right: 12px;
 }
 
-.page-title h1 {
+.page-title-wrap .page-title h1 {
   font-family: "M PLUS Rounded 1c", sans-serif;
   font-size: 40px;
   color: #262B2F;
 }
 
-.page-wrap, .page-title-wrap, .footer-wrap, .entry-cta-wrap {
+.page-wrap {
   display: inline-flex;
   width: 1400px;
   margin-top: 50px;
+}
+
+/* Header ------------------------ */
+header.top-wrap {
+  background-color: #262B2F;
+  height: 60px;
+}
+
+header.top-wrap .main-header {
+  display: inline-flex;
+}
+
+header.top-wrap .main-header .logo {
+  padding: 10px 0;
+}
+
+header.top-wrap .main-header ul#menu {
+  position: absolute;
+  right: 0;
+  list-style: none;
+  display: inline-flex;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+header.top-wrap .main-header ul#menu li {
+  cursor: pointer;
+}
+
+header.top-wrap .main-header ul#menu li.button-down {
+  position: relative;
+  height: 60px;
+  margin: 0 13px;
+  -webkit-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+}
+
+header.top-wrap .main-header ul#menu li.button-down:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  border-left: 1px solid #DEFEB3;
+  border-right: 0;
+  -webkit-transform: rotateX(-90deg) perspective(180px) rotateX(90deg);
+  -ms-transform: rotateX(-90deg) perspective(180px) rotateX(90deg);
+  transform: rotateX(-90deg) perspective(180px) rotateX(90deg);
+  -webkit-transform-origin: center top;
+  -ms-transform-origin: center top;
+  transform-origin: center top;
+}
+
+header.top-wrap .main-header ul#menu li.button-down div {
+  width: 100%;
+  z-index: 1;
+  line-height: 60px;
+  -webkit-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+}
+
+header.top-wrap .main-header ul#menu li.button-down div a {
+  outline: 0;
+  padding: 30px 20px;
+}
+
+header.top-wrap .main-header ul#menu li.button-down div a:hover, header.top-wrap .main-header ul#menu li.button-down div a:active, header.top-wrap .main-header ul#menu li.button-down div a:focus {
+  text-shadow: 1px 0px 20px #FFFFFF;
+  text-decoration: none;
+  font-style: oblique;
+  -webkit-transform: skewX(-10deg);
+  -ms-transform: skewX(-10deg);
+  transform: skewX(-10deg);
+}
+
+header.top-wrap .main-header ul#menu li.button-down div a:hover .fa, header.top-wrap .main-header ul#menu li.button-down div a:active .fa, header.top-wrap .main-header ul#menu li.button-down div a:focus .fa {
+  -webkit-transform: skewX(-10deg);
+  -ms-transform: skewX(-10deg);
+  transform: skewX(-10deg);
+}
+
+header.top-wrap .main-header ul#menu li.button-up {
+  height: 45px;
+  position: relative;
+  -webkit-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+}
+
+header.top-wrap .main-header ul#menu li.button-up:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  border-left: 1px solid #DEFEB3;
+  border-right: 0;
+  -webkit-transform: rotateX(90deg) perspective(180px) rotateX(-90deg);
+  -ms-transform: rotateX(90deg) perspective(180px) rotateX(-90deg);
+  transform: rotateX(90deg) perspective(180px) rotateX(-90deg);
+  -webkit-transform-origin: center bottom;
+  -ms-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+
+header.top-wrap .main-header ul#menu li.button-up div {
+  width: 100%;
+  z-index: 1;
+  line-height: 30px;
+  -webkit-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+}
+
+header.top-wrap .main-header ul#menu li.button-up div a {
+  outline: 0;
+  padding: 30px 20px;
+}
+
+header.top-wrap .main-header ul#menu li.button-up div a:hover, header.top-wrap .main-header ul#menu li.button-up div a:active, header.top-wrap .main-header ul#menu li.button-up div a:focus {
+  text-shadow: 1px 0px 20px #FFFFFF;
+  text-decoration: none;
+  font-style: oblique;
+  -webkit-transform: skewX(-10deg);
+  -ms-transform: skewX(-10deg);
+  transform: skewX(-10deg);
+}
+
+header.top-wrap .main-header ul#menu li.button-up div a:hover .fa, header.top-wrap .main-header ul#menu li.button-up div a:active .fa, header.top-wrap .main-header ul#menu li.button-up div a:focus .fa {
+  -webkit-transform: skewX(-10deg);
+  -ms-transform: skewX(-10deg);
+  transform: skewX(-10deg);
+}
+
+header.top-wrap .main-header ul#menu li.search:before {
+  border-right: 1px solid #DEFEB3;
 }
 
 /* CTAs -------------------------- */
@@ -141,6 +265,12 @@ header ul, footer ul {
 .cta-pitch .cta-pitch-title {
   font-size: 30px;
   text-transform: uppercase;
+}
+
+.entry-cta-wrap {
+  display: inline-flex;
+  width: 948px;
+  margin-top: 50px;
 }
 
 .signup-button-left {
@@ -242,127 +372,6 @@ header ul, footer ul {
   background-color: #FFFFFF;
 }
 
-/* Menu -------------------------- */
-ul#menu {
-  position: absolute;
-  right: 0;
-}
-
-ul#menu li {
-  cursor: pointer;
-}
-
-ul#menu li.button-down {
-  position: relative;
-  height: 60px;
-  margin: 0 13px;
-  -webkit-transform: rotateX(180deg);
-  -ms-transform: rotateX(180deg);
-  transform: rotateX(180deg);
-}
-
-ul#menu li.button-down:before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  border-left: 1px solid #DEFEB3;
-  border-right: 0;
-  -webkit-transform: rotateX(-90deg) perspective(180px) rotateX(90deg);
-  -ms-transform: rotateX(-90deg) perspective(180px) rotateX(90deg);
-  transform: rotateX(-90deg) perspective(180px) rotateX(90deg);
-  -webkit-transform-origin: center top;
-  -ms-transform-origin: center top;
-  transform-origin: center top;
-}
-
-ul#menu li.button-down div {
-  width: 100%;
-  z-index: 1;
-  line-height: 60px;
-  -webkit-transform: rotateX(180deg);
-  -ms-transform: rotateX(180deg);
-  transform: rotateX(180deg);
-}
-
-ul#menu li.button-down div a {
-  outline: 0;
-  padding: 30px 20px;
-}
-
-ul#menu li.button-down div a:hover, ul#menu li.button-down div a:active, ul#menu li.button-down div a:focus {
-  text-shadow: 1px 0px 20px #FFFFFF;
-  text-decoration: none;
-  font-style: oblique;
-  -webkit-transform: skewX(-10deg);
-  -ms-transform: skewX(-10deg);
-  transform: skewX(-10deg);
-}
-
-ul#menu li.button-down div a:hover .fa, ul#menu li.button-down div a:active .fa, ul#menu li.button-down div a:focus .fa {
-  -webkit-transform: skewX(-10deg);
-  -ms-transform: skewX(-10deg);
-  transform: skewX(-10deg);
-}
-
-ul#menu li.button-up {
-  height: 45px;
-  position: relative;
-  -webkit-transform: rotateX(180deg);
-  -ms-transform: rotateX(180deg);
-  transform: rotateX(180deg);
-}
-
-ul#menu li.button-up:before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  border-left: 1px solid #DEFEB3;
-  border-right: 0;
-  -webkit-transform: rotateX(90deg) perspective(180px) rotateX(-90deg);
-  -ms-transform: rotateX(90deg) perspective(180px) rotateX(-90deg);
-  transform: rotateX(90deg) perspective(180px) rotateX(-90deg);
-  -webkit-transform-origin: center bottom;
-  -ms-transform-origin: center bottom;
-  transform-origin: center bottom;
-}
-
-ul#menu li.button-up div {
-  width: 100%;
-  z-index: 1;
-  line-height: 30px;
-  -webkit-transform: rotateX(180deg);
-  -ms-transform: rotateX(180deg);
-  transform: rotateX(180deg);
-}
-
-ul#menu li.button-up div a {
-  outline: 0;
-  padding: 30px 20px;
-}
-
-ul#menu li.button-up div a:hover, ul#menu li.button-up div a:active, ul#menu li.button-up div a:focus {
-  text-shadow: 1px 0px 20px #FFFFFF;
-  text-decoration: none;
-  font-style: oblique;
-  -webkit-transform: skewX(-10deg);
-  -ms-transform: skewX(-10deg);
-  transform: skewX(-10deg);
-}
-
-ul#menu li.button-up div a:hover .fa, ul#menu li.button-up div a:active .fa, ul#menu li.button-up div a:focus .fa {
-  -webkit-transform: skewX(-10deg);
-  -ms-transform: skewX(-10deg);
-  transform: skewX(-10deg);
-}
-
-ul#menu li.search:before {
-  border-right: 1px solid #DEFEB3;
-}
-
 /* Sidebar ----------------------- */
 .col-aside-right {
   width: 420px;
@@ -415,12 +424,31 @@ footer {
   margin-top: 50px;
 }
 
-footer .footer-left-col, footer .footer-right-col {
+footer .footer-wrap {
+  display: inline-flex;
+  width: 1400px;
+  margin-top: 50px;
+}
+
+footer .footer-wrap .footer-left-col {
   width: 50%;
   text-align: center;
 }
 
-footer .fa {
+footer .footer-wrap .footer-right-col {
+  width: 50%;
+  text-align: center;
+}
+
+footer .footer-wrap .footer-right-col ul {
+  list-style: none;
+  display: inline-flex;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+footer .footer-wrap .footer-right-col ul .fa {
   font-size: 30px;
   font-style: normal;
   padding: 10px;
