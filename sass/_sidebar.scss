@@ -5,35 +5,25 @@
 
 /* Sidebar ----------------------- */
 
-.col-aside-right {
-  width                 : $sidebar-width;
-  padding               : $col-aside-right-padding;
-  background-image      : url("data:image/svg+xml;utf8,
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 2364.373' preserveAspectRatio='none'>
-      <defs>
-        <style>
-          .cls-1 {
-            fill        : %23262b2f;
-          }
-        </style>
-      </defs>
-      <path id='Path_44' data-name='Path 44' class='cls-1' d='M1648,202l-68,2325.191L1438.344,2546.4,1296,2527.191,1228,202l68-19.974h284Z' transform='translate(-1228 -182.025)'/>
-    </svg>");
+.col-aside {
+  width                 : $col-aside-width;
+  padding               : $col-aside-padding;
   background-repeat     : no-repeat;
   background-position   : center;
   background-size       : 100% 100%;
+  background-image      : svgParams(sidebar, $sidebar-svg-color);
 
   .lesson-name-wrapper {
-    background-color    : $lesson-name-wrapper-bg;
-    width               : $lesson-name-wrapper-width;
+    background-color    : $lesson-name-wrapper-bg-color;
 
     span {
-      background-color  : $lesson-name-wrapper-span;
-      color             : $lesson-name-wrapper-color;
-      width             : $lesson-name-wrapper-span-width;
-      padding           : $lesson-name-wrapper-span-padding;
       display           : block;
-      text-transform    : uppercase;
+      background-color  : $lesson-name-span-bg-color;
+      color             : $lesson-name-span-text-color;
+      width             : $lesson-name-span-width;
+      padding           : $lesson-name-span-padding;
+      text-transform    : $lesson-name-span-text-transform;
+      margin            : $lesson-name-span-margin;
     }
   }
 
@@ -42,18 +32,28 @@
     counter-reset       : li;
 
     li {
-      margin-left       : 40px;
+      margin-left       : $lesson-name-li-margin-left;
       counter-increment : li;
 
       ::before {
         content         : counter(li);
         color           : $lesson-link-number-color;
         display         : inline-block;
-        width           : 1em;
-        margin-left     : -1.5em;
-        margin-right    : 0.5em;
-        text-align      : right;
-        direction       : rtl;
+        width           : $lesson-link-number-width;
+        margin-left     : $lesson-link-number-margin-left;
+        margin-right    : $lesson-link-number-margin-right;
+        text-align      : $lesson-link-number-text-align;
+        direction       : $lesson-link-number-text-direction;
+      }
+
+      &.active {
+        &:before {
+          content       : $lesson-link-active-marker;
+          font-size     : $lesson-link-active-marker-size;
+          color         : $lesson-link-number-color;
+          margin-left   : $lesson-link-active-margin-left;
+          margin-right  : $lesson-link-active-margin-right;
+        }
       }
     }
   }

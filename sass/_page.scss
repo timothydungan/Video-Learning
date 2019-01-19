@@ -1,56 +1,90 @@
 // !compileOnSave
-// compileOnSave      : false
-// main               : ../style.scss
+// compileOnSave    : false
+// main             : ../style.scss
 
 
 /* Page -------------------------- */
 
 body {
-  background-color    : $page-bg-color;
-  font-family         : $main-text-font;
-  font-size           : $main-text-size;
+  background-color  : $page-bg-color;
+  font-family       : $main-text-font;
+  font-size         : $main-text-size;
 }
 
 a {
-	color               : $text-link-color;
-	text-decoration     : none;
+	color             : $text-link-color;
+	text-decoration   : none;
 
   &:focus, &:hover, &:active {
-  	outline             : thin dotted;
-  	text-decoration     : underline;
+  	outline         : thin dotted;
+  	text-decoration : $a-hover-text-decoration;
   }
 }
 
 .wrapper {
-           position   : relative;
-          max-width   : 100%;
-              width   : $container-width;
-               left   : 50%;
-       margin-right   : -50%;
-  -webkit-transform   : translateX(-50%);
-      -ms-transform   : translateX(-50%);
-          transform   : translateX(-50%);
+  position          : relative;
+  width             : $wrapper-width;
+  left              : $wrapper-left;
+  -webkit-transform : translateX($wrapper-transform-translateX);
+      -ms-transform : translateX($wrapper-transform-translateX);
+          transform : translateX($wrapper-transform-translateX);
 }
+  @media (min-width : 1201px) and (max-width: 1400px) {
+    .wrapper {
+      width         : $wrapper-width-1200;
+    }
+  }
+  @media (min-width : 1001px) and (max-width: 1200px) {
+    .wrapper {
+      width         : $wrapper-width-1000;
+    }
+  }
+  @media (min-width : 801px) and (max-width: 1000px) {
+    .wrapper {
+      width         : $wrapper-width-800;
+    }
+  }
+  @media (min-width : 601px) and (max-width: 800px) {
+    .wrapper {
+      width         : $wrapper-width-600;
+    }
+  }
+  @media (min-width : 401px) and (max-width: 600px) {
+    .wrapper {
+      width         : $wrapper-width-400;
+    }
+  }
+  @media (min-width : 201px) and (max-width: 400px) {
+    .wrapper {
+      width         : $wrapper-width-200;
+    }
+  }
+  @media (max-width : 200px) {
+    .wrapper {
+      width         : $wrapper-width-100;
+    }
+  }
 
 .page-title-wrap {
-  display             : inline-flex;
-  width               : $container-width;
-  margin-top          : 50px;
+  display           : flex;
+  width             : $page-title-wrap-width;
+  margin-top        : $vertical-margin-spacing;
 
   .page-title {
-    width               : $col-main-width;
-    margin-right        : 12px;
+    width           : $page-title-width;
+    margin-right    : $page-title-margin-right;
 
     h1 {
-      font-family         : $page-title-font;
-      font-size           : $page-title-size;
-      color               : $titling-color;
+      font-family   : $page-title-font;
+      font-size     : $page-title-size;
+      color         : $titling-color;
+      margin-top    : $page-title-margin-top;
     }
   }
 }
 
-.page-wrap {
-  display             : inline-flex;
-  width               : $container-width;
-  margin-top          : 50px;
+.content-wrap {
+  display           : flex;
+  width             : $content-wrap-width;
+  margin-top        : $vertical-margin-spacing;
 }

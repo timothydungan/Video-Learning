@@ -1,143 +1,321 @@
 // !compileOnSave
-// compileOnSave          : false
-// main                   : ../style.scss
+// compileOnSave                   : false
+// main                            : ../style.scss
 
 
 /* Main Content ------------------ */
 
 .col-main {
-  width                   : $col-main-width;
-  margin-right            : $col-gutter;
+  width                            : $col-main-width;
+  margin-right                     : $col-gutter;
 
   .video-wrapper {
-    height                : $video-player-wrapper-height;
-    width                 : $col-main-width;
-    margin                : 0;
-    background-repeat     : no-repeat;
-    background-position   : center;
-    background-size       : 100% 100%;
-    background-image      : url("data:image/svg+xml;utf8,
-      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 948 502.096' preserveAspectRatio='none'>
-        <defs>
-          <style>
-            .cls-1 {
-              fill        : %23262b2f;
-            }
-          </style>
-        </defs>
-        <path id='Path_35' data-name='Path 35' class='cls-1' d='M328,685h812l68-22.513-68-460.86L734,182.9,328,201.626l-68,460.86Z' transform='translate(-260 -182.904)'/>
-      </svg>");
+    height                         : $video-wrapper-height;
+    width                          : $video-wrapper-width;
+    margin                         : $video-wrapper-margin;
+    display                        : -webkit-box;
+    display                        : flex;
+    justify-content                : center;
+    flex-wrap                      : wrap;
+    -webkit-box-pack               : start;
+    background-repeat              : no-repeat;
+    background-position            : center;
+    background-size                : 100% 100%;
+    background-image               : svgParams(video, $video-svg-color);
 
-      .video-player {
-        -webkit-transform : translate($polygon-inner-transform-translate);
-            -ms-transform : translate($polygon-inner-transform-translate);
-                transform : translate($polygon-inner-transform-translate);
-      }
+    .next-lesson, .previous-lesson {
+      font-size                    : $video-nav-text-size;
+      margin-top                   : $video-nav-margin-top;
+      padding                      : $video-nav-padding;
+      -webkit-transform            : scaleX($video-nav-transform-scalex);
+          -ms-transform            : scaleX($video-nav-transform-scalex);
+              transform            : scaleX($video-nav-transform-scalex);
 
-      .video-title {
-        color             : $video-caption-color;
-        font-style        : italic;
-        font-size         : 10px;
-        text-align        : center;
-        line-height       : 4em;
-      }
-  }
+      a {
+        outline                    : none;
 
-  .course-titling-wrapper {
-    height                : $course-titling-wrapper-height;
-    width                 : $col-main-width;
-    margin                : 0;
-    background-repeat     : no-repeat;
-    background-position   : center;
-    background-size       : 100% 100%;
-    background-image      : url("data:image/svg+xml;utf8,
-      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 948 128' preserveAspectRatio='none'>
-        <defs>
-          <style>
-            .cls-1 {
-              fill        : %23307379;
-            }
-
-            .cls-2, .cls-3 {
-              stroke      : none;
-            }
-
-            .cls-3 {
-              fill        : %23262b2f;
-            }
-          </style>
-        </defs>
-        <g id='Path_57' data-name='Path 57' class='cls-1' transform='translate(-260 -1017.684)'>
-          <path class='cls-2' d='M 732 1145.182983398438 L 326.2886657714844 1125.197143554688 L 261.1109008789063 1018.542663574219 L 325.8549499511719 1038.162109375 L 325.9258728027344 1038.18359375 L 326 1038.18359375 L 1138 1038.18359375 L 1138.069946289063 1038.18359375 L 1138.137451171875 1038.164306640625 L 1206.855102539063 1018.530639648438 L 1137.7197265625 1125.19677734375 L 732 1145.182983398438 Z'/>
-          <path class='cls-3' d='M 1205.710205078125 1019.377807617188 L 1138.274658203125 1038.645141601563 L 1138.140014648438 1038.68359375 L 1138 1038.68359375 L 326 1038.68359375 L 325.851806640625 1038.68359375 L 325.7099609375 1038.640625 L 262.2220458984375 1019.40185546875 L 326.577392578125 1124.710815429688 L 732 1144.682373046875 L 1137.439331054688 1124.7099609375 L 1205.710205078125 1019.377807617188 M 260 1017.68359375 L 326 1037.68359375 L 1138 1037.68359375 L 1208 1017.68359375 L 1138 1125.68359375 L 732 1145.68359375 L 326 1125.68359375 L 260 1017.68359375 Z'/>
-        </g>
-      </svg>");
-
-      .course-title-wrap {
-        padding-top       : 1em;
-        width             : 812px;
-        -webkit-transform : translate($polygon-inner-transform-translate);
-            -ms-transform : translate($polygon-inner-transform-translate);
-                transform : translate($polygon-inner-transform-translate);
-      }
-
-      .course-titling {
-        color             : $white;
-        font-size         : 20px;
-        line-height       : 1.5em;
-
-        strong {
-          font-weight     : bold;
-          letter-spacing  : .1em;
+        &:focus, &:hover, &:active {
+          cursor                   : pointer;
+          text-shadow              : $button-glow;
+          -webkit-transition       : $button-transition;
+                  transition       : $button-transition;
         }
       }
 
-      .course-title {
-        width             : 650px;
+      &.current {
+        z-index                    : $video-nav-current-z-index;
+      }
+    }
+
+    .video-player {
+      -webkit-transform            : translate($video-transform-translate);
+          -ms-transform            : translate($video-transform-translate);
+              transform            : translate($video-transform-translate);
+
+      .video-frame {
+        width                      : $video-width;
+        height                     : $video-height;
+      }
+    }
+
+    .video-title {
+      color                        : $video-caption-color;
+      font-size                    : $video-caption-text-size;
+      font-style                   : $video-caption-text-style;
+      margin-top                   : $video-caption-margin-top;
+      text-align                   : center;
+    }
+  }
+
+  .course-titling-wrapper {
+    height                         : $course-titling-wrapper-height;
+    width                          : $course-titling-wrapper-width;
+    margin                         : $course-titling-wrapper-margin;
+    background-repeat              : no-repeat;
+    background-position            : center;
+    background-size                : 100% 100%;
+    background-image               : svgParams(course, $course-svg-color, $svg-secondary-color);
+
+      .course-title-wrap {
+        margin-left                : $course-title-wrap-margin-left;
+        padding-top                : $course-title-wrap-padding-top;
+      }
+
+      .course-titling {
+        color                      : $course-titling-color;
+        font-size                  : $course-titling-text-size;
+        line-height                : $course-titling-line-height;
+
+        strong {
+          font-weight              : $course-titling-strong;
+          letter-spacing           : $course-titling-strong-spacing;
+        }
       }
 
       .extra-info {
-        display           : inline-flex;
+        display                    : flex;
       }
 
       .video-count {
-        width             : 150px;
+        margin-left                : $video-count-margin-left;
+        position                   : absolute;
       }
 
       .video-numbering {
-        text-align        : right;
+        text-align                 : $video-numbering-text-align;
+      }
+  }
+
+  .main-content-tabs {
+    margin-top                     : $vertical-margin-spacing;
+
+    section {
+      display                      : none;
+    }
+
+    input {
+      display                      : none;
+    }
+
+    label {
+      display                      : inline-block;
+      font-weight                  : $tabs-label-font-weight;
+      text-align                   : center;
+      color                        : $tabs-color-inactive;
+      margin                       : $tabs-label-margin;
+      padding                      : $tabs-label-padding;
+      background-repeat            : no-repeat;
+      background-position          : center;
+      background-size              : 100% 100%;
+      background-image             : svgParams(tab, $talk-print-svg-color, $svg-secondary-color);
+
+      &:hover {
+        color                      : $tabs-hover-color;
+        cursor                     : pointer;
       }
     }
 
-    .talk-print-wrapper {
-      width               : 948px;
-      padding             : 20px 75px 10%;
-      background-image    : url("data:image/svg+xml;utf8,
-        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 948 512' preserveAspectRatio='none'>
-          <defs>
-            <style>
-              .cls-1 {
-                fill      : %23fff;
-              }
-              .cls-2, .cls-3 {
-                stroke    : none;
-              }
-              .cls-3 {
-                fill      : none;
-              }
-            </style>
-          </defs>
-          <g id='Path_67' data-name='Path 67' class='cls-1' transform='translate(1208 1529.684) rotate(180)'>
-            <path class='cls-2' d='M 1139.566772460938 1529.183837890625 L 328.4331665039063 1529.183837890625 L 260.5567016601563 1058.041015625 L 328.0837707519531 1038.180053710938 L 734 1018.184204101563 L 1139.916259765625 1038.180053710938 L 1207.443237304688 1058.041015625 L 1139.566772460938 1529.183837890625 Z'/>
-            <path class='cls-3' d='M 734 1018.684814453125 L 328.16796875 1038.676513671875 L 261.11328125 1058.398559570313 L 328.8662109375 1528.683837890625 L 1139.1337890625 1528.683837890625 L 1206.88671875 1058.398559570313 L 1139.83203125 1038.676513671875 L 734 1018.684814453125 M 734 1017.68359375 L 1140 1037.68359375 L 1208 1057.68359375 L 1140 1529.683837890625 L 328 1529.683837890625 L 260 1057.68359375 L 328 1037.68359375 L 734 1017.68359375 Z'/>
-          </g>
-        </svg>");
-      background-repeat   : no-repeat;
-      background-position : center;
-      background-size     : 100% 100%;
+    input:checked + label {
+      color                        : $titling-color;
+      background-repeat            : no-repeat;
+      background-position          : center;
+      background-size              : 100% 100%;
+      background-image             : svgParams(tab, $talk-print-svg-color, $svg-secondary-color, $talk-print-svg-color);
+    }
 
-      .discussion, .transcription {
-        background-color  : $talk-print-bg-color;
+    input#qa-tab + label {
+      margin-left                  : $tabs-margin-left;
+    }
+
+    #talk-print-wrapper {
+      width                        : $talk-print-wrapper-width;
+      padding                      : $talk-print-wrapper-padding;
+      background-repeat            : no-repeat;
+      background-position          : center;
+      background-size              : 100% 100%;
+      background-image             : svgParams(talk-print, $talk-print-svg-color, $svg-secondary-color);
+
+      .zoink {
+        -webkit-animation-fill-mode: both;
+        -webkit-animation-duration : $tabs-animation-length;
+        -webkit-animation-name     : zoink;
+        -moz-animation-fill-mode   : both;
+        -moz-animation-duration    : $tabs-animation-length;
+        -moz-animation-name        : zoink;
+        -ms-animation-fill-mode    : both;
+        -ms-animation-duration     : $tabs-animation-length;
+        -ms-animation-name         : zoink;
+        -o-animation-fill-mode     : both;
+        -o-animation-duration      : $tabs-animation-length;
+        -o-animation-name          : zoink;
+        animation-fill-mode        : both;
+        animation-duration         : $tabs-animation-length;
+        animation-name             : zoink;
+      }
+      @-moz-keyframes zoink {
+        0% {
+          opacity                  : 0;
+          -moz-filter              : blur(2em);
+          -moz-transform-origin    : top;
+          -moz-transform           : perspective(800px) scale(.1,.1) rotateX(-180deg);
+        }
+        100% {
+          opacity                  : 1;
+          -moz-filter              : blur(0em);
+          -moz-transform-origin    : top;
+          -moz-transform           : perspective(800px) scale(1,1) rotateX(0deg);
+        }
+      }
+      @-webkit-keyframes zoink {
+        0% {
+          opacity                  : 0;
+          -webkit-filter           : blur(2em);
+          -webkit-transform-origin : top;
+          -webkit-transform        : perspective(800px) scale(.1,.1) rotateX(-180deg);
+        }
+        100% {
+          opacity                  : 1;
+          -webkit-filter           : blur(0em);
+          -webkit-transform-origin : top;
+          -webkit-transform        : perspective(800px) scale(1,1) rotateX(0deg);
+        }
+      }
+      @-o-keyframes zoink {
+        0% {
+          opacity                  : 0;
+          -webkit-filter           : blur(2em);
+          -o-transform-origin      : top;
+          -o-transform             : perspective(800px) scale(.1,.1) rotateX(-180deg);
+        }
+        100% {
+          opacity                  : 1;
+          -webkit-filter           : blur(0em);
+          -o-transform-origin      : top;
+          -o-transform             : perspective(800px) scale(1,1) rotateX(0deg);
+        }
+      }
+      @-ms-keyframes zoink {
+        0% {
+          opacity                  : 0;
+          filter                   : alpha(opacity=0);
+          filter                   : blur(2em);
+          -ms-transform-origin     : top;
+          -ms-transform            : perspective(800px) scale(.1,.1) rotateX(-180deg);
+        }
+        100% {
+          opacity                  : 1;
+          filter                   : alpha(opacity=100);
+          filter                   : blur(0em);
+          -ms-transform-origin     : top;
+          -ms-transform            : perspective(800px) scale(1,1) rotateX(0deg);
+        }
+      }
+      @keyframes zoink {
+        0% {
+          opacity                  : 0;
+          filter                   : blur(2em);
+          transform-origin         : top;
+          transform                : perspective(800px) scale(.1,.1) rotateX(-180deg);
+        }
+        100% {
+          opacity                  : 1;
+          filter                   : blur(0em);
+          transform-origin         : top;
+          transform                : perspective(800px) scale(1,1) rotateX(0deg);
+        }
+      }
+
+      h4 {
+        color                      : $text-color;
+        font-size                  : $discussion-login-text-size;
+        font-weight                : $discussion-login-font-weight;
+        margin-bottom              : $discussion-login-margin-bottom;
+
+        a {
+          color                    : $discussion-login-link-color;
+          text-decoration          : underline;
+        }
+      }
+
+      #discuss {
+        ol#comments {
+          color                    : $comments-text-color;
+
+          li {
+            list-style-type        : none;
+            width                  : $comments-li-width;
+            padding                : $comments-li-padding;
+
+            h5 {
+              strong {
+                font-weight        : $contents-li-h5-font-weight;
+              }
+            }
+
+            &.student-comments {
+              background-repeat    : no-repeat;
+              background-position  : center;
+              background-size      : 100% 100%;
+              background-image     : svgParams(talkazoid-0, $talk-print-svg-color, $svg-secondary-color);
+            }
+
+            &.teacher-comments {
+              margin-left          : $teacher-comments-margin-left;
+              text-align           : $teacher-comments-text-align;
+              background-repeat    : no-repeat;
+              background-position  : center;
+              background-size      : 100% 100%;
+              background-image     : svgParams(talkazoid-180, $talk-print-svg-color, $svg-secondary-color);
+            }
+          }
+        }
+      }
+
+      #transcript {
+        margin-left                : $transcript-margin-left;
+
+        &:before {
+          content                  : '';
+          position                 : absolute;
+          width                    : $quote-icon-width;
+          height                   : $quote-icon-height;
+          margin-left              : $quote-icon-margin-left;
+          background-repeat        : no-repeat;
+          background-position      : center;
+          background-size          : 100% 100%;
+          background-image         : svgParams(quote, $quote-svg-color);
+        }
+
+        p:not(:last-child) {
+          margin-bottom            : $transcript-p-margin-bottom;
+        }
       }
     }
+
+    #qa-tab:checked ~ #talk-print-wrapper section#discussion,
+    #vt-tab:checked ~ #talk-print-wrapper section#transcription {
+      display                      : block;
+      background-color             : $talk-print-bg-color;
+    }
+  }
 }

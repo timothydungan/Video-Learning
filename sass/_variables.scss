@@ -3,56 +3,328 @@
 // main                            : ../style.scss
 
 // ================ COLOR STYLES ===============
-$black                             : #262B2F;
-$white                             : #FFFFFF;
-$green                             : #60C48E;
-$cream                             : #DEFEB3;
-$red                               : #A12839;
-$teal                              : #307379;
-$gray                              : #707070;
+$black                               : #262B2F;
+$white                               : #FFFFFF;
+$green                               : #60C48E;
+$cream                               : #DEFEB3;
+$red                                 : #A12839;
+$teal                                : #307379;
 
-$page-bg-color                     : $green;
-$text-link-color                   : $cream;
-$text-color                        : $black;
-$titling-color                     : $black;
-$nav-bg-color                      : $black;
-$cta-bg-color                      : $red;
-$cta-text-color                    : $white;
-$cta-button-border                 : $cream;
-$overlay-color                     : $white;
-$video-caption-color               : $white;
-$lesson-name-wrapper-span          : $gray;
-$lesson-name-wrapper-color         : $white;
-$lesson-name-wrapper-bg            : $black;
-$lesson-link-number-color          : $white;
-$discussion-bg-color               : $white;
-$talk-print-bg-color               : $white;
+$page-bg-color                       : $green;
+$text-link-color                     : $cream;
+$button-glow-color                   : $white;
+$text-color                          : $black;
+$discussion-login-link-color         : $red;
+$titling-color                       : $black;
+$tabs-color-inactive                 : $teal;
+$header-bg-color                     : $black;
+$cta-svg-color                       : "#{$red}";
+$cta-text-color                      : $white;
+$subscribe-svg-color                 : "#{$red}";
+$overlay-color                       : $white;
+$video-caption-color                 : $white;
+$video-svg-color                     : "#{$black}";
+$video-nav-svg-color                 : "#{$cream}";
+$course-svg-color                    : "#{$teal}";
+$course-titling-color                : $white;
+$svg-secondary-color                 : "#{$black}";
+$svg-border-color                    : "#{$cream}";
+$lesson-name-span-bg-color           : $teal;
+$lesson-name-span-text-color         : $white;
+$lesson-name-wrapper-bg-color        : $black;
+$lesson-link-number-color            : $white;
+$sidebar-svg-color                   : "#{$black}";
+$discussion-bg-color                 : $white;
+$comments-text-color                 : $black;
+$talk-print-bg-color                 : $white;
+$tabs-hover-color                    : $red;
+$talk-print-svg-color                : "#{$white}";
+$quote-svg-color                     : "#{$black}";
+$footer-bg-color                     : $black;
 
 // ================ FONT STYLES ================
-$main-text-font                    : "Open Sans", sans-serif;
-$main-text-size                    : 14px;
-$page-title-font                   : "M PLUS Rounded 1c", sans-serif;
-$page-title-size                   : 40px;
+$main-text-font                      : "Open Sans", sans-serif;
+$page-title-font                     : "M PLUS Rounded 1c", sans-serif;
+$video-nav-text-size                 : 162px;
+$page-title-size                     : 40px;
+$social-menu-icon-size               : 30px;
+$cta-pitch-title-size                : 30px;
+$subscribe-cta-input-text-size       : 24px;
+$cta-text-size                       : 20px;
+$course-titling-text-size            : 20px;
+$discussion-login-text-size          : 20px;
+$subscribe-cta-pitch-text-size       : 16px;
+$main-text-size                      : 14px;
+$lesson-link-active-marker-size      : 11px;
+$video-caption-text-size             : 10px;
+$video-caption-text-style            : italic;
+$a-hover-text-decoration             : underline;
+$menu-text-transform                 : uppercase;
+$lesson-name-span-text-transform     : uppercase;
+$cta-pitch-title-text-transform      : uppercase;
+$cta-pitch-font-weight               : bold;
+$contents-li-h5-font-weight          : bold;
+$course-titling-strong               : 900;
+$tabs-label-font-weight              : 600;
+$discussion-login-font-weight        : 600;
+$video-numbering-text-align          : right;
+$lesson-link-number-text-align       : right;
+$teacher-comments-text-align         : right;
+$lesson-link-number-text-direction   : rtl;
+$menu-li-button-down-div-line-height : 60px;
+$menu-li-button-up-div-line-height   : 30px;
+$course-titling-line-height          : 1.5em;
+$fixed-line-height                   : 1em;
+$course-titling-strong-spacing       : .1em;
 
 // ================ PAGE STYLES ================
-$container-width                   : 1400px;
+$wrapper-width                       : 1400px;
+$wrapper-width-1200                  : 1200px;
+$wrapper-width-1000                  : 1000px;
+$wrapper-width-800                   : 800px;
+$wrapper-width-600                   : 600px;
+$wrapper-width-400                   : 400px;
+$wrapper-width-200                   : 200px;
+$wrapper-width-100                   : 100%;
+$wrapper-left                        : 50%;
+$wrapper-transform-translateX        :-50%;
+$page-title-wrap-width               : 100%;
+$page-title-width                    : 68%;
+$page-title-margin-right             : 12px;
+$page-title-margin-top               : 3%;
+$content-wrap-width                  : 100%;
+$vertical-margin-spacing             : 50px;
+$button-transition                   : all .3s linear;
+$button-glow-area                    : 1px 0px 10px;
+$button-glow                         : $button-glow-area $button-glow-color;
+
+// =============== HEADER STYLES ===============
+$header-height                       : 60px;
+$logo-padding                        : 10px 0;
+$logo-width                          : 33%;
+$menu-right                          : 0;
+$menu-li-a-padding                   : 22px;
+$menu-li-before-width                : 100%;
+$menu-li-before-height               : 100%;
+$menu-li-before-left                 : 0;
+$menu-li-before-border               : 1px solid #DEFEB3;
+$menu-li-button-down-margin          : 0 13px;
+$menu-li-button-up-height            : 45px;
 
 // ============== CONTENT STYLES ===============
-$col-main-width                    : 948px;
-$col-main-padding                  : 20px 75px;
-$col-gutter                        : 32px;
-$polygon-inner-transform-translate : 68px, 16px;
-$video-player-wrapper-height       : 502px;
-$course-titling-wrapper-height     : 128px;
-$button-perspective                : 60px;
+$col-main-width                      : 68%;
+$col-gutter                          : 2%;
+$video-transform-translate           : 0, 19px;
+$video-wrapper-height                : 502px;
+$video-wrapper-width                 : 100%;
+$video-wrapper-margin                : 0;
+$video-nav-margin-top                : 33%;
+$video-nav-padding                   : 5px;
+$video-nav-transform-scalex          : .5;
+$video-nav-current-z-index           : -5;
+$video-width                         : 812px;
+$video-height                        : 463px;
+$video-caption-margin-top            : -22px;
+$course-titling-wrapper-height       : 128px;
+$course-titling-wrapper-width        : 100%;
+$course-titling-wrapper-margin       : 0;
+$course-title-wrap-margin-left       : 70px;
+$course-title-wrap-padding-top       : 30px;
+$video-count-margin-left             : 6%;
+$tabs-label-margin                   : 0 0 -1px;
+$tabs-label-padding                  : 15px 25px;
+$tabs-margin-left                    : 70px;
+$tabs-animation-length               : .5s;
+$talk-print-wrapper-width            : 100%;
+$talk-print-wrapper-padding          : 20px 75px 5%;
+$discussion-login-margin-bottom      : 1em;
+$comments-li-width                   : 75%;
+$comments-li-padding                 : 20px 10px;
+$teacher-comments-margin-left        : 25%;
+$transcript-margin-left              : 80px;
+$quote-icon-width                    : 50px;
+$quote-icon-height                   : 50px;
+$quote-icon-margin-left              : -60px;
+$transcript-p-margin-bottom          : 1em;
 
 // ============== SIDEBAR STYLES ===============
-$sidebar-width                     : 420px;
-$col-aside-right-padding           : 20px 75px 4%;
-$lesson-name-wrapper-width         : 270px;
-$lesson-name-wrapper-span-width    : 100%;
-$lesson-name-wrapper-span-padding  : 10px;
+$col-aside-width                     : 30%;
+$col-aside-padding                   : 20px 70px 4%;
+$lesson-name-span-width              : 100%;
+$lesson-name-span-padding            : 10px;
+$lesson-name-span-margin             : 5px 0;
+$lesson-name-li-margin-left          : 40px;
+$lesson-link-number-width            : 1em;
+$lesson-link-number-margin-left      : -1.5em;
+$lesson-link-number-margin-right     : 0.5em;
+$lesson-link-active-marker           : ">>";
+$lesson-link-active-margin-left      : -38px;
+$lesson-link-active-margin-right     : 25px;
+
+// ================ CTA STYLES =================
+$main-cta-width                      : 31%;
+$main-cta-height                     : 163px;
+$cta-pitch-margin-left               : 5%;
+$cta-pitch-margin-top                : -2%;
+$big-cta-width                       : 100%;
+$big-cta-height                      : 163px;
+$big-cta-pitch-margin-left           : 35%;
+$big-cta-pitch-margin-top            : 2%;
+$entry-cta-wrap-width                : 100%;
+$entry-cta-wrap-height               : 60px;
+$entry-cta-height                    : 100%;
+$entry-cta-width                     : 45%;
+$class-files-cta-margin-top          : 30px;
+$class-files-cta-p-padding           : 20px 0 0 55px;
+$completed-files-cta-margin-left     : 10%;
+$completed-files-cta-p-margin-top    : 20px;
+$completed-files-cta-p-padding-left  : 35px;
+$signup-button-height                : 98px;
+$signup-button-a-padding             : 35px 20px;
+$signup-button-p-margin-top          : 33%;
+$signup-button-left-margin-left      : 10%;
+$signup-button-left-margin-top       : 7%;
+$signup-button-right-margin-left     : 15%;
+$signup-button-right-margin-top      : -2%;
+$subscribe-cta-wrapper-width         : 90%;
+$subscribe-cta-wrapper-height        : 110px;
+$subscribe-cta-pitch-text-padding    : 20px;
+$subscribe-cta-input-padding         : 8px 16px;
+$subscribe-button-right-margin       : -20px 20px;
+$subscribe-button-right-float        : right;
+$subscribe-button-width              : 100%;
+$subscribe-button-height             : 70px;
+$subscribe-button-padding            : 10px;
+$affiliate-cta-wrapper-margin-top    : -5%;
+$affiliate-cta-wrapper-margin-left   : 20%;
+$affiliate-cta-p-margin              : 185px -145px;
+$affiliate-cta-a-margin              : 40px 80px;
 
 // ============== FOOTER STYLES ================
-$footer-height                     : 310px;
-$footer-bg-color                   : $black;
+$footer-height                       : 310px;
+$footer-wrap-width                   : 100%;
+$footer-column-width                 : 50%;
+$social-menu-wrapper-width           : 90%;
+$social-menu-button-height           : 50px;
+$social-menu-button-width            : 14%;
+$social-menu-icon-padding            : 10px 25%;
+
+// ================ SVG STYLES =================
+@function str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+
+    @return $string;
+}
+
+@function _buildSVG($svgCompiled) {
+  $svgCompiled: "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' #{$svgCompiled}</svg>";
+  @return $svgCompiled;
+}
+
+@function svgParams(
+  $svg-name,
+  $color1: '',
+  $color2: '',
+  $color3: 'transparent'
+  ){
+  $svgs: (
+    main-cta: "viewBox='0 0 440 163.121' preserveAspectRatio='none'>
+      <path fill='#{str-replace($color1,"#","%23")}' d='M1228,100l-20,61.7,20,60.993,420,20.567L1628,222.7V100l20-19.858Z' transform='translate(-1208 -80.142)'/>",
+    subscribe-cta: "viewBox='0 0 630 110' preserveAspectRatio='none'>
+      <path fill='#{str-replace($color1,"#","%23")}' d='M1208,69.993l20,20v70l-20,20h630l-13.291-20v-70l13.291-20Z' transform='translate(-1208 -69.993)'/>",
+    main-button-0: "viewBox='0 0 100 100' preserveAspectRatio='none'>
+      <defs>
+        <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>
+          <stop offset='0' stop-color='#{str-replace($color1,"#","%23")}'/>
+          <stop offset='1' stop-color='#{str-replace($color2,"#","%23")}'/>
+        </linearGradient>
+      </defs>
+      <g fill='url(%23linear-gradient)' transform='translate(0 16)'>
+        <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>
+        <path fill='#{str-replace($color3,"#","%23")}' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>
+      </g>",
+    main-button-90: "viewBox='0 0 100 100' preserveAspectRatio='none'>
+      <defs>
+        <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>
+          <stop offset='0' stop-color='#{str-replace($color1,"#","%23")}'/>
+          <stop offset='1' stop-color='#{str-replace($color2,"#","%23")}'/>
+        </linearGradient>
+      </defs>
+      <g fill='url(%23linear-gradient)' transform='translate(84) rotate(90)'>
+        <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>
+        <path fill='#{str-replace($color3,"#","%23")}' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>
+      </g>",
+    main-button-180: "viewBox='0 0 100 100' preserveAspectRatio='none'>
+      <defs>
+        <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>
+          <stop offset='0' stop-color='#{str-replace($color1,"#","%23")}'/>
+          <stop offset='1' stop-color='#{str-replace($color2,"#","%23")}'/>
+        </linearGradient>
+      </defs>
+      <g fill='url(%23linear-gradient)' transform='translate(100 84) rotate(180)'>
+        <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>
+        <path fill='#{str-replace($color3,"#","%23")}' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>
+      </g>",
+    main-button-270: "viewBox='0 0 100 100' preserveAspectRatio='none'>
+      <defs>
+        <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>
+          <stop offset='0' stop-color='#{str-replace($color1,"#","%23")}'/>
+          <stop offset='1' stop-color='#{str-replace($color2,"#","%23")}'/>
+        </linearGradient>
+      </defs>
+      <g fill='url(%23linear-gradient)' transform='translate(16 100) rotate(-90)'>
+        <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>
+        <path fill='#{str-replace($color3,"#","%23")}' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>
+        </g>",
+    sidebar: "viewBox='0 0 420 2364.373' preserveAspectRatio='none'>
+      <path fill='#{str-replace($color1,"#","%23")}' d='M1648,202l-68,2325.191L1438.344,2546.4,1296,2527.191,1228,202l68-19.974h284Z' transform='translate(-1228 -182.025)'/>",
+    video: "viewBox='0 0 948 502.096' preserveAspectRatio='none'>
+      <path fill='#{str-replace($color1,"#","%23")}' d='M328,685h812l68-22.513-68-460.86L734,182.9,328,201.626l-68,460.86Z' transform='translate(-260 -182.904)'/>",
+    video-nav: "viewBox='0 0 30 161.597' preserveAspectRatio='none'>
+      <g transform='translate(-100.494)'>
+        <g transform='translate(100.494)'>
+          <path fill='#{str-replace($color1,"#","%23")}' d='M103.864,0l-3.37,10.82L123.558,80.8l-23.064,69.963,3.369,10.833,26.631-80.8Z' transform='translate(-100.494)'/>
+        </g>
+      </g>",
+    entry-cta: "viewBox='0 0 420 60' preserveAspectRatio='none'>
+      <path fill='#{str-replace($color1,"#","%23")}' d='M1668,112l-20,30,20,30-420-5,20-25-20-25Z' transform='translate(-1248 -112)'/>",
+    course: "viewBox='0 0 948 128' preserveAspectRatio='none'>
+      <g fill='#{str-replace($color1,"#","%23")}' transform='translate(-260 -1017.684)'>
+        <path stroke='none' d='M 732 1145.182983398438 L 326.2886657714844 1125.197143554688 L 261.1109008789063 1018.542663574219 L 325.8549499511719 1038.162109375 L 325.9258728027344 1038.18359375 L 326 1038.18359375 L 1138 1038.18359375 L 1138.069946289063 1038.18359375 L 1138.137451171875 1038.164306640625 L 1206.855102539063 1018.530639648438 L 1137.7197265625 1125.19677734375 L 732 1145.182983398438 Z'/>
+        <path stroke='none' fill='#{str-replace($color2,"#","%23")}' d='M 1205.710205078125 1019.377807617188 L 1138.274658203125 1038.645141601563 L 1138.140014648438 1038.68359375 L 1138 1038.68359375 L 326 1038.68359375 L 325.851806640625 1038.68359375 L 325.7099609375 1038.640625 L 262.2220458984375 1019.40185546875 L 326.577392578125 1124.710815429688 L 732 1144.682373046875 L 1137.439331054688 1124.7099609375 L 1205.710205078125 1019.377807617188 M 260 1017.68359375 L 326 1037.68359375 L 1138 1037.68359375 L 1208 1017.68359375 L 1138 1125.68359375 L 732 1145.68359375 L 326 1125.68359375 L 260 1017.68359375 Z'/>
+      </g>",
+    talk-print: "viewBox='0 0 948 512' preserveAspectRatio='none'>
+      <g fill='#{str-replace($color1,"#","%23")}' transform='translate(1208 1529.684) rotate(180)'>
+        <path stroke='none' d='M 1139.566772460938 1529.183837890625 L 328.4331665039063 1529.183837890625 L 260.5567016601563 1058.041015625 L 328.0837707519531 1038.180053710938 L 734 1018.184204101563 L 1139.916259765625 1038.180053710938 L 1207.443237304688 1058.041015625 L 1139.566772460938 1529.183837890625 Z'/>
+        <path stroke='none' fill='#{str-replace($color2,"#","%23")}' d='M 734 1018.684814453125 L 328.16796875 1038.676513671875 L 261.11328125 1058.398559570313 L 328.8662109375 1528.683837890625 L 1139.1337890625 1528.683837890625 L 1206.88671875 1058.398559570313 L 1139.83203125 1038.676513671875 L 734 1018.684814453125 M 734 1017.68359375 L 1140 1037.68359375 L 1208 1057.68359375 L 1140 1529.683837890625 L 328 1529.683837890625 L 260 1057.68359375 L 328 1037.68359375 L 734 1017.68359375 Z'/>
+      </g>",
+    talkazoid-0: "viewBox='0 0 600 168' preserveAspectRatio='none'>
+      <g fill='#{str-replace($color1,"#","%23")}' transform='translate(-348 -1054.638)'>
+        <path stroke='none' d='M 348.5 1222.121337890625 L 348.5 1055.1552734375 L 947.4999389648438 1075.121948242188 L 947.4999389648438 1202.154663085938 L 348.5 1222.121337890625 Z'/>
+        <path stroke='none' fill='#{str-replace($color2,"#","%23")}' d='M 349 1055.672241210938 L 349 1221.604370117188 L 946.9998779296875 1201.671020507813 L 946.9998779296875 1075.605590820313 L 349 1055.672241210938 M 348 1054.638305664063 L 947.9998779296875 1074.638305664063 L 947.9998779296875 1202.638305664063 L 348 1222.638305664063 L 348 1054.638305664063 Z'/>
+      </g>",
+    talkazoid-180: "viewBox='0 0 600 168' preserveAspectRatio='none'>
+      <g fill='#{str-replace($color1,"#","%23")}' transform='translate(948 1222.638) rotate(180)'>
+        <path stroke='none' d='M 348.5 1222.121337890625 L 348.5 1055.1552734375 L 947.4999389648438 1075.121948242188 L 947.4999389648438 1202.154663085938 L 348.5 1222.121337890625 Z'/>
+        <path stroke='none' fill='#{str-replace($color2,"#","%23")}' d='M 349 1055.672241210938 L 349 1221.604370117188 L 946.9998779296875 1201.671020507813 L 946.9998779296875 1075.605590820313 L 349 1055.672241210938 M 348 1054.638305664063 L 947.9998779296875 1074.638305664063 L 947.9998779296875 1202.638305664063 L 348 1222.638305664063 L 348 1054.638305664063 Z'/>
+      </g>",
+    quote: "viewBox='0 0 34.668 27.49' preserveAspectRatio='none'>
+      <path fill='#{str-replace($color1,"#","%23")}' d='M2.466-41.895l-.977-1.611q8.3-4.395,8.3-8.3,0-1.66-3.125-3.271a11.562,11.562,0,0,1-3.882-2.93,6.183,6.183,0,0,1-1.1-3.809,7.289,7.289,0,0,1,2.222-5.347,7.233,7.233,0,0,1,5.3-2.222,6.691,6.691,0,0,1,5.542,2.734,11.292,11.292,0,0,1,2.124,7.129,16.48,16.48,0,0,1-5.469,12.4A21.675,21.675,0,0,1,7.764-44.36,41.865,41.865,0,0,1,2.466-41.895Zm-19.287,0-.977-1.611q8.3-4.443,8.3-8.3a2.285,2.285,0,0,0-.684-1.636,10.141,10.141,0,0,0-2.441-1.636,10.846,10.846,0,0,1-3.833-2.905A6.231,6.231,0,0,1-17.6-61.816a7.306,7.306,0,0,1,2.2-5.371,7.192,7.192,0,0,1,5.273-2.2A6.738,6.738,0,0,1-4.541-66.65a11.292,11.292,0,0,1,2.124,7.129,16.363,16.363,0,0,1-1.392,6.641,17.7,17.7,0,0,1-4.126,5.762A28.967,28.967,0,0,1-16.821-41.895Z' transform='translate(17.798 69.385)'/>",
+    tab: "viewBox='0 0 200 50' preserveAspectRatio='none'>
+      <g transform='translate(-880 -1016)'>
+        <g fill='#{str-replace($color1,"#","%23")}' transform='translate(606.364 25.15)'>
+          <path stroke='none' d='M 473.0039367675781 1040.35009765625 L 274.3011779785156 1040.35009765625 L 288.4832763671875 991.3501586914063 L 461.4187622070313 991.3501586914063 L 473.0039367675781 1040.35009765625 Z'/>
+          <path stroke='none' fill='#{str-replace($color2,"#","%23")}' d='M 472.3719482421875 1039.85009765625 L 461.0232238769531 991.8501586914063 L 288.8590698242188 991.8501586914063 L 274.9664001464844 1039.85009765625 L 472.3719482421875 1039.85009765625 M 473.6359252929688 1040.85009765625 L 273.6359252929688 1040.85009765625 L 288.1074523925781 990.8501586914063 L 461.8143615722656 990.8501586914063 L 473.6359252929688 1040.85009765625 Z'/>
+        </g>
+        <path fill='#{str-replace($color3,"#","%23")}' d='M273.636,994.275l.781-2.3H470.992l.644,2.3Z' transform='translate(607.364 71.725)'/>
+      </g>"
+  );
+
+  $svgCompiled: _buildSVG(map-get($svgs, $svg-name));
+
+  @return url('data:image/svg+xml;utf8,#{$svgCompiled}');
+}

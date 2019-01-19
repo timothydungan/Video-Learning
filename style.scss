@@ -1,18 +1,17 @@
 /*
-Project                   : BYOL Redesign
-Author                    : Timothy Dungan
-Author URI                : https://www.timothydungan.com
+Project    : BYOL Redesign
+Author     : Timothy Dungan
+Author URI : https://www.timothydungan.com
 */
 
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 @import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:900");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
 
-@import "sass/plugins/bourbon/bourbon";
+@import "sass/plugins/font-awesome/css/font-awesome.css";
 @import "sass/variables";
 @import "sass/global";
-@import "sass/page";
 @import "sass/header";
+@import "sass/page";
 @import "sass/cta";
 @import "sass/main-content";
 @import "sass/sidebar";

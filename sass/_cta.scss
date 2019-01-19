@@ -1,61 +1,289 @@
 // !compileOnSave
-// compileOnSave      : false
-// main               : ../style.scss
+// compileOnSave        : false
+// main                 : ../style.scss
 
 
 /* CTAs -------------------------- */
 
 .main-cta {
-  width               : 440px;
-  height              : 163px;
-  display             : inline-flex;
-  padding-top         : 50px;
-  background-repeat   : no-repeat;
-  background-position : center;
-  background-size     : 100% 100%;
-  background-image    : url("data:image/svg+xml;utf8,
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 440 163.121' preserveAspectRatio='none'>
-      <defs>
-        <style>
-          .cls-1 {
-            fill      : %23a12839;
-          }
-        </style>
-      </defs>
-      <path id='Path_51' data-name='Path 51' class='cls-1' d='M1228,100l-20,61.7,20,60.993,420,20.567L1628,222.7V100l20-19.858Z' transform='translate(-1208 -80.142)'/>
-    </svg>");
+  width                 : $main-cta-width;
+  height                : $main-cta-height;
+  display               : flex;
+  padding-top           : $vertical-margin-spacing;
+  background-repeat     : no-repeat;
+  background-position   : center;
+  background-size       : 100% 100%;
+  background-image      : svgParams(main-cta, $cta-svg-color);
+}
+
+.big-cta {
+  width                 : $big-cta-width;
+  height                : $big-cta-height;
+  display               : flex;
+  padding-top           : $vertical-margin-spacing;
+  margin-top            : $vertical-margin-spacing;
+  background-repeat     : no-repeat;
+  background-position   : center;
+  background-size       : 100% 100%;
+  background-image      : svgParams(main-cta, $cta-svg-color);
+  -webkit-transform     : rotate(180deg);
+      -ms-transform     : rotate(180deg);
+          transform     : rotate(180deg);
+
+  .cta-pitch {
+    position            : absolute;
+    margin-top          : $big-cta-pitch-margin-top;
+    margin-left         : $big-cta-pitch-margin-left;
+    -webkit-transform   : rotate(180deg);
+        -ms-transform   : rotate(180deg);
+            transform   : rotate(180deg);
+  }
 }
 
 .cta-pitch {
-  color               : white;
-  font-weight         : bold;
-  font-size           : 20px;
-  text-align          : center;
-  margin-left         : 50px;
-  margin-top          : 22px;
-  -webkit-transform   : translateY(-50%);
-      -ms-transform   : translateY(-50%);
-          transform   : translateY(-50%);
+  color                 : $cta-text-color;
+  font-weight           : $cta-pitch-font-weight;
+  font-size             : $cta-text-size;
+  margin-left           : $cta-pitch-margin-left;
+  margin-top            : $cta-pitch-margin-top;
+  text-align            : center;
 
   .cta-pitch-title {
-    font-size         : 30px;
-    text-transform    : uppercase;
+    font-size           : $cta-pitch-title-size;
+    text-transform      : $cta-pitch-title-text-transform;
   }
 }
 
 .entry-cta-wrap {
-  display             : inline-flex;
-  width               : $col-main-width;
-  margin-top          : 50px;
+  display               : flex;
+  width                 : $entry-cta-wrap-width;
+  height                : $entry-cta-wrap-height;
+  margin-top            : $vertical-margin-spacing;
+
+  p {
+    font-size           : $cta-text-size;
+    color               : $cta-text-color;
+    line-height         : $fixed-line-height;
+  }
+
+  .class-files-cta {
+    height              : $entry-cta-height;
+    width               : $entry-cta-width;
+    margin-top          : $class-files-cta-margin-top;
+    background-repeat   : no-repeat;
+    background-position : center;
+    background-size     : 100% 100%;
+    background-image    : svgParams(entry-cta, $cta-svg-color);
+    -webkit-transform   : translateY(-50%);
+        -ms-transform   : translateY(-50%);
+            transform   : translateY(-50%);
+
+    p {
+      padding           : $class-files-cta-p-padding;
+    }
+  }
+
+  .completed-files-cta {
+    height              : $entry-cta-height;
+    width               : $entry-cta-width;
+    margin-left         : $completed-files-cta-margin-left;
+    background-repeat   : no-repeat;
+    background-position : center;
+    background-size     : 100% 100%;
+    background-image    : svgParams(entry-cta, $cta-svg-color);
+    -webkit-transform   : rotate(180deg);
+        -ms-transform   : rotate(180deg);
+            transform   : rotate(180deg);
+
+    p {
+      margin-top        : $completed-files-cta-p-margin-top;
+      padding-left      : $completed-files-cta-p-padding-left;
+      -webkit-transform : rotate(180deg);
+          -ms-transform : rotate(180deg);
+              transform : rotate(180deg);
+    }
+  }
 }
 
 .signup-button-left {
-  font-size           : 20px;
-  font-weight         : bold;
-  padding             : 20px;
-  margin-left         : 40px;
-  margin-top          : 35px;
-  -webkit-transform   : translateY(-50%);
-      -ms-transform   : translateY(-50%);
-          transform   : translateY(-50%);
+  height                : $signup-button-height;
+  margin-left           : $signup-button-left-margin-left;
+  margin-top            : $signup-button-left-margin-top;
+  background-repeat     : no-repeat;
+  background-position   : center;
+  background-size       : 100% 100%;
+  background-image      : svgParams(main-button-0, $cta-svg-color, $svg-secondary-color, $svg-border-color);
+  -webkit-transform     : translateY(-50%);
+      -ms-transform     : translateY(-50%);
+          transform     : translateY(-50%);
+
+  p {
+    font-size           : $cta-text-size;
+    font-weight         : $cta-pitch-font-weight;
+    margin-top          : $signup-button-p-margin-top;
+    line-height         : $fixed-line-height;
+  }
+
+  a {
+    padding             : $signup-button-a-padding;
+  }
+
+  &:focus, &:hover, &:active {
+    cursor              : pointer;
+    background-image    : svgParams(main-button-0, $svg-secondary-color, $cta-svg-color, $svg-border-color);
+    text-shadow         : $button-glow;
+    font-style          : oblique;
+    -webkit-transition  : $button-transition;
+            transition  : $button-transition;
+
+    a {
+      outline           : none;
+      text-decoration   : none;
+    }
+  }
+}
+
+.signup-button-right {
+  height                : $signup-button-height;
+  margin-left           : $signup-button-right-margin-left;
+  margin-top            : $signup-button-right-margin-top;
+  background-repeat     : no-repeat;
+  background-position   : center;
+  background-size       : 100% 100%;
+  background-image      : svgParams(main-button-0, $cta-svg-color, $svg-secondary-color, $svg-border-color);
+
+  p {
+    font-size           : $cta-text-size;
+    font-weight         : $cta-pitch-font-weight;
+    margin-top          : $signup-button-p-margin-top;
+    line-height         : $fixed-line-height;
+    -webkit-transform   : rotate(180deg);
+        -ms-transform   : rotate(180deg);
+            transform   : rotate(180deg);
+  }
+
+  a {
+    padding             : $signup-button-a-padding;
+  }
+
+  &:focus, &:hover, &:active {
+    cursor              : pointer;
+    background-image    : svgParams(main-button-0, $svg-secondary-color, $cta-svg-color, $svg-border-color);
+    text-shadow         : $button-glow;
+    font-style          : oblique;
+    -webkit-transition  : $button-transition;
+            transition  : $button-transition;
+
+    a {
+      outline           : none;
+      text-decoration   : none;
+    }
+  }
+}
+
+.subscribe-cta-wrapper {
+  width                 : $subscribe-cta-wrapper-width;
+  height                : $subscribe-cta-wrapper-height;
+  margin-top            : $vertical-margin-spacing;
+  background-repeat     : no-repeat;
+  background-position   : center;
+  background-size       : 100% 100%;
+  background-image      : svgParams(subscribe-cta, $subscribe-svg-color);
+
+  .cta-pitch {
+    font-size           : $subscribe-cta-pitch-text-size;
+    padding             : $subscribe-cta-pitch-text-padding;
+    text-align          : left;
+  }
+
+  input {
+    font-size           : $subscribe-cta-input-text-size;
+    padding             : $subscribe-cta-input-padding;
+  }
+}
+
+.subscribe-button-right {
+  margin                : $subscribe-button-right-margin;
+  float                 : $subscribe-button-right-float;
+  background-repeat     : no-repeat;
+  background-position   : center;
+  background-size       : 100% 100%;
+  background-image      : svgParams(main-button-0, $cta-svg-color, $svg-secondary-color, $svg-border-color);
+  -webkit-transform     : rotate(180deg);
+      -ms-transform     : rotate(180deg);
+          transform     : rotate(180deg);
+
+  div {
+    -webkit-transform   : rotate(180deg);
+        -ms-transform   : rotate(180deg);
+            transform   : rotate(180deg);
+  }
+
+  button {
+    display             : block;
+    background-color    : transparent;
+    border              : none;
+    font-size           : $cta-text-size;
+    font-weight         : $cta-pitch-font-weight;
+    color               : $text-link-color;
+    width               : $subscribe-button-width;
+    height              : $subscribe-button-height;
+    padding             : $subscribe-button-padding;
+
+    &:focus, &:hover, &:active {
+      cursor            : pointer;
+      text-shadow       : $button-glow;
+      font-style        : oblique;
+      -webkit-transition: $button-transition;
+              transition: $button-transition;
+    }
+  }
+
+  &:focus, &:hover, &:active {
+    cursor              : pointer;
+    background-image    : svgParams(main-button-0, $svg-secondary-color, $cta-svg-color, $svg-border-color);
+    -webkit-transition  : $button-transition;
+            transition  : $button-transition;
+  }
+}
+
+.affiliate-cta-wrapper {
+  position              : absolute;
+  margin-top            : $affiliate-cta-wrapper-margin-top;
+  margin-left           : $affiliate-cta-wrapper-margin-left;
+  background-repeat     : no-repeat;
+  background-position   : center;
+  background-size       : 100% 100%;
+  background-image      : svgParams(main-button-0, $cta-svg-color, $svg-secondary-color, $svg-border-color);
+  -webkit-transform     : rotate(90deg);
+      -ms-transform     : rotate(90deg);
+          transform     : rotate(90deg);
+
+  p {
+    font-size           : $cta-text-size;
+    font-weight         : $cta-pitch-font-weight;
+    margin              : $affiliate-cta-p-margin;
+    line-height         : $fixed-line-height;
+    -webkit-transform   : rotate(-90deg);
+        -ms-transform   : rotate(-90deg);
+            transform   : rotate(-90deg);
+  }
+
+  a {
+    padding             : $affiliate-cta-a-margin;
+  }
+
+  &:focus, &:hover, &:active {
+    cursor              : pointer;
+    background-image    : svgParams(main-button-0, $svg-secondary-color, $cta-svg-color, $svg-border-color);
+    text-shadow         : $button-glow;
+    font-style          : oblique;
+    -webkit-transition  : $button-transition;
+            transition  : $button-transition;
+
+    a {
+      outline           : none;
+      text-decoration   : none;
+    }
+  }
 }
