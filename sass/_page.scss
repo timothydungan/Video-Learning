@@ -65,26 +65,30 @@ a {
     }
   }
 
-.page-title-wrap {
-  display           : flex;
-  width             : $page-title-wrap-width;
-  margin-top        : $vertical-margin-spacing;
+.page {
+  z-index: -1;
 
-  .page-title {
-    width           : $page-title-width;
-    margin-right    : $page-title-margin-right;
+  .page-title-wrap {
+    display           : flex;
+    width             : $page-title-wrap-width;
+    margin-top        : $vertical-margin-spacing;
 
-    h1 {
-      font-family   : $page-title-font;
-      font-size     : $page-title-size;
-      color         : $titling-color;
-      margin-top    : $page-title-margin-top;
+    .page-title {
+      width           : $page-title-width;
+      margin-right    : $page-title-margin-right;
+
+      h1 {
+        font-family   : $page-title-font;
+        font-size     : $page-title-size;
+        color         : $titling-color;
+        margin-top    : $page-title-margin-top;
+      }
     }
   }
-}
 
-.content-wrap {
-  display           : flex;
-  width             : $content-wrap-width;
-  margin-top        : $vertical-margin-spacing;
+  .content-wrap {
+    display           : flex;
+    width             : $content-wrap-width;
+    margin-top        : $vertical-margin-spacing;
+  }
 }
