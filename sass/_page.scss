@@ -67,7 +67,7 @@ a {
 
 .page {
   z-index: -1;
-
+  
   .page-title-wrap {
     display           : flex;
     width             : $page-title-wrap-width;
@@ -85,10 +85,10 @@ a {
       }
     }
   }
+}
 
-  .content-wrap {
-    display           : flex;
-    width             : $content-wrap-width;
-    margin-top        : $vertical-margin-spacing;
-  }
+.content-wrap {
+  display           : flex;
+  width             : $content-wrap-width;
+  margin-top        : $vertical-margin-spacing;
 }
