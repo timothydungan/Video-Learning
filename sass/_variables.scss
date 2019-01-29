@@ -41,6 +41,7 @@ $tabs-hover-color                    : $red;
 $talk-print-svg-color                : "#{$white}";
 $quote-svg-color                     : "#{$black}";
 $footer-bg-color                     : $black;
+$footer-copyright-color              : $white;
 
 // ================ FONT STYLES ================
 $main-text-font                      : "Open Sans", sans-serif;
@@ -57,7 +58,9 @@ $subscribe-cta-pitch-text-size       : 16px;
 $main-text-size                      : 14px;
 $lesson-link-active-marker-size      : 11px;
 $video-caption-text-size             : 10px;
+$footer-copyright-text-size          : .8em;
 $video-caption-text-style            : italic;
+$footer-copyright-text-style         : italic;
 $a-hover-text-decoration             : underline;
 $menu-text-transform                 : uppercase;
 $lesson-name-span-text-transform     : uppercase;
@@ -208,6 +211,7 @@ $social-menu-wrapper-width           : 90%;
 $social-menu-button-height           : 50px;
 $social-menu-button-width            : 14%;
 $social-menu-icon-padding            : 10px 25%;
+$footer-copyright-margin-top         : 20%;
 
 // ================ SVG STYLES =================
 @function str-replace($string, $search, $replace: '') {

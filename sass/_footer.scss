@@ -22,6 +22,15 @@ footer {
     .footer-right-col {
       width                  : $footer-column-width;
     }
+
+    .copyright-notice {
+      position               : absolute;
+      margin-top             : $footer-copyright-margin-top;
+      color                  : $footer-copyright-color;
+      font-style             : $footer-copyright-text-style;
+      font-size              : $footer-copyright-text-size;
+      text-align             : left;
+    }
   }
 }
 
@@ -81,7 +90,7 @@ footer {
       }
     }
 
-    .fa {
+    .fab {
       font-size              : $social-menu-icon-size;
       padding                : $social-menu-icon-padding;
 

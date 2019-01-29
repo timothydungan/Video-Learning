@@ -5,7 +5,7 @@ Author URI : https://www.timothydungan.com
 */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 @import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:900");
-@import url(sass/plugins/font-awesome/css/font-awesome.css);
+@import url(sass/plugins/font-awesome/css/all.css);
 /* Global ------------------------ */
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
@@ -131,7 +131,7 @@ header.top-wrap .main-header ul#menu li.button-down div a:hover, header.top-wrap
   transform: skewX(-10deg);
 }
 
-header.top-wrap .main-header ul#menu li.button-down div a:hover .fa, header.top-wrap .main-header ul#menu li.button-down div a:active .fa, header.top-wrap .main-header ul#menu li.button-down div a:focus .fa {
+header.top-wrap .main-header ul#menu li.button-down div a:hover .fas, header.top-wrap .main-header ul#menu li.button-down div a:active .fas, header.top-wrap .main-header ul#menu li.button-down div a:focus .fas {
   -webkit-transform: skewX(-10deg);
   -ms-transform: skewX(-10deg);
   transform: skewX(-10deg);
@@ -182,7 +182,7 @@ header.top-wrap .main-header ul#menu li.button-up div a:hover, header.top-wrap .
   transform: skewX(-10deg);
 }
 
-header.top-wrap .main-header ul#menu li.button-up div a:hover .fa, header.top-wrap .main-header ul#menu li.button-up div a:active .fa, header.top-wrap .main-header ul#menu li.button-up div a:focus .fa {
+header.top-wrap .main-header ul#menu li.button-up div a:hover .fas, header.top-wrap .main-header ul#menu li.button-up div a:active .fas, header.top-wrap .main-header ul#menu li.button-up div a:focus .fas {
   -webkit-transform: skewX(-10deg);
   -ms-transform: skewX(-10deg);
   transform: skewX(-10deg);
@@ -247,6 +247,8 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-up div a {
 }
 
 header.top-wrap .main-header ul#menu li:hover > ul,
+header.top-wrap .main-header ul#menu li:active > ul,
+header.top-wrap .main-header ul#menu li:focus > ul,
 header.top-wrap .main-header ul#menu li:focus-within > ul {
   display: block;
   -webkit-transform-origin: center top;
@@ -255,6 +257,8 @@ header.top-wrap .main-header ul#menu li:focus-within > ul {
 }
 
 header.top-wrap .main-header ul#menu li:hover > ul.rollDown,
+header.top-wrap .main-header ul#menu li:active > ul.rollDown,
+header.top-wrap .main-header ul#menu li:focus > ul.rollDown,
 header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   -webkit-backface-visibility: visible !important;
   -webkit-animation-duration: 0.5s;
@@ -277,18 +281,66 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   0% {
     visibility: hidden;
     opacity: 0;
-    display: none;
-    -webkit-transform: scaleY(0) rotateX(180deg);
-    -ms-transform: scaleY(0) rotateX(180deg);
     transform: scaleY(0) rotateX(180deg);
   }
   100% {
     visibility: visible;
     opacity: 1;
-    display: block;
-    -webkit-transform: scaleY(1) rotateX(180deg);
-    -ms-transform: scaleY(1) rotateX(180deg);
     transform: scaleY(1) rotateX(180deg);
+  }
+}
+
+@-ms-keyframes rollDown {
+  0% {
+    visibility: hidden;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    -ms-transform: scaleY(0) rotateX(180deg);
+  }
+  100% {
+    visibility: visible;
+    filter: alpha(opacity=100);
+    opacity: 1;
+    -ms-transform: scaleY(1) rotateX(180deg);
+  }
+}
+
+@-o-keyframes rollDown {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    -o-transform: scaleY(0) rotateX(180deg);
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    -o-transform: scaleY(1) rotateX(180deg);
+  }
+}
+
+@-webkit-keyframes rollDown {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transform: scaleY(0) rotateX(180deg);
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: scaleY(1) rotateX(180deg);
+  }
+}
+
+@-moz-keyframes rollDown {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    -moz-transform: scaleY(0) rotateX(180deg);
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    -moz-transform: scaleY(1) rotateX(180deg);
   }
 }
 
@@ -913,48 +965,18 @@ a:focus, a:hover, a:active {
   background-color: #FFFFFF;
 }
 
-@-moz-keyframes zoink {
+@keyframes zoink {
   0% {
     opacity: 0;
-    -moz-filter: blur(2em);
-    -moz-transform-origin: top;
-    -moz-transform: perspective(800px) scale(0.1, 0.1) rotateX(-180deg);
+    filter: blur(2em);
+    transform-origin: top;
+    transform: perspective(800px) scale(0.1, 0.1) rotateX(-180deg);
   }
   100% {
     opacity: 1;
-    -moz-filter: blur(0em);
-    -moz-transform-origin: top;
-    -moz-transform: perspective(800px) scale(1, 1) rotateX(0deg);
-  }
-}
-
-@-webkit-keyframes zoink {
-  0% {
-    opacity: 0;
-    -webkit-filter: blur(2em);
-    -webkit-transform-origin: top;
-    -webkit-transform: perspective(800px) scale(0.1, 0.1) rotateX(-180deg);
-  }
-  100% {
-    opacity: 1;
-    -webkit-filter: blur(0em);
-    -webkit-transform-origin: top;
-    -webkit-transform: perspective(800px) scale(1, 1) rotateX(0deg);
-  }
-}
-
-@-o-keyframes zoink {
-  0% {
-    opacity: 0;
-    -webkit-filter: blur(2em);
-    -o-transform-origin: top;
-    -o-transform: perspective(800px) scale(0.1, 0.1) rotateX(-180deg);
-  }
-  100% {
-    opacity: 1;
-    -webkit-filter: blur(0em);
-    -o-transform-origin: top;
-    -o-transform: perspective(800px) scale(1, 1) rotateX(0deg);
+    filter: blur(0em);
+    transform-origin: top;
+    transform: perspective(800px) scale(1, 1) rotateX(0deg);
   }
 }
 
@@ -975,18 +997,48 @@ a:focus, a:hover, a:active {
   }
 }
 
-@keyframes zoink {
+@-o-keyframes zoink {
   0% {
     opacity: 0;
-    filter: blur(2em);
-    transform-origin: top;
-    transform: perspective(800px) scale(0.1, 0.1) rotateX(-180deg);
+    -webkit-filter: blur(2em);
+    -o-transform-origin: top;
+    -o-transform: perspective(800px) scale(0.1, 0.1) rotateX(-180deg);
   }
   100% {
     opacity: 1;
-    filter: blur(0em);
-    transform-origin: top;
-    transform: perspective(800px) scale(1, 1) rotateX(0deg);
+    -webkit-filter: blur(0em);
+    -o-transform-origin: top;
+    -o-transform: perspective(800px) scale(1, 1) rotateX(0deg);
+  }
+}
+
+@-webkit-keyframes zoink {
+  0% {
+    opacity: 0;
+    -webkit-filter: blur(2em);
+    -webkit-transform-origin: top;
+    -webkit-transform: perspective(800px) scale(0.1, 0.1) rotateX(-180deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-filter: blur(0em);
+    -webkit-transform-origin: top;
+    -webkit-transform: perspective(800px) scale(1, 1) rotateX(0deg);
+  }
+}
+
+@-moz-keyframes zoink {
+  0% {
+    opacity: 0;
+    -moz-filter: blur(2em);
+    -moz-transform-origin: top;
+    -moz-transform: perspective(800px) scale(0.1, 0.1) rotateX(-180deg);
+  }
+  100% {
+    opacity: 1;
+    -moz-filter: blur(0em);
+    -moz-transform-origin: top;
+    -moz-transform: perspective(800px) scale(1, 1) rotateX(0deg);
   }
 }
 
@@ -1064,6 +1116,15 @@ footer .footer-wrap .footer-right-col {
   width: 50%;
 }
 
+footer .footer-wrap .copyright-notice {
+  position: absolute;
+  margin-top: 20%;
+  color: #FFFFFF;
+  font-style: italic;
+  font-size: 0.8em;
+  text-align: left;
+}
+
 .social-menu-wrapper {
   width: 90%;
   margin-top: 50px;
@@ -1122,12 +1183,12 @@ footer .footer-wrap .footer-right-col {
   text-decoration: none;
 }
 
-.social-menu-wrapper ul .fa {
+.social-menu-wrapper ul .fab {
   font-size: 30px;
   padding: 10px 25%;
 }
 
-.social-menu-wrapper ul .fa:focus, .social-menu-wrapper ul .fa:hover, .social-menu-wrapper ul .fa:active {
+.social-menu-wrapper ul .fab:focus, .social-menu-wrapper ul .fab:hover, .social-menu-wrapper ul .fab:active {
   -webkit-transform: skewX(-10deg);
   -ms-transform: skewX(-10deg);
   transform: skewX(-10deg);

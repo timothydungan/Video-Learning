@@ -1,81 +1,81 @@
 // !compileOnSave
-// compileOnSave                       : false
-// main                                : ../style.scss
+// compileOnSave                         : false
+// main                                  : ../style.scss
 
 
 /* Header ------------------------ */
 header {
   &.top-wrap {
-    position: relative;
-    background-color                   : $header-bg-color;
-    height                             : $header-height;
-    z-index: 999;
+    position                             : relative;
+    background-color                     : $header-bg-color;
+    height                               : $header-height;
+    z-index                              : 999;
 
     .main-header {
-      display                          : flex;
-      width                            : 100%;
+      display                            : flex;
+      width                              : 100%;
 
       .logo {
-        padding                        : $logo-padding;
-        width                          : $logo-width;
+        padding                          : $logo-padding;
+        width                            : $logo-width;
       }
 
       ul#menu {
-        list-style                     : none;
-        display                        : flex;
-        text-align                     : center;
-        text-transform                 : $menu-text-transform;
-        width                          : 66%;
+        list-style                       : none;
+        display                          : flex;
+        text-align                       : center;
+        text-transform                   : $menu-text-transform;
+        width                            : 66%;
 
        li {
-         width                         : 12.5%;
+         width                           : 12.5%;
 
          &.button-down {
-            margin                     : 0 16px;
-            height                     : 60px;
-            -webkit-transform          : rotateX(180deg);
-                -ms-transform          : rotateX(180deg);
-                    transform          : rotateX(180deg);
+            margin                       : 0 16px;
+            height                       : 60px;
+            -webkit-transform            : rotateX(180deg);
+                -ms-transform            : rotateX(180deg);
+                    transform            : rotateX(180deg);
 
             &:before {
-              content                  : '';
-              position                 : absolute;
-              width                    : $menu-li-before-width;
-              height                   : $menu-li-before-height;
-              left                     : $menu-li-before-left;
-              border-left              : $menu-li-before-border;
-              -webkit-transform        : rotateX(-90deg) perspective(180px) rotateX(90deg);
-                  -ms-transform        : rotateX(-90deg) perspective(180px) rotateX(90deg);
-                      transform        : rotateX(-90deg) perspective(180px) rotateX(90deg);
-              -webkit-transform-origin : center top;
-                  -ms-transform-origin : center top;
-                      transform-origin : center top;
+              content                    : '';
+              position                   : absolute;
+              width                      : $menu-li-before-width;
+              height                     : $menu-li-before-height;
+              left                       : $menu-li-before-left;
+              border-left                : $menu-li-before-border;
+              -webkit-transform          : rotateX(-90deg) perspective(180px) rotateX(90deg);
+                  -ms-transform          : rotateX(-90deg) perspective(180px) rotateX(90deg);
+                      transform          : rotateX(-90deg) perspective(180px) rotateX(90deg);
+              -webkit-transform-origin   : center top;
+                  -ms-transform-origin   : center top;
+                      transform-origin   : center top;
            }
 
             div {
-              line-height              : $menu-li-button-down-div-line-height;
-              -webkit-transform        : rotateX(180deg);
-                  -ms-transform        : rotateX(180deg);
-                      transform        : rotateX(180deg);
+              line-height                : $menu-li-button-down-div-line-height;
+              -webkit-transform          : rotateX(180deg);
+                  -ms-transform          : rotateX(180deg);
+                      transform          : rotateX(180deg);
 
               a {
-                outline                : none;
-                padding                : 22px 15%;
+                outline                  : none;
+                padding                  : 22px 15%;
 
                 &:hover, &:active, &:focus {
-                 text-shadow           : $button-glow;
-                 text-decoration       : none;
-                 font-style            : oblique;
-                 -webkit-transition    : $button-transition;
-                         transition    : $button-transition;
-                 -webkit-transform     : skewX(-10deg);
-                     -ms-transform     : skewX(-10deg);
-                         transform     : skewX(-10deg);
+                 text-shadow             : $button-glow;
+                 text-decoration         : none;
+                 font-style              : oblique;
+                 -webkit-transition      : $button-transition;
+                         transition      : $button-transition;
+                 -webkit-transform       : skewX(-10deg);
+                     -ms-transform       : skewX(-10deg);
+                         transform       : skewX(-10deg);
 
-                  .fa {
-                    -webkit-transform  : skewX(-10deg);
-                        -ms-transform  : skewX(-10deg);
-                            transform  : skewX(-10deg);
+                  .fas {
+                    -webkit-transform    : skewX(-10deg);
+                        -ms-transform    : skewX(-10deg);
+                            transform    : skewX(-10deg);
                   }
                 }
               }
@@ -83,50 +83,52 @@ header {
           }
 
           &.button-up {
-            height                     : $menu-li-button-up-height;
-            -webkit-transform          : rotateX(180deg);
-                -ms-transform          : rotateX(180deg);
-                    transform          : rotateX(180deg);
+            height                       : $menu-li-button-up-height;
+            -webkit-transform            : rotateX(180deg);
+                -ms-transform            : rotateX(180deg);
+                    transform            : rotateX(180deg);
 
             &:before {
-              content                  : '';
-              position                 : absolute;
-              width                    : $menu-li-before-width;
-              height                   : $menu-li-before-height;
-              left                     : $menu-li-before-left;
-              border-left              : $menu-li-before-border;
-              -webkit-transform        : rotateX(90deg) perspective(180px) rotateX(-90deg);
-                  -ms-transform        : rotateX(90deg) perspective(180px) rotateX(-90deg);
-                      transform        : rotateX(90deg) perspective(180px) rotateX(-90deg);
-              -webkit-transform-origin : center bottom;
-                  -ms-transform-origin : center bottom;
-                      transform-origin : center bottom;
+              content                    : '';
+              position                   : absolute;
+              width                      : $menu-li-before-width;
+              height                     : $menu-li-before-height;
+              left                       : $menu-li-before-left;
+              border-left                : $menu-li-before-border;
+              -webkit-transform          : rotateX(90deg) perspective(180px) rotateX(-90deg);
+                  -ms-transform          : rotateX(90deg) perspective(180px) rotateX(-90deg);
+                      transform          : rotateX(90deg) perspective(180px) rotateX(-90deg);
+              -webkit-transform-origin   : center bottom;
+                  -ms-transform-origin   : center bottom;
+                      transform-origin   : center bottom;
             }
 
             div {
-             line-height               : $menu-li-button-up-div-line-height;
-             -webkit-transform         : rotateX(180deg);
-                 -ms-transform         : rotateX(180deg);
-                     transform         : rotateX(180deg);
+             line-height                 : $menu-li-button-up-div-line-height;
+             -webkit-transform           : rotateX(180deg);
+                 -ms-transform           : rotateX(180deg);
+                     transform           : rotateX(180deg);
 
               a {
-                outline                : none;
-                padding                : 22px 5%;
+                outline                  : none;
+                padding                  : 22px 5%;
 
-                &:hover, &:active, &:focus {
-                 text-shadow           : $button-glow;
-                 text-decoration       : none;
-                 font-style            : oblique;
-                 -webkit-transition    : $button-transition;
-                         transition    : $button-transition;
-                 -webkit-transform     : skewX(-10deg);
-                     -ms-transform     : skewX(-10deg);
-                         transform     : skewX(-10deg);
+                &:hover,
+                &:active,
+                &:focus {
+                 text-shadow             : $button-glow;
+                 text-decoration         : none;
+                 font-style              : oblique;
+                 -webkit-transition      : $button-transition;
+                         transition      : $button-transition;
+                 -webkit-transform       : skewX(-10deg);
+                     -ms-transform       : skewX(-10deg);
+                         transform       : skewX(-10deg);
 
-                  .fa {
-                    -webkit-transform  : skewX(-10deg);
-                        -ms-transform  : skewX(-10deg);
-                            transform  : skewX(-10deg);
+                  .fas {
+                    -webkit-transform    : skewX(-10deg);
+                        -ms-transform    : skewX(-10deg);
+                            transform    : skewX(-10deg);
                   }
                 }
               }
@@ -134,44 +136,44 @@ header {
           }
 
           &.search:before {
-           border-right                : $menu-li-before-border;
+           border-right                  : $menu-li-before-border;
           }
 
          ul.submenu {
-           display: none;
-           position: absolute;
-           min-width: 100%;
-           height                      : 100%;
-           list-style                  : none;
-           margin-top                  : -60px;
-           font-size                   : 1em;
-           font-variant                : all-petite-caps;
-           transition                  : all .5 ease;
-           -webkit-transform           : rotateX(180deg);
-               -ms-transform           : rotateX(180deg);
-                   transform           : rotateX(180deg);
+           display                       : none;
+           position                      : absolute;
+           min-width                     : 100%;
+           height                        : 100%;
+           list-style                    : none;
+           margin-top                    : -60px;
+           font-size                     : 1em;
+           font-variant                  : all-petite-caps;
+           transition                    : all .5 ease;
+           -webkit-transform             : rotateX(180deg);
+               -ms-transform             : rotateX(180deg);
+                   transform             : rotateX(180deg);
 
            li {
-             width                     : 100%;
-             height                    : 40px;
-             margin                    : 0;
-             padding                   : 0;
-             word-spacing              : 100px;
+             width                       : 100%;
+             height                      : 40px;
+             margin                      : 0;
+             padding                     : 0;
+             word-spacing                : 100px;
 
              &.button-down {
-               margin-top              : 22px;
+               margin-top                : 22px;
 
                 &:before {
-                  background-color     : $header-bg-color;
-                  border-right         : 1px solid #DEFEB3;
+                  background-color       : $header-bg-color;
+                  border-right           : 1px solid #DEFEB3;
                 }
 
                 div {
-                  line-height          : 1em;
-                  padding-bottom: 10px;
+                  line-height            : 1em;
+                  padding-bottom         : 10px;
 
                   a {
-                    padding            : 0;
+                    padding              : 0;
                   }
                 }
               }
@@ -179,15 +181,15 @@ header {
               &.button-up {
 
                 &:before {
-                  background-color     : $header-bg-color;
-                  border-right         : 1px solid #DEFEB3;
+                  background-color       : $header-bg-color;
+                  border-right           : 1px solid #DEFEB3;
                 }
 
                 div {
-                 line-height           : 1em;
+                 line-height             : 1em;
 
                  a {
-                   padding            : 0;
+                   padding               : 0;
                  }
                 }
               }
@@ -195,11 +197,13 @@ header {
           }
 
           &:hover > ul,
+          &:active > ul,
+          &:focus > ul,
           &:focus-within > ul {
-            display: block;
-            -webkit-transform-origin : center top;
-                -ms-transform-origin : center top;
-                    transform-origin : center top;
+            display                      : block;
+            -webkit-transform-origin     : center top;
+                -ms-transform-origin     : center top;
+                    transform-origin     : center top;
 
             &.rollDown {
               -webkit-backface-visibility:visible !important;
@@ -227,19 +231,63 @@ header {
 
 @keyframes rollDown {
   0% {
-    visibility: hidden;
-    opacity: 0;
-    display: none;
-    -webkit-transform           : scaleY(0) rotateX(180deg);
-        -ms-transform           : scaleY(0) rotateX(180deg);
-            transform           : scaleY(0) rotateX(180deg);
+    visibility                           : hidden;
+    opacity                              : 0;
+    transform                            : scaleY(0) rotateX(180deg);
   }
   100% {
-    visibility: visible;
-    opacity: 1;
-    display: block;
-    -webkit-transform           : scaleY(1) rotateX(180deg);
-        -ms-transform           : scaleY(1) rotateX(180deg);
-            transform           : scaleY(1) rotateX(180deg);
+    visibility                           : visible;
+    opacity                              : 1;
+    transform                            : scaleY(1) rotateX(180deg);
+  }
+}
+@-ms-keyframes rollDown {
+  0% {
+    visibility                           : hidden;
+    filter                               : alpha(opacity=0);
+    opacity                              : 0;
+    -ms-transform                        : scaleY(0) rotateX(180deg);
+  }
+  100% {
+    visibility                           : visible;
+    filter                               : alpha(opacity=100);
+    opacity                              : 1;
+    -ms-transform                        : scaleY(1) rotateX(180deg);
+  }
+}
+@-o-keyframes rollDown {
+  0% {
+    visibility                           : hidden;
+    opacity                              : 0;
+    -o-transform                         : scaleY(0) rotateX(180deg);
+  }
+  100% {
+    visibility                           : visible;
+    opacity                              : 1;
+    -o-transform                         : scaleY(1) rotateX(180deg);
+  }
+}
+@-webkit-keyframes rollDown {
+  0% {
+    visibility                           : hidden;
+    opacity                              : 0;
+    -webkit-transform                            : scaleY(0) rotateX(180deg);
+  }
+  100% {
+    visibility                           : visible;
+    opacity                              : 1;
+    -webkit-transform                            : scaleY(1) rotateX(180deg);
+  }
+}
+@-moz-keyframes rollDown {
+  0% {
+    visibility                           : hidden;
+    opacity                              : 0;
+    -moz-transform                            : scaleY(0) rotateX(180deg);
+  }
+  100% {
+    visibility                           : visible;
+    opacity                              : 1;
+    -moz-transform                            : scaleY(1) rotateX(180deg);
   }
 }
