@@ -172,78 +172,6 @@
         animation-duration         : $tabs-animation-length;
         animation-name             : zoink;
       }
-      @-moz-keyframes zoink {
-        0% {
-          opacity                  : 0;
-          -moz-filter              : blur(2em);
-          -moz-transform-origin    : top;
-          -moz-transform           : perspective(800px) scale(.1,.1) rotateX(-180deg);
-        }
-        100% {
-          opacity                  : 1;
-          -moz-filter              : blur(0em);
-          -moz-transform-origin    : top;
-          -moz-transform           : perspective(800px) scale(1,1) rotateX(0deg);
-        }
-      }
-      @-webkit-keyframes zoink {
-        0% {
-          opacity                  : 0;
-          -webkit-filter           : blur(2em);
-          -webkit-transform-origin : top;
-          -webkit-transform        : perspective(800px) scale(.1,.1) rotateX(-180deg);
-        }
-        100% {
-          opacity                  : 1;
-          -webkit-filter           : blur(0em);
-          -webkit-transform-origin : top;
-          -webkit-transform        : perspective(800px) scale(1,1) rotateX(0deg);
-        }
-      }
-      @-o-keyframes zoink {
-        0% {
-          opacity                  : 0;
-          -webkit-filter           : blur(2em);
-          -o-transform-origin      : top;
-          -o-transform             : perspective(800px) scale(.1,.1) rotateX(-180deg);
-        }
-        100% {
-          opacity                  : 1;
-          -webkit-filter           : blur(0em);
-          -o-transform-origin      : top;
-          -o-transform             : perspective(800px) scale(1,1) rotateX(0deg);
-        }
-      }
-      @-ms-keyframes zoink {
-        0% {
-          opacity                  : 0;
-          filter                   : alpha(opacity=0);
-          filter                   : blur(2em);
-          -ms-transform-origin     : top;
-          -ms-transform            : perspective(800px) scale(.1,.1) rotateX(-180deg);
-        }
-        100% {
-          opacity                  : 1;
-          filter                   : alpha(opacity=100);
-          filter                   : blur(0em);
-          -ms-transform-origin     : top;
-          -ms-transform            : perspective(800px) scale(1,1) rotateX(0deg);
-        }
-      }
-      @keyframes zoink {
-        0% {
-          opacity                  : 0;
-          filter                   : blur(2em);
-          transform-origin         : top;
-          transform                : perspective(800px) scale(.1,.1) rotateX(-180deg);
-        }
-        100% {
-          opacity                  : 1;
-          filter                   : blur(0em);
-          transform-origin         : top;
-          transform                : perspective(800px) scale(1,1) rotateX(0deg);
-        }
-      }
 
       h4 {
         color                      : $text-color;
@@ -317,5 +245,78 @@
       display                      : block;
       background-color             : $talk-print-bg-color;
     }
+  }
+}
+
+@-moz-keyframes zoink {
+  0% {
+    opacity                  : 0;
+    -moz-filter              : blur(2em);
+    -moz-transform-origin    : top;
+    -moz-transform           : perspective(800px) scale(.1,.1) rotateX(-180deg);
+  }
+  100% {
+    opacity                  : 1;
+    -moz-filter              : blur(0em);
+    -moz-transform-origin    : top;
+    -moz-transform           : perspective(800px) scale(1,1) rotateX(0deg);
+  }
+}
+@-webkit-keyframes zoink {
+  0% {
+    opacity                  : 0;
+    -webkit-filter           : blur(2em);
+    -webkit-transform-origin : top;
+    -webkit-transform        : perspective(800px) scale(.1,.1) rotateX(-180deg);
+  }
+  100% {
+    opacity                  : 1;
+    -webkit-filter           : blur(0em);
+    -webkit-transform-origin : top;
+    -webkit-transform        : perspective(800px) scale(1,1) rotateX(0deg);
+  }
+}
+@-o-keyframes zoink {
+  0% {
+    opacity                  : 0;
+    -webkit-filter           : blur(2em);
+    -o-transform-origin      : top;
+    -o-transform             : perspective(800px) scale(.1,.1) rotateX(-180deg);
+  }
+  100% {
+    opacity                  : 1;
+    -webkit-filter           : blur(0em);
+    -o-transform-origin      : top;
+    -o-transform             : perspective(800px) scale(1,1) rotateX(0deg);
+  }
+}
+@-ms-keyframes zoink {
+  0% {
+    opacity                  : 0;
+    filter                   : alpha(opacity=0);
+    filter                   : blur(2em);
+    -ms-transform-origin     : top;
+    -ms-transform            : perspective(800px) scale(.1,.1) rotateX(-180deg);
+  }
+  100% {
+    opacity                  : 1;
+    filter                   : alpha(opacity=100);
+    filter                   : blur(0em);
+    -ms-transform-origin     : top;
+    -ms-transform            : perspective(800px) scale(1,1) rotateX(0deg);
+  }
+}
+@keyframes zoink {
+  0% {
+    opacity                  : 0;
+    filter                   : blur(2em);
+    transform-origin         : top;
+    transform                : perspective(800px) scale(.1,.1) rotateX(-180deg);
+  }
+  100% {
+    opacity                  : 1;
+    filter                   : blur(0em);
+    transform-origin         : top;
+    transform                : perspective(800px) scale(1,1) rotateX(0deg);
   }
 }

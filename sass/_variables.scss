@@ -102,7 +102,6 @@ $button-glow                         : $button-glow-area $button-glow-color;
 $header-height                       : 60px;
 $logo-padding                        : 10px 0;
 $logo-width                          : 33%;
-$menu-right                          : 0;
 $menu-li-a-padding                   : 22px;
 $menu-li-before-width                : 100%;
 $menu-li-before-height               : 100%;
@@ -110,6 +109,7 @@ $menu-li-before-left                 : 0;
 $menu-li-before-border               : 1px solid #DEFEB3;
 $menu-li-button-down-margin          : 0 13px;
 $menu-li-button-up-height            : 45px;
+$lis-animation-length                : .5s;
 
 // ============== CONTENT STYLES ===============
 $col-main-width                      : 68%;

@@ -16,21 +16,16 @@
 <body>
 	<header class                                ="top-wrap">
 		<div class                                 ="wrapper">
-			<nav class 		                           ="main-header">
+			<nav class 		                           ="main-header" role="navigation">
 				<div class 	                           ="logo">
 					<a href 	                           ="index.html"><img src="images/BYOL.svg" alt="Bring Your Own Laptop Online"></a>
 				</div>
 				<ul id 	                               ="menu">
 					<li class 	                         ="button-up"><div><a href="index.html">Home</a></div></li>
-					<li class 	                         ="button-down"><div><a href="index.html">Courses</a></div>
-						<ul class 	                       ="submenu">
+					<li class 	                         ="button-down" aria-haspopup="true"><div><a href="index.html">Courses</a></div>
+						<ul class 	                       ="submenu rollDown" aria-label="submenu">
 							<li class 	                     ="button-up"><div><a href="index.html">Adobe Illustrator</a></div></li>
-							<li class 	                     ="button-down"><div><a href="index.html">Adobe Photoshop</a></div>
-								<ul class 	                   ="subsubmenu">
-									<li class 	                 ="button-up"><div><a href="index.html">for Photographers</a></div></li>
-									<li class 	                 ="button-down"><div><a href="index.html">for Web Designers</a></div></li>
-								</ul>
-							</li>
+							<li class 	                     ="button-down" aria-haspopup="true"><div><a href="index.html">Adobe Photoshop</a></div></li>
 							<li class 	                     ="button-up"><div><a href="index.html">Adobe XD</a></div></li>
 						</ul>
 					</li>

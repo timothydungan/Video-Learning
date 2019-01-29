@@ -66,8 +66,9 @@ a {
   }
 
 .page {
-  z-index: -1;
-  
+  position: relative;
+  z-index: 1;
+
   .page-title-wrap {
     display           : flex;
     width             : $page-title-wrap-width;
