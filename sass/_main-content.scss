@@ -13,48 +13,64 @@
     height                         : $video-wrapper-height;
     width                          : $video-wrapper-width;
     margin                         : $video-wrapper-margin;
-    display                        : -webkit-box;
-    display                        : flex;
-    justify-content                : center;
-    flex-wrap                      : wrap;
-    -webkit-box-pack               : start;
     background-repeat              : no-repeat;
     background-position            : center;
     background-size                : 100% 100%;
     background-image               : svgParams(video, $video-svg-color);
 
-    .next-lesson, .previous-lesson {
-      font-size                    : $video-nav-text-size;
-      margin-top                   : $video-nav-margin-top;
-      padding                      : $video-nav-padding;
-      -webkit-transform            : scaleX($video-nav-transform-scalex);
-          -ms-transform            : scaleX($video-nav-transform-scalex);
-              transform            : scaleX($video-nav-transform-scalex);
+    .video-controls {
+      display                      : -webkit-box;
+      display                      : flex;
+      justify-content              : center;
+      flex-wrap                    : wrap;
+      -webkit-box-pack             : start;
+      -webkit-transform            : translateX(-45px);
+          -ms-transform            : translateX(-45px);
+              transform            : translateX(-45px);
 
-      a {
-        outline                    : none;
+      .next-lesson, .previous-lesson {
+        font-size                  : $video-nav-text-size;
+        margin-top                 : $video-nav-margin-top;
+        padding                    : $video-nav-padding;
+        -webkit-transform          : scaleX($video-nav-transform-scalex);
+            -ms-transform          : scaleX($video-nav-transform-scalex);
+                transform          : scaleX($video-nav-transform-scalex);
 
-        &:focus, &:hover, &:active {
-          cursor                   : pointer;
-          text-shadow              : $button-glow;
-          -webkit-transition       : $button-transition;
-                  transition       : $button-transition;
+        a {
+          outline                  : none;
+
+          &:focus, &:hover, &:active {
+            cursor                 : pointer;
+            text-shadow            : $button-glow;
+            -webkit-transition     : $button-transition;
+                    transition     : $button-transition;
+          }
+        }
+
+        &.current {
+          visibility               : hidden;
         }
       }
 
-      &.current {
-        z-index                    : $video-nav-current-z-index;
+      .previous-lesson {
+        padding-left               : 30px;
       }
-    }
 
-    .video-player {
-      -webkit-transform            : translate($video-transform-translate);
-          -ms-transform            : translate($video-transform-translate);
-              transform            : translate($video-transform-translate);
+      .next-lesson {
+        right                      : -50px;
+        position                   : absolute;
+      }
 
-      .video-frame {
-        width                      : $video-width;
-        height                     : $video-height;
+      .video-player {
+        margin-left                : -25px;
+        -webkit-transform          : translate($video-transform-translate);
+            -ms-transform          : translate($video-transform-translate);
+                transform          : translate($video-transform-translate);
+
+        .video-frame {
+          width                    : $video-width;
+          height                   : $video-height;
+        }
       }
     }
 

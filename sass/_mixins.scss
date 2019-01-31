@@ -1,0 +1,47 @@
+// !compileOnSave
+// compileOnSave        : false
+// main                 : ../style.scss
+
+
+/* Mixinss ----------------------- */
+@mixin screen100 { // Small devices
+   @media (min-width: #{$screen-sm-min}) {
+       @content;
+   }
+}
+
+@mixin md { // Medium devices
+   @media (min-width: #{$screen-md-min}) {
+       @content;
+   }
+}
+
+@mixin lg { // Large devices
+   @media (min-width: #{$screen-lg-min}) {
+       @content;
+   }
+}
+
+@mixin xl { // Extra large devices
+   @media (min-width: #{$screen-xl-min}) {
+       @content;
+   }
+}
+
+@mixin rwd($screen) { // Custom devices
+   @media (min-width: $screen+'px') {
+       @content;
+   }
+}
+$wrapper-width-200                   : 280px;
+$wrapper-width-300                   : 300px;
+$wrapper-width-350                   : 350px;
+$wrapper-width-400                   : 400px;
+$wrapper-width-500                   : 500px;
+$wrapper-width-600                   : 600px;
+$wrapper-width-700                   : 700px;
+$wrapper-width-800                   : 800px;
+$wrapper-width-900                   : 900px;
+$wrapper-width-1000                  : 1000px;
+$wrapper-width-1200                  : 1200px;
+$wrapper-width-1400                  : 1400px;

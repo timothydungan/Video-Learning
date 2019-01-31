@@ -735,48 +735,64 @@ a:focus, a:hover, a:active {
   height: 502px;
   width: 100%;
   margin: 0;
-  display: -webkit-box;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  -webkit-box-pack: start;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 948 502.096' preserveAspectRatio='none'>\a       <path fill='%23262B2F' d='M328,685h812l68-22.513-68-460.86L734,182.9,328,201.626l-68,460.86Z' transform='translate(-260 -182.904)'/></svg>");
 }
 
-.col-main .video-wrapper .next-lesson, .col-main .video-wrapper .previous-lesson {
+.col-main .video-wrapper .video-controls {
+  display: -webkit-box;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -webkit-transform: translateX(-45px);
+  -ms-transform: translateX(-45px);
+  transform: translateX(-45px);
+}
+
+.col-main .video-wrapper .video-controls .next-lesson, .col-main .video-wrapper .video-controls .previous-lesson {
   font-size: 162px;
-  margin-top: 33%;
+  margin-top: 30%;
   padding: 5px;
   -webkit-transform: scaleX(0.5);
   -ms-transform: scaleX(0.5);
   transform: scaleX(0.5);
 }
 
-.col-main .video-wrapper .next-lesson a, .col-main .video-wrapper .previous-lesson a {
+.col-main .video-wrapper .video-controls .next-lesson a, .col-main .video-wrapper .video-controls .previous-lesson a {
   outline: none;
 }
 
-.col-main .video-wrapper .next-lesson a:focus, .col-main .video-wrapper .next-lesson a:hover, .col-main .video-wrapper .next-lesson a:active, .col-main .video-wrapper .previous-lesson a:focus, .col-main .video-wrapper .previous-lesson a:hover, .col-main .video-wrapper .previous-lesson a:active {
+.col-main .video-wrapper .video-controls .next-lesson a:focus, .col-main .video-wrapper .video-controls .next-lesson a:hover, .col-main .video-wrapper .video-controls .next-lesson a:active, .col-main .video-wrapper .video-controls .previous-lesson a:focus, .col-main .video-wrapper .video-controls .previous-lesson a:hover, .col-main .video-wrapper .video-controls .previous-lesson a:active {
   cursor: pointer;
   text-shadow: 1px 0px 10px #FFFFFF;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
 
-.col-main .video-wrapper .next-lesson.current, .col-main .video-wrapper .previous-lesson.current {
-  z-index: -5;
+.col-main .video-wrapper .video-controls .next-lesson.current, .col-main .video-wrapper .video-controls .previous-lesson.current {
+  visibility: hidden;
 }
 
-.col-main .video-wrapper .video-player {
+.col-main .video-wrapper .video-controls .previous-lesson {
+  padding-left: 30px;
+}
+
+.col-main .video-wrapper .video-controls .next-lesson {
+  right: -50px;
+  position: absolute;
+}
+
+.col-main .video-wrapper .video-controls .video-player {
+  margin-left: -25px;
   -webkit-transform: translate(0, 19px);
   -ms-transform: translate(0, 19px);
   transform: translate(0, 19px);
 }
 
-.col-main .video-wrapper .video-player .video-frame {
+.col-main .video-wrapper .video-controls .video-player .video-frame {
   width: 812px;
   height: 463px;
 }
@@ -785,7 +801,7 @@ a:focus, a:hover, a:active {
   color: #FFFFFF;
   font-size: 10px;
   font-style: italic;
-  margin-top: -22px;
+  margin-top: -32px;
   text-align: center;
 }
 
@@ -1116,13 +1132,21 @@ footer .footer-wrap .footer-right-col {
   width: 50%;
 }
 
-footer .footer-wrap .copyright-notice {
+footer .footer-wrap .copyright-notice,
+footer .footer-wrap .osi-notice {
   position: absolute;
   margin-top: 20%;
   color: #FFFFFF;
   font-style: italic;
   font-size: 0.8em;
-  text-align: left;
+}
+
+footer .footer-wrap .copyright-notice {
+  left: 0;
+}
+
+footer .footer-wrap .osi-notice {
+  right: 0;
 }
 
 .social-menu-wrapper {

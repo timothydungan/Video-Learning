@@ -23,47 +23,12 @@ a {
 
 .wrapper {
   position          : relative;
-  width             : $wrapper-width;
+  width             : $wrapper-width-1400;
   left              : $wrapper-left;
   -webkit-transform : translateX($wrapper-transform-translateX);
       -ms-transform : translateX($wrapper-transform-translateX);
           transform : translateX($wrapper-transform-translateX);
 }
-  @media (min-width : 1201px) and (max-width: 1400px) {
-    .wrapper {
-      width         : $wrapper-width-1200;
-    }
-  }
-  @media (min-width : 1001px) and (max-width: 1200px) {
-    .wrapper {
-      width         : $wrapper-width-1000;
-    }
-  }
-  @media (min-width : 801px) and (max-width: 1000px) {
-    .wrapper {
-      width         : $wrapper-width-800;
-    }
-  }
-  @media (min-width : 601px) and (max-width: 800px) {
-    .wrapper {
-      width         : $wrapper-width-600;
-    }
-  }
-  @media (min-width : 401px) and (max-width: 600px) {
-    .wrapper {
-      width         : $wrapper-width-400;
-    }
-  }
-  @media (min-width : 201px) and (max-width: 400px) {
-    .wrapper {
-      width         : $wrapper-width-200;
-    }
-  }
-  @media (max-width : 200px) {
-    .wrapper {
-      width         : $wrapper-width-100;
-    }
-  }
 
 .page {
   position: relative;
