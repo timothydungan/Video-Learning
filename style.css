@@ -3,9 +3,18 @@ Project    : BYOL Redesign
 Author     : Timothy Dungan
 Author URI : https://www.timothydungan.com
 */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
-@import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:900");
 @import url(sass/plugins/font-awesome/css/all.css);
+@font-face {
+  font-family: "M PLUS Rounded 1c";
+  src: url("sass/plugins/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("sass/plugins/fonts/Open_Sans/OpenSans-Regular.ttf") format("truetype");
+}
+
+/* Mixinss ----------------------- */
 /* Global ------------------------ */
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
@@ -71,6 +80,10 @@ header.top-wrap .main-header {
 header.top-wrap .main-header .logo {
   padding: 10px 0;
   width: 33%;
+}
+
+header.top-wrap .main-header .logo img#byolLogo {
+  width: 73%;
 }
 
 header.top-wrap .main-header ul#menu {
@@ -363,52 +376,76 @@ a:focus, a:hover, a:active {
 
 .wrapper {
   position: relative;
-  width: 1400px;
+  width: 100%;
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 
-@media (min-width: 1201px) and (max-width: 1400px) {
+@media (min-width: 300px) and (max-width: calc(300px + 49px)) {
   .wrapper {
-    width: 1200px;
+    width: 300px;
   }
 }
 
-@media (min-width: 1001px) and (max-width: 1200px) {
+@media (min-width: 350px) and (max-width: calc(350px + 99px)) {
   .wrapper {
-    width: 1000px;
+    width: 350px;
   }
 }
 
-@media (min-width: 801px) and (max-width: 1000px) {
-  .wrapper {
-    width: 800px;
-  }
-}
-
-@media (min-width: 601px) and (max-width: 800px) {
-  .wrapper {
-    width: 600px;
-  }
-}
-
-@media (min-width: 401px) and (max-width: 600px) {
+@media (min-width: 400px) and (max-width: calc(400px + 99px)) {
   .wrapper {
     width: 400px;
   }
 }
 
-@media (min-width: 201px) and (max-width: 400px) {
+@media (min-width: 500px) and (max-width: calc(500px + 99px)) {
   .wrapper {
-    width: 200px;
+    width: 500px;
   }
 }
 
-@media (max-width: 200px) {
+@media (min-width: 600px) and (max-width: calc(600px + 99px)) {
   .wrapper {
-    width: 100%;
+    width: 600px;
+  }
+}
+
+@media (min-width: 700px) and (max-width: calc(700px + 99px)) {
+  .wrapper {
+    width: 700px;
+  }
+}
+
+@media (min-width: 800px) and (max-width: calc(800px + 99px)) {
+  .wrapper {
+    width: 800px;
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .wrapper {
+    width: 900px;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .wrapper {
+    width: 1000px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  .wrapper {
+    width: 1200px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .wrapper {
+    width: 1400px;
   }
 }
 
@@ -801,7 +838,7 @@ a:focus, a:hover, a:active {
   color: #FFFFFF;
   font-size: 10px;
   font-style: italic;
-  margin-top: -32px;
+  padding-top: 5px;
   text-align: center;
 }
 

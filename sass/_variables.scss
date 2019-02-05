@@ -81,7 +81,7 @@ $fixed-line-height                   : 1em;
 $course-titling-strong-spacing       : .1em;
 
 // ================ PAGE STYLES ================
-$wrapper-width-200                   : 280px;
+$wrapper-width                       : 100%;
 $wrapper-width-300                   : 300px;
 $wrapper-width-350                   : 350px;
 $wrapper-width-400                   : 400px;
@@ -131,7 +131,7 @@ $video-nav-transform-scalex          : .5;
 $video-nav-current-z-index           : -5;
 $video-width                         : 812px;
 $video-height                        : 463px;
-$video-caption-margin-top            : -32px;
+$video-caption-padding-top           : 5px;
 $course-titling-wrapper-height       : 128px;
 $course-titling-wrapper-width        : 100%;
 $course-titling-wrapper-margin       : 0;

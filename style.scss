@@ -4,11 +4,19 @@ Author     : Timothy Dungan
 Author URI : https://www.timothydungan.com
 */
 
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
-@import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:900");
+@font-face {
+  font-family: "M PLUS Rounded 1c";
+  src: url("sass/plugins/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("sass/plugins/fonts/Open_Sans/OpenSans-Regular.ttf") format("truetype");
+}
 
 @import "sass/plugins/font-awesome/css/all.css";
 @import "sass/variables";
+@import "sass/mixins";
 @import "sass/global";
 @import "sass/header";
 @import "sass/page";

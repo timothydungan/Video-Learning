@@ -4,44 +4,68 @@
 
 
 /* Mixinss ----------------------- */
-@mixin screen100 { // Small devices
-   @media (min-width: #{$screen-sm-min}) {
-       @content;
-   }
+@mixin screen300 {
+  @media (min-width: #{$wrapper-width-300}) and (max-width: calc(#{$wrapper-width-300} + 49px)) {
+    @content;
+  }
 }
 
-@mixin md { // Medium devices
-   @media (min-width: #{$screen-md-min}) {
-       @content;
-   }
+@mixin screen350 {
+  @media (min-width: #{$wrapper-width-350}) and (max-width: calc(#{$wrapper-width-350} + 99px)) {
+    @content;
+  }
 }
 
-@mixin lg { // Large devices
-   @media (min-width: #{$screen-lg-min}) {
-       @content;
-   }
+@mixin screen400 {
+  @media (min-width: #{$wrapper-width-400}) and (max-width: calc(#{$wrapper-width-400} + 99px)) {
+    @content;
+  }
 }
 
-@mixin xl { // Extra large devices
-   @media (min-width: #{$screen-xl-min}) {
-       @content;
-   }
+@mixin screen500 {
+  @media (min-width: #{$wrapper-width-500}) and (max-width: calc(#{$wrapper-width-500} + 99px)) {
+    @content;
+  }
 }
 
-@mixin rwd($screen) { // Custom devices
-   @media (min-width: $screen+'px') {
-       @content;
-   }
+@mixin screen600 {
+  @media (min-width: #{$wrapper-width-600}) and (max-width: calc(#{$wrapper-width-600} + 99px)) {
+    @content;
+  }
 }
-$wrapper-width-200                   : 280px;
-$wrapper-width-300                   : 300px;
-$wrapper-width-350                   : 350px;
-$wrapper-width-400                   : 400px;
-$wrapper-width-500                   : 500px;
-$wrapper-width-600                   : 600px;
-$wrapper-width-700                   : 700px;
-$wrapper-width-800                   : 800px;
-$wrapper-width-900                   : 900px;
-$wrapper-width-1000                  : 1000px;
-$wrapper-width-1200                  : 1200px;
-$wrapper-width-1400                  : 1400px;
+
+@mixin screen700 {
+  @media (min-width: #{$wrapper-width-700}) and (max-width: calc(#{$wrapper-width-700} + 99px)) {
+    @content;
+  }
+}
+
+@mixin screen800 {
+  @media (min-width: #{$wrapper-width-800}) and (max-width: calc(#{$wrapper-width-800} + 99px)) {
+    @content;
+  }
+}
+
+@mixin screen900 {
+  @media (min-width: #{$wrapper-width-900}) and (max-width: calc(#{$wrapper-width-900} + 99px)) {
+    @content;
+  }
+}
+
+@mixin screen1000 {
+  @media (min-width: #{$wrapper-width-1000}) and (max-width: calc(#{$wrapper-width-1000} + 199px)) {
+    @content;
+  }
+}
+
+@mixin screen1200 {
+  @media (min-width: #{$wrapper-width-1200}) and (max-width: calc(#{$wrapper-width-1200} + 199px)) {
+    @content;
+  }
+}
+
+@mixin screen1400 {
+  @media (min-width: #{$wrapper-width-1400}) {
+    @content;
+  }
+}
