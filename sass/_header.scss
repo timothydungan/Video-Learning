@@ -11,6 +11,10 @@ header {
     height                               : $header-height;
     z-index                              : 999;
 
+    #responsive-menu-trigger, #close-menu {
+      display: none;
+    }
+
     .main-header {
       display                            : flex;
       width                              : $wrapper-width;
@@ -139,7 +143,7 @@ header {
             }
           }
 
-          &.search:before {
+          &.searchLi:before {
            border-right                  : $menu-li-before-border;
           }
 
@@ -228,6 +232,15 @@ header {
             }
           }
         }
+      }
+
+      .close-btn {
+        display: none;
+        color: #fff;
+        font-size: 2rem;
+        position: absolute;
+        top: .5rem;
+        right: 2rem;
       }
     }
   }
