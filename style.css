@@ -1084,6 +1084,12 @@ a:focus, a:hover, a:active {
     transform-origin: top;
     transform: perspective(800px) scale(0.1, 0.1) rotateX(-180deg);
   }
+  50% {
+    opacity: 0;
+    filter: blur(1em);
+    transform-origin: top;
+    transform: perspective(800px) scale(0.5, 0.5) rotateX(-90deg);
+  }
   100% {
     opacity: 1;
     filter: blur(0em);
@@ -1099,6 +1105,13 @@ a:focus, a:hover, a:active {
     filter: blur(2em);
     -ms-transform-origin: top;
     -ms-transform: perspective(800px) scale(0.1, 0.1) rotateX(-180deg);
+  }
+  50% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    filter: blur(1em);
+    -ms-transform-origin: top;
+    -ms-transform: perspective(800px) scale(0.5, 0.5) rotateX(-90deg);
   }
   100% {
     opacity: 1;
@@ -1116,6 +1129,12 @@ a:focus, a:hover, a:active {
     -o-transform-origin: top;
     -o-transform: perspective(800px) scale(0.1, 0.1) rotateX(-180deg);
   }
+  50% {
+    opacity: 0;
+    -webkit-filter: blur(1em);
+    -o-transform-origin: top;
+    -o-transform: perspective(800px) scale(0.5, 0.5) rotateX(-90deg);
+  }
   100% {
     opacity: 1;
     -webkit-filter: blur(0em);
@@ -1131,9 +1150,15 @@ a:focus, a:hover, a:active {
     -webkit-transform-origin: top;
     -webkit-transform: perspective(800px) scale(0.1, 0.1) rotateX(-180deg);
   }
+  50% {
+    opacity: 0;
+    -webkit-filter: blur(1em);
+    -webkit-transform-origin: top;
+    -webkit-transform: perspective(800px) scale(0.5, 0.5) rotateX(-90deg);
+  }
   100% {
     opacity: 1;
-    -webkit-filter: blur(0em);
+    -webkit-filter: blur(1em);
     -webkit-transform-origin: top;
     -webkit-transform: perspective(800px) scale(1, 1) rotateX(0deg);
   }
@@ -1145,6 +1170,12 @@ a:focus, a:hover, a:active {
     -moz-filter: blur(2em);
     -moz-transform-origin: top;
     -moz-transform: perspective(800px) scale(0.1, 0.1) rotateX(-180deg);
+  }
+  50% {
+    opacity: 0;
+    -moz-filter: blur(1em);
+    -moz-transform-origin: top;
+    -moz-transform: perspective(800px) scale(0.5, 0.5) rotateX(-90deg);
   }
   100% {
     opacity: 1;
@@ -1208,7 +1239,7 @@ a:focus, a:hover, a:active {
 }
 
 .col-aside ul li ol {
-  display: block;
+  display: none;
 }
 
 .col-aside ul li ol li {
@@ -1233,6 +1264,10 @@ a:focus, a:hover, a:active {
   color: #FFFFFF;
   margin-left: -38px;
   margin-right: 25px;
+}
+
+.col-aside ul li .toggle:checked + * + ol {
+  display: block;
 }
 
 /* Footer ------------------------ */

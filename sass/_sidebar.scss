@@ -57,7 +57,7 @@
       }
 
       ol {
-        display           : block;
+        display           : none;
 
         li {
           margin-left       : $lesson-name-li-margin-left;
@@ -85,6 +85,8 @@
           }
         }
       }
+
+      .toggle:checked + * + ol{display: block;}
     }
   }
 }

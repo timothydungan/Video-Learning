@@ -272,6 +272,12 @@
     transform-origin         : top;
     transform                : perspective(800px) scale(.1,.1) rotateX(-180deg);
   }
+  50% {
+    opacity                  : 0;
+    filter                   : blur(1em);
+    transform-origin         : top;
+    transform                : perspective(800px) scale(.5,.5) rotateX(-90deg);
+  }
   100% {
     opacity                  : 1;
     filter                   : blur(0em);
@@ -286,6 +292,13 @@
     filter                   : blur(2em);
     -ms-transform-origin     : top;
     -ms-transform            : perspective(800px) scale(.1,.1) rotateX(-180deg);
+  }
+  50% {
+    opacity                  : 0;
+    filter                   : alpha(opacity=0);
+    filter                   : blur(1em);
+    -ms-transform-origin     : top;
+    -ms-transform            : perspective(800px) scale(.5,.5) rotateX(-90deg);
   }
   100% {
     opacity                  : 1;
@@ -302,6 +315,12 @@
     -o-transform-origin      : top;
     -o-transform             : perspective(800px) scale(.1,.1) rotateX(-180deg);
   }
+  50% {
+    opacity                  : 0;
+    -webkit-filter           : blur(1em);
+    -o-transform-origin      : top;
+    -o-transform             : perspective(800px) scale(.5,.5) rotateX(-90deg);
+  }
   100% {
     opacity                  : 1;
     -webkit-filter           : blur(0em);
@@ -316,9 +335,15 @@
     -webkit-transform-origin : top;
     -webkit-transform        : perspective(800px) scale(.1,.1) rotateX(-180deg);
   }
+  50% {
+    opacity                  : 0;
+    -webkit-filter           : blur(1em);
+    -webkit-transform-origin : top;
+    -webkit-transform        : perspective(800px) scale(.5,.5) rotateX(-90deg);
+  }
   100% {
     opacity                  : 1;
-    -webkit-filter           : blur(0em);
+    -webkit-filter           : blur(1em);
     -webkit-transform-origin : top;
     -webkit-transform        : perspective(800px) scale(1,1) rotateX(0deg);
   }
@@ -329,6 +354,12 @@
     -moz-filter              : blur(2em);
     -moz-transform-origin    : top;
     -moz-transform           : perspective(800px) scale(.1,.1) rotateX(-180deg);
+  }
+  50% {
+    opacity                  : 0;
+    -moz-filter              : blur(1em);
+    -moz-transform-origin    : top;
+    -moz-transform           : perspective(800px) scale(.5,.5) rotateX(-90deg);
   }
   100% {
     opacity                  : 1;
