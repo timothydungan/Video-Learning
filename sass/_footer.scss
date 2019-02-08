@@ -11,7 +11,8 @@ footer {
   margin-top                 : $vertical-margin-spacing;
 
   .footer-wrap {
-    display                  : flex;
+    display                  : inline-flex;
+    flex-direction           : row;
     width                    : $footer-wrap-width;
     text-align               : center;
 

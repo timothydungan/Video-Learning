@@ -77,7 +77,8 @@ header.top-wrap #responsive-menu-trigger, header.top-wrap #close-menu {
 }
 
 header.top-wrap .main-header {
-  display: flex;
+  display: inline-flex;
+  flex-direction: row;
   width: 100%;
 }
 
@@ -92,7 +93,8 @@ header.top-wrap .main-header .logo img#byolLogo {
 
 header.top-wrap .main-header ul#menu {
   list-style: none;
-  display: flex;
+  display: inline-flex;
+  flex-direction: row;
   text-align: center;
   text-transform: uppercase;
   width: 66%;
@@ -506,7 +508,8 @@ a:focus, a:hover, a:active {
 }
 
 .page .page-title-wrap {
-  display: flex;
+  display: inline-flex;
+  flex-direction: row;
   width: 100%;
   margin-top: 50px;
 }
@@ -524,7 +527,8 @@ a:focus, a:hover, a:active {
 }
 
 .content-wrap {
-  display: flex;
+  display: inline-flex;
+  flex-direction: row;
   width: 100%;
   margin-top: 50px;
 }
@@ -533,7 +537,8 @@ a:focus, a:hover, a:active {
 .main-cta {
   width: 31%;
   height: 163px;
-  display: flex;
+  display: inline-flex;
+  flex-direction: row;
   padding-top: 50px;
   background-repeat: no-repeat;
   background-position: center;
@@ -542,9 +547,10 @@ a:focus, a:hover, a:active {
 }
 
 .big-cta {
+  display: inline-flex;
+  flex-direction: row;
   width: 100%;
   height: 163px;
-  display: flex;
   padding-top: 50px;
   margin-top: 50px;
   background-repeat: no-repeat;
@@ -580,7 +586,8 @@ a:focus, a:hover, a:active {
 }
 
 .entry-cta-wrap {
-  display: flex;
+  display: inline-flex;
+  flex-direction: row;
   width: 100%;
   height: 60px;
   margin-top: 50px;
@@ -889,7 +896,7 @@ a:focus, a:hover, a:active {
   color: #FFFFFF;
   font-size: 10px;
   font-style: italic;
-  padding-top: 5px;
+  margin-top: -31px;
   text-align: center;
 }
 
@@ -920,7 +927,8 @@ a:focus, a:hover, a:active {
 }
 
 .col-main .course-titling-wrapper .extra-info {
-  display: flex;
+  display: inline-flex;
+  flex-direction: row;
 }
 
 .col-main .course-titling-wrapper .video-count {
@@ -1160,8 +1168,21 @@ a:focus, a:hover, a:active {
   background-color: #262B2F;
 }
 
-.col-aside .lesson-name-wrapper span {
+.col-aside ul {
+  counter-reset: li;
+}
+
+.col-aside ul li {
+  list-style: none;
+}
+
+.col-aside ul li input {
+  display: none;
+}
+
+.col-aside ul li label {
   display: block;
+  cursor: pointer;
   background-color: #307379;
   color: #FFFFFF;
   width: 100%;
@@ -1170,17 +1191,32 @@ a:focus, a:hover, a:active {
   margin: 5px 0;
 }
 
-.col-aside ol {
-  list-style: none;
-  counter-reset: li;
+.col-aside ul li label.ln-label::after {
+  content: " ";
+  display: block;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid currentColor;
+  vertical-align: middle;
+  transition: transform .2s ease-out;
+  float: right;
+  clear: both;
 }
 
-.col-aside ol li {
+.col-aside ul li .toggle:checked + .ln-label::after {
+  transform: rotate(90deg) translateX(-3px);
+}
+
+.col-aside ul li ol {
+  display: block;
+}
+
+.col-aside ul li ol li {
   margin-left: 40px;
-  counter-increment: li;
 }
 
-.col-aside ol li ::before {
+.col-aside ul li ol li ::before {
+  counter-increment: li;
   content: counter(li);
   color: #FFFFFF;
   display: inline-block;
@@ -1191,7 +1227,7 @@ a:focus, a:hover, a:active {
   direction: rtl;
 }
 
-.col-aside ol li.active:before {
+.col-aside ul li ol li.active:before {
   content: ">>";
   font-size: 11px;
   color: #FFFFFF;
@@ -1207,7 +1243,8 @@ footer {
 }
 
 footer .footer-wrap {
-  display: flex;
+  display: inline-flex;
+  flex-direction: row;
   width: 100%;
   text-align: center;
 }

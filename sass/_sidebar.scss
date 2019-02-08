@@ -15,44 +15,74 @@
 
   .lesson-name-wrapper {
     background-color    : $lesson-name-wrapper-bg-color;
-
-    span {
-      display           : block;
-      background-color  : $lesson-name-span-bg-color;
-      color             : $lesson-name-span-text-color;
-      width             : $lesson-name-span-width;
-      padding           : $lesson-name-span-padding;
-      text-transform    : $lesson-name-span-text-transform;
-      margin            : $lesson-name-span-margin;
-    }
   }
 
-  ol {
-    list-style          : none;
-    counter-reset       : li;
+  ul {
+    counter-reset     : li;
 
     li {
-      margin-left       : $lesson-name-li-margin-left;
-      counter-increment : li;
+      list-style          : none;
 
-      ::before {
-        content         : counter(li);
-        color           : $lesson-link-number-color;
-        display         : inline-block;
-        width           : $lesson-link-number-width;
-        margin-left     : $lesson-link-number-margin-left;
-        margin-right    : $lesson-link-number-margin-right;
-        text-align      : $lesson-link-number-text-align;
-        direction       : $lesson-link-number-text-direction;
+      input {
+        display: none;
       }
 
-      &.active {
-        &:before {
-          content       : $lesson-link-active-marker;
-          font-size     : $lesson-link-active-marker-size;
-          color         : $lesson-link-number-color;
-          margin-left   : $lesson-link-active-margin-left;
-          margin-right  : $lesson-link-active-margin-right;
+      label {
+        display: block;
+        cursor: pointer;
+        background-color  : $lesson-name-span-bg-color;
+        color             : $lesson-name-span-text-color;
+        width             : $lesson-name-span-width;
+        padding           : $lesson-name-span-padding;
+        text-transform    : $lesson-name-span-text-transform;
+        margin            : $lesson-name-span-margin;
+
+        &.ln-label {
+          &::after {
+            content: " ";
+            display: block;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 5px solid currentColor;
+            vertical-align: middle;
+            transition: transform .2s ease-out;
+            float: right;
+            clear: both;
+          }
+        }
+      }
+
+      .toggle:checked + .ln-label::after {
+        transform: rotate(90deg) translateX(-3px);
+      }
+
+      ol {
+        display           : block;
+
+        li {
+          margin-left       : $lesson-name-li-margin-left;
+
+          ::before {
+            counter-increment: li;
+            content         : counter(li);
+            color           : $lesson-link-number-color;
+            display         : inline-block;
+            width           : $lesson-link-number-width;
+            margin-left     : $lesson-link-number-margin-left;
+            margin-right    : $lesson-link-number-margin-right;
+            text-align      : $lesson-link-number-text-align;
+            direction       : $lesson-link-number-text-direction;
+          }
+
+          &.active {
+            &:before {
+              content       : $lesson-link-active-marker;
+              font-size     : $lesson-link-active-marker-size;
+              color         : $lesson-link-number-color;
+              margin-left   : $lesson-link-active-margin-left;
+              margin-right  : $lesson-link-active-margin-right;
+            }
+          }
         }
       }
     }

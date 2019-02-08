@@ -8,7 +8,8 @@
 .main-cta {
   width                 : $main-cta-width;
   height                : $main-cta-height;
-  display               : flex;
+  display               : inline-flex;
+  flex-direction        : row;
   padding-top           : $vertical-margin-spacing;
   background-repeat     : no-repeat;
   background-position   : center;
@@ -17,9 +18,10 @@
 }
 
 .big-cta {
+  display               : inline-flex;
+  flex-direction        : row;
   width                 : $big-cta-width;
   height                : $big-cta-height;
-  display               : flex;
   padding-top           : $vertical-margin-spacing;
   margin-top            : $vertical-margin-spacing;
   background-repeat     : no-repeat;
@@ -55,7 +57,8 @@
 }
 
 .entry-cta-wrap {
-  display               : flex;
+  display               : inline-flex;
+  flex-direction        : row;
   width                 : $entry-cta-wrap-width;
   height                : $entry-cta-wrap-height;
   margin-top            : $vertical-margin-spacing;

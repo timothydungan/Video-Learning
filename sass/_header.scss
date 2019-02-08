@@ -16,7 +16,8 @@ header {
     }
 
     .main-header {
-      display                            : flex;
+      display                            : inline-flex;
+      flex-direction                     : row;
       width                              : $wrapper-width;
 
       .logo {
@@ -30,7 +31,8 @@ header {
 
       ul#menu {
         list-style                       : none;
-        display                          : flex;
+        display                          : inline-flex;
+        flex-direction                   : row;
         text-align                       : center;
         text-transform                   : $menu-text-transform;
         width                            : 66%;

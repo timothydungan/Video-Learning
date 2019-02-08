@@ -107,7 +107,8 @@ a {
   z-index: 1;
 
   .page-title-wrap {
-    display           : flex;
+    display           : inline-flex;
+    flex-direction    : row;
     width             : $page-title-wrap-width;
     margin-top        : $vertical-margin-spacing;
 
@@ -126,7 +127,8 @@ a {
 }
 
 .content-wrap {
-  display           : flex;
+  display           : inline-flex;
+  flex-direction    : row;
   width             : $content-wrap-width;
   margin-top        : $vertical-margin-spacing;
 }
