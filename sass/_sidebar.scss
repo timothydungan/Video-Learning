@@ -48,16 +48,24 @@
             transition: transform .2s ease-out;
             float: right;
             clear: both;
+            margin-right: -10px;
+            -webkit-transform          : translateY(50%);
+                -ms-transform          : translateY(50%);
+                    transform          : translateY(50%);
           }
         }
       }
 
       .toggle:checked + .ln-label::after {
-        transform: rotate(90deg) translateX(-3px);
+        -webkit-transform          : rotate(90deg);
+            -ms-transform          : rotate(90deg);
+                transform          : rotate(90deg);
       }
 
       ol {
-        display           : none;
+        // Because display:none messes up the lesson counter
+        font-size: 0;
+        visibility: hidden;
 
         li {
           margin-left       : $lesson-name-li-margin-left;
@@ -86,7 +94,10 @@
         }
       }
 
-      .toggle:checked + * + ol{display: block;}
+      .toggle:checked + * + ol {
+        font-size: 100%;
+        visibility: visible;
+      }
     }
   }
 }

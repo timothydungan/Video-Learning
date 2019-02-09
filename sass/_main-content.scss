@@ -62,12 +62,19 @@
       }
 
       .video-player {
+        overflow                   : hidden;
+        padding-top                : 56.25%;
+        position                   : relative;
         margin-left                : -25px;
+        width                      : 812px;
         -webkit-transform          : translate($video-transform-translate);
             -ms-transform          : translate($video-transform-translate);
                 transform          : translate($video-transform-translate);
 
         .video-frame {
+          position: absolute;
+          top: 0;
+          left: 0;
           width                    : $video-width;
           height                   : $video-height;
         }

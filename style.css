@@ -881,22 +881,29 @@ a:focus, a:hover, a:active {
 }
 
 .col-main .video-wrapper .video-controls .video-player {
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
   margin-left: -25px;
-  -webkit-transform: translate(0, 19px);
-  -ms-transform: translate(0, 19px);
-  transform: translate(0, 19px);
+  width: 812px;
+  -webkit-transform: translate(0, -21px);
+  -ms-transform: translate(0, -21px);
+  transform: translate(0, -21px);
 }
 
 .col-main .video-wrapper .video-controls .video-player .video-frame {
-  width: 812px;
-  height: 463px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .col-main .video-wrapper .video-title {
   color: #FFFFFF;
   font-size: 10px;
   font-style: italic;
-  margin-top: -31px;
+  margin-top: -54px;
   text-align: center;
 }
 
@@ -1217,7 +1224,7 @@ a:focus, a:hover, a:active {
   background-color: #307379;
   color: #FFFFFF;
   width: 100%;
-  padding: 10px;
+  padding: 10px 20px 10px 10px;
   text-transform: uppercase;
   margin: 5px 0;
 }
@@ -1232,14 +1239,21 @@ a:focus, a:hover, a:active {
   transition: transform .2s ease-out;
   float: right;
   clear: both;
+  margin-right: -10px;
+  -webkit-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  transform: translateY(50%);
 }
 
 .col-aside ul li .toggle:checked + .ln-label::after {
-  transform: rotate(90deg) translateX(-3px);
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .col-aside ul li ol {
-  display: none;
+  font-size: 0;
+  visibility: hidden;
 }
 
 .col-aside ul li ol li {
@@ -1267,7 +1281,8 @@ a:focus, a:hover, a:active {
 }
 
 .col-aside ul li .toggle:checked + * + ol {
-  display: block;
+  font-size: 100%;
+  visibility: visible;
 }
 
 /* Footer ------------------------ */
