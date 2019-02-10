@@ -128,7 +128,7 @@ header.top-wrap .main-header ul#menu li.button-down:before {
 }
 
 header.top-wrap .main-header ul#menu li.button-down div {
-  line-height: 60px;
+  line-height: 430%;
   -webkit-transform: rotateX(180deg);
   -ms-transform: rotateX(180deg);
   transform: rotateX(180deg);
@@ -179,7 +179,7 @@ header.top-wrap .main-header ul#menu li.button-up:before {
 }
 
 header.top-wrap .main-header ul#menu li.button-up div {
-  line-height: 30px;
+  line-height: 215%;
   -webkit-transform: rotateX(180deg);
   -ms-transform: rotateX(180deg);
   transform: rotateX(180deg);
@@ -376,7 +376,7 @@ header.top-wrap .main-header .close-btn {
 body {
   background-color: #60C48E;
   font-family: "Open Sans", sans-serif;
-  font-size: 14px;
+  font-size: 90%;
 }
 
 a {
@@ -521,9 +521,9 @@ a:focus, a:hover, a:active {
 
 .page .page-title-wrap .page-title h1 {
   font-family: "M PLUS Rounded 1c", sans-serif;
-  font-size: 40px;
+  font-size: 300%;
   color: #262B2F;
-  margin-top: 3%;
+  margin-top: 1.8%;
 }
 
 .content-wrap {
@@ -574,14 +574,14 @@ a:focus, a:hover, a:active {
 .cta-pitch {
   color: #FFFFFF;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 140%;
   margin-left: 5%;
   margin-top: -2%;
   text-align: center;
 }
 
 .cta-pitch .cta-pitch-title {
-  font-size: 30px;
+  font-size: 150%;
   text-transform: uppercase;
 }
 
@@ -594,9 +594,9 @@ a:focus, a:hover, a:active {
 }
 
 .entry-cta-wrap p {
-  font-size: 20px;
+  font-size: 140%;
   color: #FFFFFF;
-  line-height: 1em;
+  line-height: 100%;
 }
 
 .entry-cta-wrap .class-files-cta {
@@ -651,10 +651,10 @@ a:focus, a:hover, a:active {
 }
 
 .signup-button-left p {
-  font-size: 20px;
+  font-size: 140%;
   font-weight: bold;
   margin-top: 33%;
-  line-height: 1em;
+  line-height: 100%;
 }
 
 .signup-button-left a {
@@ -686,10 +686,10 @@ a:focus, a:hover, a:active {
 }
 
 .signup-button-right p {
-  font-size: 20px;
+  font-size: 140%;
   font-weight: bold;
   margin-top: 33%;
-  line-height: 1em;
+  line-height: 100%;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
@@ -724,14 +724,14 @@ a:focus, a:hover, a:active {
 }
 
 .subscribe-cta-wrapper .cta-pitch {
-  font-size: 16px;
+  font-size: 115%;
   padding: 20px;
   text-align: left;
 }
 
 .subscribe-cta-wrapper input {
-  font-size: 24px;
-  padding: 8px 16px;
+  font-size: 150%;
+  padding: 1.44% 2.88%;
 }
 
 .subscribe-button-right {
@@ -756,7 +756,7 @@ a:focus, a:hover, a:active {
   display: block;
   background-color: transparent;
   border: none;
-  font-size: 20px;
+  font-size: 140%;
   font-weight: bold;
   color: #DEFEB3;
   width: 100%;
@@ -793,10 +793,10 @@ a:focus, a:hover, a:active {
 }
 
 .affiliate-cta-wrapper p {
-  font-size: 20px;
+  font-size: 140%;
   font-weight: bold;
   margin: 185px -145px;
-  line-height: 1em;
+  line-height: 100%;
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
@@ -848,7 +848,7 @@ a:focus, a:hover, a:active {
 }
 
 .col-main .video-wrapper .video-controls .next-lesson, .col-main .video-wrapper .video-controls .previous-lesson {
-  font-size: 162px;
+  font-size: 1160%;
   margin-top: 30%;
   padding: 5px;
   -webkit-transform: scaleX(0.5);
@@ -884,11 +884,11 @@ a:focus, a:hover, a:active {
   overflow: hidden;
   padding-top: 56.25%;
   position: relative;
-  margin-left: -25px;
-  width: 812px;
-  -webkit-transform: translate(0, -21px);
-  -ms-transform: translate(0, -21px);
-  transform: translate(0, -21px);
+  margin-left: -2.6%;
+  width: 85.6%;
+  -webkit-transform: translate(0, -3.8%);
+  -ms-transform: translate(0, -3.8%);
+  transform: translate(0, -3.8%);
 }
 
 .col-main .video-wrapper .video-controls .video-player .video-frame {
@@ -901,7 +901,7 @@ a:focus, a:hover, a:active {
 
 .col-main .video-wrapper .video-title {
   color: #FFFFFF;
-  font-size: 10px;
+  font-size: 70%;
   font-style: italic;
   margin-top: -54px;
   text-align: center;
@@ -924,8 +924,8 @@ a:focus, a:hover, a:active {
 
 .col-main .course-titling-wrapper .course-titling {
   color: #FFFFFF;
-  font-size: 20px;
-  line-height: 1.5em;
+  font-size: 138%;
+  line-height: 150%;
 }
 
 .col-main .course-titling-wrapper .course-titling strong {
@@ -1018,7 +1018,7 @@ a:focus, a:hover, a:active {
 
 .col-main .main-content-tabs #talk-print-wrapper h4 {
   color: #262B2F;
-  font-size: 20px;
+  font-size: 140%;
   font-weight: 600;
   margin-bottom: 1em;
 }
@@ -1274,7 +1274,7 @@ a:focus, a:hover, a:active {
 
 .col-aside ul li ol li.active:before {
   content: ">>";
-  font-size: 11px;
+  font-size: 81%;
   color: #FFFFFF;
   margin-left: -38px;
   margin-right: 25px;
@@ -1313,7 +1313,7 @@ footer .footer-wrap .osi-notice {
   margin-top: 20%;
   color: #FFFFFF;
   font-style: italic;
-  font-size: 0.8em;
+  font-size: 80%;
 }
 
 footer .footer-wrap .copyright-notice {
@@ -1383,7 +1383,7 @@ footer .footer-wrap .osi-notice {
 }
 
 .social-menu-wrapper ul .fab {
-  font-size: 30px;
+  font-size: 210%;
   padding: 10px 25%;
 }
 
