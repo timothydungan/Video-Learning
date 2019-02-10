@@ -13,6 +13,7 @@ header {
 
     #responsive-menu-trigger, #close-menu {
       display: none;
+      float: right;
     }
 
     .main-header {
@@ -41,7 +42,7 @@ header {
          width                           : 12.5%;
 
          &.button-down {
-            margin                       : 0 16px;
+            margin                       : $menu-li-button-down-margin;
             height                       : 60px;
             -webkit-transform            : rotateX(180deg);
                 -ms-transform            : rotateX(180deg);
@@ -70,7 +71,7 @@ header {
 
               a {
                 outline                  : none;
-                padding                  : 22px 15%;
+                padding                  : $menu-li-a-padding;
 
                 &:hover, &:active, &:focus {
                  text-shadow             : $button-glow;
