@@ -13,50 +13,56 @@ body {
 
 a {
 	color             : $text-link-color;
-	text-decoration   : none;
+	text-decoration   : $a-text-decoration;
 
-  &:focus, &:hover, &:active {
-  	outline         : thin dotted;
+  &:focus,
+  &:hover,
+  &:active {
+  	outline         : $a-hover-outline;
   	text-decoration : $a-hover-text-decoration;
   }
 }
 
-#search {
-  align-items: center;
-  background: $overlay-color;
-  height: 0;
-  display: flex;
-  justify-content: center;
-  opacity: 0;
-  position: fixed;
-  transition: all .5s;
-  width: 100vw;
-  will-change: transform, opacity;
-  z-index: -1;
+#search { // Popup overlay
+  position          : fixed;
+  display           : flex;
+  justify-content   : center;
+  align-items       : center;
+  background        : $overlay-color;
+  height            : 0;
+  width             : 0;
+  opacity           : 0;
+  z-index           : -1;
+  transition-duration           : $base-animation-length;
+  transition-timing-function    : $base-animation-timing-function;
+  will-change       : transform, opacity;
 
-  &:target
-  {
-    height: 100vh !important;
-    opacity: 1;
-    width: 100vw !important;
-    z-index: 2;
-    .close-btn
-    {
-      display: block;
+  &:target {
+    height          : 100vh !important;
+    opacity         : 1;
+    width           : 100vw !important;
+    z-index         : 2;
+
+    .close-btn {
+      display       : block;
+      font-size     : 200%;
+      position      : absolute;
+      top           : 35%;
+      right         : 25%;
     }
   }
 
   #searchbox {
-    background: transparent;
-    border: solid #fff;
-    border-width: 0 0 1px 0;
-    color: #fff;
-    flex: 1 0 auto;
-    font-size: 2rem;
-    height: 2rem;
-    max-width: 50%;
-    outline: 0;
-    padding: 2rem 1rem;
+    background      : transparent;
+    border          : solid #fff;
+    border-width    : 0 0 1px 0;
+    color           : #fff;
+    flex            : 1 0 auto;
+    font-size       : 2rem;
+    height          : 2rem;
+    max-width       : 50%;
+    outline         : 0;
+    padding         : 2rem 1rem;
   }
 }
 
@@ -68,59 +74,59 @@ a {
       -ms-transform : translateX($wrapper-transform-translateX);
           transform : translateX($wrapper-transform-translateX);
   @include screen300 {
-    width             : $wrapper-width-300;
+    width           : $wrapper-width-300;
   };
   @include screen350 {
-    width             : $wrapper-width-350;
+    width           : $wrapper-width-350;
   };
   @include screen400 {
-    width             : $wrapper-width-400;
+    width           : $wrapper-width-400;
   };
   @include screen500 {
-    width             : $wrapper-width-500;
+    width           : $wrapper-width-500;
   };
   @include screen600 {
-    width             : $wrapper-width-600;
+    width           : $wrapper-width-600;
   };
   @include screen700 {
-    width             : $wrapper-width-700;
+    width           : $wrapper-width-700;
   };
   @include screen800 {
-    width             : $wrapper-width-800;
+    width           : $wrapper-width-800;
   };
   @include screen900 {
-    width             : $wrapper-width-900;
+    width           : $wrapper-width-900;
   };
   @include screen1000 {
-    width             : $wrapper-width-1000;
+    width           : $wrapper-width-1000;
   };
   @include screen1200 {
-    width             : $wrapper-width-1200;
+    width           : $wrapper-width-1200;
   };
   @include screen1400 {
-    width             : $wrapper-width-1400;
+    width           : $wrapper-width-1400;
   };
 }
 
 .page {
-  position: relative;
-  z-index: 1;
+  position          : relative;
+  z-index           : 1;
 
   .page-title-wrap {
-    display           : inline-flex;
-    flex-direction    : row;
-    width             : $page-title-wrap-width;
-    margin-top        : $vertical-margin-spacing;
+    display         : inline-flex;
+    flex-direction  : row;
+    width           : $page-title-wrap-width;
+    margin-top      : $vertical-margin-spacing;
 
     .page-title {
-      width           : $page-title-width;
-      margin-right    : $page-title-margin-right;
+      width         : $page-title-width;
+      margin-right  : $page-title-margin-right;
 
       h1 {
-        font-family   : $page-title-font;
-        font-size     : $page-title-size;
-        color         : $titling-color;
-        margin-top    : $page-title-margin-top;
+        font-family : $page-title-font;
+        font-size   : $page-title-size;
+        color       : $titling-color;
+        margin-top  : $page-title-margin-top;
       }
     }
   }

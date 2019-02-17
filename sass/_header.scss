@@ -9,11 +9,11 @@ header {
     position                             : relative;
     background-color                     : $header-bg-color;
     height                               : $header-height;
-    z-index                              : 999;
+    z-index                              : 9999;
 
     #responsive-menu-trigger, #close-menu {
-      display: none;
-      float: right;
+      display                            : none;
+      float                              : right;
     }
 
     .main-header {
@@ -26,7 +26,7 @@ header {
         width                            : $logo-width;
 
         img#byolLogo {
-          width: 73%; // Test
+          width                          : $logo-img-width;
         }
       }
 
@@ -36,14 +36,14 @@ header {
         flex-direction                   : row;
         text-align                       : center;
         text-transform                   : $menu-text-transform;
-        width                            : 66%;
+        width                            : $menu-ul-width;
 
        li {
-         width                           : 12.5%;
+         width                           : $menu-li-width;
 
          &.button-down {
             margin                       : $menu-li-button-down-margin;
-            height                       : 60px;
+            height                       : $header-height;
             -webkit-transform            : rotateX(180deg);
                 -ms-transform            : rotateX(180deg);
                     transform            : rotateX(180deg);
@@ -70,13 +70,15 @@ header {
                       transform          : rotateX(180deg);
 
               a {
-                outline                  : none;
+                outline                  : $menu-a-outline;
                 padding                  : $menu-li-a-padding;
 
-                &:hover, &:active, &:focus {
+                &:hover,
+                &:active,
+                &:focus {
                  text-shadow             : $button-glow;
-                 text-decoration         : none;
-                 font-style              : oblique;
+                 text-decoration         : $menu-a-hover-text-decoration;
+                 font-style              : $menu-a-hover-font-style;
                  -webkit-transition      : $button-transition;
                          transition      : $button-transition;
                  -webkit-transform       : skewX(-10deg);
@@ -121,15 +123,14 @@ header {
                      transform           : rotateX(180deg);
 
               a {
-                outline                  : none;
-                padding                  : 22px 5%;
+                outline                  : $menu-a-outline;
 
                 &:hover,
                 &:active,
                 &:focus {
                  text-shadow             : $button-glow;
-                 text-decoration         : none;
-                 font-style              : oblique;
+                 text-decoration         : $menu-a-hover-text-decoration;
+                 font-style              : $menu-a-hover-font-style;
                  -webkit-transition      : $button-transition;
                          transition      : $button-transition;
                  -webkit-transform       : skewX(-10deg);
@@ -153,38 +154,37 @@ header {
          ul.submenu {
            display                       : none;
            position                      : absolute;
-           min-width                     : 100%;
-           height                        : 100%;
+           min-width                     : $submenu-min-width;
+           height                        : $submenu-height;
            list-style                    : none;
-           margin-top                    : -60px;
-           font-size                     : 1em;
-           font-variant                  : all-petite-caps;
-           transition                    : all .5 ease;
+           margin-top                    : $submenu-margin-top;
+           font-variant                  : $submenu-font-variant;
+           transition-duration           : $base-animation-length;
+           transition-timing-function    : $base-animation-timing-function;
            -webkit-transform             : rotateX(180deg);
                -ms-transform             : rotateX(180deg);
                    transform             : rotateX(180deg);
 
            li {
-             width                       : 100%;
-             height                      : 40px;
-             margin                      : 0;
-             padding                     : 0;
-             word-spacing                : 100px;
+             width                       : $submenu-li-width;
+             height                      : $submenu-li-height;
+             margin                      : $submenu-li-margin;
+             word-spacing                : $submenu-li-word-spacing;
 
              &.button-down {
-               margin-top                : 22px;
+               margin-top                : $submenu-li-button-down-margin-top;
 
                 &:before {
                   background-color       : $header-bg-color;
-                  border-right           : 1px solid #DEFEB3;
+                  border-right           : $menu-li-before-border;
                 }
 
                 div {
-                  line-height            : 1em;
-                  padding-bottom         : 10px;
+                  line-height            : $submenu-li-div-line-height;
+                  padding-bottom         : $submenu-li-div-padding-bottom;
 
                   a {
-                    padding              : 0;
+                    padding              : $submenu-li-div-a-padding;
                   }
                 }
               }
@@ -193,14 +193,14 @@ header {
 
                 &:before {
                   background-color       : $header-bg-color;
-                  border-right           : 1px solid #DEFEB3;
+                  border-right           : $menu-li-before-border;
                 }
 
                 div {
-                 line-height             : 1em;
+                 line-height             : $submenu-li-div-line-height;
 
                  a {
-                   padding               : 0;
+                   padding               : $submenu-li-div-a-padding;
                  }
                 }
               }
@@ -218,32 +218,23 @@ header {
 
             &.rollDown {
               -webkit-backface-visibility:visible !important;
-              -webkit-animation-duration : $lis-animation-length;
+              -webkit-animation-duration : $base-animation-length;
               -webkit-animation-name     : rollDown;
               -moz-backface-visibility   : visible !important;
-              -moz-animation-duration    : $lis-animation-length;
+              -moz-animation-duration    : $base-animation-length;
               -moz-animation-name        : rollDown;
               -ms-backface-visibility    : visible !important;
-              -ms-animation-duration     : $lis-animation-length;
+              -ms-animation-duration     : $base-animation-length;
               -ms-animation-name         : rollDown;
               -o-backface-visibility     : visible !important;
-              -o-animation-duration      : $lis-animation-length;
+              -o-animation-duration      : $base-animation-length;
               -o-animation-name          : rollDown;
               backface-visibility        : visible !important;
-              animation-duration         : $lis-animation-length;
+              animation-duration         : $base-animation-length;
               animation-name             : rollDown;
             }
           }
         }
-      }
-
-      .close-btn {
-        display: none;
-        color: #fff;
-        font-size: 2rem;
-        position: absolute;
-        top: .5rem;
-        right: 2rem;
       }
     }
   }
@@ -291,23 +282,23 @@ header {
   0% {
     visibility                           : hidden;
     opacity                              : 0;
-    -webkit-transform                            : scaleY(0) rotateX(180deg);
+    -webkit-transform                    : scaleY(0) rotateX(180deg);
   }
   100% {
     visibility                           : visible;
     opacity                              : 1;
-    -webkit-transform                            : scaleY(1) rotateX(180deg);
+    -webkit-transform                    : scaleY(1) rotateX(180deg);
   }
 }
 @-moz-keyframes rollDown {
   0% {
     visibility                           : hidden;
     opacity                              : 0;
-    -moz-transform                            : scaleY(0) rotateX(180deg);
+    -moz-transform                       : scaleY(0) rotateX(180deg);
   }
   100% {
     visibility                           : visible;
     opacity                              : 1;
-    -moz-transform                            : scaleY(1) rotateX(180deg);
+    -moz-transform                       : scaleY(1) rotateX(180deg);
   }
 }
