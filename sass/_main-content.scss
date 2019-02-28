@@ -18,11 +18,7 @@
     background-image               : svgParams(video, $video-svg-color);
 
     .video-controls {
-      display                      : -webkit-box;
-      display                      : flex;
-      justify-content              : center;
-      flex-wrap                    : wrap;
-      -webkit-box-pack             : start;
+      @include flexed;
       -webkit-transform            : translateX(-45px);
           -ms-transform            : translateX(-45px);
               transform            : translateX(-45px);
@@ -38,11 +34,14 @@
         a {
           outline                  : none;
 
-          &:focus, &:hover, &:active {
-            cursor                 : pointer;
-            text-shadow            : $button-glow;
-            -webkit-transition     : $button-transition;
-                    transition     : $button-transition;
+          &:focus,
+          &:hover,
+          &:active {
+            @include button-hover;
+          }
+
+          &:focus-within {
+            @include button-hover;
           }
         }
 
@@ -56,8 +55,12 @@
       }
 
       .next-lesson {
-        right                      : -50px;
         position                   : absolute;
+        right                      : -50px;
+        margin-top                 : 15%;
+        @include browser-hacks {
+          margin-top               : 30%;
+        }
       }
 
       .video-player {
@@ -153,7 +156,14 @@
       background-size              : 100% 100%;
       background-image             : svgParams(tab, $talk-print-svg-color, $svg-secondary-color);
 
-      &:hover {
+      &:focus,
+      &:hover,
+      &:active {
+        color                      : $tabs-hover-color;
+        cursor                     : pointer;
+      }
+
+      &:focus-within {
         color                      : $tabs-hover-color;
         cursor                     : pointer;
       }
@@ -350,7 +360,7 @@
   }
   100% {
     opacity                  : 1;
-    -webkit-filter           : blur(1em);
+    -webkit-filter           : blur(0em);
     -webkit-transform-origin : top;
     -webkit-transform        : perspective(800px) scale(1,1) rotateX(0deg);
   }

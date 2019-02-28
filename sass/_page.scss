@@ -18,16 +18,17 @@ a {
   &:focus,
   &:hover,
   &:active {
-  	outline         : $a-hover-outline;
-  	text-decoration : $a-hover-text-decoration;
+  	@include body-a-hover;
+  }
+
+  &:focus-within {
+    @include body-a-hover;
   }
 }
 
 #search { // Popup overlay
   position          : fixed;
-  display           : flex;
-  justify-content   : center;
-  align-items       : center;
+  @include flexed;
   background        : $overlay-color;
   height            : 0;
   width             : 0;
@@ -44,11 +45,11 @@ a {
     z-index         : 2;
 
     .close-btn {
-      display       : block;
-      font-size     : 200%;
       position      : absolute;
-      top           : 35%;
-      right         : 25%;
+      display       : block;
+      font-size     : $search-close-btn-font-size;
+      top           : $search-close-btn-top;
+      right         : $search-close-btn-right;
     }
   }
 
@@ -109,8 +110,7 @@ a {
 }
 
 .page {
-  position          : relative;
-  z-index           : 1;
+  padding-top       : 50px;
 
   .page-title-wrap {
     display         : inline-flex;

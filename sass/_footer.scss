@@ -49,9 +49,7 @@ footer {
 
   ul {
     list-style               : none;
-    display                  : flex;
-    justify-content          : space-around;
-    flex-wrap                : wrap;
+    @include flexed;
 
     li {
       height                 : $social-menu-button-height;
@@ -64,17 +62,14 @@ footer {
         background-size      : 100% 100%;
         background-image     : svgParams(main-button-90, $cta-svg-color, $svg-secondary-color, $svg-border-color);
 
-        &:focus, &:hover, &:active {
-          background-image   : svgParams(main-button-90, $svg-secondary-color, $cta-svg-color, $svg-border-color);
-          text-shadow        : $button-glow;
-          font-style         : oblique;
-          -webkit-transition : $button-transition;
-                  transition : $button-transition;
+        &:focus,
+        &:hover,
+        &:active {
+          @include social-menu-button-up-hover;
+        }
 
-          a {
-            outline          : none;
-            text-decoration  : none;
-          }
+        &:focus-within {
+          @include social-menu-button-up-hover;
         }
       }
 
@@ -84,17 +79,14 @@ footer {
         background-size      : 100% 100%;
         background-image     : svgParams(main-button-270, $cta-svg-color, $svg-secondary-color, $svg-border-color);
 
-        &:focus, &:hover, &:active {
-          background-image   : svgParams(main-button-270, $svg-secondary-color, $cta-svg-color, $svg-border-color);
-          text-shadow        : $button-glow;
-          font-style         : oblique;
-          -webkit-transition : $button-transition;
-                  transition : $button-transition;
+        &:focus,
+        &:hover,
+        &:active {
+          @include social-menu-button-down-hover;
+        }
 
-          a {
-            outline          : none;
-            text-decoration  : none;
-          }
+        &:focus-within {
+          @include social-menu-button-down-hover;
         }
       }
     }
@@ -103,10 +95,14 @@ footer {
       font-size              : $social-menu-icon-size;
       padding                : $social-menu-icon-padding;
 
-      &:focus, &:hover, &:active {
-        -webkit-transform    : skewX(-10deg);
-            -ms-transform    : skewX(-10deg);
-                transform    : skewX(-10deg);
+      &:focus,
+      &:hover,
+      &:active {
+        @include social-menu-hover;
+      }
+
+      &:focus-within {
+        @include social-menu-hover;
       }
     }
   }

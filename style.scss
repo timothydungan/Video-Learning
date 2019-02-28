@@ -16,10 +16,11 @@ Author URI : https://www.timothydungan.com
 
 @import "sass/plugins/font-awesome/css/all.css";
 @import "sass/variables";
+@import "sass/functions";
 @import "sass/mixins";
 @import "sass/global";
-@import "sass/header";
 @import "sass/page";
+@import "sass/header";
 @import "sass/cta";
 @import "sass/main-content";
 @import "sass/sidebar";

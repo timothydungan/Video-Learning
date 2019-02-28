@@ -131,18 +131,14 @@
     padding             : $signup-button-a-padding;
   }
 
-  &:focus, &:hover, &:active {
-    cursor              : pointer;
-    background-image    : svgParams(main-button-0, $svg-secondary-color, $cta-svg-color, $svg-border-color);
-    text-shadow         : $button-glow;
-    font-style          : oblique;
-    -webkit-transition  : $button-transition;
-            transition  : $button-transition;
+  &:focus,
+  &:hover,
+  &:active {
+    @include signup-button-hover;
+  }
 
-    a {
-      outline           : none;
-      text-decoration   : none;
-    }
+  &:focus-within {
+    @include signup-button-hover;
   }
 }
 
@@ -169,18 +165,14 @@
     padding             : $signup-button-a-padding;
   }
 
-  &:focus, &:hover, &:active {
-    cursor              : pointer;
-    background-image    : svgParams(main-button-0, $svg-secondary-color, $cta-svg-color, $svg-border-color);
-    text-shadow         : $button-glow;
-    font-style          : oblique;
-    -webkit-transition  : $button-transition;
-            transition  : $button-transition;
+  &:focus,
+  &:hover,
+  &:active {
+    @include signup-button-hover;
+  }
 
-    a {
-      outline           : none;
-      text-decoration   : none;
-    }
+  &:focus-within {
+    @include signup-button-hover;
   }
 }
 
@@ -233,20 +225,25 @@
     height              : $subscribe-button-height;
     padding             : $subscribe-button-padding;
 
-    &:focus, &:hover, &:active {
-      cursor            : pointer;
-      text-shadow       : $button-glow;
-      font-style        : oblique;
-      -webkit-transition: $button-transition;
-              transition: $button-transition;
+    &:focus,
+    &:hover,
+    &:active {
+      @include button-hover;
+    }
+
+    &:focus-within {
+      @include button-hover;
     }
   }
 
-  &:focus, &:hover, &:active {
-    cursor              : pointer;
-    background-image    : svgParams(main-button-0, $svg-secondary-color, $cta-svg-color, $svg-border-color);
-    -webkit-transition  : $button-transition;
-            transition  : $button-transition;
+  &:focus,
+  &:hover,
+  &:active {
+    @include subscribe-button-hover;
+  }
+
+  &:focus-within {
+    @include subscribe-button-hover;
   }
 }
 
@@ -276,17 +273,13 @@
     padding             : $affiliate-cta-a-margin;
   }
 
-  &:focus, &:hover, &:active {
-    cursor              : pointer;
-    background-image    : svgParams(main-button-0, $svg-secondary-color, $cta-svg-color, $svg-border-color);
-    text-shadow         : $button-glow;
-    font-style          : oblique;
-    -webkit-transition  : $button-transition;
-            transition  : $button-transition;
+  &:focus,
+  &:hover,
+  &:active {
+    @include signup-button-hover;
+  }
 
-    a {
-      outline           : none;
-      text-decoration   : none;
-    }
+  &:focus-within {
+    @include signup-button-hover;
   }
 }
