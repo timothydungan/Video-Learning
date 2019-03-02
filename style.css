@@ -124,16 +124,16 @@ a:focus-within {
 }
 
 #search #searchbox {
-  background: transparent;
-  border: solid #fff;
-  border-width: 0 0 1px 0;
-  color: #fff;
   flex: 1 0 auto;
-  font-size: 2rem;
   height: 2rem;
   max-width: 50%;
   outline: 0;
   padding: 2rem 1rem;
+  color: #FFFFFF;
+  font-size: 2rem;
+  border: solid #FFFFFF;
+  border-width: 0 0 1px 0;
+  background: transparent;
 }
 
 .wrapper {
@@ -239,6 +239,52 @@ a:focus-within {
   flex-direction: row;
   width: 100%;
   margin-top: 50px;
+}
+
+#demo {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.975);
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  will-change: transform, opacity;
+}
+
+#demo:target {
+  height: 100vh !important;
+  opacity: 1;
+  width: 100vw !important;
+  z-index: 999999;
+}
+
+#demo:target .close-btn {
+  position: absolute;
+  display: block;
+  font-size: 200%;
+  top: 35%;
+  right: 25%;
+}
+
+#demo h6 {
+  font-size: x-large;
+  flex: 1 0 auto;
+  height: 2rem;
+  max-width: 50%;
+  padding: 2rem 1rem;
+  color: #FFFFFF;
 }
 
 /* Header ------------------------ */
@@ -1029,45 +1075,45 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
 }
 
 .col-main .video-wrapper .video-controls .previous-lesson {
-  padding-left: 30px;
+  padding-left: 3.15%;
 }
 
 .col-main .video-wrapper .video-controls .next-lesson {
   position: absolute;
-  right: -50px;
+  right: -5.1%;
   margin-top: 15%;
 }
 
 @supports (-ms-accelerator: true) {
   .col-main .video-wrapper .video-controls .next-lesson {
-    margin-top: 30%;
+    margin-top: calc(15% * 2);
   }
 }
 
 @supports (-ms-ime-align: auto) {
   .col-main .video-wrapper .video-controls .next-lesson {
-    margin-top: 30%;
+    margin-top: calc(15% * 2);
   }
 }
 
 @supports (-ms-ime-align: auto) and (-webkit-text-stroke: initial) {
   .col-main .video-wrapper .video-controls .next-lesson {
-    margin-top: 30%;
+    margin-top: calc(15% * 2);
   }
 }
 
 @media screen and (-ms-high-contrast: none) {
   .col-main .video-wrapper .video-controls .next-lesson {
-    margin-top: 30%;
+    margin-top: calc(15% * 2);
   }
 }
 
 .col-main .video-wrapper .video-controls .video-player {
-  overflow: hidden;
-  padding-top: 56.25%;
   position: relative;
-  margin-left: -2.6%;
+  overflow: hidden;
   width: 85.6%;
+  padding-top: 56.25%;
+  margin-left: -2.9%;
   -webkit-transform: translate(0, -3.8%);
   -ms-transform: translate(0, -3.8%);
   transform: translate(0, -3.8%);
@@ -1411,23 +1457,51 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   cursor: pointer;
   background-color: #307379;
   color: #FFFFFF;
-  width: 100%;
-  padding: 10px 20px 10px 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 20px;
   text-transform: uppercase;
-  margin: 5px 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  .col-aside ul li label {
+    margin-left: calc(0px  - 10px);
+    margin-right: calc(0px  - 10px);
+  }
+}
+
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .col-aside ul li label {
+    margin-left: calc(0px  - 20px);
+    margin-right: calc(0px  - 20px);
+    padding-top: calc(10px -  5px);
+    padding-bottom: calc(10px -  5px);
+    padding-right: calc(20px      -  5px);
+  }
 }
 
 .col-aside ul li label.ln-label::after {
-  content: " ";
   display: block;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-left: 5px solid currentColor;
+  content: " ";
   vertical-align: middle;
-  transition: transform .2s ease-out;
   float: right;
   clear: both;
-  margin-right: -10px;
+  border-style: solid;
+  height: 0;
+  width: 0;
+  border-color: transparent transparent transparent currentColor;
+  border-width: 5px 0 5px 5px;
+  margin-right: -3%;
+  -webkit-transition: -webkit-transform .2s ease-out;
+  -o-transition: transform .2s ease-out;
+  transition: -webkit-transform .2s ease-out;
+  transition: transform .2s ease-out;
+  transition: transform .2s ease-out, -webkit-transform .2s ease-out;
   -webkit-transform: translateY(50%);
   -ms-transform: translateY(50%);
   transform: translateY(50%);
@@ -1461,11 +1535,12 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
 }
 
 .col-aside ul li ol li.active:before {
+  display: inline-block;
   content: ">>";
   font-size: 81%;
   color: #FFFFFF;
+  width: 14.7%;
   margin-left: -38px;
-  margin-right: 25px;
 }
 
 .col-aside ul li .toggle:checked + * + ol {
@@ -1475,7 +1550,7 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
 
 /* Footer ------------------------ */
 footer {
-  height: 310px;
+  height: 320px;
   background-color: #262B2F;
   margin-top: 50px;
 }

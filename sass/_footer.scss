@@ -34,11 +34,11 @@ footer {
     }
 
     .copyright-notice {
-      left                   : 0;
+      left                   : $legal-notice-side-padding;
     }
 
     .osi-notice {
-      right                  : 0;
+      right                  : $legal-notice-side-padding;
     }
   }
 }

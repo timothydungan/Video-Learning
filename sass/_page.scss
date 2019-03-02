@@ -54,16 +54,16 @@ a {
   }
 
   #searchbox {
-    background      : transparent;
-    border          : solid #fff;
-    border-width    : 0 0 1px 0;
-    color           : #fff;
-    flex            : 1 0 auto;
-    font-size       : 2rem;
-    height          : 2rem;
-    max-width       : 50%;
-    outline         : 0;
-    padding         : 2rem 1rem;
+    flex            : $searchbox-flex;
+    height          : $searchbox-height;
+    max-width       : $searchbox-max-width;
+    outline         : $searchbox-outline;
+    padding         : $searchbox-padding;
+    color           : $searchbox-text-color;
+    font-size       : $searchbox-text-size;
+    border          : $searchbox-border;
+    border-width    : $searchbox-border-width;
+    background      : $searchbox-background;
   }
 }
 
@@ -110,7 +110,7 @@ a {
 }
 
 .page {
-  padding-top       : 50px;
+  padding-top       : 50px; // Clear the fixed header menu
 
   .page-title-wrap {
     display         : inline-flex;
@@ -137,4 +137,42 @@ a {
   flex-direction    : row;
   width             : $content-wrap-width;
   margin-top        : $vertical-margin-spacing;
+}
+
+#demo { // Popup overlay
+  position          : fixed;
+  @include flexed;
+  top               : 0;
+  height            : 0;
+  width             : 0;
+  opacity           : 0;
+  z-index           : -1;
+  background-color  : $overlay-color;
+  transition-duration           : $base-animation-length;
+  transition-timing-function    : $base-animation-timing-function;
+  will-change       : transform, opacity;
+
+  &:target {
+    height          : 100vh !important;
+    opacity         : 1;
+    width           : 100vw !important;
+    z-index         : 999999;
+
+    .close-btn {
+      position      : absolute;
+      display       : block;
+      font-size     : $search-close-btn-font-size;
+      top           : $search-close-btn-top;
+      right         : $search-close-btn-right;
+    }
+  }
+
+  h6 {
+    font-size: x-large;
+    flex            : $searchbox-flex;
+    height          : $searchbox-height;
+    max-width       : $searchbox-max-width;
+    padding         : $searchbox-padding;
+    color           : $searchbox-text-color;
+  }
 }

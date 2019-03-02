@@ -32,23 +32,42 @@
         cursor: pointer;
         background-color  : $lesson-name-span-bg-color;
         color             : $lesson-name-span-text-color;
-        width             : $lesson-name-span-width;
-        padding           : $lesson-name-span-padding;
+        padding-top       : $lesson-name-span-padding-top-bottom;
+        padding-bottom    : $lesson-name-span-padding-top-bottom;
+        padding-left      : $lesson-name-span-padding-left;
+        padding-right     : $lesson-name-span-padding-right;
         text-transform    : $lesson-name-span-text-transform;
-        margin            : $lesson-name-span-margin;
+        margin-top        : $lesson-name-span-margin-top-bottom;
+        margin-bottom     : $lesson-name-span-margin-top-bottom;
+        margin-left       : $lesson-name-span-margin-left-right;
+        margin-right      : $lesson-name-span-margin-left-right;
+        @include screen1200 {
+          margin-left     : calc(#{$lesson-name-span-margin-left-right}  - 10px);
+          margin-right    : calc(#{$lesson-name-span-margin-left-right}  - 10px);
+        };
+        @include screen1000 {
+          margin-left     : calc(#{$lesson-name-span-margin-left-right}  - 20px);
+          margin-right    : calc(#{$lesson-name-span-margin-left-right}  - 20px);
+          padding-top     : calc(#{$lesson-name-span-padding-top-bottom} -  5px);
+          padding-bottom  : calc(#{$lesson-name-span-padding-top-bottom} -  5px);
+          padding-right   : calc(#{$lesson-name-span-padding-right}      -  5px);
+        };
 
         &.ln-label {
           &::after {
-            content: " ";
             display: block;
-            border-top: 5px solid transparent;
-            border-bottom: 5px solid transparent;
-            border-left: 5px solid currentColor;
+            content: " ";
             vertical-align: middle;
-            transition: transform .2s ease-out;
             float: right;
             clear: both;
-            margin-right: -10px;
+            @include triangle("right", 5px, 10px, currentColor);
+            margin-right: $lesson-group-triangle;
+            -webkit-transition: -webkit-transform .2s ease-out;
+                 -o-transition:         transform .2s ease-out;
+                    transition: -webkit-transform .2s ease-out;
+                    transition:         transform .2s ease-out;
+                    transition:         transform .2s ease-out,
+                                -webkit-transform .2s ease-out;
             -webkit-transform          : translateY(50%);
                 -ms-transform          : translateY(50%);
                     transform          : translateY(50%);
@@ -84,11 +103,12 @@
 
           &.active {
             &:before {
+              display       : inline-block;
               content       : $lesson-link-active-marker;
               font-size     : $lesson-link-active-marker-size;
               color         : $lesson-link-number-color;
+              width         : $lesson-link-active-width;
               margin-left   : $lesson-link-active-margin-left;
-              margin-right  : $lesson-link-active-margin-right;
             }
           }
         }

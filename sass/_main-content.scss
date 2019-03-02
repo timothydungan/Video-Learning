@@ -51,27 +51,27 @@
       }
 
       .previous-lesson {
-        padding-left               : 30px;
+        padding-left               : $video-nav-previous-padding-left;
       }
 
       .next-lesson {
         position                   : absolute;
-        right                      : -50px;
-        margin-top                 : 15%;
+        right                      : $video-nav-next-right;
+        margin-top                 : $video-nav-next-margin-top;
         @include browser-hacks {
-          margin-top               : 30%;
+          margin-top               : calc(#{$video-nav-next-margin-top} * 2);
         }
       }
 
       .video-player {
-        overflow                   : hidden;
-        padding-top                : 56.25%;
         position                   : relative;
-        margin-left                : -2.6%;
-        width                      : 85.6%;
-        -webkit-transform          : translate($video-transform-translate);
-            -ms-transform          : translate($video-transform-translate);
-                transform          : translate($video-transform-translate);
+        overflow                   : hidden;
+        width                      : $video-player-width;
+        padding-top                : $video-player-padding-top;
+        margin-left                : $video-player-margin-left;
+        -webkit-transform          : translate($video-player-transform-translate);
+            -ms-transform          : translate($video-player-transform-translate);
+                transform          : translate($video-player-transform-translate);
 
         .video-frame {
           position: absolute;
