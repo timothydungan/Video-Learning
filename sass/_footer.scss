@@ -6,9 +6,20 @@
 /* Footer ------------------------ */
 
 footer {
+  width                      : $footer-width;
   height                     : $footer-height;
   background-color           : $footer-bg-color;
-  margin-top                 : $vertical-margin-spacing;
+  margin-top                 : -$footer-height;
+  clear                      : both;
+  @include screen1200 {
+    margin-top               : calc(#{-$footer-height} + 60px);
+  };
+  @include screen1000 {
+    height                   : calc(#{$footer-height}  +  5px);
+  };
+  @include screen900 {
+    height                   : calc(#{$footer-height}  +  5px);
+  };
 
   .footer-wrap {
     display                  : inline-flex;
@@ -18,27 +29,35 @@ footer {
 
     .footer-left-col {
       width                  : $footer-column-width;
+
+      .copyright-notice {
+        position             : absolute;
+        text-align           : left;
+        bottom               : 0;
+
+      }
     }
 
     .footer-right-col {
       width                  : $footer-column-width;
+
+      .osi-notice {
+        padding-top          : 20px;
+        text-align           : right;
+        @include screen1000 {
+          margin-bottom      : -4px;
+        };
+        @include screen900 {
+          margin-bottom      : -4px;
+        };
+      }
     }
 
     .copyright-notice,
     .osi-notice {
-      position               : absolute;
-      margin-top             : $footer-copyright-margin-top;
-      color                  : $footer-copyright-color;
-      font-style             : $footer-copyright-text-style;
-      font-size              : $footer-copyright-text-size;
-    }
-
-    .copyright-notice {
-      left                   : $legal-notice-side-padding;
-    }
-
-    .osi-notice {
-      right                  : $legal-notice-side-padding;
+      color                  : $footer-legal-color;
+      font-style             : $footer-legal-text-style;
+      font-size              : $footer-legal-text-size;
     }
   }
 }
@@ -46,6 +65,12 @@ footer {
 .social-menu-wrapper {
   width                      : $social-menu-wrapper-width;
   margin-top                 : $vertical-margin-spacing;
+  @include screen1000 {
+    width                    : calc(#{$social-menu-wrapper-width} + 10%);
+  };
+  @include screen900 {
+    width                    : calc(#{$social-menu-wrapper-width} + 10%);
+  };
 
   ul {
     list-style               : none;
@@ -55,12 +80,19 @@ footer {
       height                 : $social-menu-button-height;
       width                  : $social-menu-button-width;
       cursor                 : pointer;
+      @include screen900 {
+        height               : calc(#{$social-menu-button-height} - 3px);
+      };
 
       &.button-up {
         background-repeat    : no-repeat;
         background-position  : center;
         background-size      : 100% 100%;
         background-image     : svgParams(main-button-90, $cta-svg-color, $svg-secondary-color, $svg-border-color);
+        @media screen and (max-width: $wrapper-width-900) {
+          background-color    : $cta-bg-color;
+          background-image    : none;
+        }
 
         &:focus,
         &:hover,
@@ -78,6 +110,10 @@ footer {
         background-position  : center;
         background-size      : 100% 100%;
         background-image     : svgParams(main-button-270, $cta-svg-color, $svg-secondary-color, $svg-border-color);
+        @media screen and (max-width: $wrapper-width-900) {
+          background-color    : $cta-bg-color;
+          background-image    : none;
+        }
 
         &:focus,
         &:hover,

@@ -9,6 +9,9 @@ body {
   background-color  : $page-bg-color;
   font-family       : $main-text-font;
   font-size         : $main-text-size;
+  @include screen900 {
+    font-size       : calc(#{$main-text-size} - 10%);
+  };
 }
 
 a {
@@ -74,43 +77,48 @@ a {
   -webkit-transform : translateX($wrapper-transform-translateX);
       -ms-transform : translateX($wrapper-transform-translateX);
           transform : translateX($wrapper-transform-translateX);
-  @include screen300 {
-    width           : $wrapper-width-300;
-  };
-  @include screen350 {
-    width           : $wrapper-width-350;
-  };
-  @include screen400 {
-    width           : $wrapper-width-400;
-  };
-  @include screen500 {
-    width           : $wrapper-width-500;
-  };
-  @include screen600 {
-    width           : $wrapper-width-600;
-  };
-  @include screen700 {
-    width           : $wrapper-width-700;
-  };
-  @include screen800 {
-    width           : $wrapper-width-800;
-  };
-  @include screen900 {
-    width           : $wrapper-width-900;
-  };
-  @include screen1000 {
-    width           : $wrapper-width-1000;
+  @include screen1400 {
+    width           : $wrapper-width-1400;
   };
   @include screen1200 {
     width           : $wrapper-width-1200;
   };
-  @include screen1400 {
-    width           : $wrapper-width-1400;
+  @include screen1000 {
+    width           : $wrapper-width-1000;
+  };
+  @include screen900 {
+    width           : $wrapper-width-900;
+  };
+  @include screen800 {
+    width           : $wrapper-width-800;
+  };
+  @include screen700 {
+    width           : $wrapper-width-700;
+  };
+  @include screen600 {
+    width           : $wrapper-width-600;
+  };
+  @include screen500 {
+    width           : $wrapper-width-500;
+  };
+  @include screen400 {
+    width           : $wrapper-width-400;
+  };
+  @include screen350 {
+    width           : $wrapper-width-350;
+  };
+  @include screen300 {
+    width           : $wrapper-width-300;
   };
 }
 
 .page {
-  padding-top       : 50px; // Clear the fixed header menu
+  padding-top       : $vertical-margin-spacing; // Clear the fixed header menu
+  padding-bottom    : $footer-height;           // Clear the footer
+  margin-bottom     : $vertical-margin-spacing;
+  @include screen1200 {
+    padding-bottom  : calc(#{$footer-height}  - 60px);
+  };
 
   .page-title-wrap {
     display         : inline-flex;
@@ -125,8 +133,19 @@ a {
       h1 {
         font-family : $page-title-font;
         font-size   : $page-title-size;
+        line-height : $page-title-line-height;
         color       : $titling-color;
         margin-top  : $page-title-margin-top;
+        @include screen1200 {
+          font-size : calc(#{$page-title-size}        - 10%);
+        };
+        @include screen1000 {
+          font-size : calc(#{$page-title-size}        - 20%);
+        };
+        @include screen900 {
+          font-size  : calc(#{$page-title-size}       - 20%);
+          margin-top : calc(#{$page-title-margin-top} +  1%);
+        };
       }
     }
   }

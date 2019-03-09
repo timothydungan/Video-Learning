@@ -7,17 +7,29 @@
 
 .col-aside {
   width                 : $col-aside-width;
-  padding               : $col-aside-padding;
+  padding-top           : $col-aside-padding-top;
+  padding-left          : $col-aside-padding-left-right;
+  padding-right         : $col-aside-padding-left-right;
+  padding-bottom        : $col-aside-padding-bottom;
   background-repeat     : no-repeat;
   background-position   : center;
   background-size       : 100% 100%;
   background-image      : svgParams(sidebar, $sidebar-svg-color);
+  @include screen1200 {
+    padding-left        : calc(#{$col-aside-padding-left-right} + 1%);
+    padding-right       : calc(#{$col-aside-padding-left-right} + 1%);
+  };
+  @media screen and (max-width: $wrapper-width-900) {
+    background-color    : $lesson-name-wrapper-bg-color;
+    background-image    : none;
+  }
 
   .lesson-name-wrapper {
     background-color    : $lesson-name-wrapper-bg-color;
   }
 
   ul {
+    font-size         : $lesson-name-font-size;
     counter-reset     : li;
 
     li {
@@ -30,6 +42,7 @@
       label {
         display: block;
         cursor: pointer;
+        font-size         : $lesson-name-font-size;
         background-color  : $lesson-name-span-bg-color;
         color             : $lesson-name-span-text-color;
         padding-top       : $lesson-name-span-padding-top-bottom;
@@ -44,13 +57,18 @@
         @include screen1200 {
           margin-left     : calc(#{$lesson-name-span-margin-left-right}  - 10px);
           margin-right    : calc(#{$lesson-name-span-margin-left-right}  - 10px);
+          font-size       : calc(#{$lesson-name-font-size}               - 5%);
+
         };
         @include screen1000 {
-          margin-left     : calc(#{$lesson-name-span-margin-left-right}  - 20px);
-          margin-right    : calc(#{$lesson-name-span-margin-left-right}  - 20px);
-          padding-top     : calc(#{$lesson-name-span-padding-top-bottom} -  5px);
-          padding-bottom  : calc(#{$lesson-name-span-padding-top-bottom} -  5px);
-          padding-right   : calc(#{$lesson-name-span-padding-right}      -  5px);
+          padding-top     : calc(#{$lesson-name-span-padding-top-bottom} - 5px);
+          padding-bottom  : calc(#{$lesson-name-span-padding-top-bottom} - 5px);
+          padding-right   : calc(#{$lesson-name-span-padding-right}      - 5px);
+        };
+        @include screen900 {
+          padding-top     : calc(#{$lesson-name-span-padding-top-bottom} - 5px);
+          padding-bottom  : calc(#{$lesson-name-span-padding-top-bottom} - 5px);
+          padding-right   : calc(#{$lesson-name-span-padding-right}      - 5px);
         };
 
         &.ln-label {
@@ -88,6 +106,9 @@
 
         li {
           margin-left       : $lesson-name-li-margin-left;
+          @include screen1200 {
+            margin-left     : calc(#{$lesson-name-li-margin-left} - 8px);
+          };
 
           ::before {
             counter-increment: li;
@@ -99,6 +120,9 @@
             margin-right    : $lesson-link-number-margin-right;
             text-align      : $lesson-link-number-text-align;
             direction       : $lesson-link-number-text-direction;
+            @include screen900 {
+              margin-left   : calc(#{$lesson-link-number-margin-left} - 0.3em);
+            };
           }
 
           &.active {
@@ -115,8 +139,21 @@
       }
 
       .toggle:checked + * + ol {
-        font-size: 100%;
-        visibility: visible;
+        font-size           : $lesson-name-font-size;
+        line-height         : $main-line-height;
+        visibility          : visible;
+        @include screen1200 {
+          font-size         : calc(#{$lesson-name-font-size} -   5%);
+          line-height       : calc(#{$main-line-height}       - 15%);
+        };
+        @include screen1000 {
+          font-size         : calc(#{$lesson-name-font-size} -  10%);
+          line-height       : calc(#{$main-line-height}       - 25%);
+        };
+        @include screen900 {
+          font-size         : calc(#{$lesson-name-font-size} -  10%);
+          line-height       : calc(#{$main-line-height}       - 10%);
+        };
       }
     }
   }

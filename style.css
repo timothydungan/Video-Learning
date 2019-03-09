@@ -17,9 +17,31 @@ Author URI : https://www.timothydungan.com
 /* Mixinss ----------------------- */
 /* Global ------------------------ */
 *, * :before, *:after {
+  margin: 0;
+  padding: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
 }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
@@ -47,17 +69,6 @@ audio, canvas, video {
   max-width: 100%;
 }
 
-html {
-  overflow-y: scroll;
-  overflow-x: hidden;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 @supports (object-fit: cover) {
   img, video, iframe {
     -o-object-fit: cover;
@@ -70,6 +81,12 @@ body {
   background-color: #60C48E;
   font-family: "Open Sans", sans-serif;
   font-size: 90%;
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  body {
+    font-size: calc(90% - 10%);
+  }
 }
 
 a {
@@ -145,57 +162,9 @@ a:focus-within {
   transform: translateX(-50%);
 }
 
-@media (min-width: 300px) and (max-width: calc(300px + 49px)) {
+@media (min-width: 1400px) {
   .wrapper {
-    width: 300px;
-  }
-}
-
-@media (min-width: 350px) and (max-width: calc(350px + 99px)) {
-  .wrapper {
-    width: 350px;
-  }
-}
-
-@media (min-width: 400px) and (max-width: calc(400px + 99px)) {
-  .wrapper {
-    width: 400px;
-  }
-}
-
-@media (min-width: 500px) and (max-width: calc(500px + 99px)) {
-  .wrapper {
-    width: 500px;
-  }
-}
-
-@media (min-width: 600px) and (max-width: calc(600px + 99px)) {
-  .wrapper {
-    width: 600px;
-  }
-}
-
-@media (min-width: 700px) and (max-width: calc(700px + 99px)) {
-  .wrapper {
-    width: 700px;
-  }
-}
-
-@media (min-width: 800px) and (max-width: calc(800px + 99px)) {
-  .wrapper {
-    width: 800px;
-  }
-}
-
-@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
-  .wrapper {
-    width: 900px;
-  }
-}
-
-@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
-  .wrapper {
-    width: 1000px;
+    width: 1400px;
   }
 }
 
@@ -205,14 +174,70 @@ a:focus-within {
   }
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
   .wrapper {
-    width: 1400px;
+    width: 1000px;
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .wrapper {
+    width: 900px;
+  }
+}
+
+@media (min-width: 800px) and (max-width: calc(800px + 99px)) {
+  .wrapper {
+    width: 800px;
+  }
+}
+
+@media (min-width: 700px) and (max-width: calc(700px + 99px)) {
+  .wrapper {
+    width: 700px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: calc(600px + 99px)) {
+  .wrapper {
+    width: 600px;
+  }
+}
+
+@media (min-width: 500px) and (max-width: calc(500px + 99px)) {
+  .wrapper {
+    width: 500px;
+  }
+}
+
+@media (min-width: 400px) and (max-width: calc(400px + 99px)) {
+  .wrapper {
+    width: 400px;
+  }
+}
+
+@media (min-width: 350px) and (max-width: calc(350px + 99px)) {
+  .wrapper {
+    width: 350px;
+  }
+}
+
+@media (min-width: 300px) and (max-width: calc(300px + 49px)) {
+  .wrapper {
+    width: 300px;
   }
 }
 
 .page {
   padding-top: 50px;
+  padding-bottom: 275px;
+  margin-bottom: 50px;
+}
+
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  .page {
+    padding-bottom: calc(275px  - 60px);
+  }
 }
 
 .page .page-title-wrap {
@@ -230,8 +255,28 @@ a:focus-within {
 .page .page-title-wrap .page-title h1 {
   font-family: "M PLUS Rounded 1c", sans-serif;
   font-size: 300%;
+  line-height: 140%;
   color: #262B2F;
   margin-top: 1.8%;
+}
+
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  .page .page-title-wrap .page-title h1 {
+    font-size: calc(300%        - 10%);
+  }
+}
+
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .page .page-title-wrap .page-title h1 {
+    font-size: calc(300%        - 20%);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .page .page-title-wrap .page-title h1 {
+    font-size: calc(300%       - 20%);
+    margin-top: calc(1.8% +  1%);
+  }
 }
 
 .content-wrap {
@@ -308,12 +353,32 @@ header.top-wrap .main-header {
 }
 
 header.top-wrap .main-header .logo {
-  padding: 0.7% 0;
   width: 33%;
 }
 
 header.top-wrap .main-header .logo img#byolLogo {
   width: 73%;
+  padding-top: 2.2%;
+}
+
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  header.top-wrap .main-header .logo img#byolLogo {
+    width: calc(73%   + 22%);
+  }
+}
+
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  header.top-wrap .main-header .logo img#byolLogo {
+    width: calc(73%   + 24%);
+    padding-top: calc(2.2% +  1%);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  header.top-wrap .main-header .logo img#byolLogo {
+    width: calc(73%   + 22%);
+    padding-top: calc(2.2% +  3%);
+  }
 }
 
 header.top-wrap .main-header ul#menu {
@@ -357,6 +422,12 @@ header.top-wrap .main-header ul#menu li.button-down div {
   -webkit-transform: rotateX(180deg);
   -ms-transform: rotateX(180deg);
   transform: rotateX(180deg);
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  header.top-wrap .main-header ul#menu li.button-down div {
+    line-height: calc(430% + 45%);
+  }
 }
 
 header.top-wrap .main-header ul#menu li.button-down div a {
@@ -425,6 +496,12 @@ header.top-wrap .main-header ul#menu li.button-up div {
   -webkit-transform: rotateX(180deg);
   -ms-transform: rotateX(180deg);
   transform: rotateX(180deg);
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  header.top-wrap .main-header ul#menu li.button-up div {
+    line-height: calc(215% + 25%);
+  }
 }
 
 header.top-wrap .main-header ul#menu li.button-up div a {
@@ -680,6 +757,39 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 440 163.121' preserveAspectRatio='none'>\a       <path fill='%23A12839' d='M1228,100l-20,61.7,20,60.993,420,20.567L1628,222.7V100l20-19.858Z' transform='translate(-1208 -80.142)'/></svg>");
 }
 
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .main-cta {
+    height: calc(163px - 16px);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .main-cta {
+    height: calc(163px - 30px);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .main-cta {
+    background-color: #A12839;
+    background-image: none;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .main-cta .cta-pitch {
+    font-size: calc(140%        - 30%);
+    margin-top: calc(-4.8% -  1.2%);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .main-cta .cta-pitch {
+    font-size: calc(140%        - 30%);
+    margin-top: calc(-4.8% -  2.2%);
+  }
+}
+
 .big-cta {
   display: inline-flex;
   flex-direction: row;
@@ -696,6 +806,25 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   transform: rotate(180deg);
 }
 
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .big-cta {
+    height: calc(163px - 16px);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .big-cta {
+    height: calc(163px - 30px);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .big-cta {
+    background-color: #A12839;
+    background-image: none;
+  }
+}
+
 .big-cta .cta-pitch {
   position: absolute;
   margin-top: 2%;
@@ -705,6 +834,22 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   transform: rotate(180deg);
 }
 
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .big-cta .cta-pitch {
+    margin-top: calc(2% -   0.6%);
+    margin-left: calc(35% -  6%);
+    font-size: calc(140%             - 10%);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .big-cta .cta-pitch {
+    margin-top: calc(2% -   1.3%);
+    margin-left: calc(35% -  6%);
+    font-size: calc(140%             - 10%);
+  }
+}
+
 .cta-pitch {
   color: #FFFFFF;
   font-weight: bold;
@@ -712,6 +857,12 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   margin-left: 5%;
   margin-top: -4.8%;
   text-align: center;
+}
+
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  .cta-pitch {
+    margin-top: calc(-4.8% -  1%);
+  }
 }
 
 .cta-pitch .cta-pitch-title {
@@ -727,10 +878,35 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   margin-top: 50px;
 }
 
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .entry-cta-wrap {
+    height: calc(60px - 10px);
+  }
+}
+
 .entry-cta-wrap p {
   font-size: 140%;
   color: #FFFFFF;
   line-height: 100%;
+  text-align: center;
+}
+
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  .entry-cta-wrap p {
+    font-size: calc(140% - 20%);
+  }
+}
+
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .entry-cta-wrap p {
+    font-size: calc(140% - 40%);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .entry-cta-wrap p {
+    font-size: calc(140% - 50%);
+  }
 }
 
 .entry-cta-wrap .class-files-cta {
@@ -746,8 +922,39 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   transform: translateY(-50%);
 }
 
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .entry-cta-wrap .class-files-cta {
+    margin-top: calc(30px - 4px);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .entry-cta-wrap .class-files-cta {
+    background-color: #A12839;
+    background-image: none;
+  }
+}
+
 .entry-cta-wrap .class-files-cta p {
-  padding: 20px 0 0 55px;
+  padding-top: 18px;
+}
+
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  .entry-cta-wrap .class-files-cta p {
+    padding-top: calc(18px + 1px);
+  }
+}
+
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .entry-cta-wrap .class-files-cta p {
+    padding-top: calc(18px + 5px);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .entry-cta-wrap .class-files-cta p {
+    padding-top: calc(18px + 1px);
+  }
 }
 
 .entry-cta-wrap .completed-files-cta {
@@ -763,12 +970,36 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   transform: rotate(180deg);
 }
 
+@media screen and (max-width: 900px) {
+  .entry-cta-wrap .completed-files-cta {
+    background-color: #A12839;
+    background-image: none;
+  }
+}
+
 .entry-cta-wrap .completed-files-cta p {
-  margin-top: 20px;
-  padding-left: 35px;
+  margin-top: 22px;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
+}
+
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  .entry-cta-wrap .completed-files-cta p {
+    margin-top: calc(22px + 2px);
+  }
+}
+
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .entry-cta-wrap .completed-files-cta p {
+    margin-top: calc(22px + 1px);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .entry-cta-wrap .completed-files-cta p {
+    margin-top: calc(22px - 3px);
+  }
 }
 
 .signup-button-left {
@@ -784,6 +1015,32 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   transform: translateY(-50%);
 }
 
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  .signup-button-left {
+    margin-top: calc(7% + 1%);
+  }
+}
+
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .signup-button-left {
+    height: calc(98px          - 14px);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .signup-button-left {
+    height: calc(98px          - 20px);
+    margin-top: calc(7% - 1%);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .signup-button-left {
+    background-color: #A12839;
+    background-image: none;
+  }
+}
+
 .signup-button-left p {
   font-size: 140%;
   font-weight: bold;
@@ -791,17 +1048,39 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   line-height: 100%;
 }
 
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .signup-button-left p {
+    font-size: calc(140%              - 40%);
+    margin-top: calc(33% +  5%);
+  }
+}
+
 .signup-button-left a {
-  padding: 35px 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .signup-button-left a {
+    padding-left: calc(20px - 10px);
+    padding-right: calc(20px - 10px);
+  }
 }
 
 .signup-button-left:focus, .signup-button-left:hover, .signup-button-left:active {
   cursor: pointer;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23262B2F'/>\a           <stop offset='1' stop-color='%23A12839'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(0 16)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a       </g></svg>");
   text-shadow: 1px 0px 10px #FFFFFF;
   font-style: oblique;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23262B2F'/>\a           <stop offset='1' stop-color='%23A12839'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(0 16)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a       </g></svg>");
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
+}
+
+@media screen and (max-width: 900px) {
+  .signup-button-left:focus, .signup-button-left:hover, .signup-button-left:active {
+    background-color: #A12839;
+    background-image: none;
+  }
 }
 
 .signup-button-left:focus a, .signup-button-left:hover a, .signup-button-left:active a {
@@ -811,11 +1090,18 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
 
 .signup-button-left:focus-within {
   cursor: pointer;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23262B2F'/>\a           <stop offset='1' stop-color='%23A12839'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(0 16)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a       </g></svg>");
   text-shadow: 1px 0px 10px #FFFFFF;
   font-style: oblique;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23262B2F'/>\a           <stop offset='1' stop-color='%23A12839'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(0 16)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a       </g></svg>");
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
+}
+
+@media screen and (max-width: 900px) {
+  .signup-button-left:focus-within {
+    background-color: #A12839;
+    background-image: none;
+  }
 }
 
 .signup-button-left:focus-within a {
@@ -833,6 +1119,28 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23A12839'/>\a           <stop offset='1' stop-color='%23262B2F'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(0 16)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a       </g></svg>");
 }
 
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .signup-button-right {
+    margin-left: calc(15% -  5%);
+    margin-top: calc(-2%  -  1.7%);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .signup-button-right {
+    height: calc(98px            - 15px);
+    margin-left: calc(15% -  7%);
+    margin-top: calc(-2%  -  2.2%);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .signup-button-right {
+    background-color: #A12839;
+    background-image: none;
+  }
+}
+
 .signup-button-right p {
   font-size: 140%;
   font-weight: bold;
@@ -843,17 +1151,37 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   transform: rotate(180deg);
 }
 
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .signup-button-right p {
+    margin-top: calc(33% + 2.3%);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .signup-button-right p {
+    margin-top: calc(33% - 0.7%);
+  }
+}
+
 .signup-button-right a {
-  padding: 35px 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .signup-button-right:focus, .signup-button-right:hover, .signup-button-right:active {
   cursor: pointer;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23262B2F'/>\a           <stop offset='1' stop-color='%23A12839'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(0 16)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a       </g></svg>");
   text-shadow: 1px 0px 10px #FFFFFF;
   font-style: oblique;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23262B2F'/>\a           <stop offset='1' stop-color='%23A12839'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(0 16)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a       </g></svg>");
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
+}
+
+@media screen and (max-width: 900px) {
+  .signup-button-right:focus, .signup-button-right:hover, .signup-button-right:active {
+    background-color: #A12839;
+    background-image: none;
+  }
 }
 
 .signup-button-right:focus a, .signup-button-right:hover a, .signup-button-right:active a {
@@ -863,11 +1191,18 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
 
 .signup-button-right:focus-within {
   cursor: pointer;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23262B2F'/>\a           <stop offset='1' stop-color='%23A12839'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(0 16)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a       </g></svg>");
   text-shadow: 1px 0px 10px #FFFFFF;
   font-style: oblique;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23262B2F'/>\a           <stop offset='1' stop-color='%23A12839'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(0 16)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a       </g></svg>");
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
+}
+
+@media screen and (max-width: 900px) {
+  .signup-button-right:focus-within {
+    background-color: #A12839;
+    background-image: none;
+  }
 }
 
 .signup-button-right:focus-within a {
@@ -885,20 +1220,54 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 630 110' preserveAspectRatio='none'>\a       <path fill='%23A12839' d='M1208,69.993l20,20v70l-20,20h630l-13.291-20v-70l13.291-20Z' transform='translate(-1208 -69.993)'/></svg>");
 }
 
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .subscribe-cta-wrapper {
+    width: calc(90% + 10%);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .subscribe-cta-wrapper {
+    width: calc(90% + 10%);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .subscribe-cta-wrapper {
+    background-color: #A12839;
+    background-image: none;
+  }
+}
+
 .subscribe-cta-wrapper .cta-pitch {
   font-size: 115%;
   padding: 20px;
   text-align: left;
 }
 
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  .subscribe-cta-wrapper .cta-pitch {
+    font-size: calc(115% - 5%);
+  }
+}
+
 .subscribe-cta-wrapper input {
+  width: 70%;
   font-size: 150%;
   padding: 1.44% 2.88%;
 }
 
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  .subscribe-cta-wrapper input {
+    width: calc(70%     -  5%);
+    font-size: calc(150% - 10%);
+  }
+}
+
 .subscribe-button-right {
-  margin: -4% 2%;
   float: right;
+  margin-top: -4%;
+  margin-left: 2%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
@@ -906,6 +1275,19 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .subscribe-button-right {
+    margin-left: calc(2% - 2%);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .subscribe-button-right {
+    background-color: #A12839;
+    background-image: none;
+  }
 }
 
 .subscribe-button-right div {
@@ -916,14 +1298,28 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
 
 .subscribe-button-right button {
   display: block;
-  background-color: transparent;
-  border: none;
+  width: 100%;
+  height: 70px;
   font-size: 140%;
   font-weight: bold;
   color: #DEFEB3;
-  width: 100%;
-  height: 70px;
   padding: 10px;
+  border: none;
+  background-color: transparent;
+}
+
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .subscribe-button-right button {
+    font-size: calc(140%           - 25%);
+    height: calc(70px - 10px);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .subscribe-button-right button {
+    font-size: calc(140%           - 25%);
+    height: calc(70px - 10px);
+  }
 }
 
 .subscribe-button-right button:focus, .subscribe-button-right button:hover, .subscribe-button-right button:active {
@@ -949,6 +1345,13 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   transition: all 0.3s linear;
 }
 
+@media screen and (max-width: 900px) {
+  .subscribe-button-right:focus, .subscribe-button-right:hover, .subscribe-button-right:active {
+    background-color: #A12839;
+    background-image: none;
+  }
+}
+
 .subscribe-button-right:focus-within {
   cursor: pointer;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23262B2F'/>\a           <stop offset='1' stop-color='%23A12839'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(0 16)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a       </g></svg>");
@@ -956,10 +1359,18 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   transition: all 0.3s linear;
 }
 
+@media screen and (max-width: 900px) {
+  .subscribe-button-right:focus-within {
+    background-color: #A12839;
+    background-image: none;
+  }
+}
+
 .affiliate-cta-wrapper {
   position: absolute;
+  height: 400px;
   margin-top: -5%;
-  margin-left: 20%;
+  margin-left: 15%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
@@ -969,10 +1380,23 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   transform: rotate(90deg);
 }
 
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .affiliate-cta-wrapper {
+    margin-top: calc(-5% - 3%);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .affiliate-cta-wrapper {
+    background-color: #A12839;
+    background-image: none;
+  }
+}
+
 .affiliate-cta-wrapper p {
   font-size: 140%;
   font-weight: bold;
-  margin: 185px -145px;
+  margin: 185px -145px 0;
   line-height: 100%;
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
@@ -985,11 +1409,18 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
 
 .affiliate-cta-wrapper:focus, .affiliate-cta-wrapper:hover, .affiliate-cta-wrapper:active {
   cursor: pointer;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23262B2F'/>\a           <stop offset='1' stop-color='%23A12839'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(0 16)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a       </g></svg>");
   text-shadow: 1px 0px 10px #FFFFFF;
   font-style: oblique;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23262B2F'/>\a           <stop offset='1' stop-color='%23A12839'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(0 16)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a       </g></svg>");
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
+}
+
+@media screen and (max-width: 900px) {
+  .affiliate-cta-wrapper:focus, .affiliate-cta-wrapper:hover, .affiliate-cta-wrapper:active {
+    background-color: #A12839;
+    background-image: none;
+  }
 }
 
 .affiliate-cta-wrapper:focus a, .affiliate-cta-wrapper:hover a, .affiliate-cta-wrapper:active a {
@@ -999,11 +1430,18 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
 
 .affiliate-cta-wrapper:focus-within {
   cursor: pointer;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23262B2F'/>\a           <stop offset='1' stop-color='%23A12839'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(0 16)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a       </g></svg>");
   text-shadow: 1px 0px 10px #FFFFFF;
   font-style: oblique;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23262B2F'/>\a           <stop offset='1' stop-color='%23A12839'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(0 16)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a       </g></svg>");
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
+}
+
+@media screen and (max-width: 900px) {
+  .affiliate-cta-wrapper:focus-within {
+    background-color: #A12839;
+    background-image: none;
+  }
 }
 
 .affiliate-cta-wrapper:focus-within a {
@@ -1026,6 +1464,31 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 948 502.096' preserveAspectRatio='none'>\a       <path fill='%23262B2F' d='M328,685h812l68-22.513-68-460.86L734,182.9,328,201.626l-68,460.86Z' transform='translate(-260 -182.904)'/></svg>");
 }
 
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  .col-main .video-wrapper {
+    background-size: 100% calc(100% - 5%);
+  }
+}
+
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .col-main .video-wrapper {
+    background-size: 100% calc(100% - 2%);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .col-main .video-wrapper {
+    background-size: 100% calc(100% - 1.7%);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .col-main .video-wrapper {
+    background-color: #262B2F;
+    background-image: none;
+  }
+}
+
 .col-main .video-wrapper .video-controls {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1045,9 +1508,22 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   font-size: 1160%;
   margin-top: 30%;
   padding: 5px;
+  width: 12.5%;
   -webkit-transform: scaleX(0.5);
   -ms-transform: scaleX(0.5);
   transform: scaleX(0.5);
+}
+
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .col-main .video-wrapper .video-controls .next-lesson, .col-main .video-wrapper .video-controls .previous-lesson {
+    font-size: calc(1160% - 250%);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .col-main .video-wrapper .video-controls .next-lesson, .col-main .video-wrapper .video-controls .previous-lesson {
+    font-size: calc(1160% - 250%);
+  }
 }
 
 .col-main .video-wrapper .video-controls .next-lesson a, .col-main .video-wrapper .video-controls .previous-lesson a {
@@ -1078,10 +1554,46 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   padding-left: 3.15%;
 }
 
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  .col-main .video-wrapper .video-controls .previous-lesson {
+    padding-left: calc(3.15% + 1%);
+  }
+}
+
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .col-main .video-wrapper .video-controls .previous-lesson {
+    padding-left: calc(3.15% + 6%);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .col-main .video-wrapper .video-controls .previous-lesson {
+    padding-left: calc(3.15% + 7%);
+  }
+}
+
 .col-main .video-wrapper .video-controls .next-lesson {
   position: absolute;
-  right: -5.1%;
+  right: -7.2%;
   margin-top: 15%;
+}
+
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  .col-main .video-wrapper .video-controls .next-lesson {
+    right: calc(-7.2%      - 0.8%);
+  }
+}
+
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .col-main .video-wrapper .video-controls .next-lesson {
+    right: calc(-7.2%      - 1.7%);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .col-main .video-wrapper .video-controls .next-lesson {
+    right: calc(-7.2%      - 3.1%);
+  }
 }
 
 @supports (-ms-accelerator: true) {
@@ -1114,9 +1626,30 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   width: 85.6%;
   padding-top: 56.25%;
   margin-left: -2.9%;
-  -webkit-transform: translate(0, -3.8%);
-  -ms-transform: translate(0, -3.8%);
-  transform: translate(0, -3.8%);
+  -webkit-transform: translate(0%, -3.8%);
+  -ms-transform: translate(0%, -3.8%);
+  transform: translate(0%, -3.8%);
+}
+
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  .col-main .video-wrapper .video-controls .video-player {
+    margin-left: calc(-2.9% + 1.5%);
+  }
+}
+
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .col-main .video-wrapper .video-controls .video-player {
+    margin-left: calc(-2.9% + 3.9%);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .col-main .video-wrapper .video-controls .video-player {
+    margin-left: calc(-2.9% + 4%);
+    -webkit-transform: translate(calc(0% + 0.8%), -3.8%);
+    -ms-transform: translate(calc(0% + 0.8%), -3.8%);
+    transform: translate(calc(0% + 0.8%), -3.8%);
+  }
 }
 
 .col-main .video-wrapper .video-controls .video-player .video-frame {
@@ -1136,6 +1669,25 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   text-align: center;
 }
 
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  .col-main .video-wrapper .video-title {
+    margin-top: calc(-6%     - 1%);
+    padding-bottom: calc(0.4% + 1.7%);
+  }
+}
+
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .col-main .video-wrapper .video-title {
+    padding-bottom: calc(0.4% + 0.5%);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .col-main .video-wrapper .video-title {
+    padding-bottom: calc(0.4% + 0.7%);
+  }
+}
+
 .col-main .course-titling-wrapper {
   height: 128px;
   width: 100%;
@@ -1146,15 +1698,40 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 948 128' preserveAspectRatio='none'>\a       <g fill='%23307379' transform='translate(-260 -1017.684)'>\a         <path stroke='none' d='M 732 1145.182983398438 L 326.2886657714844 1125.197143554688 L 261.1109008789063 1018.542663574219 L 325.8549499511719 1038.162109375 L 325.9258728027344 1038.18359375 L 326 1038.18359375 L 1138 1038.18359375 L 1138.069946289063 1038.18359375 L 1138.137451171875 1038.164306640625 L 1206.855102539063 1018.530639648438 L 1137.7197265625 1125.19677734375 L 732 1145.182983398438 Z'/>\a         <path stroke='none' fill='%23262B2F' d='M 1205.710205078125 1019.377807617188 L 1138.274658203125 1038.645141601563 L 1138.140014648438 1038.68359375 L 1138 1038.68359375 L 326 1038.68359375 L 325.851806640625 1038.68359375 L 325.7099609375 1038.640625 L 262.2220458984375 1019.40185546875 L 326.577392578125 1124.710815429688 L 732 1144.682373046875 L 1137.439331054688 1124.7099609375 L 1205.710205078125 1019.377807617188 M 260 1017.68359375 L 326 1037.68359375 L 1138 1037.68359375 L 1208 1017.68359375 L 1138 1125.68359375 L 732 1145.68359375 L 326 1125.68359375 L 260 1017.68359375 Z'/>\a       </g></svg>");
 }
 
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .col-main .course-titling-wrapper {
+    height: calc(128px - 10px);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .col-main .course-titling-wrapper {
+    background-color: #307379;
+    background-image: none;
+  }
+}
+
 .col-main .course-titling-wrapper .course-title-wrap {
   margin-left: 7.35%;
   padding-top: 3.5%;
+}
+
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  .col-main .course-titling-wrapper .course-title-wrap {
+    padding-top: calc(3.5% + 0.7%);
+  }
 }
 
 .col-main .course-titling-wrapper .course-titling {
   color: #FFFFFF;
   font-size: 138%;
   line-height: 150%;
+}
+
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  .col-main .course-titling-wrapper .course-titling {
+    font-size: calc(138% - 20%);
+  }
 }
 
 .col-main .course-titling-wrapper .course-titling strong {
@@ -1168,8 +1745,23 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
 }
 
 .col-main .course-titling-wrapper .video-count {
-  margin-left: 6%;
   position: absolute;
+  margin-top: 0%;
+  margin-left: 6%;
+}
+
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .col-main .course-titling-wrapper .video-count {
+    margin-top: calc(0%  +  3%);
+    margin-left: calc(6% - 42%);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .col-main .course-titling-wrapper .video-count {
+    margin-top: calc(0%  +  3%);
+    margin-left: calc(6% - 41%);
+  }
 }
 
 .col-main .course-titling-wrapper .video-numbering {
@@ -1178,6 +1770,13 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
 
 .col-main .main-content-tabs {
   margin-top: 50px;
+  line-height: 135%;
+}
+
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  .col-main .main-content-tabs {
+    line-height: calc(135%      - 15%);
+  }
 }
 
 .col-main .main-content-tabs section {
@@ -1194,11 +1793,28 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   text-align: center;
   color: #307379;
   margin: 0 0 -1px;
-  padding: 1.58% 3%;
+  padding-top: 1.58%;
+  padding-bottom: 1.58%;
+  padding-left: 3%;
+  padding-right: 3%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 200 50' preserveAspectRatio='none'>\a       <g transform='translate(-880 -1016)'>\a         <g fill='%23FFFFFF' transform='translate(606.364 25.15)'>\a           <path stroke='none' d='M 473.0039367675781 1040.35009765625 L 274.3011779785156 1040.35009765625 L 288.4832763671875 991.3501586914063 L 461.4187622070313 991.3501586914063 L 473.0039367675781 1040.35009765625 Z'/>\a           <path stroke='none' fill='%23262B2F' d='M 472.3719482421875 1039.85009765625 L 461.0232238769531 991.8501586914063 L 288.8590698242188 991.8501586914063 L 274.9664001464844 1039.85009765625 L 472.3719482421875 1039.85009765625 M 473.6359252929688 1040.85009765625 L 273.6359252929688 1040.85009765625 L 288.1074523925781 990.8501586914063 L 461.8143615722656 990.8501586914063 L 473.6359252929688 1040.85009765625 Z'/>\a         </g>\a         <path fill='transparent' d='M273.636,994.275l.781-2.3H470.992l.644,2.3Z' transform='translate(607.364 71.725)'/>\a       </g></svg>");
+}
+
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  .col-main .main-content-tabs label {
+    padding-top: calc(1.58% + 0.02%);
+    padding-bottom: calc(1.58% + 0.02%);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .col-main .main-content-tabs label {
+    background-color: #FFFFFF;
+    background-image: none;
+  }
 }
 
 .col-main .main-content-tabs label:focus, .col-main .main-content-tabs label:hover, .col-main .main-content-tabs label:active {
@@ -1219,6 +1835,13 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 200 50' preserveAspectRatio='none'>\a       <g transform='translate(-880 -1016)'>\a         <g fill='%23FFFFFF' transform='translate(606.364 25.15)'>\a           <path stroke='none' d='M 473.0039367675781 1040.35009765625 L 274.3011779785156 1040.35009765625 L 288.4832763671875 991.3501586914063 L 461.4187622070313 991.3501586914063 L 473.0039367675781 1040.35009765625 Z'/>\a           <path stroke='none' fill='%23262B2F' d='M 472.3719482421875 1039.85009765625 L 461.0232238769531 991.8501586914063 L 288.8590698242188 991.8501586914063 L 274.9664001464844 1039.85009765625 L 472.3719482421875 1039.85009765625 M 473.6359252929688 1040.85009765625 L 273.6359252929688 1040.85009765625 L 288.1074523925781 990.8501586914063 L 461.8143615722656 990.8501586914063 L 473.6359252929688 1040.85009765625 Z'/>\a         </g>\a         <path fill='%23FFFFFF' d='M273.636,994.275l.781-2.3H470.992l.644,2.3Z' transform='translate(607.364 71.725)'/>\a       </g></svg>");
 }
 
+@media screen and (max-width: 900px) {
+  .col-main .main-content-tabs input:checked + label {
+    background-color: #FFFFFF;
+    background-image: none;
+  }
+}
+
 .col-main .main-content-tabs input#qa-tab + label {
   margin-left: 7.5%;
 }
@@ -1232,22 +1855,29 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 948 512' preserveAspectRatio='none'>\a       <g fill='%23FFFFFF' transform='translate(1208 1529.684) rotate(180)'>\a         <path stroke='none' d='M 1139.566772460938 1529.183837890625 L 328.4331665039063 1529.183837890625 L 260.5567016601563 1058.041015625 L 328.0837707519531 1038.180053710938 L 734 1018.184204101563 L 1139.916259765625 1038.180053710938 L 1207.443237304688 1058.041015625 L 1139.566772460938 1529.183837890625 Z'/>\a         <path stroke='none' fill='%23262B2F' d='M 734 1018.684814453125 L 328.16796875 1038.676513671875 L 261.11328125 1058.398559570313 L 328.8662109375 1528.683837890625 L 1139.1337890625 1528.683837890625 L 1206.88671875 1058.398559570313 L 1139.83203125 1038.676513671875 L 734 1018.684814453125 M 734 1017.68359375 L 1140 1037.68359375 L 1208 1057.68359375 L 1140 1529.683837890625 L 328 1529.683837890625 L 260 1057.68359375 L 328 1037.68359375 L 734 1017.68359375 Z'/>\a       </g></svg>");
 }
 
-.col-main .main-content-tabs #talk-print-wrapper .zoink {
+@media screen and (max-width: 900px) {
+  .col-main .main-content-tabs #talk-print-wrapper {
+    background-color: #FFFFFF;
+    background-image: none;
+  }
+}
+
+.col-main .main-content-tabs #talk-print-wrapper .swashIn {
   -webkit-animation-fill-mode: both;
   -webkit-animation-duration: 0.5s;
-  -webkit-animation-name: zoink;
+  -webkit-animation-name: swashIn;
   -moz-animation-fill-mode: both;
   -moz-animation-duration: 0.5s;
-  -moz-animation-name: zoink;
+  -moz-animation-name: swashIn;
   -ms-animation-fill-mode: both;
   -ms-animation-duration: 0.5s;
-  -ms-animation-name: zoink;
+  -ms-animation-name: swashIn;
   -o-animation-fill-mode: both;
   -o-animation-duration: 0.5s;
-  -o-animation-name: zoink;
+  -o-animation-name: swashIn;
   animation-fill-mode: both;
   animation-duration: 0.5s;
-  animation-name: zoink;
+  animation-name: swashIn;
 }
 
 .col-main .main-content-tabs #talk-print-wrapper h4 {
@@ -1283,6 +1913,13 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 600 168' preserveAspectRatio='none'>\a       <g fill='%23FFFFFF' transform='translate(-348 -1054.638)'>\a         <path stroke='none' d='M 348.5 1222.121337890625 L 348.5 1055.1552734375 L 947.4999389648438 1075.121948242188 L 947.4999389648438 1202.154663085938 L 348.5 1222.121337890625 Z'/>\a         <path stroke='none' fill='%23262B2F' d='M 349 1055.672241210938 L 349 1221.604370117188 L 946.9998779296875 1201.671020507813 L 946.9998779296875 1075.605590820313 L 349 1055.672241210938 M 348 1054.638305664063 L 947.9998779296875 1074.638305664063 L 947.9998779296875 1202.638305664063 L 348 1222.638305664063 L 348 1054.638305664063 Z'/>\a       </g></svg>");
 }
 
+@media screen and (max-width: 900px) {
+  .col-main .main-content-tabs #talk-print-wrapper #discuss ol#comments li.student-comments {
+    background-color: #FFFFFF;
+    background-image: none;
+  }
+}
+
 .col-main .main-content-tabs #talk-print-wrapper #discuss ol#comments li.teacher-comments {
   margin-left: 25%;
   text-align: right;
@@ -1292,6 +1929,13 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 600 168' preserveAspectRatio='none'>\a       <g fill='%23FFFFFF' transform='translate(948 1222.638) rotate(180)'>\a         <path stroke='none' d='M 348.5 1222.121337890625 L 348.5 1055.1552734375 L 947.4999389648438 1075.121948242188 L 947.4999389648438 1202.154663085938 L 348.5 1222.121337890625 Z'/>\a         <path stroke='none' fill='%23262B2F' d='M 349 1055.672241210938 L 349 1221.604370117188 L 946.9998779296875 1201.671020507813 L 946.9998779296875 1075.605590820313 L 349 1055.672241210938 M 348 1054.638305664063 L 947.9998779296875 1074.638305664063 L 947.9998779296875 1202.638305664063 L 348 1222.638305664063 L 348 1054.638305664063 Z'/>\a       </g></svg>");
 }
 
+@media screen and (max-width: 900px) {
+  .col-main .main-content-tabs #talk-print-wrapper #discuss ol#comments li.teacher-comments {
+    background-color: #FFFFFF;
+    background-image: none;
+  }
+}
+
 .col-main .main-content-tabs #talk-print-wrapper #transcript {
   margin-left: 10%;
 }
@@ -1299,13 +1943,29 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
 .col-main .main-content-tabs #talk-print-wrapper #transcript:before {
   content: '';
   position: absolute;
-  width: 6.26%;
-  height: 11.2%;
+  width: 50px;
+  height: 50px;
   margin-left: -8%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 34.668 27.49' preserveAspectRatio='none'>\a       <path fill='%23262B2F' d='M2.466-41.895l-.977-1.611q8.3-4.395,8.3-8.3,0-1.66-3.125-3.271a11.562,11.562,0,0,1-3.882-2.93,6.183,6.183,0,0,1-1.1-3.809,7.289,7.289,0,0,1,2.222-5.347,7.233,7.233,0,0,1,5.3-2.222,6.691,6.691,0,0,1,5.542,2.734,11.292,11.292,0,0,1,2.124,7.129,16.48,16.48,0,0,1-5.469,12.4A21.675,21.675,0,0,1,7.764-44.36,41.865,41.865,0,0,1,2.466-41.895Zm-19.287,0-.977-1.611q8.3-4.443,8.3-8.3a2.285,2.285,0,0,0-.684-1.636,10.141,10.141,0,0,0-2.441-1.636,10.846,10.846,0,0,1-3.833-2.905A6.231,6.231,0,0,1-17.6-61.816a7.306,7.306,0,0,1,2.2-5.371,7.192,7.192,0,0,1,5.273-2.2A6.738,6.738,0,0,1-4.541-66.65a11.292,11.292,0,0,1,2.124,7.129,16.363,16.363,0,0,1-1.392,6.641,17.7,17.7,0,0,1-4.126,5.762A28.967,28.967,0,0,1-16.821-41.895Z' transform='translate(17.798 69.385)'/></svg>");
+}
+
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .col-main .main-content-tabs #talk-print-wrapper #transcript:before {
+    width: calc(50px       -  5px);
+    height: calc(50px      -  5px);
+    margin-left: calc(-8% -  1%);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .col-main .main-content-tabs #talk-print-wrapper #transcript:before {
+    width: calc(50px       - 10px);
+    height: calc(50px      - 10px);
+    margin-left: calc(-8% -  1%);
+  }
 }
 
 .col-main .main-content-tabs #talk-print-wrapper #transcript p:not(:last-child) {
@@ -1318,122 +1978,121 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   background-color: #FFFFFF;
 }
 
-@keyframes zoink {
+@keyframes swashIn {
   0% {
     opacity: 0;
-    filter: blur(2em);
-    transform-origin: top;
-    transform: perspective(800px) scale(0.1, 0.1) rotateX(-180deg);
+    transform-origin: 50% 50%;
+    transform: scale(0, 0);
   }
-  40% {
-    opacity: 0.1;
-    filter: blur(1em);
-    transform-origin: top;
-    transform: perspective(800px) scale(0.4, 0.4) rotateX(-110deg);
+  90% {
+    opacity: 1;
+    transform-origin: 50% 50%;
+    transform: scale(0.9, 0.9);
   }
   100% {
     opacity: 1;
-    filter: blur(0em);
-    transform-origin: top;
-    transform: perspective(800px) scale(1, 1) rotateX(0deg);
+    transform-origin: 50% 50%;
+    transform: scale(1, 1);
   }
 }
 
-@-ms-keyframes zoink {
+@-ms-keyframes swashIn {
   0% {
     opacity: 0;
-    filter: alpha(opacity=0);
-    filter: blur(2em);
-    -ms-transform-origin: top;
-    -ms-transform: perspective(800px) scale(0.1, 0.1) rotateX(-180deg);
+    -ms-transform-origin: 50% 50%;
+    -ms-transform: scale(0, 0);
   }
-  40% {
-    opacity: 0.1;
-    filter: alpha(opacity=0.1);
-    filter: blur(1em);
-    -ms-transform-origin: top;
-    -ms-transform: perspective(800px) scale(0.4, 0.4) rotateX(-110deg);
+  90% {
+    opacity: 1;
+    -ms-transform-origin: 50% 50%;
+    -ms-transform: scale(0.9, 0.9);
   }
   100% {
     opacity: 1;
-    filter: alpha(opacity=100);
-    filter: blur(0em);
-    -ms-transform-origin: top;
-    -ms-transform: perspective(800px) scale(1, 1) rotateX(0deg);
+    -ms-transform-origin: 50% 50%;
+    -ms-transform: scale(1, 1);
   }
 }
 
-@-o-keyframes zoink {
+@-o-keyframes swashIn {
   0% {
     opacity: 0;
-    -webkit-filter: blur(2em);
-    -o-transform-origin: top;
-    -o-transform: perspective(800px) scale(0.1, 0.1) rotateX(-180deg);
+    -o-transform-origin: 50% 50%;
+    -o-transform: scale(0, 0);
   }
-  40% {
-    opacity: 0.1;
-    -webkit-filter: blur(1em);
-    -o-transform-origin: top;
-    -o-transform: perspective(800px) scale(0.4, 0.4) rotateX(-110deg);
+  90% {
+    opacity: 1;
+    -o-transform-origin: 50% 50%;
+    -o-transform: scale(0.9, 0.9);
   }
   100% {
     opacity: 1;
-    -webkit-filter: blur(0em);
-    -o-transform-origin: top;
-    -o-transform: perspective(800px) scale(1, 1) rotateX(0deg);
+    -o-transform-origin: 50% 50%;
+    -o-transform: scale(1, 1);
   }
 }
 
-@-webkit-keyframes zoink {
+@-webkit-keyframes swashIn {
   0% {
     opacity: 0;
-    -webkit-filter: blur(2em);
-    -webkit-transform-origin: top;
-    -webkit-transform: perspective(800px) scale(0.1, 0.1) rotateX(-180deg);
+    -webkit-transform-origin: 50% 50%;
+    -webkit-transform: scale(0, 0);
   }
-  40% {
-    opacity: 0.1;
-    -webkit-filter: blur(1em);
-    -webkit-transform-origin: top;
-    -webkit-transform: perspective(800px) scale(0.4, 0.4) rotateX(-110deg);
+  90% {
+    opacity: 1;
+    -webkit-transform-origin: 50% 50%;
+    -webkit-transform: scale(0.9, 0.9);
   }
   100% {
     opacity: 1;
-    -webkit-filter: blur(0em);
-    -webkit-transform-origin: top;
-    -webkit-transform: perspective(800px) scale(1, 1) rotateX(0deg);
+    -webkit-transform-origin: 50% 50%;
+    -webkit-transform: scale(1, 1);
   }
 }
 
-@-moz-keyframes zoink {
+@-moz-keyframes swashIn {
   0% {
     opacity: 0;
-    -moz-filter: blur(2em);
-    -moz-transform-origin: top;
-    -moz-transform: perspective(800px) scale(0.1, 0.1) rotateX(-180deg);
+    -moz-transform-origin: 50% 50%;
+    -moz-transform: scale(0, 0);
   }
-  40% {
-    opacity: 0.1;
-    -moz-filter: blur(1em);
-    -moz-transform-origin: top;
-    -moz-transform: perspective(800px) scale(0.4, 0.4) rotateX(-110deg);
+  90% {
+    opacity: 1;
+    -moz-transform-origin: 50% 50%;
+    -moz-transform: scale(0.9, 0.9);
   }
   100% {
     opacity: 1;
-    -moz-filter: blur(0em);
-    -moz-transform-origin: top;
-    -moz-transform: perspective(800px) scale(1, 1) rotateX(0deg);
+    -moz-transform-origin: 50% 50%;
+    -moz-transform: scale(1, 1);
   }
 }
 
 /* Sidebar ----------------------- */
 .col-aside {
   width: 30%;
-  padding: 20px 70px 4%;
+  padding-top: 0.8%;
+  padding-left: 4.8%;
+  padding-right: 4.8%;
+  padding-bottom: 4%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 420 2364.373' preserveAspectRatio='none'>\a       <path fill='%23262B2F' d='M1648,202l-68,2325.191L1438.344,2546.4,1296,2527.191,1228,202l68-19.974h284Z' transform='translate(-1228 -182.025)'/></svg>");
+}
+
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  .col-aside {
+    padding-left: calc(4.8% + 1%);
+    padding-right: calc(4.8% + 1%);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .col-aside {
+    background-color: #262B2F;
+    background-image: none;
+  }
 }
 
 .col-aside .lesson-name-wrapper {
@@ -1441,6 +2100,7 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
 }
 
 .col-aside ul {
+  font-size: 100%;
   counter-reset: li;
 }
 
@@ -1455,6 +2115,7 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
 .col-aside ul li label {
   display: block;
   cursor: pointer;
+  font-size: 100%;
   background-color: #307379;
   color: #FFFFFF;
   padding-top: 10px;
@@ -1472,16 +2133,23 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   .col-aside ul li label {
     margin-left: calc(0px  - 10px);
     margin-right: calc(0px  - 10px);
+    font-size: calc(100%               - 5%);
   }
 }
 
 @media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
   .col-aside ul li label {
-    margin-left: calc(0px  - 20px);
-    margin-right: calc(0px  - 20px);
-    padding-top: calc(10px -  5px);
-    padding-bottom: calc(10px -  5px);
-    padding-right: calc(20px      -  5px);
+    padding-top: calc(10px - 5px);
+    padding-bottom: calc(10px - 5px);
+    padding-right: calc(20px      - 5px);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .col-aside ul li label {
+    padding-top: calc(10px - 5px);
+    padding-bottom: calc(10px - 5px);
+    padding-right: calc(20px      - 5px);
   }
 }
 
@@ -1522,16 +2190,28 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   margin-left: 40px;
 }
 
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  .col-aside ul li ol li {
+    margin-left: calc(40px - 8px);
+  }
+}
+
 .col-aside ul li ol li ::before {
   counter-increment: li;
   content: counter(li);
   color: #FFFFFF;
   display: inline-block;
-  width: 1em;
+  width: 15px;
   margin-left: -1.5em;
   margin-right: 0.5em;
   text-align: right;
   direction: rtl;
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .col-aside ul li ol li ::before {
+    margin-left: calc(-1.5em - 0.3em);
+  }
 }
 
 .col-aside ul li ol li.active:before {
@@ -1539,20 +2219,62 @@ header.top-wrap .main-header ul#menu li:focus-within > ul.rollDown {
   content: ">>";
   font-size: 81%;
   color: #FFFFFF;
-  width: 14.7%;
-  margin-left: -38px;
+  width: 35px;
+  margin-left: -39px;
 }
 
 .col-aside ul li .toggle:checked + * + ol {
   font-size: 100%;
+  line-height: 135%;
   visibility: visible;
+}
+
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  .col-aside ul li .toggle:checked + * + ol {
+    font-size: calc(100% -   5%);
+    line-height: calc(135%       - 15%);
+  }
+}
+
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .col-aside ul li .toggle:checked + * + ol {
+    font-size: calc(100% -  10%);
+    line-height: calc(135%       - 25%);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .col-aside ul li .toggle:checked + * + ol {
+    font-size: calc(100% -  10%);
+    line-height: calc(135%       - 10%);
+  }
 }
 
 /* Footer ------------------------ */
 footer {
-  height: 320px;
+  width: 100%;
+  height: 275px;
   background-color: #262B2F;
-  margin-top: 50px;
+  margin-top: -275px;
+  clear: both;
+}
+
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  footer {
+    margin-top: calc(-275px + 60px);
+  }
+}
+
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  footer {
+    height: calc(275px  +  5px);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  footer {
+    height: calc(275px  +  5px);
+  }
 }
 
 footer .footer-wrap {
@@ -1566,30 +2288,55 @@ footer .footer-wrap .footer-left-col {
   width: 50%;
 }
 
+footer .footer-wrap .footer-left-col .copyright-notice {
+  position: absolute;
+  text-align: left;
+  bottom: 0;
+}
+
 footer .footer-wrap .footer-right-col {
   width: 50%;
 }
 
+footer .footer-wrap .footer-right-col .osi-notice {
+  padding-top: 20px;
+  text-align: right;
+}
+
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  footer .footer-wrap .footer-right-col .osi-notice {
+    margin-bottom: -4px;
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  footer .footer-wrap .footer-right-col .osi-notice {
+    margin-bottom: -4px;
+  }
+}
+
 footer .footer-wrap .copyright-notice,
 footer .footer-wrap .osi-notice {
-  position: absolute;
-  margin-top: 20%;
   color: #FFFFFF;
   font-style: italic;
   font-size: 80%;
 }
 
-footer .footer-wrap .copyright-notice {
-  left: 0;
-}
-
-footer .footer-wrap .osi-notice {
-  right: 0;
-}
-
 .social-menu-wrapper {
   width: 90%;
   margin-top: 50px;
+}
+
+@media (min-width: 1000px) and (max-width: calc(1000px + 199px)) {
+  .social-menu-wrapper {
+    width: calc(90% + 10%);
+  }
+}
+
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .social-menu-wrapper {
+    width: calc(90% + 10%);
+  }
 }
 
 .social-menu-wrapper ul {
@@ -1611,6 +2358,12 @@ footer .footer-wrap .osi-notice {
   cursor: pointer;
 }
 
+@media (min-width: 900px) and (max-width: calc(900px + 99px)) {
+  .social-menu-wrapper ul li {
+    height: calc(50px - 3px);
+  }
+}
+
 .social-menu-wrapper ul li.button-up {
   background-repeat: no-repeat;
   background-position: center;
@@ -1618,12 +2371,26 @@ footer .footer-wrap .osi-notice {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23A12839'/>\a           <stop offset='1' stop-color='%23262B2F'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(84) rotate(90)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a       </g></svg>");
 }
 
+@media screen and (max-width: 900px) {
+  .social-menu-wrapper ul li.button-up {
+    background-color: #A12839;
+    background-image: none;
+  }
+}
+
 .social-menu-wrapper ul li.button-up:focus, .social-menu-wrapper ul li.button-up:hover, .social-menu-wrapper ul li.button-up:active {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23262B2F'/>\a           <stop offset='1' stop-color='%23A12839'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(84) rotate(90)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a       </g></svg>");
   text-shadow: 1px 0px 10px #FFFFFF;
   font-style: oblique;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23262B2F'/>\a           <stop offset='1' stop-color='%23A12839'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(84) rotate(90)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a       </g></svg>");
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
+}
+
+@media screen and (max-width: 900px) {
+  .social-menu-wrapper ul li.button-up:focus, .social-menu-wrapper ul li.button-up:hover, .social-menu-wrapper ul li.button-up:active {
+    background-color: #A12839;
+    background-image: none;
+  }
 }
 
 .social-menu-wrapper ul li.button-up:focus a, .social-menu-wrapper ul li.button-up:hover a, .social-menu-wrapper ul li.button-up:active a {
@@ -1632,11 +2399,18 @@ footer .footer-wrap .osi-notice {
 }
 
 .social-menu-wrapper ul li.button-up:focus-within {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23262B2F'/>\a           <stop offset='1' stop-color='%23A12839'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(84) rotate(90)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a       </g></svg>");
   text-shadow: 1px 0px 10px #FFFFFF;
   font-style: oblique;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23262B2F'/>\a           <stop offset='1' stop-color='%23A12839'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(84) rotate(90)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a       </g></svg>");
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
+}
+
+@media screen and (max-width: 900px) {
+  .social-menu-wrapper ul li.button-up:focus-within {
+    background-color: #A12839;
+    background-image: none;
+  }
 }
 
 .social-menu-wrapper ul li.button-up:focus-within a {
@@ -1651,12 +2425,26 @@ footer .footer-wrap .osi-notice {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23A12839'/>\a           <stop offset='1' stop-color='%23262B2F'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(16 100) rotate(-90)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a         </g></svg>");
 }
 
+@media screen and (max-width: 900px) {
+  .social-menu-wrapper ul li.button-down {
+    background-color: #A12839;
+    background-image: none;
+  }
+}
+
 .social-menu-wrapper ul li.button-down:focus, .social-menu-wrapper ul li.button-down:hover, .social-menu-wrapper ul li.button-down:active {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23262B2F'/>\a           <stop offset='1' stop-color='%23A12839'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(16 100) rotate(-90)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a         </g></svg>");
   text-shadow: 1px 0px 10px #FFFFFF;
   font-style: oblique;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23262B2F'/>\a           <stop offset='1' stop-color='%23A12839'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(16 100) rotate(-90)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a         </g></svg>");
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
+}
+
+@media screen and (max-width: 900px) {
+  .social-menu-wrapper ul li.button-down:focus, .social-menu-wrapper ul li.button-down:hover, .social-menu-wrapper ul li.button-down:active {
+    background-color: #A12839;
+    background-image: none;
+  }
 }
 
 .social-menu-wrapper ul li.button-down:focus a, .social-menu-wrapper ul li.button-down:hover a, .social-menu-wrapper ul li.button-down:active a {
@@ -1665,11 +2453,18 @@ footer .footer-wrap .osi-notice {
 }
 
 .social-menu-wrapper ul li.button-down:focus-within {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23262B2F'/>\a           <stop offset='1' stop-color='%23A12839'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(16 100) rotate(-90)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a         </g></svg>");
   text-shadow: 1px 0px 10px #FFFFFF;
   font-style: oblique;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23262B2F'/>\a           <stop offset='1' stop-color='%23A12839'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(16 100) rotate(-90)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a         </g></svg>");
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
+}
+
+@media screen and (max-width: 900px) {
+  .social-menu-wrapper ul li.button-down:focus-within {
+    background-color: #A12839;
+    background-image: none;
+  }
 }
 
 .social-menu-wrapper ul li.button-down:focus-within a {

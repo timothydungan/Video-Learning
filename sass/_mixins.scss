@@ -54,15 +54,23 @@
 @mixin subscribe-button-hover {
   cursor              : pointer;
   background-image    : svgParams(main-button-0, $svg-secondary-color, $cta-svg-color, $svg-border-color);
+  @media screen and (max-width: $wrapper-width-900) {
+    background-color    : $cta-bg-color;
+    background-image    : none;
+  }
   -webkit-transition  : $button-transition;
           transition  : $button-transition;
 }
 
 @mixin signup-button-hover {
   cursor              : pointer;
-  background-image    : svgParams(main-button-0, $svg-secondary-color, $cta-svg-color, $svg-border-color);
   text-shadow         : $button-glow;
   font-style          : oblique;
+  background-image    : svgParams(main-button-0, $svg-secondary-color, $cta-svg-color, $svg-border-color);
+  @media screen and (max-width: $wrapper-width-900) {
+    background-color    : $cta-bg-color;
+    background-image    : none;
+  }
   -webkit-transition  : $button-transition;
           transition  : $button-transition;
 
@@ -96,9 +104,13 @@
 }
 
 @mixin social-menu-button-up-hover {
-  background-image   : svgParams(main-button-90, $svg-secondary-color, $cta-svg-color, $svg-border-color);
   text-shadow        : $button-glow;
   font-style         : oblique;
+  background-image   : svgParams(main-button-90, $svg-secondary-color, $cta-svg-color, $svg-border-color);
+  @media screen and (max-width: $wrapper-width-900) {
+    background-color    : $cta-bg-color;
+    background-image    : none;
+  }
   -webkit-transition : $button-transition;
           transition : $button-transition;
 
@@ -109,9 +121,13 @@
 }
 
 @mixin social-menu-button-down-hover {
-  background-image   : svgParams(main-button-270, $svg-secondary-color, $cta-svg-color, $svg-border-color);
   text-shadow        : $button-glow;
   font-style         : oblique;
+  background-image   : svgParams(main-button-270, $svg-secondary-color, $cta-svg-color, $svg-border-color);
+  @media screen and (max-width: $wrapper-width-900) {
+    background-color    : $cta-bg-color;
+    background-image    : none;
+  }
   -webkit-transition : $button-transition;
           transition : $button-transition;
 
@@ -146,56 +162,8 @@
   }
 }
 
-@mixin screen300 {
-  @media (min-width: #{$wrapper-width-300}) and (max-width: calc(#{$wrapper-width-300} + 49px)) {
-    @content;
-  }
-}
-
-@mixin screen350 {
-  @media (min-width: #{$wrapper-width-350}) and (max-width: calc(#{$wrapper-width-350} + 99px)) {
-    @content;
-  }
-}
-
-@mixin screen400 {
-  @media (min-width: #{$wrapper-width-400}) and (max-width: calc(#{$wrapper-width-400} + 99px)) {
-    @content;
-  }
-}
-
-@mixin screen500 {
-  @media (min-width: #{$wrapper-width-500}) and (max-width: calc(#{$wrapper-width-500} + 99px)) {
-    @content;
-  }
-}
-
-@mixin screen600 {
-  @media (min-width: #{$wrapper-width-600}) and (max-width: calc(#{$wrapper-width-600} + 99px)) {
-    @content;
-  }
-}
-
-@mixin screen700 {
-  @media (min-width: #{$wrapper-width-700}) and (max-width: calc(#{$wrapper-width-700} + 99px)) {
-    @content;
-  }
-}
-
-@mixin screen800 {
-  @media (min-width: #{$wrapper-width-800}) and (max-width: calc(#{$wrapper-width-800} + 99px)) {
-    @content;
-  }
-}
-
-@mixin screen900 {
-  @media (min-width: #{$wrapper-width-900}) and (max-width: calc(#{$wrapper-width-900} + 99px)) {
-    @content;
-  }
-}
-
-@mixin screen1000 {
-  @media (min-width: #{$wrapper-width-1000}) and (max-width: calc(#{$wrapper-width-1000} + 199px)) {
+@mixin screen1400 {
+  @media (min-width: #{$wrapper-width-1400}) {
     @content;
   }
 }
@@ -206,8 +174,56 @@
   }
 }
 
-@mixin screen1400 {
-  @media (min-width: #{$wrapper-width-1400}) {
+@mixin screen1000 {
+  @media (min-width: #{$wrapper-width-1000}) and (max-width: calc(#{$wrapper-width-1000} + 199px)) {
+    @content;
+  }
+}
+
+@mixin screen900 {
+  @media (min-width: #{$wrapper-width-900}) and (max-width: calc(#{$wrapper-width-900} + 99px)) {
+    @content;
+  }
+}
+
+@mixin screen800 {
+  @media (min-width: #{$wrapper-width-800}) and (max-width: calc(#{$wrapper-width-800} + 99px)) {
+    @content;
+  }
+}
+
+@mixin screen700 {
+  @media (min-width: #{$wrapper-width-700}) and (max-width: calc(#{$wrapper-width-700} + 99px)) {
+    @content;
+  }
+}
+
+@mixin screen600 {
+  @media (min-width: #{$wrapper-width-600}) and (max-width: calc(#{$wrapper-width-600} + 99px)) {
+    @content;
+  }
+}
+
+@mixin screen500 {
+  @media (min-width: #{$wrapper-width-500}) and (max-width: calc(#{$wrapper-width-500} + 99px)) {
+    @content;
+  }
+}
+
+@mixin screen400 {
+  @media (min-width: #{$wrapper-width-400}) and (max-width: calc(#{$wrapper-width-400} + 99px)) {
+    @content;
+  }
+}
+
+@mixin screen350 {
+  @media (min-width: #{$wrapper-width-350}) and (max-width: calc(#{$wrapper-width-350} + 99px)) {
+    @content;
+  }
+}
+
+@mixin screen300 {
+  @media (min-width: #{$wrapper-width-300}) and (max-width: calc(#{$wrapper-width-300} + 49px)) {
     @content;
   }
 }

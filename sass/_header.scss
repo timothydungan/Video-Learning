@@ -23,11 +23,22 @@ header {
       width                              : $wrapper-width;
 
       .logo {
-        padding                          : $logo-padding;
         width                            : $logo-width;
 
         img#byolLogo {
           width                          : $logo-img-width;
+          padding-top                    : $logo-padding-top;
+          @include screen1200 {
+            width                        : calc(#{$logo-img-width}   + 22%);
+          };
+          @include screen1000 {
+            width                        : calc(#{$logo-img-width}   + 24%);
+            padding-top                  : calc(#{$logo-padding-top} +  1%);
+          };
+          @include screen900 {
+            width                        : calc(#{$logo-img-width}   + 22%);
+            padding-top                  : calc(#{$logo-padding-top} +  3%);
+          };
         }
       }
 
@@ -66,6 +77,9 @@ header {
 
             div {
               line-height                : $menu-li-button-down-div-line-height;
+              @include screen900 {
+                line-height               : calc(#{$menu-li-button-down-div-line-height} + 45%);
+              };
               -webkit-transform          : rotateX(180deg);
                   -ms-transform          : rotateX(180deg);
                       transform          : rotateX(180deg);
@@ -110,6 +124,9 @@ header {
 
             div {
              line-height                 : $menu-li-button-up-div-line-height;
+             @include screen900 {
+               line-height               : calc(#{$menu-li-button-up-div-line-height} + 25%);
+             };
              -webkit-transform           : rotateX(180deg);
                  -ms-transform           : rotateX(180deg);
                      transform           : rotateX(180deg);
