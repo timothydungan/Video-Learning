@@ -96,10 +96,18 @@ $submenu-li-width                    : 100%;
 $submenu-li-height                   : 66%;
 $submenu-li-margin                   : 0;
 $submenu-li-word-spacing             : 100px;
-$submenu-li-button-down-margin-top   : 22px;
-$submenu-li-div-line-height          : 100%;
-$submenu-li-div-padding-bottom       : 15%;
+$submenu-li-button-down-before-height      : 160%;
+$submenu-li-button-down-before-margin-top  : -90%;
+$submenu-li-button-down-margin-left  : -75%;
+$submenu-li-button-down-div-width    : 0px;
+$submenu-li-div-width                : 100px;
+$submenu-li-div-margin-bottom        : -4%;
+$submenu-li-div-line-height          : 120%;
+$submenu-li-div-padding-bottom       : 10%;
 $submenu-li-div-a-padding            : 0;
+$submenu-li-subNavLeft-margin-left   : 93%;
+$submenu-li-subNavRight-margin-left  : -200px;
+$submenu-li-subNavRight-margin-top   : -75%;
 
 // ============== CONTENT STYLES ===============
 $col-main-width                      : 68%;

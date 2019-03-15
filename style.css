@@ -586,28 +586,12 @@ header.top-wrap .main-header ul#menu li ul.submenu {
 }
 
 header.top-wrap .main-header ul#menu li ul.submenu li {
+  margin: 0;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-up {
   width: 100%;
   height: 66%;
-  margin: 0;
-  word-spacing: 100px;
-}
-
-header.top-wrap .main-header ul#menu li ul.submenu li.button-down {
-  margin-top: 22px;
-}
-
-header.top-wrap .main-header ul#menu li ul.submenu li.button-down:before {
-  background-color: #262B2F;
-  border-right: 1px solid #DEFEB3;
-}
-
-header.top-wrap .main-header ul#menu li ul.submenu li.button-down div {
-  line-height: 100%;
-  padding-bottom: 15%;
-}
-
-header.top-wrap .main-header ul#menu li ul.submenu li.button-down div a {
-  padding: 0;
 }
 
 header.top-wrap .main-header ul#menu li ul.submenu li.button-up:before {
@@ -616,11 +600,147 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-up:before {
 }
 
 header.top-wrap .main-header ul#menu li ul.submenu li.button-up div {
-  line-height: 100%;
+  line-height: 120%;
 }
 
 header.top-wrap .main-header ul#menu li ul.submenu li.button-up div a {
   padding: 0;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down {
+  position: absolute;
+  display: inline-flex;
+  width: calc(100% + 50%);
+  margin-left: -75%;
+}
+
+@media (min-width: 1200px) and (max-width: calc(1200px + 199px)) {
+  header.top-wrap .main-header ul#menu li ul.submenu li.button-down {
+    width: calc(100% + 60%);
+  }
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down:before {
+  height: 160%;
+  margin-top: -90%;
+  background-color: #262B2F;
+  border-right: 1px solid #DEFEB3;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down div {
+  width: 0px;
+  line-height: 120%;
+  padding-bottom: 10%;
+  margin-bottom: -4%;
+  white-space: nowrap;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down div div {
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down div div a {
+  padding: 0;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavLeft {
+  margin-left: 93%;
+  text-align: left;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
+  margin-left: -200px;
+  margin-top: -75%;
+  float: right;
+  text-align: right;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavLeft :nth-child(1) {
+  margin-left: -100px;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight :nth-child(1) {
+  margin-left: 100px;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavLeft :nth-child(2) {
+  margin-left: -90px;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight :nth-child(2) {
+  margin-left: 90px;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavLeft :nth-child(3) {
+  margin-left: -80px;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight :nth-child(3) {
+  margin-left: 80px;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavLeft :nth-child(4) {
+  margin-left: -70px;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight :nth-child(4) {
+  margin-left: 70px;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavLeft :nth-child(5) {
+  margin-left: -60px;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight :nth-child(5) {
+  margin-left: 60px;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavLeft :nth-child(6) {
+  margin-left: -50px;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight :nth-child(6) {
+  margin-left: 50px;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavLeft :nth-child(7) {
+  margin-left: -40px;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight :nth-child(7) {
+  margin-left: 40px;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavLeft :nth-child(8) {
+  margin-left: -30px;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight :nth-child(8) {
+  margin-left: 30px;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavLeft :nth-child(9) {
+  margin-left: -20px;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight :nth-child(9) {
+  margin-left: 20px;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavLeft :nth-child(10) {
+  margin-left: -10px;
+}
+
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight :nth-child(10) {
+  margin-left: 10px;
 }
 
 header.top-wrap .main-header ul#menu li:hover > ul,

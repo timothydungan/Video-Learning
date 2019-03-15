@@ -164,47 +164,92 @@ header {
            }
            transition-duration           : $base-animation-length;
            transition-timing-function    : $base-animation-timing-function;
-           -webkit-transform             : rotateX(180deg);
-               -ms-transform             : rotateX(180deg);
-                   transform             : rotateX(180deg);
+           -webkit-transform           : rotateX(180deg);
+               -ms-transform           : rotateX(180deg);
+                   transform           : rotateX(180deg);
 
            li {
-             width                       : $submenu-li-width;
-             height                      : $submenu-li-height;
              margin                      : $submenu-li-margin;
-             word-spacing                : $submenu-li-word-spacing;
+
+             &.button-up {
+               width                     : $submenu-li-width;
+               height                    : $submenu-li-height;
+
+               &:before {
+                 background-color        : $header-bg-color;
+                 border-right            : $menu-li-before-border;
+               }
+
+               div {
+                line-height              : $submenu-li-div-line-height;
+
+                a {
+                  padding                : $submenu-li-div-a-padding;
+                }
+               }
+             }
 
              &.button-down {
-               margin-top                : $submenu-li-button-down-margin-top;
+               position                  : absolute;
+               display                   : inline-flex;
+               width                     : calc(#{$submenu-li-width} + 50%);
+               margin-left               : $submenu-li-button-down-margin-left;
+               @include screen1200 {
+                 width                   : calc(#{$submenu-li-width} + 60%);
+               };
 
                 &:before {
+                  height                 : $submenu-li-button-down-before-height;
+                  margin-top             : $submenu-li-button-down-before-margin-top;
                   background-color       : $header-bg-color;
                   border-right           : $menu-li-before-border;
                 }
 
                 div {
+                  width                  : $submenu-li-button-down-div-width;
                   line-height            : $submenu-li-div-line-height;
                   padding-bottom         : $submenu-li-div-padding-bottom;
+                  margin-bottom          : $submenu-li-div-margin-bottom;
+                  white-space            : nowrap;
 
-                  a {
-                    padding              : $submenu-li-div-a-padding;
+                  div {
+                    -webkit-transform    : rotateY(0deg);
+                        -ms-transform    : rotateY(0deg);
+                            transform    : rotateY(0deg);
+
+                    a {
+                      padding            : $submenu-li-div-a-padding;
+                    }
                   }
                 }
-              }
 
-              &.button-up {
-
-                &:before {
-                  background-color       : $header-bg-color;
-                  border-right           : $menu-li-before-border;
+                .subNavLeft {
+                  margin-left            : $submenu-li-subNavLeft-margin-left;
+                  text-align             : left;
                 }
 
-                div {
-                 line-height             : $submenu-li-div-line-height;
+                .subNavRight {
+                  margin-left            : $submenu-li-subNavRight-margin-left;
+                  margin-top             : $submenu-li-subNavRight-margin-top;
+                  float                  : right;
+                  @include clearfix;
+                  text-align             : right;
+                }
 
-                 a {
-                   padding               : $submenu-li-div-a-padding;
-                 }
+                @for $i from 1 through 10 {
+                  $hold                  : (110 - ($i * 10));
+
+                  .subNavLeft {
+                    :nth-child(#{$i}) {
+                      margin-left        : -#{$hold}px;
+                    }
+                  }
+
+                  .subNavRight {
+                    :nth-child(#{$i}) {
+                      margin-left        : #{$hold}px;
+                    }
+                  }
                 }
               }
             }
