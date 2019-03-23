@@ -54,8 +54,7 @@
 @mixin subscribe-button-hover {
   cursor              : pointer;
   background-image    : svgParams(main-button-0, $svg-secondary-color, $cta-svg-color, $svg-border-color);
-  @media screen and (max-width: $wrapper-width-900) {
-    background-color    : $cta-bg-color;
+  @include screen900below {
     background-image    : none;
   }
   -webkit-transition  : $button-transition;
@@ -67,8 +66,7 @@
   text-shadow         : $button-glow;
   font-style          : oblique;
   background-image    : svgParams(main-button-0, $svg-secondary-color, $cta-svg-color, $svg-border-color);
-  @media screen and (max-width: $wrapper-width-900) {
-    background-color    : $cta-bg-color;
+  @include screen900below {
     background-image    : none;
   }
   -webkit-transition  : $button-transition;
@@ -107,8 +105,7 @@
   text-shadow        : $button-glow;
   font-style         : oblique;
   background-image   : svgParams(main-button-90, $svg-secondary-color, $cta-svg-color, $svg-border-color);
-  @media screen and (max-width: $wrapper-width-900) {
-    background-color    : $cta-bg-color;
+  @include screen900below {
     background-image    : none;
   }
   -webkit-transition : $button-transition;
@@ -124,8 +121,7 @@
   text-shadow        : $button-glow;
   font-style         : oblique;
   background-image   : svgParams(main-button-270, $svg-secondary-color, $cta-svg-color, $svg-border-color);
-  @media screen and (max-width: $wrapper-width-900) {
-    background-color    : $cta-bg-color;
+  @include screen900below {
     background-image    : none;
   }
   -webkit-transition : $button-transition;
@@ -144,21 +140,23 @@
           transform-origin     : center top;
 
   &.rollDown {
-    -webkit-backface-visibility:visible !important;
-    -webkit-animation-duration : $base-animation-length;
-    -webkit-animation-name     : rollDown;
-    -moz-backface-visibility   : visible !important;
-    -moz-animation-duration    : $base-animation-length;
-    -moz-animation-name        : rollDown;
-    -ms-backface-visibility    : visible !important;
-    -ms-animation-duration     : $base-animation-length;
-    -ms-animation-name         : rollDown;
-    -o-backface-visibility     : visible !important;
-    -o-animation-duration      : $base-animation-length;
-    -o-animation-name          : rollDown;
-    backface-visibility        : visible !important;
-    animation-duration         : $base-animation-length;
-    animation-name             : rollDown;
+    @include screen900above {
+      -webkit-backface-visibility:visible;
+      -webkit-animation-duration : $base-animation-length;
+      -webkit-animation-name     : rollDown;
+      -moz-backface-visibility   : visible;
+      -moz-animation-duration    : $base-animation-length;
+      -moz-animation-name        : rollDown;
+      -ms-backface-visibility    : visible;
+      -ms-animation-duration     : $base-animation-length;
+      -ms-animation-name         : rollDown;
+      -o-backface-visibility     : visible;
+      -o-animation-duration      : $base-animation-length;
+      -o-animation-name          : rollDown;
+      backface-visibility        : visible;
+      animation-duration         : $base-animation-length;
+      animation-name             : rollDown;
+    };
   }
 }
 
@@ -180,8 +178,20 @@
   }
 }
 
+@mixin screen900above {
+  @media screen and (min-width: $wrapper-width-900) {
+    @content;
+  }
+}
+
 @mixin screen900 {
   @media (min-width: #{$wrapper-width-900}) and (max-width: calc(#{$wrapper-width-900} + 99px)) {
+    @content;
+  }
+}
+
+@mixin screen900below {
+  @media screen and (max-width: calc(#{$wrapper-width-800} + 99px)) {
     @content;
   }
 }
@@ -194,6 +204,12 @@
 
 @mixin screen700 {
   @media (min-width: #{$wrapper-width-700}) and (max-width: calc(#{$wrapper-width-700} + 99px)) {
+    @content;
+  }
+}
+
+@mixin screen700below {
+  @media screen and (max-width: calc(#{$wrapper-width-600} + 99px)) {
     @content;
   }
 }

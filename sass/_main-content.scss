@@ -8,6 +8,10 @@
 .col-main {
   width                            : $col-main-width;
   margin-right                     : $col-gutter;
+  @include screen700below {
+    width                          : calc(#{$col-main-width} + 32%);
+    margin-right                   : unset;
+  };
 
   .video-wrapper {
     width                          : $video-wrapper-width;
@@ -22,10 +26,7 @@
     @include screen1000 {
       background-size              : 100% calc(#{$video-wrapper-bg-height} - 2%);
     };
-    @include screen900 {
-      background-size              : 100% calc(#{$video-wrapper-bg-height} - 1.7%);
-    };
-    @media screen and (max-width: $wrapper-width-900) {
+    @include screen900below {
       background-color    : $video-bg-color;
       background-image    : none;
     }
@@ -37,19 +38,24 @@
               transform            : translateX(-45px);
 
       .next-lesson, .previous-lesson {
+        width                      : $video-nav-width;
         font-size                  : $video-nav-text-size;
         margin-top                 : $video-nav-margin-top;
         padding                    : $video-nav-padding;
-        width                      : $video-nav-width;
-        @include screen1000 {
-          font-size                : calc(#{$video-nav-text-size} - 250%);
-        };
-        @include screen900 {
-          font-size                : calc(#{$video-nav-text-size} - 250%);
-        };
         -webkit-transform          : scaleX($video-nav-transform-scalex);
             -ms-transform          : scaleX($video-nav-transform-scalex);
                 transform          : scaleX($video-nav-transform-scalex);
+        @include screen1000 {
+          font-size                : calc(#{$video-nav-text-size}  - 250%);
+        };
+        @include screen900 {
+          font-size                : calc(#{$video-nav-text-size}  - 250%);
+          margin-top               : calc(#{$video-nav-margin-top} -  10%);
+        };
+        @include screen900below {
+          font-size                : calc(#{$video-nav-text-size}  - 250%);
+          margin-top               : unset;
+        };
 
         a {
           outline                  : none;
@@ -79,7 +85,19 @@
           padding-left             : calc(#{$video-nav-previous-padding-left} + 6%);
         };
         @include screen900 {
-          padding-left             : calc(#{$video-nav-previous-padding-left} + 7%);
+          padding-left             : calc(#{$video-nav-previous-padding-left} + 8.6%);
+        };
+        @include screen800 {
+          padding-left             : calc(#{$video-nav-previous-padding-left} + 8%);
+        };
+        @include screen700 {
+          padding-left             : calc(#{$video-nav-previous-padding-left} + 8%);
+        };
+        @include screen600 {
+          padding-left             : calc(#{$video-nav-previous-padding-left} + 6%);
+        };
+        @include screen500 {
+          padding-left             : calc(#{$video-nav-previous-padding-left} + 8.3%);
         };
       }
 
@@ -87,6 +105,9 @@
         position                   : absolute;
         right                      : $video-nav-next-right;
         margin-top                 : $video-nav-next-margin-top;
+        @include browser-hacks {
+          margin-top               : calc(#{$video-nav-next-margin-top} * 2);
+        }
         @include screen1200 {
           right                    : calc(#{$video-nav-next-right}      - 0.8%);
         };
@@ -94,11 +115,24 @@
           right                    : calc(#{$video-nav-next-right}      - 1.7%);
         };
         @include screen900 {
-          right                    : calc(#{$video-nav-next-right}      - 3.1%);
+          right                    : calc(#{$video-nav-next-right}      - 2.5%);
+          margin-top               : calc(#{$video-nav-next-margin-top} - 5%);
         };
-        @include browser-hacks {
-          margin-top               : calc(#{$video-nav-next-margin-top} * 2);
-        }
+        @include screen900below {
+          margin-top               : unset;
+        };
+        @include screen800 {
+          right                    : calc(#{$video-nav-next-right}      - 4.1%);
+        };
+        @include screen700 {
+          right                    : calc(#{$video-nav-next-right}      - 4.1%);
+        };
+        @include screen600 {
+          right                    : calc(#{$video-nav-next-right}      - 3.5%);
+        };
+        @include screen500 {
+          right                    : calc(#{$video-nav-next-right}      - 4.9%);
+        };
       }
 
       .video-player {
@@ -111,16 +145,44 @@
             -ms-transform          : translate($video-player-translate-x, $video-player-translate-y);
                 transform          : translate($video-player-translate-x, $video-player-translate-y);
         @include screen1200 {
-          margin-left              : calc(#{$video-player-margin-left} + 1.5%);
+          margin-left              : calc(#{$video-player-margin-left}           + 1.5%);
         };
         @include screen1000 {
-          margin-left              : calc(#{$video-player-margin-left} + 3.9%);
+          margin-left              : calc(#{$video-player-margin-left}           + 3.9%);
         };
         @include screen900 {
-          margin-left              : calc(#{$video-player-margin-left} + 4%);
-          -webkit-transform        : translate(calc(#{$video-player-translate-x} + 0.8%), $video-player-translate-y);
-              -ms-transform        : translate(calc(#{$video-player-translate-x} + 0.8%), $video-player-translate-y);
-                  transform        : translate(calc(#{$video-player-translate-x} + 0.8%), $video-player-translate-y);
+          margin-left              : calc(#{$video-player-margin-left}           + 4%);
+          -webkit-transform        : translate(calc(#{$video-player-translate-x} + 0.8%), calc(#{$video-player-translate-y} - 0%));
+              -ms-transform        : translate(calc(#{$video-player-translate-x} + 0.8%), calc(#{$video-player-translate-y} - 0%));
+                  transform        : translate(calc(#{$video-player-translate-x} + 0.8%), calc(#{$video-player-translate-y} - 0%));
+        };
+        @include screen800 {
+          width                    : calc(#{$video-player-width}                 + 0.8%);
+          margin-left              : calc(#{$video-player-margin-left}           + 4%);
+          -webkit-transform        : translate(calc(#{$video-player-translate-x} + 2%),   calc(#{$video-player-translate-y} - 3%));
+              -ms-transform        : translate(calc(#{$video-player-translate-x} + 2%),   calc(#{$video-player-translate-y} - 3%));
+                  transform        : translate(calc(#{$video-player-translate-x} + 2%),   calc(#{$video-player-translate-y} - 3%));
+        };
+        @include screen700 {
+          width                    : calc(#{$video-player-width}                 + 0.8%);
+          margin-left              : calc(#{$video-player-margin-left}           + 4%);
+          -webkit-transform        : translate(calc(#{$video-player-translate-x} + 2%),   calc(#{$video-player-translate-y} - 3%));
+              -ms-transform        : translate(calc(#{$video-player-translate-x} + 2%),   calc(#{$video-player-translate-y} - 3%));
+                  transform        : translate(calc(#{$video-player-translate-x} + 2%),   calc(#{$video-player-translate-y} - 3%));
+        };
+        @include screen600 {
+          width                    : calc(#{$video-player-width}                 + 0.8%);
+          margin-left              : calc(#{$video-player-margin-left}           + 2%);
+          -webkit-transform        : translate(calc(#{$video-player-translate-x} + 2%),   calc(#{$video-player-translate-y} - 3%));
+              -ms-transform        : translate(calc(#{$video-player-translate-x} + 2%),   calc(#{$video-player-translate-y} - 3%));
+                  transform        : translate(calc(#{$video-player-translate-x} + 2%),   calc(#{$video-player-translate-y} - 3%));
+        };
+        @include screen500 {
+          width                    : calc(#{$video-player-width}                 + 0.8%);
+          margin-left              : calc(#{$video-player-margin-left}           + 4%);
+          -webkit-transform        : translate(calc(#{$video-player-translate-x} + 2.5%), calc(#{$video-player-translate-y} - 2.9%));
+              -ms-transform        : translate(calc(#{$video-player-translate-x} + 2.5%), calc(#{$video-player-translate-y} - 2.9%));
+                  transform        : translate(calc(#{$video-player-translate-x} + 2.5%), calc(#{$video-player-translate-y} - 2.9%));
         };
 
         .video-frame {
@@ -150,6 +212,22 @@
       @include screen900 {
         padding-bottom             : calc(#{$video-caption-padding-bottom} + 0.7%);
       };
+      @include screen800 {
+        margin-top                 : calc(#{$video-caption-margin-top}     - 1%);
+        padding-bottom             : calc(#{$video-caption-padding-bottom} + 0.7%);
+      };
+      @include screen700 {
+        margin-top                 : calc(#{$video-caption-margin-top}     - 1%);
+        padding-bottom             : calc(#{$video-caption-padding-bottom} + 0.7%);
+      };
+      @include screen600 {
+        margin-top                 : calc(#{$video-caption-margin-top}     - 1%);
+        padding-bottom             : calc(#{$video-caption-padding-bottom} + 0.7%);
+      };
+      @include screen500 {
+        margin-top                 : calc(#{$video-caption-margin-top}     - 1%);
+        padding-bottom             : calc(#{$video-caption-padding-bottom} + 0.7%);
+      };
     }
   }
 
@@ -164,55 +242,108 @@
     @include screen900 {
       height                       : calc(#{$course-titling-wrapper-height} - 10px);
     };
-    @media screen and (max-width: $wrapper-width-900) {
+    @include screen900below {
       background-color    : $course-bg-color;
       background-image    : none;
+    };
+    @include screen800 {
+      height                       : calc(#{$course-titling-wrapper-height} - 50px);
+    };
+    @include screen700 {
+      height                       : calc(#{$course-titling-wrapper-height} - 50px);
+    };
+    @include screen600 {
+      height                       : calc(#{$course-titling-wrapper-height} - 50px);
+    };
+    @include screen500 {
+      height                       : calc(#{$course-titling-wrapper-height} - 50px);
+    };
+
+    .course-title-wrap {
+      margin-left                : $course-title-wrap-margin-left;
+      padding-top                : $course-title-wrap-padding-top;
+      @include screen1200 {
+        padding-top              : calc(#{$course-title-wrap-padding-top}   +  0.7%);
+      };
+      @include screen800 {
+        margin-left              : calc(#{$course-title-wrap-margin-left}   -  6%);
+        padding-top              : calc(#{$course-title-wrap-padding-top}   -  3%);
+      };
+      @include screen700 {
+        margin-left              : calc(#{$course-title-wrap-margin-left}   -  6%);
+        padding-top              : calc(#{$course-title-wrap-padding-top}   -  3%);
+      };
+      @include screen600 {
+        margin-left              : calc(#{$course-title-wrap-margin-left}   -  6%);
+        padding-top              : calc(#{$course-title-wrap-padding-top}   -  3%);
+      };
+      @include screen500 {
+        margin-left              : calc(#{$course-title-wrap-margin-left}   -  6%);
+        padding-top              : calc(#{$course-title-wrap-padding-top}   -  3%);
+      };
     }
 
-      .course-title-wrap {
-        margin-left                : $course-title-wrap-margin-left;
-        padding-top                : $course-title-wrap-padding-top;
-        @include screen1200 {
-          padding-top              : calc(#{$course-title-wrap-padding-top} + 0.7%);
-        };
-      }
+    .course-titling {
+      color                      : $course-titling-color;
+      font-size                  : $course-titling-text-size;
+      line-height                : $course-titling-line-height;
+      @include screen1200 {
+        font-size                : calc(#{$course-titling-text-size} - 20%);
+      };
+      @include screen800 {
+        font-size                : calc(#{$course-titling-text-size} - 20%);
+      };
+      @include screen700 {
+        font-size                : calc(#{$course-titling-text-size} - 20%);
+      };
+      @include screen600 {
+        font-size                : calc(#{$course-titling-text-size} - 20%);
+      };
+      @include screen500 {
+        font-size                : calc(#{$course-titling-text-size} - 20%);
+      };
 
-      .course-titling {
-        color                      : $course-titling-color;
-        font-size                  : $course-titling-text-size;
-        line-height                : $course-titling-line-height;
-        @include screen1200 {
-          font-size                : calc(#{$course-titling-text-size} - 20%);
-        };
-
-        strong {
-          font-weight              : $course-titling-strong;
-          letter-spacing           : $course-titling-strong-spacing;
-        }
+      strong {
+        font-weight              : $course-titling-strong;
+        letter-spacing           : $course-titling-strong-spacing;
       }
+    }
 
-      .extra-info {
-        display                    : inline-flex;
-        flex-direction             : row;
-      }
+    .extra-info {
+      display                    : inline-flex;
+      flex-direction             : row;
+      @include screen800 {
+        display                    : block;
+      };
+      @include screen700 {
+        display                    : block;
+      };
+      @include screen700below {
+        display                    : block;
+      };
+    }
 
-      .video-count {
-        position                   : absolute;
-        margin-top                 : $video-count-margin-top;
-        margin-left                : $video-count-margin-left;
-        @include screen1000 {
-          margin-top               : calc(#{$video-count-margin-top}  +  3%);
-          margin-left              : calc(#{$video-count-margin-left} - 42%);
-        };
-        @include screen900 {
-          margin-top               : calc(#{$video-count-margin-top}  +  3%);
-          margin-left              : calc(#{$video-count-margin-left} - 41%);
-        };
-      }
+    .video-count {
+      position                   : absolute;
+      margin-top                 : $video-count-margin-top;
+      margin-left                : $video-count-margin-left;
+      @include screen1000 {
+        margin-top               : calc(#{$video-count-margin-top}  +  3%);
+        margin-left              : calc(#{$video-count-margin-left} - 42%);
+      };
+      @include screen900 {
+        margin-top               : calc(#{$video-count-margin-top}  +  3%);
+        margin-left              : calc(#{$video-count-margin-left} - 41%);
+      };
+      @include screen900below {
+        margin-top               : unset;
+        margin-left              : unset;
+      };
+    }
 
-      .video-numbering {
-        text-align                 : $video-numbering-text-align;
-      }
+    .video-numbering {
+      text-align                 : $video-numbering-text-align;
+    }
   }
 
   .main-content-tabs {
@@ -220,6 +351,24 @@
     line-height                    : $main-line-height;
     @include screen1200 {
       line-height       : calc(#{$main-line-height}      - 15%);
+    };
+    @include screen1000 {
+      font-size         : calc(#{$lesson-name-font-size} -  10%);
+      line-height       : calc(#{$main-line-height}       - 15%);
+    };
+    @include screen900 {
+      font-size         : calc(#{$lesson-name-font-size} -  10%);
+      line-height       : calc(#{$main-line-height}       - 10%);
+    };
+    @include screen900below {
+      font-size         : calc(#{$lesson-name-font-size} -  10%);
+      line-height       : calc(#{$main-line-height}       - 10%);
+    };
+    @include screen600 {
+      margin-top        : calc(#{$vertical-margin-spacing} - 50px);
+    };
+    @include screen500 {
+      margin-top        : calc(#{$vertical-margin-spacing} - 50px);
     };
 
     section {
@@ -248,9 +397,10 @@
         padding-top                : calc(#{$tabs-label-padding-top-bottom} + 0.02%);
         padding-bottom             : calc(#{$tabs-label-padding-top-bottom} + 0.02%);
       };
-      @media screen and (max-width: $wrapper-width-900) {
-        background-color    : $talk-print-bg-color;
-        background-image    : none;
+      @include screen900below {
+        background-color           : $talk-print-bg-color;
+        background-image           : none;
+        border                     : 1px solid $tabs-border-color;
       }
 
       &:focus,
@@ -272,27 +422,71 @@
       background-position          : center;
       background-size              : 100% 100%;
       background-image             : svgParams(tab, $talk-print-svg-color, $svg-secondary-color, $talk-print-svg-color);
-      @media screen and (max-width: $wrapper-width-900) {
-        background-color    : $talk-print-bg-color;
-        background-image    : none;
+      @include screen900below {
+        background-color           : $talk-print-bg-color;
+        background-image           : none;
+        border-bottom              : 1px solid $talk-print-bg-color;
       }
     }
 
     input#qa-tab + label {
       margin-left                  : $tabs-margin-left;
+      @include screen800 {
+        margin-left                : calc(#{$tabs-margin-left} - 7%);
+      };
+      @include screen700 {
+        margin-left                : calc(#{$tabs-margin-left} - 7%);
+      };
+      @include screen700below {
+        margin-left                : calc(#{$tabs-margin-left} - 7%);
+      };
     }
 
     #talk-print-wrapper {
       width                        : $talk-print-wrapper-width;
-      padding                      : $talk-print-wrapper-padding;
+      padding                      :
+        $talk-print-wrapper-padding-top
+        $talk-print-wrapper-padding-right
+        $talk-print-wrapper-padding-bottom
+        $talk-print-wrapper-padding-left;
       background-repeat            : no-repeat;
       background-position          : center;
       background-size              : 100% 100%;
       background-image             : svgParams(talk-print, $talk-print-svg-color, $svg-secondary-color);
-      @media screen and (max-width: $wrapper-width-900) {
-        background-color    : $talk-print-bg-color;
-        background-image    : none;
+      @include screen900below {
+        background-color           : $talk-print-bg-color;
+        background-image           : none;
+        border                     : 1px solid $tabs-border-color;
       }
+      @include screen800 {
+        padding                    :
+          calc(#{$talk-print-wrapper-padding-top}    - 1%)
+          calc(#{$talk-print-wrapper-padding-right}  - 7%)
+          calc(#{$talk-print-wrapper-padding-bottom} - 4%)
+          calc(#{$talk-print-wrapper-padding-left}   - 7%);
+      };
+      @include screen700 {
+        padding                    :
+          calc(#{$talk-print-wrapper-padding-top}    - 1%)
+          calc(#{$talk-print-wrapper-padding-right}  - 7%)
+          calc(#{$talk-print-wrapper-padding-bottom} - 4%)
+          calc(#{$talk-print-wrapper-padding-left}   - 7%);
+      };
+      @include screen600 {
+        padding                    :
+          calc(#{$talk-print-wrapper-padding-top}    - 1%)
+          calc(#{$talk-print-wrapper-padding-right}  - 7%)
+          calc(#{$talk-print-wrapper-padding-bottom} - 4%)
+          calc(#{$talk-print-wrapper-padding-left}   - 7%);
+      };
+      @include screen500 {
+        padding                    :
+          calc(#{$talk-print-wrapper-padding-top}    - 1%)
+          calc(#{$talk-print-wrapper-padding-right}  - 7%)
+          calc(#{$talk-print-wrapper-padding-bottom} - 4%)
+          calc(#{$talk-print-wrapper-padding-left}   - 7%);
+      };
+
 
       .swashIn {
         -webkit-animation-fill-mode: both;
@@ -344,10 +538,6 @@
               background-position  : center;
               background-size      : 100% 100%;
               background-image     : svgParams(talkazoid-0, $talk-print-svg-color, $svg-secondary-color);
-              @media screen and (max-width: $wrapper-width-900) {
-                background-color    : $talk-print-bg-color;
-                background-image    : none;
-              }
             }
 
             &.teacher-comments {
@@ -357,10 +547,6 @@
               background-position  : center;
               background-size      : 100% 100%;
               background-image     : svgParams(talkazoid-180, $talk-print-svg-color, $svg-secondary-color);
-              @media screen and (max-width: $wrapper-width-900) {
-                background-color    : $talk-print-bg-color;
-                background-image    : none;
-              }
             }
           }
         }
@@ -368,6 +554,23 @@
 
       #transcript {
         margin-left                : $transcript-margin-left;
+        padding-left               : $transcript-padding-left;
+        @include screen800 {
+          margin-left              : calc(#{$transcript-margin-left}  - 8%);
+          padding-left             : calc(#{$transcript-padding-left} + 8%);
+        };
+        @include screen700 {
+          margin-left              : calc(#{$transcript-margin-left}  - 8%);
+          padding-left             : calc(#{$transcript-padding-left} + 8%);
+        };
+        @include screen600 {
+          margin-left              : calc(#{$transcript-margin-left}  - 8%);
+          padding-left             : calc(#{$transcript-padding-left} + 8%);
+        };
+        @include screen500 {
+          margin-left              : calc(#{$transcript-margin-left}  - 8%);
+          padding-left             : calc(#{$transcript-padding-left} + 8%);
+        };
 
         &:before {
           content                  : '';
@@ -387,6 +590,26 @@
           @include screen900 {
             width                  : calc(#{$quote-icon-width}       - 10px);
             height                 : calc(#{$quote-icon-height}      - 10px);
+            margin-left            : calc(#{$quote-icon-margin-left} -  1%);
+          };
+          @include screen800 {
+            width                  : calc(#{$quote-icon-width}       - 15px);
+            height                 : calc(#{$quote-icon-height}      - 15px);
+            margin-left            : calc(#{$quote-icon-margin-left} -  1%);
+          };
+          @include screen700 {
+            width                  : calc(#{$quote-icon-width}       - 15px);
+            height                 : calc(#{$quote-icon-height}      - 15px);
+            margin-left            : calc(#{$quote-icon-margin-left} -  1%);
+          };
+          @include screen600 {
+            width                  : calc(#{$quote-icon-width}       - 15px);
+            height                 : calc(#{$quote-icon-height}      - 15px);
+            margin-left            : calc(#{$quote-icon-margin-left} -  1%);
+          };
+          @include screen500 {
+            width                  : calc(#{$quote-icon-width}       - 15px);
+            height                 : calc(#{$quote-icon-height}      - 15px);
             margin-left            : calc(#{$quote-icon-margin-left} -  1%);
           };
         }

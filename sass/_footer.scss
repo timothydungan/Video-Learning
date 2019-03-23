@@ -18,7 +18,13 @@ footer {
     height                   : calc(#{$footer-height}  +  5px);
   };
   @include screen900 {
-    height                   : calc(#{$footer-height}  +  5px);
+    height                   : unset;
+  };
+  @include screen600 {
+    height                   : unset;
+  };
+  @include screen500 {
+    height                   : unset;
   };
 
   .footer-wrap {
@@ -26,20 +32,55 @@ footer {
     flex-direction           : row;
     width                    : $footer-wrap-width;
     text-align               : center;
+    @include screen700below {
+      display       : block;
+    };
 
     .footer-left-col {
       width                  : $footer-column-width;
+      @include screen700below {
+        width                : calc(#{$footer-column-width}     + 50%);
+      };
+      @include screen600 {
+        padding-top          : $vertical-margin-spacing;
+      };
+      @include screen500 {
+        padding-top          : $vertical-margin-spacing;
+      };
 
       .copyright-notice {
         position             : absolute;
         text-align           : left;
-        bottom               : 0;
-
+        bottom               : $copyright-notice-bottom;
+        @include screen900 {
+          bottom             : calc(#{$copyright-notice-bottom} +  1%);
+        };
+        @include screen900below {
+          bottom             : calc(#{$copyright-notice-bottom} +  1%);
+        };
+        @include screen700below {
+          display            : block;
+        };
+        @include screen600 {
+          bottom             : calc(#{$copyright-notice-bottom} +  5%);
+        };
+        @include screen500 {
+          bottom             : calc(#{$copyright-notice-bottom} +  5%);
+        };
       }
     }
 
     .footer-right-col {
       width                  : $footer-column-width;
+      @include screen700below {
+        width                : calc(#{$footer-column-width}     + 50%);
+      };
+      @include screen600 {
+        margin-top           : $vertical-margin-spacing;
+      };
+      @include screen500 {
+        margin-top           : $vertical-margin-spacing;
+      };
 
       .osi-notice {
         padding-top          : 20px;
@@ -47,7 +88,7 @@ footer {
         @include screen1000 {
           margin-bottom      : -4px;
         };
-        @include screen900 {
+        @include screen900below {
           margin-bottom      : -4px;
         };
       }
@@ -71,6 +112,15 @@ footer {
   @include screen900 {
     width                    : calc(#{$social-menu-wrapper-width} + 10%);
   };
+  @include screen900below {
+    width                    : unset;
+  };
+  @include screen600 {
+    margin-top        : calc(#{$vertical-margin-spacing} - 25px);
+  };
+  @include screen500 {
+    margin-top        : calc(#{$vertical-margin-spacing} - 25px);
+  };
 
   ul {
     list-style               : none;
@@ -80,8 +130,8 @@ footer {
       height                 : $social-menu-button-height;
       width                  : $social-menu-button-width;
       cursor                 : pointer;
-      @include screen900 {
-        height               : calc(#{$social-menu-button-height} - 3px);
+      @include screen900below {
+        height               : unset;
       };
 
       &.button-up {
@@ -89,7 +139,7 @@ footer {
         background-position  : center;
         background-size      : 100% 100%;
         background-image     : svgParams(main-button-90, $cta-svg-color, $svg-secondary-color, $svg-border-color);
-        @media screen and (max-width: $wrapper-width-900) {
+        @include screen900below {
           background-color    : $cta-bg-color;
           background-image    : none;
         }
@@ -110,7 +160,7 @@ footer {
         background-position  : center;
         background-size      : 100% 100%;
         background-image     : svgParams(main-button-270, $cta-svg-color, $svg-secondary-color, $svg-border-color);
-        @media screen and (max-width: $wrapper-width-900) {
+        @include screen900below {
           background-color    : $cta-bg-color;
           background-image    : none;
         }

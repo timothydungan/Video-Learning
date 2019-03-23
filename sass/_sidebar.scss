@@ -16,21 +16,48 @@
   background-size       : 100% 100%;
   background-image      : svgParams(sidebar, $sidebar-svg-color);
   @include screen1200 {
-    padding-left        : calc(#{$col-aside-padding-left-right} + 1%);
-    padding-right       : calc(#{$col-aside-padding-left-right} + 1%);
+    padding-left        : calc(#{$col-aside-padding-left-right}  + 1%);
+    padding-right       : calc(#{$col-aside-padding-left-right}  + 1%);
   };
-  @media screen and (max-width: $wrapper-width-900) {
+  @include screen900below {
     background-color    : $lesson-name-wrapper-bg-color;
     background-image    : none;
+    padding-top         : unset;
   }
+  @include screen800 {
+    padding-left        : calc(#{$col-aside-padding-left-right}  - 5%);
+    padding-right       : calc(#{$col-aside-padding-left-right}  - 5%);
+    padding-bottom      : calc(#{$col-aside-padding-bottom}      - 5%);
+  };
+  @include screen700 {
+    padding-left        : calc(#{$col-aside-padding-left-right}  - 5%);
+    padding-right       : calc(#{$col-aside-padding-left-right}  - 5%);
+    padding-bottom      : calc(#{$col-aside-padding-bottom}      - 5%);
+  };
+  @include screen700below {
+    width                 : unset;
+    padding-top           : unset;
+    padding-left          : unset;
+    padding-right         : unset;
+    padding-bottom        : unset;
+  };
+  @include screen600 {
+    margin-top            : calc(#{$vertical-margin-spacing} - 25px);
+  };
+  @include screen500 {
+    margin-top            : calc(#{$vertical-margin-spacing} - 25px);
+  };
 
   .lesson-name-wrapper {
-    background-color    : $lesson-name-wrapper-bg-color;
+    background-color      : $lesson-name-wrapper-bg-color;
   }
 
   ul {
     font-size         : $lesson-name-font-size;
     counter-reset     : li;
+    @include screen900below {
+      margin-top        : -$lesson-name-label-margin-top-bottom;
+    };
 
     li {
       list-style          : none;
@@ -43,32 +70,36 @@
         display: block;
         cursor: pointer;
         font-size         : $lesson-name-font-size;
-        background-color  : $lesson-name-span-bg-color;
-        color             : $lesson-name-span-text-color;
-        padding-top       : $lesson-name-span-padding-top-bottom;
-        padding-bottom    : $lesson-name-span-padding-top-bottom;
-        padding-left      : $lesson-name-span-padding-left;
-        padding-right     : $lesson-name-span-padding-right;
-        text-transform    : $lesson-name-span-text-transform;
-        margin-top        : $lesson-name-span-margin-top-bottom;
-        margin-bottom     : $lesson-name-span-margin-top-bottom;
-        margin-left       : $lesson-name-span-margin-left-right;
-        margin-right      : $lesson-name-span-margin-left-right;
+        background-color  : $lesson-name-label-bg-color;
+        color             : $lesson-name-label-text-color;
+        padding-top       : $lesson-name-label-padding-top-bottom;
+        padding-bottom    : $lesson-name-label-padding-top-bottom;
+        padding-left      : $lesson-name-label-padding-left;
+        padding-right     : $lesson-name-label-padding-right;
+        text-transform    : $lesson-name-label-text-transform;
+        margin-top        : $lesson-name-label-margin-top-bottom;
+        margin-bottom     : $lesson-name-label-margin-top-bottom;
+        margin-left       : $lesson-name-label-margin-left-right;
+        margin-right      : $lesson-name-label-margin-left-right;
         @include screen1200 {
-          margin-left     : calc(#{$lesson-name-span-margin-left-right}  - 10px);
-          margin-right    : calc(#{$lesson-name-span-margin-left-right}  - 10px);
-          font-size       : calc(#{$lesson-name-font-size}               - 5%);
-
+          margin-left     : calc(#{$lesson-name-label-margin-left-right}  - 10px);
+          margin-right    : calc(#{$lesson-name-label-margin-left-right}  - 10px);
+          font-size       : calc(#{$lesson-name-font-size}                -  5%);
         };
         @include screen1000 {
-          padding-top     : calc(#{$lesson-name-span-padding-top-bottom} - 5px);
-          padding-bottom  : calc(#{$lesson-name-span-padding-top-bottom} - 5px);
-          padding-right   : calc(#{$lesson-name-span-padding-right}      - 5px);
+          padding-top     : calc(#{$lesson-name-label-padding-top-bottom} -  5px);
+          padding-bottom  : calc(#{$lesson-name-label-padding-top-bottom} -  5px);
+          padding-right   : calc(#{$lesson-name-label-padding-right}      -  5px);
         };
         @include screen900 {
-          padding-top     : calc(#{$lesson-name-span-padding-top-bottom} - 5px);
-          padding-bottom  : calc(#{$lesson-name-span-padding-top-bottom} - 5px);
-          padding-right   : calc(#{$lesson-name-span-padding-right}      - 5px);
+          padding-top     : calc(#{$lesson-name-label-padding-top-bottom} -  5px);
+          padding-bottom  : calc(#{$lesson-name-label-padding-top-bottom} -  5px);
+          padding-right   : calc(#{$lesson-name-label-padding-right}      -  5px);
+        };
+        @include screen700 {
+          padding-top     : calc(#{$lesson-name-label-padding-top-bottom} -  5px);
+          padding-bottom  : calc(#{$lesson-name-label-padding-top-bottom} -  5px);
+          padding-right   : calc(#{$lesson-name-label-padding-right}      -  5px);
         };
 
         &.ln-label {
@@ -79,7 +110,7 @@
             float: right;
             clear: both;
             @include triangle("right", 5px, 10px, currentColor);
-            margin-right: $lesson-group-triangle;
+            margin-right       : $lesson-group-triangle-margin;
             -webkit-transition: -webkit-transform .2s ease-out;
                  -o-transition:         transform .2s ease-out;
                     transition: -webkit-transform .2s ease-out;
@@ -89,6 +120,12 @@
             -webkit-transform          : translateY(50%);
                 -ms-transform          : translateY(50%);
                     transform          : translateY(50%);
+            @include screen600 {
+              margin-right     : calc(#{$lesson-group-triangle-margin} + 2%);
+            };
+            @include screen500 {
+              margin-right     : calc(#{$lesson-group-triangle-margin} + 2%);
+            };
           }
         }
       }
@@ -100,7 +137,7 @@
       }
 
       ol {
-        // Because display:none messes up the lesson counter
+        // Because "display:none" messes up the lesson counter
         font-size: 0;
         visibility: hidden;
 
@@ -120,8 +157,11 @@
             margin-right    : $lesson-link-number-margin-right;
             text-align      : $lesson-link-number-text-align;
             direction       : $lesson-link-number-text-direction;
-            @include screen900 {
-              margin-left   : calc(#{$lesson-link-number-margin-left} - 0.3em);
+            @include screen1200 {
+              margin-right  : calc(#{$lesson-link-number-margin-right} - 1px);
+            };
+            @include screen1000 {
+              margin-right  : calc(#{$lesson-link-number-margin-right} - 1px);
             };
           }
 
@@ -148,9 +188,13 @@
         };
         @include screen1000 {
           font-size         : calc(#{$lesson-name-font-size} -  10%);
-          line-height       : calc(#{$main-line-height}       - 25%);
+          line-height       : calc(#{$main-line-height}       - 15%);
         };
         @include screen900 {
+          font-size         : calc(#{$lesson-name-font-size} -  10%);
+          line-height       : calc(#{$main-line-height}       - 10%);
+        };
+        @include screen900below {
           font-size         : calc(#{$lesson-name-font-size} -  10%);
           line-height       : calc(#{$main-line-height}       - 10%);
         };

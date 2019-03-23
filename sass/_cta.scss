@@ -16,15 +16,25 @@
   background-size       : 100% 100%;
   background-image      : svgParams(main-cta, $cta-svg-color);
   @include screen1000 {
-    height              : calc(#{$main-cta-height} - 16px);
+    height              : calc(#{$main-cta-height}      - 16px);
   };
   @include screen900 {
-    height              : calc(#{$main-cta-height} - 30px);
+    height              : calc(#{$main-cta-height}      - 30px);
   };
-  @media screen and (max-width: $wrapper-width-900) {
+  @include screen900below {
     background-color    : $cta-bg-color;
     background-image    : none;
-  }
+    height              : unset;
+  };
+  @include screen700below {
+    width               : calc(#{$main-cta-width}          + 69%);
+  };
+  @include screen600 {
+    margin-top          : calc(#{$vertical-margin-spacing} - 25px);
+  };
+  @include screen500 {
+    margin-top          : calc(#{$vertical-margin-spacing} - 25px);
+  };
 
   .cta-pitch {
     @include screen1000 {
@@ -34,7 +44,38 @@
     @include screen900 {
       font-size         : calc(#{$cta-text-size}        - 30%);
       margin-top        : calc(#{$cta-pitch-margin-top} -  2.2%);
+      margin-left       : calc(#{$cta-pitch-margin-left} - 2%);
     };
+    @include screen900below {
+      font-size         : calc(#{$cta-text-size}        - 30%);
+    };
+    @include screen800 {
+      margin-top        : calc(#{$cta-pitch-margin-top} - 14.5%);
+    };
+    @include screen700 {
+      margin-top        : calc(#{$cta-pitch-margin-top} - 17%);
+    };
+    @include screen600 {
+      display           : flex;
+      margin-top        : calc(#{$cta-pitch-margin-top} -  2.7%);
+      white-space       : nowrap;
+    };
+    @include screen500 {
+      display           : flex;
+      margin-top        : calc(#{$cta-pitch-margin-top} -  4.7%);
+      white-space       : nowrap;
+    };
+
+    .cta-pitch-title {
+      @include screen600 {
+        font-size       : calc(#{$cta-text-size}                 + 50%);
+        padding-right   : calc(#{$cta-pitch-title-padding-right} +  5%);
+      };
+      @include screen500 {
+        font-size       : calc(#{$cta-text-size}                 + 50%);
+        padding-right   : calc(#{$cta-pitch-title-padding-right} +  5%);
+      };
+    }
   }
 }
 
@@ -49,37 +90,73 @@
   background-position   : center;
   background-size       : 100% 100%;
   background-image      : svgParams(main-cta, $cta-svg-color);
-  @include screen1000 {
-    height              : calc(#{$big-cta-height} - 16px);
-  };
-  @include screen900 {
-    height              : calc(#{$big-cta-height} - 30px);
-  };
-  @media screen and (max-width: $wrapper-width-900) {
-    background-color    : $cta-bg-color;
-    background-image    : none;
-  }
   -webkit-transform     : rotate(180deg);
       -ms-transform     : rotate(180deg);
           transform     : rotate(180deg);
+  @include screen1000 {
+    height              : calc(#{$big-cta-height}          -  16px);
+  };
+  @include screen900 {
+    height              : calc(#{$big-cta-height}          -  30px);
+  };
+  @include screen900below {
+    background-color    : $cta-bg-color;
+    background-image    : none;
+    height              : unset;
+  };
+  @include screen800 {
+    padding-top         : calc(#{$vertical-margin-spacing} -  20px);
+  };
+  @include screen700 {
+    padding-top         : calc(#{$vertical-margin-spacing} -  20px);
+  };
+  @include screen600 {
+    margin-top          : calc(#{$vertical-margin-spacing} -  25px);
+    padding-top         : calc(#{$vertical-margin-spacing} -  20px);
+  };
+  @include screen500 {
+    margin-top          : calc(#{$vertical-margin-spacing} -  25px);
+    padding-top         : calc(#{$vertical-margin-spacing} -  20px);
+  };
 
   .cta-pitch {
     position            : absolute;
     margin-top          : $big-cta-pitch-margin-top;
     margin-left         : $big-cta-pitch-margin-left;
+    -webkit-transform   : rotate(180deg);
+        -ms-transform   : rotate(180deg);
+            transform   : rotate(180deg);
     @include screen1000 {
-      margin-top        : calc(#{$big-cta-pitch-margin-top} -   0.6%);
+      margin-top        : calc(#{$big-cta-pitch-margin-top}  -  0.6%);
       margin-left       : calc(#{$big-cta-pitch-margin-left} -  6%);
       font-size         : calc(#{$cta-text-size}             - 10%);
     };
     @include screen900 {
-      margin-top        : calc(#{$big-cta-pitch-margin-top} -   1.3%);
+      margin-top        : calc(#{$big-cta-pitch-margin-top}  -  1.3%);
+      margin-left       : calc(#{$big-cta-pitch-margin-left} -  5%);
+      font-size         : calc(#{$cta-text-size}             - 10%);
+    };
+    @include screen800 {
+      margin-top        : calc(#{$big-cta-pitch-margin-top}  -  0.9%);
       margin-left       : calc(#{$big-cta-pitch-margin-left} -  6%);
       font-size         : calc(#{$cta-text-size}             - 10%);
     };
-    -webkit-transform   : rotate(180deg);
-        -ms-transform   : rotate(180deg);
-            transform   : rotate(180deg);
+    @include screen700 {
+      margin-top        : calc(#{$big-cta-pitch-margin-top}  -  0.9%);
+      margin-left       : calc(#{$big-cta-pitch-margin-left} - 10%);
+      font-size         : calc(#{$cta-text-size}             - 25%);
+    };
+    @include screen600 {
+      margin-top        : calc(#{$big-cta-pitch-margin-top}  -  6%);
+      margin-left       : calc(#{$big-cta-pitch-margin-left} -  0%);
+      font-size         : calc(#{$cta-text-size}             - 25%);
+    };
+    @include screen500 {
+      margin-top        : calc(#{$big-cta-pitch-margin-top}  -  6.8%);
+      margin-left       : calc(#{$big-cta-pitch-margin-left} -  8%);
+      font-size         : calc(#{$cta-text-size}             - 25%);
+      white-space       : nowrap;
+    };
   }
 }
 
@@ -97,6 +174,7 @@
   .cta-pitch-title {
     font-size           : $cta-pitch-title-size;
     text-transform      : $cta-pitch-title-text-transform;
+    padding-right       : $cta-pitch-title-padding-right;
   }
 }
 
@@ -107,7 +185,22 @@
   height                : $entry-cta-wrap-height;
   margin-top            : $vertical-margin-spacing;
   @include screen900 {
-    height              : calc(#{$entry-cta-wrap-height} - 10px);
+    height              : calc(#{$entry-cta-wrap-height}   - 10px);
+  };
+  @include screen800 {
+    height              : calc(#{$entry-cta-wrap-height}   - 20px);
+  };
+  @include screen700 {
+    height              : calc(#{$entry-cta-wrap-height}   - 20px);
+  };
+  @include screen700below {
+    height              : unset;
+  };
+  @include screen600 {
+    margin-top          : calc(#{$vertical-margin-spacing} - 25px);
+  };
+  @include screen500 {
+    margin-top          : calc(#{$vertical-margin-spacing} - 25px);
   };
 
   p {
@@ -122,9 +215,11 @@
       font-size         : calc(#{$cta-text-size} - 40%);
     };
     @include screen900 {
-      font-size         : calc(#{$cta-text-size} - 50%);
+      font-size         : calc(#{$cta-text-size} - 40%);
     };
-
+    @include screen900below {
+      font-size         : calc(#{$cta-text-size} - 40%);
+    };
   }
 
   .class-files-cta {
@@ -135,27 +230,51 @@
     background-position : center;
     background-size     : 100% 100%;
     background-image    : svgParams(entry-cta, $cta-svg-color);
-    @include screen900 {
-      margin-top        : calc(#{$class-files-cta-margin-top} - 4px);
-    };
-    @media screen and (max-width: $wrapper-width-900) {
-      background-color    : $cta-bg-color;
-      background-image    : none;
-    }
     -webkit-transform   : translateY(-50%);
         -ms-transform   : translateY(-50%);
             transform   : translateY(-50%);
+    @include screen900 {
+      margin-top        : calc(#{$class-files-cta-margin-top} -  4px);
+    };
+    @include screen900below {
+      background-color    : $cta-bg-color;
+      background-image    : none;
+      width               : calc(#{$entry-cta-width}            + 55%);
+    }
+    @include screen800 {
+      margin-top        : calc(#{$class-files-cta-margin-top} - 10px);
+    };
+    @include screen700 {
+      margin-top        : calc(#{$class-files-cta-margin-top} - 10px);
+    };
+    @include screen600 {
+      margin-top        : calc(#{$class-files-cta-margin-top} - 11px);
+    };
+    @include screen500 {
+      margin-top        : calc(#{$class-files-cta-margin-top} - 11px);
+    };
 
     p {
       padding-top       : $class-files-cta-p-padding-top;
       @include screen1200 {
-        padding-top     : calc(#{$class-files-cta-p-padding-top} + 1px);
+        padding-top     : calc(#{$class-files-cta-p-padding-top} +  1px);
       };
       @include screen1000 {
-        padding-top     : calc(#{$class-files-cta-p-padding-top} + 5px);
+        padding-top     : calc(#{$class-files-cta-p-padding-top} +  5px);
       };
-      @include screen900 {
-        padding-top     : calc(#{$class-files-cta-p-padding-top} + 1px);
+      @include screen800 {
+        padding-top     : calc(#{$class-files-cta-p-padding-top} -  5px);
+      };
+      @include screen700 {
+        padding-top     : calc(#{$class-files-cta-p-padding-top} - 11px);
+      };
+      @include screen600 {
+        padding-top     : calc(#{$class-files-cta-p-padding-top} - 11px);
+        padding-bottom  : calc(#{$class-files-cta-p-padding-top} - 11px);
+      };
+      @include screen500 {
+        padding-top     : calc(#{$class-files-cta-p-padding-top} - 11px);
+        padding-bottom  : calc(#{$class-files-cta-p-padding-top} - 11px);
       };
     }
   }
@@ -168,13 +287,25 @@
     background-position : center;
     background-size     : 100% 100%;
     background-image    : svgParams(entry-cta, $cta-svg-color);
-    @media screen and (max-width: $wrapper-width-900) {
-      background-color    : $cta-bg-color;
-      background-image    : none;
-    }
     -webkit-transform   : rotate(180deg);
         -ms-transform   : rotate(180deg);
             transform   : rotate(180deg);
+    @include screen900below {
+      background-color    : $cta-bg-color;
+      background-image    : none;
+    }
+    @include screen800 {
+      width             : calc(#{$entry-cta-width}            + 55%);
+    };
+    @include screen700 {
+      width             : calc(#{$entry-cta-width}            + 55%);
+    };
+    @include screen600 {
+      width             : calc(#{$entry-cta-width}            + 55%);
+    };
+    @include screen500 {
+      width             : calc(#{$entry-cta-width}            + 55%);
+    };
 
     p {
       margin-top        : $completed-files-cta-p-margin-top;
@@ -182,15 +313,38 @@
           -ms-transform : rotate(180deg);
               transform : rotate(180deg);
       @include screen1200 {
-        margin-top      : calc(#{$completed-files-cta-p-margin-top} + 2px);
+        margin-top      : calc(#{$completed-files-cta-p-margin-top} +  2px);
       };
       @include screen1000 {
-        margin-top      : calc(#{$completed-files-cta-p-margin-top} + 1px);
+        margin-top      : calc(#{$completed-files-cta-p-margin-top} +  1px);
       };
       @include screen900 {
-        margin-top      : calc(#{$completed-files-cta-p-margin-top} - 3px);
+        margin-top      : calc(#{$completed-files-cta-p-margin-top} -  3px);
+      };
+      @include screen800 {
+        margin-top      : calc(#{$completed-files-cta-p-margin-top} -  7px);
+      };
+      @include screen700 {
+        margin-top      : calc(#{$completed-files-cta-p-margin-top} - 13px);
+      };
+      @include screen600 {
+        margin-top      : unset;
+        padding         : calc(#{$class-files-cta-p-padding-top}    - 11px);
+      };
+      @include screen500 {
+        margin-top      : unset;
+        padding         : calc(#{$class-files-cta-p-padding-top}    - 11px);
       };
     }
+  }
+
+  a {
+    @include screen700 {
+      display           : block;
+    };
+    @include screen700below {
+      display           : block;
+    };
   }
 }
 
@@ -203,22 +357,38 @@
   background-size       : 100% 100%;
   background-image      : svgParams(main-button-0, $cta-svg-color, $svg-secondary-color, $svg-border-color);
   @include screen1200 {
-    margin-top          : calc(#{$signup-button-left-margin-top} + 1%);
+    margin-top          : calc(#{$signup-button-left-margin-top} +  1%);
   };
   @include screen1000 {
     height              : calc(#{$signup-button-height}          - 14px);
   };
+  @include screen900above {
+    -webkit-transform     : translateY(-50%);
+        -ms-transform     : translateY(-50%);
+            transform     : translateY(-50%);
+  }
   @include screen900 {
     height              : calc(#{$signup-button-height}          - 20px);
-    margin-top          : calc(#{$signup-button-left-margin-top} - 1%);
+    margin-top          : calc(#{$signup-button-left-margin-top} -  1%);
   };
-  @media screen and (max-width: $wrapper-width-900) {
-    background-color    : $cta-bg-color;
+  @include screen900below {
     background-image    : none;
+    height              : unset;
   }
-  -webkit-transform     : translateY(-50%);
-      -ms-transform     : translateY(-50%);
-          transform     : translateY(-50%);
+  @include screen800 {
+    margin-left         : calc(#{$signup-button-left-margin-left} -  5%);
+    margin-top          : calc(#{$signup-button-left-margin-top}  - 24%);
+  };
+  @include screen700 {
+    margin-left         : calc(#{$signup-button-left-margin-left} -  5%);
+    margin-top          : calc(#{$signup-button-left-margin-top}  - 20%);
+  };
+  @include screen600 {
+    margin-top          : calc(#{$signup-button-left-margin-top}  - 17%);
+  };
+  @include screen500 {
+    margin-top          : calc(#{$signup-button-left-margin-top}  - 19%);
+  };
 
   p {
     font-size           : $cta-text-size;
@@ -226,8 +396,22 @@
     margin-top          : $signup-button-p-margin-top;
     line-height         : $fixed-line-height;
     @include screen900 {
+      margin-top        : calc(#{$signup-button-p-margin-top} -  5%);
+    };
+    @include screen800 {
       font-size         : calc(#{$cta-text-size}              - 40%);
-      margin-top        : calc(#{$signup-button-p-margin-top} +  5%);
+    };
+    @include screen700 {
+      font-size         : calc(#{$cta-text-size}              - 40%);
+      margin-top        : calc(#{$signup-button-p-margin-top} - 19%);
+    };
+    @include screen600 {
+      font-size         : calc(#{$cta-text-size}              -  0%);
+      margin-top        : calc(#{$signup-button-p-margin-top} - 10%);
+    };
+    @include screen500 {
+      font-size         : calc(#{$cta-text-size}              -  0%);
+      margin-top        : calc(#{$signup-button-p-margin-top} - 10%);
     };
   }
 
@@ -235,6 +419,14 @@
     padding-left        : $signup-button-a-padding;
     padding-right       : $signup-button-a-padding;
     @include screen1000 {
+      padding-left      : calc(#{$signup-button-a-padding} - 10px);
+      padding-right     : calc(#{$signup-button-a-padding} - 10px);
+    };
+    @include screen800 {
+      padding-left      : calc(#{$signup-button-a-padding} - 10px);
+      padding-right     : calc(#{$signup-button-a-padding} - 10px);
+    };
+    @include screen700 {
       padding-left      : calc(#{$signup-button-a-padding} - 10px);
       padding-right     : calc(#{$signup-button-a-padding} - 10px);
     };
@@ -268,25 +460,49 @@
     margin-left         : calc(#{$signup-button-right-margin-left} -  7%);
     margin-top          : calc(#{$signup-button-right-margin-top}  -  2.2%);
   };
-  @media screen and (max-width: $wrapper-width-900) {
-    background-color    : $cta-bg-color;
+  @include screen900below {
     background-image    : none;
   }
+  @include screen800 {
+    height              : calc(#{$signup-button-height}            - 15px);
+    margin-left         : calc(#{$signup-button-right-margin-left} -  7%);
+    margin-top          : calc(#{$signup-button-right-margin-top}  -  2.5%);
+  };
+  @include screen700 {
+    height              : calc(#{$signup-button-height}            - 20px);
+    margin-left         : calc(#{$signup-button-right-margin-left} - 15%);
+    margin-top          : calc(#{$signup-button-right-margin-top}  -  3.5%);
+  };
+  @include screen700below {
+    height              : unset;
+  };
+  @include screen700 {
+    margin-left         : calc(#{$signup-button-right-margin-left} - 15%);
+    margin-top          : calc(#{$signup-button-right-margin-top}  -  3.5%);
+  };
+  @include screen600 {
+    margin-left         : calc(#{$signup-button-right-margin-left} -  8%);
+    margin-top          : calc(#{$signup-button-right-margin-top}  -  7.5%);
+  };
+  @include screen500 {
+    margin-left         : calc(#{$signup-button-right-margin-left} -  8%);
+    margin-top          : calc(#{$signup-button-right-margin-top}  -  8.9%);
+  };
 
   p {
     font-size           : $cta-text-size;
     font-weight         : $cta-pitch-font-weight;
     margin-top          : $signup-button-p-margin-top;
     line-height         : $fixed-line-height;
-    @include screen1000 {
-      margin-top          : calc(#{$signup-button-p-margin-top} + 2.3%);
-    };
-    @include screen900 {
-      margin-top          : calc(#{$signup-button-p-margin-top} - 0.7%);
-    };
     -webkit-transform   : rotate(180deg);
         -ms-transform   : rotate(180deg);
             transform   : rotate(180deg);
+    @include screen1000 {
+      margin-top          : calc(#{$signup-button-p-margin-top} + 2.3%);
+    };
+    @include screen900below {
+      margin-top          : calc(#{$signup-button-p-margin-top} - 0.7%);
+    };
   }
 
   a {
@@ -316,13 +532,17 @@
   @include screen1000 {
     width               : calc(#{$subscribe-cta-wrapper-width} + 10%);
   };
-  @include screen900 {
-    width               : calc(#{$subscribe-cta-wrapper-width} + 10%);
-  };
-  @media screen and (max-width: $wrapper-width-900) {
+  @include screen900below {
     background-color    : $cta-bg-color;
     background-image    : none;
+    width               : unset;
   }
+  @include screen600 {
+    margin-top        : calc(#{$vertical-margin-spacing} - 25px);
+  };
+  @include screen500 {
+    margin-top        : calc(#{$vertical-margin-spacing} - 25px);
+  };
 
   .cta-pitch {
     font-size           : $subscribe-cta-pitch-text-size;
@@ -330,6 +550,15 @@
     text-align          : left;
     @include screen1200 {
       font-size         : calc(#{$subscribe-cta-pitch-text-size} - 5%);
+    };
+    @include screen900below {
+      font-size         : calc(#{$subscribe-cta-pitch-text-size} - 5%);
+    };
+    @include screen800 {
+      margin-left       : calc(#{$cta-pitch-margin-left}         - 7%);
+    };
+    @include screen700 {
+      margin-left       : calc(#{$cta-pitch-margin-left}         - 7%);
     };
   }
 
@@ -352,16 +581,27 @@
   background-position   : center;
   background-size       : 100% 100%;
   background-image      : svgParams(main-button-0, $cta-svg-color, $svg-secondary-color, $svg-border-color);
-  @include screen900 {
-    margin-left         : calc(#{$subscribe-button-right-margin-left} - 2%);
-  };
-  @media screen and (max-width: $wrapper-width-900) {
-    background-color    : $cta-bg-color;
-    background-image    : none;
-  }
   -webkit-transform     : rotate(180deg);
       -ms-transform     : rotate(180deg);
           transform     : rotate(180deg);
+  @include screen900 {
+    margin-top          : calc(#{$subscribe-button-right-margin-top}   - 12%);
+  };
+  @include screen900below {
+    background-image    : none;
+    margin-left         : unset;
+  };
+  @include screen700 {
+    margin-left         : calc(#{$subscribe-button-right-margin-left}  -  4%);
+  };
+  @include screen600 {
+    margin-top          : calc(#{$subscribe-button-right-margin-top}   +  2%);
+    margin-right        : calc(#{$subscribe-button-right-margin-right} +  4%);
+  };
+  @include screen500 {
+    margin-top          : calc(#{$subscribe-button-right-margin-top}   +  2%);
+    margin-right        : calc(#{$subscribe-button-right-margin-right} +  4%);
+  };
 
   div {
     -webkit-transform   : rotate(180deg);
@@ -384,6 +624,10 @@
       height            : calc(#{$subscribe-button-height} - 10px);
     };
     @include screen900 {
+      font-size         : calc(#{$cta-text-size}           - 25%);
+      height            : calc(#{$subscribe-button-height} - 10px);
+    };
+    @include screen900below {
       font-size         : calc(#{$cta-text-size}           - 25%);
       height            : calc(#{$subscribe-button-height} - 10px);
     };
@@ -420,24 +664,51 @@
   background-size       : 100% 100%;
   background-image      : svgParams(main-button-0, $cta-svg-color, $svg-secondary-color, $svg-border-color);
   @include screen1000 {
-    margin-top          : calc(#{$affiliate-cta-wrapper-margin-top} - 3%);
+    margin-top          : calc(#{$affiliate-cta-wrapper-margin-top}  -  3%);
+    margin-left         : calc(#{$affiliate-cta-wrapper-margin-left} +  5%);
   };
-  @media screen and (max-width: $wrapper-width-900) {
+  @include screen900above {
+    -webkit-transform     : rotate(90deg);
+        -ms-transform     : rotate(90deg);
+            transform     : rotate(90deg);
+  };
+  @include screen900 {
+    margin-top          : calc(#{$affiliate-cta-wrapper-margin-top}  -  3%);
+    margin-left         : calc(#{$affiliate-cta-wrapper-margin-left} +  5%);
+  };
+  @include screen900below {
+    height              : unset;
+    margin-left         : unset;
     background-color    : $cta-bg-color;
     background-image    : none;
-  }
-  -webkit-transform     : rotate(90deg);
-      -ms-transform     : rotate(90deg);
-          transform     : rotate(90deg);
+  };
+  @include screen800 {
+    margin-top          : calc(#{$affiliate-cta-wrapper-margin-top}  + 20%);
+  };
+  @include screen700 {
+    margin-top          : calc(#{$affiliate-cta-wrapper-margin-top}  + 25%);
+  };
+  @include screen700below {
+    position            : relative;
+    padding             : calc(#{$affiliate-cta-wrapper-padding}     +  1%);
+  };
 
   p {
     font-size           : $cta-text-size;
     font-weight         : $cta-pitch-font-weight;
-    margin              : $affiliate-cta-p-margin;
+    margin              : $affiliate-cta-p-margins;
     line-height         : $fixed-line-height;
-    -webkit-transform   : rotate(-90deg);
-        -ms-transform   : rotate(-90deg);
-            transform   : rotate(-90deg);
+    @include screen900above {
+      -webkit-transform : rotate(-90deg);
+          -ms-transform : rotate(-90deg);
+              transform : rotate(-90deg);
+    };
+    @include screen900below {
+      margin            : $affiliate-cta-p-margin;
+    };
+    @include screen700 {
+      font-size         : calc(#{$cta-text-size} - 20%);
+    };
   }
 
   a {

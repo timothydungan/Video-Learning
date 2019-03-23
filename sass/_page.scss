@@ -12,6 +12,9 @@ body {
   @include screen900 {
     font-size       : calc(#{$main-text-size} - 10%);
   };
+  @include screen900below {
+    font-size       : calc(#{$main-text-size} - 10%);
+  };
 }
 
 a {
@@ -32,7 +35,7 @@ a {
 #search { // Popup overlay
   position          : fixed;
   @include flexed;
-  background        : $overlay-color;
+  background-color  : $overlay-color;
   height            : 0;
   width             : 0;
   opacity           : 0;
@@ -50,9 +53,9 @@ a {
     .close-btn {
       position      : absolute;
       display       : block;
-      font-size     : $search-close-btn-font-size;
-      top           : $search-close-btn-top;
-      right         : $search-close-btn-right;
+      font-size     : $overlay-close-btn-font-size;
+      top           : $overlay-close-btn-top;
+      right         : $overlay-close-btn-right;
     }
   }
 
@@ -62,7 +65,7 @@ a {
     max-width       : $searchbox-max-width;
     outline         : $searchbox-outline;
     padding         : $searchbox-padding;
-    color           : $searchbox-text-color;
+    color           : $overlay-text-color;
     font-size       : $searchbox-text-size;
     border          : $searchbox-border;
     border-width    : $searchbox-border-width;
@@ -125,10 +128,29 @@ a {
     flex-direction  : row;
     width           : $page-title-wrap-width;
     margin-top      : $vertical-margin-spacing;
+    @include screen700below {
+      display       : block;
+    };
+    @include screen600 {
+      margin-top        : calc(#{$vertical-margin-spacing} - 25px);
+    };
+    @include screen500 {
+      margin-top        : calc(#{$vertical-margin-spacing} - 25px);
+    };
 
     .page-title {
       width         : $page-title-width;
       margin-right  : $page-title-margin-right;
+      @include screen800 {
+        width       : calc(#{$page-title-width} + 2%);
+      };
+      @include screen700 {
+        width       : calc(#{$page-title-width} + 2%);
+      };
+      @include screen700below {
+        width       : unset;
+        margin-right: unset;
+      };
 
       h1 {
         font-family : $page-title-font;
@@ -146,6 +168,21 @@ a {
           font-size  : calc(#{$page-title-size}       - 20%);
           margin-top : calc(#{$page-title-margin-top} +  1%);
         };
+        @include screen900below {
+          margin-top : unset;
+        };
+        @include screen800 {
+          font-size  : calc(#{$page-title-size}       - 80%);
+        };
+        @include screen700 {
+          font-size  : calc(#{$page-title-size}       - 80%);
+        };
+        @include screen600 {
+          font-size  : calc(#{$page-title-size}       - 80%);
+        };
+        @include screen500 {
+          font-size  : calc(#{$page-title-size}       - 80%);
+        };
       }
     }
   }
@@ -156,6 +193,15 @@ a {
   flex-direction    : row;
   width             : $content-wrap-width;
   margin-top        : $vertical-margin-spacing;
+  @include screen700below {
+    display       : block;
+  };
+  @include screen600 {
+    margin-top        : calc(#{$vertical-margin-spacing} - 25px);
+  };
+  @include screen500 {
+    margin-top        : calc(#{$vertical-margin-spacing} - 25px);
+  };
 }
 
 #demo { // Popup overlay
@@ -173,16 +219,16 @@ a {
 
   &:target {
     height          : 100vh !important;
-    opacity         : 1;
     width           : 100vw !important;
+    opacity         : 1;
     z-index         : 999999;
 
     .close-btn {
       position      : absolute;
       display       : block;
-      font-size     : $search-close-btn-font-size;
-      top           : $search-close-btn-top;
-      right         : $search-close-btn-right;
+      font-size     : $overlay-close-btn-font-size;
+      top           : $overlay-close-btn-top;
+      right         : $overlay-close-btn-right;
     }
   }
 
@@ -192,6 +238,6 @@ a {
     height          : $searchbox-height;
     max-width       : $searchbox-max-width;
     padding         : $searchbox-padding;
-    color           : $searchbox-text-color;
+    color           : $overlay-text-color;
   }
 }

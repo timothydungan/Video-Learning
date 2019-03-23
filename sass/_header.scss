@@ -11,10 +11,28 @@ header {
     background-color                     : $header-bg-color;
     height                               : $header-height;
     z-index                              : 9999;
+    @include screen700below {
+      height                             : unset;
+    };
 
-    #responsive-menu-trigger, #close-menu {
+    #responsive-menu-trigger,
+    .close-btn {
       display                            : none;
       float                              : right;
+      font-size                          : $responsive-menu-btn-font-size;
+      padding-top                        : $responsive-menu-btn-padding-top;
+      @include clearfix;
+    }
+
+    #responsive-menu-trigger {
+      @include screen900below {
+        display                          : block;
+        padding-top                      : calc(#{$responsive-menu-btn-padding-top} + 1%);
+      };
+      @include screen500 {
+        margin-top                       : calc(#{$responsive-menu-btn-padding-top} + 1%);
+        padding-top                      : unset;
+      };
     }
 
     .main-header {
@@ -28,6 +46,7 @@ header {
         img#byolLogo {
           width                          : $logo-img-width;
           padding-top                    : $logo-padding-top;
+          margin-top                     : $logo-margin-top;
           @include screen1200 {
             width                        : calc(#{$logo-img-width}   + 22%);
           };
@@ -39,26 +58,110 @@ header {
             width                        : calc(#{$logo-img-width}   + 22%);
             padding-top                  : calc(#{$logo-padding-top} +  3%);
           };
+          @include screen800 {
+            position                     : absolute;
+            width                        : calc(#{$logo-img-width}   - 25%);
+            padding-top                  : calc(#{$logo-padding-top} -  2.2%);
+            margin-top                   : calc(#{$logo-margin-top}  -  5.5%);
+          };
+          @include screen700 {
+            position                     : absolute;
+            width                        : calc(#{$logo-img-width}   - 25%);
+            padding-top                  : calc(#{$logo-padding-top} -  2.2%);
+            margin-top                   : calc(#{$logo-margin-top}  -  6.5%);
+          };
+          @include screen700below {
+            padding-top                  : calc(#{$logo-padding-top} -  2.2%);
+          };
+          @include screen600 {
+            position                     : absolute;
+            width                        : calc(#{$logo-img-width}   - 10%);
+            margin-top                   : calc(#{$logo-margin-top}  -  7.5%);
+          };
+          @include screen500 {
+            position                     : absolute;
+            width                        : calc(#{$logo-img-width}   - 10%);
+            margin-top                   : calc(#{$logo-margin-top}  -  8.5%);
+          };
         }
       }
 
       ul#menu {
-        list-style                       : none;
         display                          : inline-flex;
         flex-direction                   : row;
         text-align                       : center;
         text-transform                   : $menu-text-transform;
         width                            : $menu-ul-width;
+        list-style                       : none;
+        @include screen900below {
+          position                      : fixed;
+          display                       : flex;
+          flex-direction                : column;
+          align-items                   : center;
+          justify-content               : center;
+          background-color              : $overlay-color;
+          color                         : $overlay-text-color;
+          height                        : 0;
+          width                         : 100vw;
+          top                           : 0;
+          left                          : 0;
+          margin                        : 0;
+          padding                       : 0;
+          opacity                       : 0;
+          pointer-events                : none;
+          transition-duration           : $base-animation-length;
+          transition-timing-function    : $base-animation-timing-function;
+          will-change                   : opacity;
 
-       li {
-         width                           : $menu-li-width;
+          &:target {
+            height          : 101vh !important;
+            width           : 100vw !important;
+            opacity         : 1;
+            pointer-events  : auto;
+            z-index         : 99999;
+            -webkit-overflow-scrolling :touch;
+            overflow-y                 : auto;
+            @include screen900below {
+              margin-left   : calc(#{$menu-target-padding} -  4%);
+            };
+            @include screen800 {
+              font-size     : calc(#{$main-text-size}      + 25%);
+            };
+            @include screen700 {
+              font-size     : calc(#{$main-text-size}      + 25%);
+            };
+            @include screen500 {
+              padding-top   : calc(#{$menu-target-padding} + 37%);
+            };
 
-         &.button-down {
+            .close-btn {
+              position      : absolute;
+              display       : block;
+              font-size     : $overlay-close-btn-font-size;
+              top           : calc(#{$overlay-close-btn-top}   - 35%);
+              right         : calc(#{$overlay-close-btn-right} - 20%);
+              z-index       : 999999;
+            }
+          }
+        };
+
+        li {
+          width                          : $menu-li-width;
+          @include screen900below {
+            width                        : auto;
+          };
+
+          &.button-down {
             margin                       : $menu-li-button-down-margin;
             height                       : $header-height;
-            -webkit-transform            : rotateX(180deg);
-                -ms-transform            : rotateX(180deg);
-                    transform            : rotateX(180deg);
+            @include screen900above {
+              -webkit-transform          : rotateX(180deg);
+                  -ms-transform          : rotateX(180deg);
+                      transform          : rotateX(180deg);
+            };
+            @include screen900below {
+              height                     : auto;
+            };
 
             &:before {
               content                    : '';
@@ -66,46 +169,65 @@ header {
               width                      : $menu-li-before-width;
               height                     : $menu-li-before-height;
               left                       : $menu-li-before-left;
-              border-left                : $menu-li-before-border;
-              -webkit-transform          : rotateX(-90deg) perspective(180px) rotateX(90deg);
-                  -ms-transform          : rotateX(-90deg) perspective(180px) rotateX(90deg);
-                      transform          : rotateX(-90deg) perspective(180px) rotateX(90deg);
-              -webkit-transform-origin   : center top;
-                  -ms-transform-origin   : center top;
-                      transform-origin   : center top;
+              border-left                : $menu-li-border;
+              @include screen900above {
+                -webkit-transform          : rotateX(-90deg) perspective(180px) rotateX(90deg);
+                    -ms-transform          : rotateX(-90deg) perspective(180px) rotateX(90deg);
+                        transform          : rotateX(-90deg) perspective(180px) rotateX(90deg);
+                -webkit-transform-origin   : center top;
+                    -ms-transform-origin   : center top;
+                        transform-origin   : center top;
+              };
+              @include screen900below {
+                display                  : none;
+              };
            }
 
             div {
               line-height                : $menu-li-button-down-div-line-height;
-              @include screen900 {
-                line-height               : calc(#{$menu-li-button-down-div-line-height} + 45%);
+              @include screen900above {
+                -webkit-transform          : rotateX(180deg);
+                    -ms-transform          : rotateX(180deg);
+                        transform          : rotateX(180deg);
               };
-              -webkit-transform          : rotateX(180deg);
-                  -ms-transform          : rotateX(180deg);
-                      transform          : rotateX(180deg);
+              @include screen900 {
+                line-height              : calc(#{$menu-li-button-down-div-line-height} + 45%);
+              };
+              @include screen900below {
+                line-height              : unset;
+              };
 
               a {
                 outline                  : $menu-a-outline;
                 padding                  : $menu-li-a-padding;
+                @include screen900above {
+                  &:hover,
+                  &:active,
+                  &:focus {
+                    @include menu-hover;
+                  }
 
-                &:hover,
-                &:active,
-                &:focus {
-                  @include menu-hover;
-                }
-
-                &:focus-within {
-                  @include menu-hover;
-                }
+                  &:focus-within {
+                    @include menu-hover;
+                  }
+                };
+                @include screen900below {
+                  padding                : unset;
+                };
               }
             }
           }
 
           &.button-up {
             height                       : $menu-li-button-up-height;
-            -webkit-transform            : rotateX(180deg);
-                -ms-transform            : rotateX(180deg);
-                    transform            : rotateX(180deg);
+            @include screen900above {
+              -webkit-transform          : rotateX(180deg);
+                  -ms-transform          : rotateX(180deg);
+                      transform          : rotateX(180deg);
+            };
+            @include screen900below {
+              height                     : auto;
+            };
 
             &:before {
               content                    : '';
@@ -113,157 +235,213 @@ header {
               width                      : $menu-li-before-width;
               height                     : $menu-li-before-height;
               left                       : $menu-li-before-left;
-              border-left                : $menu-li-before-border;
-              -webkit-transform          : rotateX(90deg) perspective(180px) rotateX(-90deg);
-                  -ms-transform          : rotateX(90deg) perspective(180px) rotateX(-90deg);
-                      transform          : rotateX(90deg) perspective(180px) rotateX(-90deg);
-              -webkit-transform-origin   : center bottom;
-                  -ms-transform-origin   : center bottom;
-                      transform-origin   : center bottom;
+              border-left                : $menu-li-border;
+              @include screen900above {
+                -webkit-transform          : rotateX(90deg) perspective(180px) rotateX(-90deg);
+                    -ms-transform          : rotateX(90deg) perspective(180px) rotateX(-90deg);
+                        transform          : rotateX(90deg) perspective(180px) rotateX(-90deg);
+                -webkit-transform-origin   : center bottom;
+                    -ms-transform-origin   : center bottom;
+                        transform-origin   : center bottom;
+              };
+              @include screen900below {
+                display                  : none;
+              };
             }
 
             div {
-             line-height                 : $menu-li-button-up-div-line-height;
-             @include screen900 {
-               line-height               : calc(#{$menu-li-button-up-div-line-height} + 25%);
-             };
-             -webkit-transform           : rotateX(180deg);
-                 -ms-transform           : rotateX(180deg);
-                     transform           : rotateX(180deg);
+              line-height                 : $menu-li-button-up-div-line-height;
+              @include screen900above {
+                -webkit-transform           : rotateX(180deg);
+                    -ms-transform           : rotateX(180deg);
+                        transform           : rotateX(180deg);
+              };
+              @include screen900 {
+                line-height               : calc(#{$menu-li-button-up-div-line-height} + 25%);
+              };
 
               a {
                 outline                  : $menu-a-outline;
+                @include screen900above {
+                  &:hover,
+                  &:active,
+                  &:focus {
+                    @include menu-hover;
+                  }
 
-                &:hover,
-                &:active,
-                &:focus {
-                  @include menu-hover;
-                }
-
-                &:focus-within {
-                  @include menu-hover;
-                }
+                  &:focus-within {
+                    @include menu-hover;
+                  }
+                };
               }
             }
           }
 
           &.searchLi:before {
-           border-right                  : $menu-li-before-border;
+            border-right                  : $menu-li-border;
+            @include screen900below {
+              display                  : none;
+            };
           }
 
-         ul.submenu {
-           display                       : none;
-           position                      : absolute;
-           min-width                     : $submenu-min-width;
-           height                        : $submenu-height;
-           list-style                    : none;
-           margin-top                    : $submenu-margin-top;
-           font-variant                  : $submenu-font-variant;
-           @include browser-hacks {
-             font-size: x-small;
-           }
-           transition-duration           : $base-animation-length;
-           transition-timing-function    : $base-animation-timing-function;
-           -webkit-transform           : rotateX(180deg);
-               -ms-transform           : rotateX(180deg);
-                   transform           : rotateX(180deg);
+          ul.submenu {
+            list-style                    : none;
+            min-width                     : $submenu-min-width;
+            height                        : $submenu-height;
+            margin-top                    : $submenu-margin-top;
+            font-variant                  : $submenu-font-variant;
+            @include browser-hacks {
+              font-size: x-small;
+            }
+            transition-duration           : $base-animation-length;
+            transition-timing-function    : $base-animation-timing-function;
+            @include screen900above {
+              display                     : none;
+              -webkit-transform           : rotateX(180deg);
+                  -ms-transform           : rotateX(180deg);
+                      transform           : rotateX(180deg);
+            };
+            @include screen900below {
+              display                      : flex;
+              flex-direction               : row;
+              height                       : unset;
+              margin-top                   : unset;
+            };
 
-           li {
-             margin                      : $submenu-li-margin;
+            li {
+              margin                      : $submenu-li-margin;
 
-             &.button-up {
-               width                     : $submenu-li-width;
-               height                    : $submenu-li-height;
+              &.button-up {
+                width                     : $submenu-li-width;
+                height                    : $submenu-li-height;
 
-               &:before {
-                 background-color        : $header-bg-color;
-                 border-right            : $menu-li-before-border;
-               }
-
-               div {
-                line-height              : $submenu-li-div-line-height;
-
-                a {
-                  padding                : $submenu-li-div-a-padding;
+                &:before {
+                  background-color        : $header-bg-color;
+                  border-right            : $menu-li-border;
+                  @include screen900below {
+                    display               : none;
+                  };
                 }
-               }
-             }
 
-             &.button-down {
-               position                  : absolute;
-               display                   : inline-flex;
-               width                     : calc(#{$submenu-li-width} + 50%);
-               margin-left               : $submenu-li-button-down-margin-left;
-               @include screen1200 {
-                 width                   : calc(#{$submenu-li-width} + 60%);
-               };
+                div {
+                  line-height              : $submenu-li-div-line-height;
+
+                  a {
+                    padding                : $submenu-li-div-a-padding;
+                  }
+                }
+              }
+
+              &.button-down {
+                position                  : absolute;
+                display                   : inline-flex;
+                width                     : $submenu-li-button-down-width;
+                margin-left               : $submenu-li-button-down-margin-left;
+                padding-top               : $submenu-li-button-down-padding-top;
+                @include screen1200 {
+                  width                   : calc(#{$submenu-li-button-down-width}       + 10%);
+                };
+                @include screen1000 {
+                  width                   : calc(#{$submenu-li-button-down-width}       + 25%);
+                };
+                @include screen900 {
+                  width                   : calc(#{$submenu-li-width}                   + 90%);
+                  margin-left             : calc(#{$submenu-li-button-down-margin-left} - 15%);
+                  padding-top             : calc(#{$submenu-li-button-down-padding-top} +  5%);
+                };
+                @include screen900below {
+                  position                : relative;
+                  width                   : unset;
+                  margin-left             : unset;
+                };
 
                 &:before {
                   height                 : $submenu-li-button-down-before-height;
                   margin-top             : $submenu-li-button-down-before-margin-top;
                   background-color       : $header-bg-color;
-                  border-right           : $menu-li-before-border;
+                  border-right           : $menu-li-border;
+                  @include screen900 {
+                    height               : calc(#{$submenu-li-button-down-before-height}     - 10%);
+                    margin-top           : calc(#{$submenu-li-button-down-before-margin-top} + 10%);
+                  };
+                  @include screen900below {
+                    display              : none;
+                  };
                 }
 
                 div {
                   width                  : $submenu-li-button-down-div-width;
                   line-height            : $submenu-li-div-line-height;
-                  padding-bottom         : $submenu-li-div-padding-bottom;
                   margin-bottom          : $submenu-li-div-margin-bottom;
+                  padding-bottom         : $submenu-li-div-padding;
                   white-space            : nowrap;
+                  @include screen900below {
+                    width                : unset;
+                    line-height          : unset;
+                    margin-bottom        : unset;
+                    padding              : 0 calc(#{$submenu-li-div-padding} - 9%);;
+                  };
 
                   div {
-                    -webkit-transform    : rotateY(0deg);
-                        -ms-transform    : rotateY(0deg);
-                            transform    : rotateY(0deg);
-
-                    a {
-                      padding            : $submenu-li-div-a-padding;
-                    }
+                    @include screen900above {
+                      -webkit-transform    : rotateY(0deg);
+                          -ms-transform    : rotateY(0deg);
+                              transform    : rotateY(0deg);
+                    };
                   }
                 }
 
                 .subNavLeft {
                   margin-left            : $submenu-li-subNavLeft-margin-left;
                   text-align             : left;
+                  @include screen900 {
+                    margin-left          : calc(#{$submenu-li-subNavLeft-margin-left} + 10%);
+                  };
+                  @include screen900below {
+                    margin-left          : unset;
+                  };
                 }
 
                 .subNavRight {
                   margin-left            : $submenu-li-subNavRight-margin-left;
                   margin-top             : $submenu-li-subNavRight-margin-top;
-                  float                  : right;
-                  @include clearfix;
                   text-align             : right;
+                  @include screen900below {
+                    margin-left          : unset;
+                    margin-top           : unset;
+                  };
                 }
 
-                @for $i from 1 through 10 {
-                  $hold                  : (110 - ($i * 10));
-
-                  .subNavLeft {
-                    :nth-child(#{$i}) {
-                      margin-left        : -#{$hold}px;
+                @include screen900above {
+                  @for $i from 1 through 10 {
+                    $hold                  : (110 - ($i * 10));
+                    .subNavLeft {
+                      :nth-child(#{$i}) {
+                        margin-left        : -#{$hold}px;
+                      }
+                    }
+                    .subNavRight {
+                      :nth-child(#{$i}) {
+                        margin-left        : #{$hold}px;
+                      }
                     }
                   }
-
-                  .subNavRight {
-                    :nth-child(#{$i}) {
-                      margin-left        : #{$hold}px;
-                    }
-                  }
-                }
+                };
               }
             }
           }
 
-          &:hover > ul,
-          &:active > ul,
-          &:focus > ul {
-            @include submenu-animation;
-          }
+          @include screen900above {
+            &:hover > ul,
+            &:active > ul,
+            &:focus > ul {
+              @include submenu-animation;
+            }
 
-          &:focus-within > ul {
-            @include submenu-animation;
-          }
+            &:focus-within > ul {
+              @include submenu-animation;
+            }
+          };
         }
       }
     }
