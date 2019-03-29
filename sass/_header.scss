@@ -1,5 +1,3 @@
-// !compileOnSave
-// compileOnSave                         : false
 // main                                  : ../style.scss
 
 
@@ -7,7 +5,7 @@
 header {
   &.top-wrap {
     position                             : fixed;
-    width                                : 100%;
+    width                                : $screen-width;
     background-color                     : $header-bg-color;
     height                               : $header-height;
     z-index                              : 9999;
@@ -22,6 +20,9 @@ header {
       font-size                          : $responsive-menu-btn-font-size;
       padding-top                        : $responsive-menu-btn-padding-top;
       @include clearfix;
+      @include screen500below {
+        font-size                        : unset;
+      };
     }
 
     #responsive-menu-trigger {
@@ -33,6 +34,11 @@ header {
         margin-top                       : calc(#{$responsive-menu-btn-padding-top} + 1%);
         padding-top                      : unset;
       };
+      @include screen500below {
+        position                         : absolute;
+        padding-top                      : unset;
+        right                            : calc(#{$responsive-menu-btn-right}       + 1%);
+      };
     }
 
     .main-header {
@@ -42,6 +48,9 @@ header {
 
       .logo {
         width                            : $logo-width;
+        @include screen500below {
+          width                        : calc(#{$logo-width}         + 60%);
+        };
 
         img#byolLogo {
           width                          : $logo-img-width;
@@ -82,6 +91,13 @@ header {
             position                     : absolute;
             width                        : calc(#{$logo-img-width}   - 10%);
             margin-top                   : calc(#{$logo-margin-top}  -  8.5%);
+          };
+          @include screen500below {
+            position                     : relative;
+            width                        : calc(#{$logo-img-width}   - 43%);
+            margin-top                   : unset;
+            padding-top                  : calc(#{$logo-padding-top} -  1.2%);
+            left                         : calc(#{$logo-left}        +  1%);
           };
         }
       }
@@ -132,6 +148,9 @@ header {
             };
             @include screen500 {
               padding-top   : calc(#{$menu-target-padding} + 37%);
+            };
+            @include screen500below {
+              margin-left   : unset;
             };
 
             .close-btn {
@@ -295,6 +314,7 @@ header {
             }
             transition-duration           : $base-animation-length;
             transition-timing-function    : $base-animation-timing-function;
+            z-index                       : 99990;
             @include screen900above {
               display                     : none;
               -webkit-transform           : rotateX(180deg);
@@ -314,10 +334,12 @@ header {
               &.button-up {
                 width                     : $submenu-li-width;
                 height                    : $submenu-li-height;
+                z-index                   : 99992;
 
                 &:before {
                   background-color        : $header-bg-color;
                   border-right            : $menu-li-border;
+                  z-index                 : 99991;
                   @include screen900below {
                     display               : none;
                   };
@@ -338,6 +360,7 @@ header {
                 width                     : $submenu-li-button-down-width;
                 margin-left               : $submenu-li-button-down-margin-left;
                 padding-top               : $submenu-li-button-down-padding-top;
+                z-index                   : 99994;
                 @include screen1200 {
                   width                   : calc(#{$submenu-li-button-down-width}       + 10%);
                 };
@@ -360,6 +383,7 @@ header {
                   margin-top             : $submenu-li-button-down-before-margin-top;
                   background-color       : $header-bg-color;
                   border-right           : $menu-li-border;
+                  z-index                : 99993;
                   @include screen900 {
                     height               : calc(#{$submenu-li-button-down-before-height}     - 10%);
                     margin-top           : calc(#{$submenu-li-button-down-before-margin-top} + 10%);
@@ -394,6 +418,7 @@ header {
                 .subNavLeft {
                   margin-left            : $submenu-li-subNavLeft-margin-left;
                   text-align             : left;
+                  z-index                : 99999;
                   @include screen900 {
                     margin-left          : calc(#{$submenu-li-subNavLeft-margin-left} + 10%);
                   };
@@ -406,6 +431,7 @@ header {
                   margin-left            : $submenu-li-subNavRight-margin-left;
                   margin-top             : $submenu-li-subNavRight-margin-top;
                   text-align             : right;
+                  z-index                : 99999;
                   @include screen900below {
                     margin-left          : unset;
                     margin-top           : unset;

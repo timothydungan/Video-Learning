@@ -1,5 +1,3 @@
-// !compileOnSave
-// compileOnSave        : false
 // main                 : ../style.scss
 
 
@@ -36,16 +34,11 @@
   };
   @include screen700below {
     width                 : unset;
+    margin-top            : calc(#{$vertical-margin-spacing} - 25px);
     padding-top           : unset;
     padding-left          : unset;
     padding-right         : unset;
     padding-bottom        : unset;
-  };
-  @include screen600 {
-    margin-top            : calc(#{$vertical-margin-spacing} - 25px);
-  };
-  @include screen500 {
-    margin-top            : calc(#{$vertical-margin-spacing} - 25px);
   };
 
   .lesson-name-wrapper {
@@ -101,6 +94,10 @@
           padding-bottom  : calc(#{$lesson-name-label-padding-top-bottom} -  5px);
           padding-right   : calc(#{$lesson-name-label-padding-right}      -  5px);
         };
+        @include screen500below {
+          margin          : unset;
+          border-bottom   : $lesson-name-label-border-bottom;
+        };
 
         &.ln-label {
           &::after {
@@ -124,6 +121,9 @@
               margin-right     : calc(#{$lesson-group-triangle-margin} + 2%);
             };
             @include screen500 {
+              margin-right     : calc(#{$lesson-group-triangle-margin} + 2%);
+            };
+            @include screen500below {
               margin-right     : calc(#{$lesson-group-triangle-margin} + 2%);
             };
           }

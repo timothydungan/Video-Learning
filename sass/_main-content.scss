@@ -1,5 +1,3 @@
-// !compileOnSave
-// compileOnSave                   : false
 // main                            : ../style.scss
 
 
@@ -30,12 +28,25 @@
       background-color    : $video-bg-color;
       background-image    : none;
     }
+    @include screen500below {
+      padding-bottom      : calc(#{$video-wrapper-padding} + 10%);
+    }
 
     .video-controls {
       @include flexed;
       -webkit-transform            : translateX(-45px);
           -ms-transform            : translateX(-45px);
               transform            : translateX(-45px);
+      @include screen500below {
+        display                    : block;
+        -webkit-box-pack           : unset;
+        -ms-flex-pack              : unset;
+        justify-content            : unset;
+        align-items                : unset;
+        -webkit-transform          : unset;
+            -ms-transform          : unset;
+                transform          : unset;
+      };
 
       .next-lesson, .previous-lesson {
         width                      : $video-nav-width;
@@ -55,6 +66,11 @@
         @include screen900below {
           font-size                : calc(#{$video-nav-text-size}  - 250%);
           margin-top               : unset;
+        };
+        @include screen500below {
+          position                 : absolute;
+          width                    : unset;
+          font-size                : calc(#{$video-nav-text-size}  - 850%);
         };
 
         a {
@@ -99,6 +115,11 @@
         @include screen500 {
           padding-left             : calc(#{$video-nav-previous-padding-left} + 8.3%);
         };
+        @include screen500below {
+          padding                  : unset;
+          margin-top               : $video-nav-previous-margin-top;
+          left                     : calc(#{$video-nav-previous-padding-left} - 3.05%);
+        };
       }
 
       .next-lesson {
@@ -106,32 +127,36 @@
         right                      : $video-nav-next-right;
         margin-top                 : $video-nav-next-margin-top;
         @include browser-hacks {
-          margin-top               : calc(#{$video-nav-next-margin-top} * 2);
+          margin-top               : calc(#{$video-nav-next-margin-top} *  2);
         }
         @include screen1200 {
-          right                    : calc(#{$video-nav-next-right}      - 0.8%);
+          right                    : calc(#{$video-nav-next-right}      -  0.8%);
         };
         @include screen1000 {
-          right                    : calc(#{$video-nav-next-right}      - 1.7%);
+          right                    : calc(#{$video-nav-next-right}      -  1.7%);
         };
         @include screen900 {
-          right                    : calc(#{$video-nav-next-right}      - 2.5%);
-          margin-top               : calc(#{$video-nav-next-margin-top} - 5%);
+          right                    : calc(#{$video-nav-next-right}      -  2.5%);
+          margin-top               : calc(#{$video-nav-next-margin-top} -  5%);
         };
         @include screen900below {
           margin-top               : unset;
         };
         @include screen800 {
-          right                    : calc(#{$video-nav-next-right}      - 4.1%);
+          right                    : calc(#{$video-nav-next-right}      -  4.1%);
         };
         @include screen700 {
-          right                    : calc(#{$video-nav-next-right}      - 4.1%);
+          right                    : calc(#{$video-nav-next-right}      -  4.1%);
         };
         @include screen600 {
-          right                    : calc(#{$video-nav-next-right}      - 3.5%);
+          right                    : calc(#{$video-nav-next-right}      -  3.5%);
         };
         @include screen500 {
-          right                    : calc(#{$video-nav-next-right}      - 4.9%);
+          right                    : calc(#{$video-nav-next-right}      -  4.9%);
+        };
+        @include screen500below {
+          right                    : calc(#{$video-nav-next-right}      +  6%);
+          margin-top               : calc(#{$video-nav-next-margin-top} - 26.5%);
         };
       }
 
@@ -141,48 +166,93 @@
         width                      : $video-player-width;
         padding-top                : $video-player-padding-top;
         margin-left                : $video-player-margin-left;
-        -webkit-transform          : translate($video-player-translate-x, $video-player-translate-y);
-            -ms-transform          : translate($video-player-translate-x, $video-player-translate-y);
-                transform          : translate($video-player-translate-x, $video-player-translate-y);
+        -webkit-transform          : translate(
+                                             $video-player-translate-x,
+                                             $video-player-translate-y);
+            -ms-transform          : translate(
+                                             $video-player-translate-x,
+                                             $video-player-translate-y);
+                transform          : translate(
+                                             $video-player-translate-x,
+                                             $video-player-translate-y);
         @include screen1200 {
-          margin-left              : calc(#{$video-player-margin-left}           + 1.5%);
+          margin-left              :  calc(#{$video-player-margin-left}  +  1.5%);
         };
         @include screen1000 {
-          margin-left              : calc(#{$video-player-margin-left}           + 3.9%);
+          margin-left              :  calc(#{$video-player-margin-left}  +  3.9%);
         };
         @include screen900 {
-          margin-left              : calc(#{$video-player-margin-left}           + 4%);
-          -webkit-transform        : translate(calc(#{$video-player-translate-x} + 0.8%), calc(#{$video-player-translate-y} - 0%));
-              -ms-transform        : translate(calc(#{$video-player-translate-x} + 0.8%), calc(#{$video-player-translate-y} - 0%));
-                  transform        : translate(calc(#{$video-player-translate-x} + 0.8%), calc(#{$video-player-translate-y} - 0%));
+          margin-left              :  calc(#{$video-player-margin-left}  +  4%);
+          -webkit-transform        : translate(
+                                      calc(#{$video-player-translate-x}  +  0.8%),
+                                             $video-player-translate-y);
+              -ms-transform        : translate(
+                                      calc(#{$video-player-translate-x}  +  0.8%),
+                                             $video-player-translate-y);
+                  transform        : translate(
+                                      calc(#{$video-player-translate-x}  +  0.8%),
+                                             $video-player-translate-y);
         };
         @include screen800 {
-          width                    : calc(#{$video-player-width}                 + 0.8%);
-          margin-left              : calc(#{$video-player-margin-left}           + 4%);
-          -webkit-transform        : translate(calc(#{$video-player-translate-x} + 2%),   calc(#{$video-player-translate-y} - 3%));
-              -ms-transform        : translate(calc(#{$video-player-translate-x} + 2%),   calc(#{$video-player-translate-y} - 3%));
-                  transform        : translate(calc(#{$video-player-translate-x} + 2%),   calc(#{$video-player-translate-y} - 3%));
+          width                    :  calc(#{$video-player-width}        +  0.8%);
+          margin-left              :  calc(#{$video-player-margin-left}  +  4%);
+          -webkit-transform        : translate(
+                                      calc(#{$video-player-translate-x}  +  2%),
+                                      calc(#{$video-player-translate-y}  -  3%));
+              -ms-transform        : translate(
+                                      calc(#{$video-player-translate-x}  +  2%),
+                                      calc(#{$video-player-translate-y}  -  3%));
+                  transform        : translate(
+                                      calc(#{$video-player-translate-x}  +  2%),
+                                      calc(#{$video-player-translate-y}  -  3%));
         };
         @include screen700 {
-          width                    : calc(#{$video-player-width}                 + 0.8%);
-          margin-left              : calc(#{$video-player-margin-left}           + 4%);
-          -webkit-transform        : translate(calc(#{$video-player-translate-x} + 2%),   calc(#{$video-player-translate-y} - 3%));
-              -ms-transform        : translate(calc(#{$video-player-translate-x} + 2%),   calc(#{$video-player-translate-y} - 3%));
-                  transform        : translate(calc(#{$video-player-translate-x} + 2%),   calc(#{$video-player-translate-y} - 3%));
+          width                    :  calc(#{$video-player-width}        +  0.8%);
+          margin-left              :  calc(#{$video-player-margin-left}  +  4%);
+          -webkit-transform        : translate(
+                                      calc(#{$video-player-translate-x}  +  2%),
+                                      calc(#{$video-player-translate-y}  -  3%));
+              -ms-transform        : translate(
+                                      calc(#{$video-player-translate-x}  +  2%),
+                                      calc(#{$video-player-translate-y}  -  3%));
+                  transform        : translate(
+                                      calc(#{$video-player-translate-x}  +  2%),
+                                      calc(#{$video-player-translate-y}  -  3%));
+        };
+        @include screen700below {
+          width                    :  calc(#{$video-player-width}        +  0.8%);
         };
         @include screen600 {
-          width                    : calc(#{$video-player-width}                 + 0.8%);
-          margin-left              : calc(#{$video-player-margin-left}           + 2%);
-          -webkit-transform        : translate(calc(#{$video-player-translate-x} + 2%),   calc(#{$video-player-translate-y} - 3%));
-              -ms-transform        : translate(calc(#{$video-player-translate-x} + 2%),   calc(#{$video-player-translate-y} - 3%));
-                  transform        : translate(calc(#{$video-player-translate-x} + 2%),   calc(#{$video-player-translate-y} - 3%));
+          margin-left              :  calc(#{$video-player-margin-left}  +  2%);
+          -webkit-transform        : translate(
+                                      calc(#{$video-player-translate-x}  +  2%),
+                                      calc(#{$video-player-translate-y}  -  3%));
+              -ms-transform        : translate(
+                                      calc(#{$video-player-translate-x}  +  2%),
+                                      calc(#{$video-player-translate-y}  -  3%));
+                  transform        : translate(
+                                      calc(#{$video-player-translate-x}  +  2%),
+                                      calc(#{$video-player-translate-y}  -  3%));
         };
         @include screen500 {
-          width                    : calc(#{$video-player-width}                 + 0.8%);
-          margin-left              : calc(#{$video-player-margin-left}           + 4%);
-          -webkit-transform        : translate(calc(#{$video-player-translate-x} + 2.5%), calc(#{$video-player-translate-y} - 2.9%));
-              -ms-transform        : translate(calc(#{$video-player-translate-x} + 2.5%), calc(#{$video-player-translate-y} - 2.9%));
-                  transform        : translate(calc(#{$video-player-translate-x} + 2.5%), calc(#{$video-player-translate-y} - 2.9%));
+          margin-left              :  calc(#{$video-player-margin-left}  +  4%);
+          -webkit-transform        : translate(
+                                      calc(#{$video-player-translate-x}  +  2.5%),
+                                      calc(#{$video-player-translate-y}  -  2.9%));
+              -ms-transform        : translate(
+                                      calc(#{$video-player-translate-x}  +  2.5%),
+                                      calc(#{$video-player-translate-y}  -  2.9%));
+                  transform        : translate(
+                                      calc(#{$video-player-translate-x}  +  2.5%),
+                                      calc(#{$video-player-translate-y}  -  2.9%));
+        };
+        @include screen500below {
+          width                    :  unset;
+          margin-left              :  unset;
+          padding-top              :  calc(#{$video-player-padding-top}  + 13%);
+          -webkit-transform        :  unset;
+              -ms-transform        :  unset;
+                  transform        :  unset;
         };
 
         .video-frame {
@@ -203,30 +273,22 @@
       padding-bottom               : $video-caption-padding-bottom;
       text-align                   : center;
       @include screen1200 {
-        margin-top                 : calc(#{$video-caption-margin-top}     - 1%);
-        padding-bottom             : calc(#{$video-caption-padding-bottom} + 1.7%);
+        margin-top                 : calc(#{$video-caption-margin-top}     -  1%);
+        padding-bottom             : calc(#{$video-caption-padding-bottom} +  1.7%);
       };
       @include screen1000 {
-        padding-bottom             : calc(#{$video-caption-padding-bottom} + 0.5%);
+        padding-bottom             : calc(#{$video-caption-padding-bottom} +  0.5%);
       };
       @include screen900 {
-        padding-bottom             : calc(#{$video-caption-padding-bottom} + 0.7%);
+        padding-bottom             : calc(#{$video-caption-padding-bottom} +  0.7%);
       };
-      @include screen800 {
-        margin-top                 : calc(#{$video-caption-margin-top}     - 1%);
-        padding-bottom             : calc(#{$video-caption-padding-bottom} + 0.7%);
+      @include screen900below {
+        margin-top                 : calc(#{$video-caption-margin-top}     -  1%);
+        padding-bottom             : calc(#{$video-caption-padding-bottom} +  0.7%);
       };
-      @include screen700 {
-        margin-top                 : calc(#{$video-caption-margin-top}     - 1%);
-        padding-bottom             : calc(#{$video-caption-padding-bottom} + 0.7%);
-      };
-      @include screen600 {
-        margin-top                 : calc(#{$video-caption-margin-top}     - 1%);
-        padding-bottom             : calc(#{$video-caption-padding-bottom} + 0.7%);
-      };
-      @include screen500 {
-        margin-top                 : calc(#{$video-caption-margin-top}     - 1%);
-        padding-bottom             : calc(#{$video-caption-padding-bottom} + 0.7%);
+      @include screen500below {
+        margin-top                 : calc(#{$video-caption-margin-top}     - 62%);
+        padding-bottom             : calc(#{$video-caption-padding-bottom} + 56%);
       };
     }
   }
@@ -243,20 +305,13 @@
       height                       : calc(#{$course-titling-wrapper-height} - 10px);
     };
     @include screen900below {
-      background-color    : $course-bg-color;
-      background-image    : none;
-    };
-    @include screen800 {
       height                       : calc(#{$course-titling-wrapper-height} - 50px);
+      background-color             : $course-bg-color;
+      background-image             : none;
     };
-    @include screen700 {
-      height                       : calc(#{$course-titling-wrapper-height} - 50px);
-    };
-    @include screen600 {
-      height                       : calc(#{$course-titling-wrapper-height} - 50px);
-    };
-    @include screen500 {
-      height                       : calc(#{$course-titling-wrapper-height} - 50px);
+    @include screen500below {
+      height                       : unset;
+      margin-top                   : calc(#{$vertical-margin-spacing}       - 40px);
     };
 
     .course-title-wrap {
@@ -265,19 +320,7 @@
       @include screen1200 {
         padding-top              : calc(#{$course-title-wrap-padding-top}   +  0.7%);
       };
-      @include screen800 {
-        margin-left              : calc(#{$course-title-wrap-margin-left}   -  6%);
-        padding-top              : calc(#{$course-title-wrap-padding-top}   -  3%);
-      };
-      @include screen700 {
-        margin-left              : calc(#{$course-title-wrap-margin-left}   -  6%);
-        padding-top              : calc(#{$course-title-wrap-padding-top}   -  3%);
-      };
-      @include screen600 {
-        margin-left              : calc(#{$course-title-wrap-margin-left}   -  6%);
-        padding-top              : calc(#{$course-title-wrap-padding-top}   -  3%);
-      };
-      @include screen500 {
+      @include screen900below {
         margin-left              : calc(#{$course-title-wrap-margin-left}   -  6%);
         padding-top              : calc(#{$course-title-wrap-padding-top}   -  3%);
       };
@@ -290,17 +333,12 @@
       @include screen1200 {
         font-size                : calc(#{$course-titling-text-size} - 20%);
       };
-      @include screen800 {
+      @include screen900below {
         font-size                : calc(#{$course-titling-text-size} - 20%);
       };
-      @include screen700 {
-        font-size                : calc(#{$course-titling-text-size} - 20%);
-      };
-      @include screen600 {
-        font-size                : calc(#{$course-titling-text-size} - 20%);
-      };
-      @include screen500 {
-        font-size                : calc(#{$course-titling-text-size} - 20%);
+      @include screen500below {
+        font-size                : unset;
+        line-height              : unset;
       };
 
       strong {
@@ -312,13 +350,7 @@
     .extra-info {
       display                    : inline-flex;
       flex-direction             : row;
-      @include screen800 {
-        display                    : block;
-      };
-      @include screen700 {
-        display                    : block;
-      };
-      @include screen700below {
+      @include screen900below {
         display                    : block;
       };
     }
@@ -338,6 +370,9 @@
       @include screen900below {
         margin-top               : unset;
         margin-left              : unset;
+      };
+      @include screen500below {
+        position                 : relative;
       };
     }
 
@@ -364,11 +399,11 @@
       font-size         : calc(#{$lesson-name-font-size} -  10%);
       line-height       : calc(#{$main-line-height}       - 10%);
     };
-    @include screen600 {
+    @include screen700below {
       margin-top        : calc(#{$vertical-margin-spacing} - 50px);
     };
-    @include screen500 {
-      margin-top        : calc(#{$vertical-margin-spacing} - 50px);
+    @include screen500below {
+      margin-top        : calc(#{$vertical-margin-spacing} - 25px);
     };
 
     section {
@@ -440,6 +475,9 @@
       @include screen700below {
         margin-left                : calc(#{$tabs-margin-left} - 7%);
       };
+      @include screen500below {
+        margin-left                : unset;
+      };
     }
 
     #talk-print-wrapper {
@@ -458,28 +496,7 @@
         background-image           : none;
         border                     : 1px solid $tabs-border-color;
       }
-      @include screen800 {
-        padding                    :
-          calc(#{$talk-print-wrapper-padding-top}    - 1%)
-          calc(#{$talk-print-wrapper-padding-right}  - 7%)
-          calc(#{$talk-print-wrapper-padding-bottom} - 4%)
-          calc(#{$talk-print-wrapper-padding-left}   - 7%);
-      };
-      @include screen700 {
-        padding                    :
-          calc(#{$talk-print-wrapper-padding-top}    - 1%)
-          calc(#{$talk-print-wrapper-padding-right}  - 7%)
-          calc(#{$talk-print-wrapper-padding-bottom} - 4%)
-          calc(#{$talk-print-wrapper-padding-left}   - 7%);
-      };
-      @include screen600 {
-        padding                    :
-          calc(#{$talk-print-wrapper-padding-top}    - 1%)
-          calc(#{$talk-print-wrapper-padding-right}  - 7%)
-          calc(#{$talk-print-wrapper-padding-bottom} - 4%)
-          calc(#{$talk-print-wrapper-padding-left}   - 7%);
-      };
-      @include screen500 {
+      @include screen900below {
         padding                    :
           calc(#{$talk-print-wrapper-padding-top}    - 1%)
           calc(#{$talk-print-wrapper-padding-right}  - 7%)
@@ -555,21 +572,13 @@
       #transcript {
         margin-left                : $transcript-margin-left;
         padding-left               : $transcript-padding-left;
-        @include screen800 {
+        @include screen900below {
           margin-left              : calc(#{$transcript-margin-left}  - 8%);
           padding-left             : calc(#{$transcript-padding-left} + 8%);
         };
-        @include screen700 {
-          margin-left              : calc(#{$transcript-margin-left}  - 8%);
-          padding-left             : calc(#{$transcript-padding-left} + 8%);
-        };
-        @include screen600 {
-          margin-left              : calc(#{$transcript-margin-left}  - 8%);
-          padding-left             : calc(#{$transcript-padding-left} + 8%);
-        };
-        @include screen500 {
-          margin-left              : calc(#{$transcript-margin-left}  - 8%);
-          padding-left             : calc(#{$transcript-padding-left} + 8%);
+        @include screen500below {
+          margin                   : unset;
+          padding                  : calc(#{$transcript-padding-left} + 1%);
         };
 
         &:before {
@@ -592,25 +601,13 @@
             height                 : calc(#{$quote-icon-height}      - 10px);
             margin-left            : calc(#{$quote-icon-margin-left} -  1%);
           };
-          @include screen800 {
+          @include screen900below {
             width                  : calc(#{$quote-icon-width}       - 15px);
             height                 : calc(#{$quote-icon-height}      - 15px);
             margin-left            : calc(#{$quote-icon-margin-left} -  1%);
           };
-          @include screen700 {
-            width                  : calc(#{$quote-icon-width}       - 15px);
-            height                 : calc(#{$quote-icon-height}      - 15px);
-            margin-left            : calc(#{$quote-icon-margin-left} -  1%);
-          };
-          @include screen600 {
-            width                  : calc(#{$quote-icon-width}       - 15px);
-            height                 : calc(#{$quote-icon-height}      - 15px);
-            margin-left            : calc(#{$quote-icon-margin-left} -  1%);
-          };
-          @include screen500 {
-            width                  : calc(#{$quote-icon-width}       - 15px);
-            height                 : calc(#{$quote-icon-height}      - 15px);
-            margin-left            : calc(#{$quote-icon-margin-left} -  1%);
+          @include screen500below {
+            display                : none;
           };
         }
 

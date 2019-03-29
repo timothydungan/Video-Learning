@@ -1,5 +1,3 @@
-// !compileOnSave
-// compileOnSave        : false
 // main                 : ../style.scss
 
 
@@ -35,6 +33,12 @@
   @include screen500 {
     margin-top          : calc(#{$vertical-margin-spacing} - 25px);
   };
+  @include screen500below {
+    display             : block;
+    text-align          : center;
+    margin-top          : calc(#{$vertical-margin-spacing} - 40px);
+    padding             : $cta-padding;
+  };
 
   .cta-pitch {
     @include screen1000 {
@@ -65,15 +69,21 @@
       margin-top        : calc(#{$cta-pitch-margin-top} -  4.7%);
       white-space       : nowrap;
     };
+    @include screen500below {
+      font-size         : calc(#{$cta-text-size}              - 40%);
+      margin-top        : unset;
+      margin-left       : auto;
+      white-space       : nowrap;
+    };
 
     .cta-pitch-title {
-      @include screen600 {
+      @include screen700below {
         font-size       : calc(#{$cta-text-size}                 + 50%);
         padding-right   : calc(#{$cta-pitch-title-padding-right} +  5%);
       };
-      @include screen500 {
-        font-size       : calc(#{$cta-text-size}                 + 50%);
-        padding-right   : calc(#{$cta-pitch-title-padding-right} +  5%);
+      @include screen500below {
+        font-size         : calc(#{$cta-text-size}               - 40%);
+        padding-right   : unset;
       };
     }
   }
@@ -110,13 +120,12 @@
   @include screen700 {
     padding-top         : calc(#{$vertical-margin-spacing} -  20px);
   };
-  @include screen600 {
+  @include screen700below {
     margin-top          : calc(#{$vertical-margin-spacing} -  25px);
     padding-top         : calc(#{$vertical-margin-spacing} -  20px);
   };
-  @include screen500 {
-    margin-top          : calc(#{$vertical-margin-spacing} -  25px);
-    padding-top         : calc(#{$vertical-margin-spacing} -  20px);
+  @include screen500below {
+    display             : block;
   };
 
   .cta-pitch {
@@ -157,6 +166,13 @@
       font-size         : calc(#{$cta-text-size}             - 25%);
       white-space       : nowrap;
     };
+    @include screen500below {
+      position          : relative;
+      text-align        : center;
+      margin            : unset;
+      font-size         : calc(#{$cta-text-size}             - 40%);
+      white-space       : unset;
+    };
   }
 }
 
@@ -194,13 +210,12 @@
     height              : calc(#{$entry-cta-wrap-height}   - 20px);
   };
   @include screen700below {
+    display             : block;
     height              : unset;
-  };
-  @include screen600 {
     margin-top          : calc(#{$vertical-margin-spacing} - 25px);
   };
-  @include screen500 {
-    margin-top          : calc(#{$vertical-margin-spacing} - 25px);
+  @include screen500below {
+    margin-top          : $vertical-margin-spacing;
   };
 
   p {
@@ -247,11 +262,11 @@
     @include screen700 {
       margin-top        : calc(#{$class-files-cta-margin-top} - 10px);
     };
-    @include screen600 {
+    @include screen700below {
       margin-top        : calc(#{$class-files-cta-margin-top} - 11px);
     };
-    @include screen500 {
-      margin-top        : calc(#{$class-files-cta-margin-top} - 11px);
+    @include screen500below {
+      margin-top        : unset;
     };
 
     p {
@@ -268,11 +283,7 @@
       @include screen700 {
         padding-top     : calc(#{$class-files-cta-p-padding-top} - 11px);
       };
-      @include screen600 {
-        padding-top     : calc(#{$class-files-cta-p-padding-top} - 11px);
-        padding-bottom  : calc(#{$class-files-cta-p-padding-top} - 11px);
-      };
-      @include screen500 {
+      @include screen700below {
         padding-top     : calc(#{$class-files-cta-p-padding-top} - 11px);
         padding-bottom  : calc(#{$class-files-cta-p-padding-top} - 11px);
       };
@@ -300,11 +311,12 @@
     @include screen700 {
       width             : calc(#{$entry-cta-width}            + 55%);
     };
-    @include screen600 {
+    @include screen700below {
       width             : calc(#{$entry-cta-width}            + 55%);
     };
-    @include screen500 {
-      width             : calc(#{$entry-cta-width}            + 55%);
+    @include screen500below {
+      margin-top        : $completed-files-cta-margin-top;
+      margin-left       : unset;
     };
 
     p {
@@ -327,11 +339,7 @@
       @include screen700 {
         margin-top      : calc(#{$completed-files-cta-p-margin-top} - 13px);
       };
-      @include screen600 {
-        margin-top      : unset;
-        padding         : calc(#{$class-files-cta-p-padding-top}    - 11px);
-      };
-      @include screen500 {
+      @include screen700below {
         margin-top      : unset;
         padding         : calc(#{$class-files-cta-p-padding-top}    - 11px);
       };
@@ -389,6 +397,9 @@
   @include screen500 {
     margin-top          : calc(#{$signup-button-left-margin-top}  - 19%);
   };
+  @include screen500below {
+    margin              : unset;
+  };
 
   p {
     font-size           : $cta-text-size;
@@ -405,13 +416,12 @@
       font-size         : calc(#{$cta-text-size}              - 40%);
       margin-top        : calc(#{$signup-button-p-margin-top} - 19%);
     };
-    @include screen600 {
-      font-size         : calc(#{$cta-text-size}              -  0%);
+    @include screen700below {
       margin-top        : calc(#{$signup-button-p-margin-top} - 10%);
     };
-    @include screen500 {
-      font-size         : calc(#{$cta-text-size}              -  0%);
-      margin-top        : calc(#{$signup-button-p-margin-top} - 10%);
+    @include screen500below {
+      font-size         : calc(#{$cta-text-size}              - 40%);
+      margin-top        : unset;
     };
   }
 
@@ -429,6 +439,11 @@
     @include screen700 {
       padding-left      : calc(#{$signup-button-a-padding} - 10px);
       padding-right     : calc(#{$signup-button-a-padding} - 10px);
+    };
+    @include screen500below {
+      padding-left      : unset;
+      padding-right     : unset;
+      white-space       : nowrap;
     };
   }
 
@@ -480,13 +495,18 @@
     margin-left         : calc(#{$signup-button-right-margin-left} - 15%);
     margin-top          : calc(#{$signup-button-right-margin-top}  -  3.5%);
   };
-  @include screen600 {
+  @include screen700below {
     margin-left         : calc(#{$signup-button-right-margin-left} -  8%);
+  };
+  @include screen600 {
     margin-top          : calc(#{$signup-button-right-margin-top}  -  7.5%);
   };
   @include screen500 {
-    margin-left         : calc(#{$signup-button-right-margin-left} -  8%);
     margin-top          : calc(#{$signup-button-right-margin-top}  -  8.9%);
+  };
+  @include screen500below {
+    margin              : unset;
+    text-align          : center;
   };
 
   p {
@@ -503,11 +523,18 @@
     @include screen900below {
       margin-top          : calc(#{$signup-button-p-margin-top} - 0.7%);
     };
+    @include screen500below {
+      font-size           : unset;
+      margin              : unset;
+    };
   }
 
   a {
     padding-left        : $signup-button-a-padding;
     padding-right       : $signup-button-a-padding;
+    @include screen500below {
+      padding           : unset;
+    };
   }
 
   &:focus,
@@ -537,11 +564,11 @@
     background-image    : none;
     width               : unset;
   }
-  @include screen600 {
-    margin-top        : calc(#{$vertical-margin-spacing} - 25px);
+  @include screen700below {
+    margin-top          : calc(#{$vertical-margin-spacing} - 25px);
   };
-  @include screen500 {
-    margin-top        : calc(#{$vertical-margin-spacing} - 25px);
+  @include screen500below {
+    height              : unset;
   };
 
   .cta-pitch {
@@ -549,17 +576,27 @@
     padding             : $subscribe-cta-pitch-text-padding;
     text-align          : left;
     @include screen1200 {
-      font-size         : calc(#{$subscribe-cta-pitch-text-size} - 5%);
+      font-size         : calc(#{$subscribe-cta-pitch-text-size} -  5%);
     };
     @include screen900below {
-      font-size         : calc(#{$subscribe-cta-pitch-text-size} - 5%);
+      font-size         : calc(#{$subscribe-cta-pitch-text-size} -  5%);
     };
     @include screen800 {
-      margin-left       : calc(#{$cta-pitch-margin-left}         - 7%);
+      margin-left       : calc(#{$cta-pitch-margin-left}         -  7%);
     };
     @include screen700 {
-      margin-left       : calc(#{$cta-pitch-margin-left}         - 7%);
+      margin-left       : calc(#{$cta-pitch-margin-left}         -  7%);
     };
+    @include screen500below {
+      font-size         : calc(#{$subscribe-cta-pitch-text-size} - 15%);
+    };
+
+    label {
+      @include screen500below {
+        display         : block;
+        font-size       : calc(#{$subscribe-cta-pitch-text-size} - 35%);
+      };
+    }
   }
 
   input {
@@ -569,6 +606,11 @@
     @include screen1200 {
       width             : calc(#{$subscribe-cta-input-width}     -  5%);
       font-size         : calc(#{$subscribe-cta-input-text-size} - 10%);
+    };
+    @include screen500below {
+      width               : calc(#{$subscribe-cta-input-width}   + 10%);
+      font-size           : unset;
+      padding             : unset;
     };
   }
 }
@@ -594,19 +636,27 @@
   @include screen700 {
     margin-left         : calc(#{$subscribe-button-right-margin-left}  -  4%);
   };
-  @include screen600 {
+  @include screen700below {
     margin-top          : calc(#{$subscribe-button-right-margin-top}   +  2%);
     margin-right        : calc(#{$subscribe-button-right-margin-right} +  4%);
   };
-  @include screen500 {
-    margin-top          : calc(#{$subscribe-button-right-margin-top}   +  2%);
-    margin-right        : calc(#{$subscribe-button-right-margin-right} +  4%);
+  @include screen500below {
+    float               : unset;
+    margin              : unset;
+    -webkit-transform   : unset;
+        -ms-transform   : unset;
+            transform   : unset;
   };
 
   div {
     -webkit-transform   : rotate(180deg);
         -ms-transform   : rotate(180deg);
             transform   : rotate(180deg);
+    @include screen500below {
+      -webkit-transform : unset;
+          -ms-transform : unset;
+              transform : unset;
+    };
   }
 
   button {
@@ -630,6 +680,13 @@
     @include screen900below {
       font-size         : calc(#{$cta-text-size}           - 25%);
       height            : calc(#{$subscribe-button-height} - 10px);
+    };
+    @include screen500below {
+      width             : unset;
+      height            : unset;
+      font-size         : unset;
+      padding           : unset;
+      text-align        : left;
     };
 
     &:focus,
@@ -709,10 +766,16 @@
     @include screen700 {
       font-size         : calc(#{$cta-text-size} - 20%);
     };
+    @include screen500below {
+      font-size         : calc(#{$cta-text-size} - 40%);
+    };
   }
 
   a {
     padding             : $affiliate-cta-a-margin;
+    @include screen500below {
+      padding           : unset;
+    };
   }
 
   &:focus,

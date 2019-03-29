@@ -1,5 +1,3 @@
-// !compileOnSave
-// compileOnSave    : false
 // main             : ../style.scss
 
 
@@ -48,7 +46,7 @@ a {
     height          : 100vh !important;
     opacity         : 1;
     width           : 100vw !important;
-    z-index         : 2;
+    z-index         : 99999;
 
     .close-btn {
       position      : absolute;
@@ -56,20 +54,30 @@ a {
       font-size     : $overlay-close-btn-font-size;
       top           : $overlay-close-btn-top;
       right         : $overlay-close-btn-right;
+      @include screen500below {
+        font-size   : unset;
+        top         : calc(#{$overlay-close-btn-top}   - 34%);
+        right       : calc(#{$overlay-close-btn-right} - 24%);
+      };
     }
   }
 
   #searchbox {
     flex            : $searchbox-flex;
+    font-size       : $searchbox-text-size;
+    color           : $overlay-text-color;
     height          : $searchbox-height;
     max-width       : $searchbox-max-width;
-    outline         : $searchbox-outline;
     padding         : $searchbox-padding;
-    color           : $overlay-text-color;
-    font-size       : $searchbox-text-size;
+    outline         : $searchbox-outline;
     border          : $searchbox-border;
     border-width    : $searchbox-border-width;
     background      : $searchbox-background;
+    @include screen500below {
+      font-size     : unset;
+      max-width     : calc(#{$searchbox-max-width} + 40%);
+      padding       : unset;
+    };
   }
 }
 
@@ -104,15 +112,6 @@ a {
   @include screen500 {
     width           : $wrapper-width-500;
   };
-  @include screen400 {
-    width           : $wrapper-width-400;
-  };
-  @include screen350 {
-    width           : $wrapper-width-350;
-  };
-  @include screen300 {
-    width           : $wrapper-width-300;
-  };
 }
 
 .page {
@@ -120,7 +119,12 @@ a {
   padding-bottom    : $footer-height;           // Clear the footer
   margin-bottom     : $vertical-margin-spacing;
   @include screen1200 {
-    padding-bottom  : calc(#{$footer-height}  - 60px);
+    padding-bottom  : calc(#{$footer-height}           -  60px);
+  };
+  @include screen500below {
+    margin-bottom   : calc(#{$vertical-margin-spacing} - 213px);
+    padding-top     : calc(#{$vertical-margin-spacing} -  25px);
+    padding-bottom  : calc(#{$footer-height}           -  87px);
   };
 
   .page-title-wrap {
@@ -130,12 +134,10 @@ a {
     margin-top      : $vertical-margin-spacing;
     @include screen700below {
       display       : block;
+      margin-top    : calc(#{$vertical-margin-spacing} -  25px);
     };
-    @include screen600 {
-      margin-top        : calc(#{$vertical-margin-spacing} - 25px);
-    };
-    @include screen500 {
-      margin-top        : calc(#{$vertical-margin-spacing} - 25px);
+    @include screen500below {
+      margin        : unset;
     };
 
     .page-title {
@@ -151,6 +153,9 @@ a {
         width       : unset;
         margin-right: unset;
       };
+      @include screen500below {
+        padding     : $page-title-padding;
+      };
 
       h1 {
         font-family : $page-title-font;
@@ -159,29 +164,22 @@ a {
         color       : $titling-color;
         margin-top  : $page-title-margin-top;
         @include screen1200 {
-          font-size : calc(#{$page-title-size}        - 10%);
+          font-size : calc(#{$page-title-size}        -  10%);
         };
         @include screen1000 {
-          font-size : calc(#{$page-title-size}        - 20%);
+          font-size : calc(#{$page-title-size}        -  20%);
         };
         @include screen900 {
-          font-size  : calc(#{$page-title-size}       - 20%);
-          margin-top : calc(#{$page-title-margin-top} +  1%);
+          font-size  : calc(#{$page-title-size}       -  20%);
+          margin-top : calc(#{$page-title-margin-top} +   1%);
         };
         @include screen900below {
           margin-top : unset;
+          font-size  : calc(#{$page-title-size}       -  80%);
         };
-        @include screen800 {
-          font-size  : calc(#{$page-title-size}       - 80%);
-        };
-        @include screen700 {
-          font-size  : calc(#{$page-title-size}       - 80%);
-        };
-        @include screen600 {
-          font-size  : calc(#{$page-title-size}       - 80%);
-        };
-        @include screen500 {
-          font-size  : calc(#{$page-title-size}       - 80%);
+        @include screen500below {
+          margin-top : unset;
+          font-size  : calc(#{$page-title-size}       - 150%);
         };
       }
     }
@@ -194,13 +192,8 @@ a {
   width             : $content-wrap-width;
   margin-top        : $vertical-margin-spacing;
   @include screen700below {
-    display       : block;
-  };
-  @include screen600 {
-    margin-top        : calc(#{$vertical-margin-spacing} - 25px);
-  };
-  @include screen500 {
-    margin-top        : calc(#{$vertical-margin-spacing} - 25px);
+    display         : block;
+    margin-top      : calc(#{$vertical-margin-spacing} - 25px);
   };
 }
 
@@ -221,7 +214,7 @@ a {
     height          : 100vh !important;
     width           : 100vw !important;
     opacity         : 1;
-    z-index         : 999999;
+    z-index         : 99999;
 
     .close-btn {
       position      : absolute;
@@ -229,6 +222,11 @@ a {
       font-size     : $overlay-close-btn-font-size;
       top           : $overlay-close-btn-top;
       right         : $overlay-close-btn-right;
+      @include screen500below {
+        font-size   : unset;
+        top         : calc(#{$overlay-close-btn-top}   - 34%);
+        right       : calc(#{$overlay-close-btn-right} - 24%);
+      };
     }
   }
 
@@ -239,5 +237,11 @@ a {
     max-width       : $searchbox-max-width;
     padding         : $searchbox-padding;
     color           : $overlay-text-color;
+    @include screen500below {
+      font-size     : unset;
+      flex          : unset;
+      height        : unset;
+      padding       : unset;
+    };
   }
 }

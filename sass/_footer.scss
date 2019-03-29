@@ -1,5 +1,3 @@
-// !compileOnSave
-// compileOnSave             : false
 // main                      : ../style.scss
 
 
@@ -20,11 +18,11 @@ footer {
   @include screen900 {
     height                   : unset;
   };
-  @include screen600 {
+  @include screen700below {
     height                   : unset;
   };
-  @include screen500 {
-    height                   : unset;
+  @include screen500below {
+    margin-top               : unset;
   };
 
   .footer-wrap {
@@ -47,6 +45,9 @@ footer {
       @include screen500 {
         padding-top          : $vertical-margin-spacing;
       };
+      @include screen500below {
+        padding              : unset;
+      };
 
       .copyright-notice {
         position             : absolute;
@@ -60,11 +61,6 @@ footer {
         };
         @include screen700below {
           display            : block;
-        };
-        @include screen600 {
-          bottom             : calc(#{$copyright-notice-bottom} +  5%);
-        };
-        @include screen500 {
           bottom             : calc(#{$copyright-notice-bottom} +  5%);
         };
       }
@@ -80,6 +76,9 @@ footer {
       };
       @include screen500 {
         margin-top           : $vertical-margin-spacing;
+      };
+      @include screen500below {
+        margin               : unset;
       };
 
       .osi-notice {
@@ -121,10 +120,21 @@ footer {
   @include screen500 {
     margin-top        : calc(#{$vertical-margin-spacing} - 25px);
   };
+  @include screen500below {
+    width             : calc(#{$social-menu-wrapper-width} + 10%);
+    margin-top        : calc(#{$vertical-margin-spacing} - 25px);
+    margin-bottom     : calc(#{$vertical-margin-spacing} - 25px);
+  };
 
   ul {
     list-style               : none;
     @include flexed;
+    @include screen500below {
+      -webkit-box-pack       : unset;
+      -ms-flex-pack          : unset;
+      justify-content        : unset;
+      align-items            : unset;
+    };
 
     li {
       height                 : $social-menu-button-height;
@@ -132,6 +142,9 @@ footer {
       cursor                 : pointer;
       @include screen900below {
         height               : unset;
+      };
+      @include screen500below {
+        width                : $social-menu-button-width;
       };
 
       &.button-up {
@@ -180,6 +193,10 @@ footer {
     .fab {
       font-size              : $social-menu-icon-size;
       padding                : $social-menu-icon-padding;
+      @include screen500below {
+        font-size            : unset;
+        padding              : $social-menu-icon-small-padding;
+      };
 
       &:focus,
       &:hover,

@@ -1,5 +1,3 @@
-// !compileOnSave
-// compileOnSave        : false
 // main                 : ../style.scss
 
 
@@ -161,85 +159,73 @@
 }
 
 @mixin screen1400 {
-  @media (min-width: #{$wrapper-width-1400}) {
+  @media screen and (min-width: calc(#{$wrapper-width-1400} + 30px)) {
     @content;
   }
 }
 
 @mixin screen1200 {
-  @media (min-width: #{$wrapper-width-1200}) and (max-width: calc(#{$wrapper-width-1200} + 199px)) {
+  @media (min-width: calc(#{$wrapper-width-1200} + 30px)) and (max-width: calc(#{$wrapper-width-1200} + 229px)) {
     @content;
   }
 }
 
 @mixin screen1000 {
-  @media (min-width: #{$wrapper-width-1000}) and (max-width: calc(#{$wrapper-width-1000} + 199px)) {
+  @media (min-width: calc(#{$wrapper-width-1000} + 30px)) and (max-width: calc(#{$wrapper-width-1000} + 229px)) {
     @content;
   }
 }
 
 @mixin screen900above {
-  @media screen and (min-width: $wrapper-width-900) {
+  @media screen and (min-width: calc(#{$wrapper-width-900} + 30px)) {
     @content;
   }
 }
 
 @mixin screen900 {
-  @media (min-width: #{$wrapper-width-900}) and (max-width: calc(#{$wrapper-width-900} + 99px)) {
+  @media (min-width: calc(#{$wrapper-width-900} + 30px)) and (max-width: calc(#{$wrapper-width-900} + 129px)) {
     @content;
   }
 }
 
 @mixin screen900below {
-  @media screen and (max-width: calc(#{$wrapper-width-800} + 99px)) {
+  @media screen and (max-width: calc(#{$wrapper-width-800} + 129px)) {
     @content;
   }
 }
 
 @mixin screen800 {
-  @media (min-width: #{$wrapper-width-800}) and (max-width: calc(#{$wrapper-width-800} + 99px)) {
+  @media (min-width: calc(#{$wrapper-width-800} + 30px)) and (max-width: calc(#{$wrapper-width-800} + 129px)) {
     @content;
   }
 }
 
 @mixin screen700 {
-  @media (min-width: #{$wrapper-width-700}) and (max-width: calc(#{$wrapper-width-700} + 99px)) {
+  @media (min-width: calc(#{$wrapper-width-700} + 30px)) and (max-width: calc(#{$wrapper-width-700} + 129px)) {
     @content;
   }
 }
 
 @mixin screen700below {
-  @media screen and (max-width: calc(#{$wrapper-width-600} + 99px)) {
+  @media screen and (max-width: calc(#{$wrapper-width-600} + 129px)) {
     @content;
   }
 }
 
 @mixin screen600 {
-  @media (min-width: #{$wrapper-width-600}) and (max-width: calc(#{$wrapper-width-600} + 99px)) {
+  @media (min-width: calc(#{$wrapper-width-600} + 30px)) and (max-width: calc(#{$wrapper-width-600} + 129px)) {
     @content;
   }
 }
 
 @mixin screen500 {
-  @media (min-width: #{$wrapper-width-500}) and (max-width: calc(#{$wrapper-width-500} + 99px)) {
+  @media (min-width: calc(#{$wrapper-width-500} + 30px)) and (max-width: calc(#{$wrapper-width-500} + 129px)) {
     @content;
   }
 }
 
-@mixin screen400 {
-  @media (min-width: #{$wrapper-width-400}) and (max-width: calc(#{$wrapper-width-400} + 99px)) {
-    @content;
-  }
-}
-
-@mixin screen350 {
-  @media (min-width: #{$wrapper-width-350}) and (max-width: calc(#{$wrapper-width-350} + 99px)) {
-    @content;
-  }
-}
-
-@mixin screen300 {
-  @media (min-width: #{$wrapper-width-300}) and (max-width: calc(#{$wrapper-width-300} + 49px)) {
+@mixin screen500below {
+  @media screen and (max-width: calc(#{$wrapper-width-500} + 30px)) {
     @content;
   }
 }
