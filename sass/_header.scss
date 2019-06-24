@@ -130,15 +130,16 @@ header {
           will-change                   : opacity;
 
           &:target {
-            height          : 101vh !important;
-            width           : 100vw !important;
+            height          : $menu-target-height;
+            width           : $menu-target-width;
             opacity         : 1;
             pointer-events  : auto;
             z-index         : 99999;
             -webkit-overflow-scrolling :touch;
             overflow-y                 : auto;
             @include screen900below {
-              margin-left   : calc(#{$menu-target-padding} -  4%);
+              width         : calc(#{$menu-target-width}   +  1vw);
+              margin-left   : calc(#{$menu-target-padding} -  5%);
             };
             @include screen800 {
               font-size     : calc(#{$main-text-size}      + 25%);
@@ -173,6 +174,9 @@ header {
           &.button-down {
             margin                       : $menu-li-button-down-margin;
             height                       : $header-height;
+            -webkit-transform-style     : preserve-3d;
+                -ms-transform-style     : preserve-3d;
+                    transform-style     : preserve-3d;
             @include screen900above {
               -webkit-transform          : rotateX(180deg);
                   -ms-transform          : rotateX(180deg);
@@ -189,6 +193,9 @@ header {
               height                     : $menu-li-before-height;
               left                       : $menu-li-before-left;
               border-left                : $menu-li-border;
+              -webkit-transform-style     : preserve-3d;
+                  -ms-transform-style     : preserve-3d;
+                      transform-style     : preserve-3d;
               @include screen900above {
                 -webkit-transform          : rotateX(-90deg) perspective(180px) rotateX(90deg);
                     -ms-transform          : rotateX(-90deg) perspective(180px) rotateX(90deg);
@@ -204,6 +211,9 @@ header {
 
             div {
               line-height                : $menu-li-button-down-div-line-height;
+              -webkit-transform-style     : preserve-3d;
+                  -ms-transform-style     : preserve-3d;
+                      transform-style     : preserve-3d;
               @include screen900above {
                 -webkit-transform          : rotateX(180deg);
                     -ms-transform          : rotateX(180deg);
@@ -218,7 +228,7 @@ header {
 
               a {
                 outline                  : $menu-a-outline;
-                padding                  : $menu-li-a-padding;
+                padding                  : $menu-li-button-down-div-a-padding;
                 @include screen900above {
                   &:hover,
                   &:active,
@@ -239,6 +249,9 @@ header {
 
           &.button-up {
             height                       : $menu-li-button-up-height;
+            -webkit-transform-style     : preserve-3d;
+                -ms-transform-style     : preserve-3d;
+                    transform-style     : preserve-3d;
             @include screen900above {
               -webkit-transform          : rotateX(180deg);
                   -ms-transform          : rotateX(180deg);
@@ -255,6 +268,9 @@ header {
               height                     : $menu-li-before-height;
               left                       : $menu-li-before-left;
               border-left                : $menu-li-border;
+              -webkit-transform-style     : preserve-3d;
+                  -ms-transform-style     : preserve-3d;
+                      transform-style     : preserve-3d;
               @include screen900above {
                 -webkit-transform          : rotateX(90deg) perspective(180px) rotateX(-90deg);
                     -ms-transform          : rotateX(90deg) perspective(180px) rotateX(-90deg);
@@ -270,16 +286,20 @@ header {
 
             div {
               line-height                 : $menu-li-button-up-div-line-height;
+              -webkit-transform-style     : preserve-3d;
+                  -ms-transform-style     : preserve-3d;
+                      transform-style     : preserve-3d;
               @include screen900above {
-                -webkit-transform           : rotateX(180deg);
-                    -ms-transform           : rotateX(180deg);
-                        transform           : rotateX(180deg);
+                -webkit-transform         : rotateX(180deg);
+                    -ms-transform         : rotateX(180deg);
+                        transform         : rotateX(180deg);
               };
               @include screen900 {
                 line-height               : calc(#{$menu-li-button-up-div-line-height} + 25%);
               };
 
               a {
+                padding                  : $menu-li-button-up-div-a-padding;
                 outline                  : $menu-a-outline;
                 @include screen900above {
                   &:hover,
@@ -309,7 +329,10 @@ header {
             height                        : $submenu-height;
             margin-top                    : $submenu-margin-top;
             font-variant                  : $submenu-font-variant;
-            @include browser-hacks {
+            -webkit-transform-style     : preserve-3d;
+                -ms-transform-style     : preserve-3d;
+                    transform-style     : preserve-3d;
+            @include browser-hacks-ms {
               font-size: x-small;
             }
             transition-duration           : $base-animation-length;
@@ -407,6 +430,9 @@ header {
                   };
 
                   div {
+                    -webkit-transform-style     : preserve-3d;
+                        -ms-transform-style     : preserve-3d;
+                            transform-style     : preserve-3d;
                     @include screen900above {
                       -webkit-transform    : rotateY(0deg);
                           -ms-transform    : rotateY(0deg);
@@ -478,11 +504,13 @@ header {
   0% {
     visibility                           : hidden;
     opacity                              : 0;
+    transform-style     : preserve-3d;
     transform                            : scaleY(0) rotateX(180deg);
   }
   100% {
     visibility                           : visible;
     opacity                              : 1;
+    transform-style     : preserve-3d;
     transform                            : scaleY(1) rotateX(180deg);
   }
 }
@@ -491,12 +519,14 @@ header {
     visibility                           : hidden;
     filter                               : alpha(opacity=0);
     opacity                              : 0;
+    -ms-transform-style     : preserve-3d;
     -ms-transform                        : scaleY(0) rotateX(180deg);
   }
   100% {
     visibility                           : visible;
     filter                               : alpha(opacity=100);
     opacity                              : 1;
+    -ms-transform-style     : preserve-3d;
     -ms-transform                        : scaleY(1) rotateX(180deg);
   }
 }
@@ -504,11 +534,13 @@ header {
   0% {
     visibility                           : hidden;
     opacity                              : 0;
+    -o-transform-style     : preserve-3d;
     -o-transform                         : scaleY(0) rotateX(180deg);
   }
   100% {
     visibility                           : visible;
     opacity                              : 1;
+    -o-transform-style     : preserve-3d;
     -o-transform                         : scaleY(1) rotateX(180deg);
   }
 }
@@ -516,11 +548,13 @@ header {
   0% {
     visibility                           : hidden;
     opacity                              : 0;
+    -webkit-transform-style     : preserve-3d;
     -webkit-transform                    : scaleY(0) rotateX(180deg);
   }
   100% {
     visibility                           : visible;
     opacity                              : 1;
+    -webkit-transform-style     : preserve-3d;
     -webkit-transform                    : scaleY(1) rotateX(180deg);
   }
 }
@@ -528,11 +562,13 @@ header {
   0% {
     visibility                           : hidden;
     opacity                              : 0;
+    -moz-transform-style     : preserve-3d;
     -moz-transform                       : scaleY(0) rotateX(180deg);
   }
   100% {
     visibility                           : visible;
     opacity                              : 1;
+    -moz-transform-style     : preserve-3d;
     -moz-transform                       : scaleY(1) rotateX(180deg);
   }
 }

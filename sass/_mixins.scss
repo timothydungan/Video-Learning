@@ -2,7 +2,7 @@
 
 
 /* Mixinss ----------------------- */
-@mixin browser-hacks {
+@mixin browser-hacks-ms {
   // Microsoft Edge Browser (All) - @supports method
   @supports (-ms-accelerator:true) {
     @content;
@@ -23,6 +23,19 @@
     @content;
   }
 }
+
+@mixin browser-hacks-sf {
+  _::-webkit-full-page-media, _:future, :root & { // Safari 7.1+
+    @content;
+  }
+
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    ::i-block-chrome, & {                         // Safari only
+      @content;
+    }
+  }
+}
+
 
 @mixin flexed {
   display           : -webkit-box;
@@ -82,11 +95,17 @@
   font-style              : $menu-a-hover-font-style;
   -webkit-transition      : $button-transition;
           transition      : $button-transition;
+  -webkit-transform-style     : preserve-3d;
+      -ms-transform-style     : preserve-3d;
+          transform-style     : preserve-3d;
   -webkit-transform       : skewX(-10deg);
       -ms-transform       : skewX(-10deg);
           transform       : skewX(-10deg);
 
   .fas {
+    -webkit-transform-style     : preserve-3d;
+        -ms-transform-style     : preserve-3d;
+            transform-style     : preserve-3d;
     -webkit-transform    : skewX(-10deg);
         -ms-transform    : skewX(-10deg);
             transform    : skewX(-10deg);
@@ -94,6 +113,9 @@
 }
 
 @mixin social-menu-hover {
+  -webkit-transform-style     : preserve-3d;
+      -ms-transform-style     : preserve-3d;
+          transform-style     : preserve-3d;
   -webkit-transform    : skewX(-10deg);
       -ms-transform    : skewX(-10deg);
           transform    : skewX(-10deg);
@@ -133,6 +155,9 @@
 
 @mixin submenu-animation {
   display                      : block;
+  -webkit-transform-style     : preserve-3d;
+      -ms-transform-style     : preserve-3d;
+          transform-style     : preserve-3d;
   -webkit-transform-origin     : center top;
       -ms-transform-origin     : center top;
           transform-origin     : center top;

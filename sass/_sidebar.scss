@@ -114,6 +114,9 @@
                     transition:         transform .2s ease-out;
                     transition:         transform .2s ease-out,
                                 -webkit-transform .2s ease-out;
+            -webkit-transform-style     : preserve-3d;
+                -ms-transform-style     : preserve-3d;
+                    transform-style     : preserve-3d;
             -webkit-transform          : translateY(50%);
                 -ms-transform          : translateY(50%);
                     transform          : translateY(50%);
@@ -131,6 +134,9 @@
       }
 
       .toggle:checked + .ln-label::after {
+        -webkit-transform-style    : preserve-3d;
+            -ms-transform-style    : preserve-3d;
+                transform-style    : preserve-3d;
         -webkit-transform          : rotate(90deg);
             -ms-transform          : rotate(90deg);
                 transform          : rotate(90deg);

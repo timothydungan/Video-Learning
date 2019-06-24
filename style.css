@@ -183,6 +183,9 @@ a:focus-within {
   position: relative;
   width: 100%;
   left: 50%;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
@@ -606,8 +609,8 @@ header.top-wrap .main-header ul#menu {
     will-change: opacity;
   }
   header.top-wrap .main-header ul#menu:target {
-    height: 101vh !important;
-    width: 100vw !important;
+    height: 101vh;
+    width: 100vw;
     opacity: 1;
     pointer-events: auto;
     z-index: 99999;
@@ -618,7 +621,8 @@ header.top-wrap .main-header ul#menu {
 
 @media screen and (max-width: calc(800px + 129px)) and (max-width: calc(800px + 129px)) {
   header.top-wrap .main-header ul#menu:target {
-    margin-left: calc(0% -  4%);
+    width: calc(100vw   +  1vw);
+    margin-left: calc(0% -  5%);
   }
 }
 
@@ -670,6 +674,9 @@ header.top-wrap .main-header ul#menu li {
 header.top-wrap .main-header ul#menu li.button-down {
   margin: 0 1.7%;
   height: 60px;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 @media screen and (min-width: calc(900px + 30px)) {
@@ -693,6 +700,9 @@ header.top-wrap .main-header ul#menu li.button-down:before {
   height: 100%;
   left: 0;
   border-left: 1px solid #DEFEB3;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 @media screen and (min-width: calc(900px + 30px)) {
@@ -714,6 +724,9 @@ header.top-wrap .main-header ul#menu li.button-down:before {
 
 header.top-wrap .main-header ul#menu li.button-down div {
   line-height: 430%;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 @media screen and (min-width: calc(900px + 30px)) {
@@ -748,11 +761,17 @@ header.top-wrap .main-header ul#menu li.button-down div a {
     font-style: oblique;
     -webkit-transition: all 0.3s linear;
     transition: all 0.3s linear;
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
     -webkit-transform: skewX(-10deg);
     -ms-transform: skewX(-10deg);
     transform: skewX(-10deg);
   }
   header.top-wrap .main-header ul#menu li.button-down div a:hover .fas, header.top-wrap .main-header ul#menu li.button-down div a:active .fas, header.top-wrap .main-header ul#menu li.button-down div a:focus .fas {
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
     -webkit-transform: skewX(-10deg);
     -ms-transform: skewX(-10deg);
     transform: skewX(-10deg);
@@ -763,11 +782,17 @@ header.top-wrap .main-header ul#menu li.button-down div a {
     font-style: oblique;
     -webkit-transition: all 0.3s linear;
     transition: all 0.3s linear;
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
     -webkit-transform: skewX(-10deg);
     -ms-transform: skewX(-10deg);
     transform: skewX(-10deg);
   }
   header.top-wrap .main-header ul#menu li.button-down div a:focus-within .fas {
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
     -webkit-transform: skewX(-10deg);
     -ms-transform: skewX(-10deg);
     transform: skewX(-10deg);
@@ -782,6 +807,9 @@ header.top-wrap .main-header ul#menu li.button-down div a {
 
 header.top-wrap .main-header ul#menu li.button-up {
   height: 75%;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 @media screen and (min-width: calc(900px + 30px)) {
@@ -805,6 +833,9 @@ header.top-wrap .main-header ul#menu li.button-up:before {
   height: 100%;
   left: 0;
   border-left: 1px solid #DEFEB3;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 @media screen and (min-width: calc(900px + 30px)) {
@@ -826,6 +857,9 @@ header.top-wrap .main-header ul#menu li.button-up:before {
 
 header.top-wrap .main-header ul#menu li.button-up div {
   line-height: 215%;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 @media screen and (min-width: calc(900px + 30px)) {
@@ -843,6 +877,7 @@ header.top-wrap .main-header ul#menu li.button-up div {
 }
 
 header.top-wrap .main-header ul#menu li.button-up div a {
+  padding: 20.6% 9%;
   outline: none;
 }
 
@@ -853,11 +888,17 @@ header.top-wrap .main-header ul#menu li.button-up div a {
     font-style: oblique;
     -webkit-transition: all 0.3s linear;
     transition: all 0.3s linear;
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
     -webkit-transform: skewX(-10deg);
     -ms-transform: skewX(-10deg);
     transform: skewX(-10deg);
   }
   header.top-wrap .main-header ul#menu li.button-up div a:hover .fas, header.top-wrap .main-header ul#menu li.button-up div a:active .fas, header.top-wrap .main-header ul#menu li.button-up div a:focus .fas {
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
     -webkit-transform: skewX(-10deg);
     -ms-transform: skewX(-10deg);
     transform: skewX(-10deg);
@@ -868,11 +909,17 @@ header.top-wrap .main-header ul#menu li.button-up div a {
     font-style: oblique;
     -webkit-transition: all 0.3s linear;
     transition: all 0.3s linear;
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
     -webkit-transform: skewX(-10deg);
     -ms-transform: skewX(-10deg);
     transform: skewX(-10deg);
   }
   header.top-wrap .main-header ul#menu li.button-up div a:focus-within .fas {
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
     -webkit-transform: skewX(-10deg);
     -ms-transform: skewX(-10deg);
     transform: skewX(-10deg);
@@ -895,6 +942,9 @@ header.top-wrap .main-header ul#menu li ul.submenu {
   height: 100%;
   margin-top: -60px;
   font-variant: all-petite-caps;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   transition-duration: 0.5s;
   transition-timing-function: ease;
   z-index: 99990;
@@ -1047,6 +1097,12 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down div {
   }
 }
 
+header.top-wrap .main-header ul#menu li ul.submenu li.button-down div div {
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
 @media screen and (min-width: calc(900px + 30px)) {
   header.top-wrap .main-header ul#menu li ul.submenu li.button-down div div {
     -webkit-transform: rotateY(0deg);
@@ -1155,6 +1211,9 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
   header.top-wrap .main-header ul#menu li:active > ul,
   header.top-wrap .main-header ul#menu li:focus > ul {
     display: block;
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
     -webkit-transform-origin: center top;
     -ms-transform-origin: center top;
     transform-origin: center top;
@@ -1186,6 +1245,9 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
 @media screen and (min-width: calc(900px + 30px)) {
   header.top-wrap .main-header ul#menu li:focus-within > ul {
     display: block;
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
     -webkit-transform-origin: center top;
     -ms-transform-origin: center top;
     transform-origin: center top;
@@ -1216,11 +1278,13 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
   0% {
     visibility: hidden;
     opacity: 0;
+    transform-style: preserve-3d;
     transform: scaleY(0) rotateX(180deg);
   }
   100% {
     visibility: visible;
     opacity: 1;
+    transform-style: preserve-3d;
     transform: scaleY(1) rotateX(180deg);
   }
 }
@@ -1230,12 +1294,14 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
     visibility: hidden;
     filter: alpha(opacity=0);
     opacity: 0;
+    -ms-transform-style: preserve-3d;
     -ms-transform: scaleY(0) rotateX(180deg);
   }
   100% {
     visibility: visible;
     filter: alpha(opacity=100);
     opacity: 1;
+    -ms-transform-style: preserve-3d;
     -ms-transform: scaleY(1) rotateX(180deg);
   }
 }
@@ -1244,11 +1310,13 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
   0% {
     visibility: hidden;
     opacity: 0;
+    -o-transform-style: preserve-3d;
     -o-transform: scaleY(0) rotateX(180deg);
   }
   100% {
     visibility: visible;
     opacity: 1;
+    -o-transform-style: preserve-3d;
     -o-transform: scaleY(1) rotateX(180deg);
   }
 }
@@ -1257,11 +1325,13 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
   0% {
     visibility: hidden;
     opacity: 0;
+    -webkit-transform-style: preserve-3d;
     -webkit-transform: scaleY(0) rotateX(180deg);
   }
   100% {
     visibility: visible;
     opacity: 1;
+    -webkit-transform-style: preserve-3d;
     -webkit-transform: scaleY(1) rotateX(180deg);
   }
 }
@@ -1270,21 +1340,30 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
   0% {
     visibility: hidden;
     opacity: 0;
+    -moz-transform-style: preserve-3d;
     -moz-transform: scaleY(0) rotateX(180deg);
   }
   100% {
     visibility: visible;
     opacity: 1;
+    -moz-transform-style: preserve-3d;
     -moz-transform: scaleY(1) rotateX(180deg);
   }
 }
 
 /* CTAs -------------------------- */
 .main-cta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  align-items: center;
   width: 31%;
   height: 163px;
-  display: inline-flex;
-  flex-direction: row;
   padding-top: 50px;
   background-repeat: no-repeat;
   background-position: center;
@@ -1422,6 +1501,9 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
   background-position: center;
   background-size: 100% 100%;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 440 163.121' preserveAspectRatio='none'>\a       <path fill='%23A12839' d='M1228,100l-20,61.7,20,60.993,420,20.567L1628,222.7V100l20-19.858Z' transform='translate(-1208 -80.142)'/></svg>");
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
@@ -1476,6 +1558,9 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
   position: absolute;
   margin-top: 2%;
   margin-left: 35%;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
@@ -1640,6 +1725,9 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
   background-position: center;
   background-size: 100% 100%;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 420 60' preserveAspectRatio='none'>\a       <path fill='%23A12839' d='M1668,112l-20,30,20,30-420-5,20-25-20-25Z' transform='translate(-1248 -112)'/></svg>");
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -1726,6 +1814,9 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
   background-position: center;
   background-size: 100% 100%;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 420 60' preserveAspectRatio='none'>\a       <path fill='%23A12839' d='M1668,112l-20,30,20,30-420-5,20-25-20-25Z' transform='translate(-1248 -112)'/></svg>");
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
@@ -1765,6 +1856,9 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
 
 .entry-cta-wrap .completed-files-cta p {
   margin-top: 22px;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
@@ -1843,9 +1937,23 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
 
 @media screen and (min-width: calc(900px + 30px)) {
   .signup-button-left {
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    position: relative;
+    top: -50%;
+  }
+  .signup-button-left _::-webkit-full-page-media, .signup-button-left _:future, :root .signup-button-left {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+@media screen and (min-width: calc(900px + 30px)) and (-webkit-min-device-pixel-ratio: 0) {
+  .signup-button-left ::i-block-chrome, .signup-button-left {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
   }
 }
 
@@ -2098,6 +2206,9 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
   font-weight: bold;
   margin-top: 33%;
   line-height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
@@ -2281,6 +2392,9 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
   background-position: center;
   background-size: 100% 100%;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23A12839'/>\a           <stop offset='1' stop-color='%23262B2F'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(0 16)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a       </g></svg>");
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
@@ -2323,6 +2437,9 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
 }
 
 .subscribe-button-right div {
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
@@ -2430,6 +2547,9 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
   background-position: center;
   background-size: 100% 100%;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' preserveAspectRatio='none'>\a       <defs>\a         <linearGradient id='linear-gradient' x1='-0.041' y1='0.5' x2='0.968' y2='0.5' gradientUnits='objectBoundingBox'>\a           <stop offset='0' stop-color='%23A12839'/>\a           <stop offset='1' stop-color='%23262B2F'/>\a         </linearGradient>\a       </defs>\a       <g fill='url(%23linear-gradient)' transform='translate(0 16)'>\a         <path d='M 99.5 83.39009857177734 L 0.5 63.59009552001953 L 0.5 4.409904003143311 L 99.5 -15.39009571075439 L 99.5 83.39009857177734 Z'/>\a         <path fill='%23DEFEB3' d='M 99 -14.78018951416016 L 1 4.819808959960938 L 1 63.18019104003906 L 99 82.78018951416016 L 99 -14.78018951416016 M 100 -16 L 100 84 L 0 64 L 0 4 L 100 -16 Z'/>\a       </g></svg>");
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 @media (min-width: calc(1000px + 30px)) and (max-width: calc(1000px + 229px)) {
@@ -2487,6 +2607,9 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
   font-weight: bold;
   margin: 185px -145px 0;
   line-height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 @media screen and (min-width: calc(900px + 30px)) {
@@ -2622,6 +2745,9 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
   -ms-flex-pack: center;
   justify-content: center;
   align-items: center;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -webkit-transform: translateX(-45px);
   -ms-transform: translateX(-45px);
   transform: translateX(-45px);
@@ -2645,6 +2771,9 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
   font-size: 1160%;
   margin-top: 30%;
   padding: 5px;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -webkit-transform: scaleX(0.5);
   -ms-transform: scaleX(0.5);
   transform: scaleX(0.5);
@@ -2848,6 +2977,9 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
   width: 85.6%;
   padding-top: 56.25%;
   margin-left: -2.9%;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -webkit-transform: translate(0%, -3.8%);
   -ms-transform: translate(0%, -3.8%);
   transform: translate(0%, -3.8%);
@@ -3400,16 +3532,19 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
 @keyframes swashIn {
   0% {
     opacity: 0;
+    transform-style: preserve-3d;
     transform-origin: 50% 50%;
     transform: scale(0, 0);
   }
   90% {
     opacity: 1;
+    transform-style: preserve-3d;
     transform-origin: 50% 50%;
     transform: scale(0.9, 0.9);
   }
   100% {
     opacity: 1;
+    transform-style: preserve-3d;
     transform-origin: 50% 50%;
     transform: scale(1, 1);
   }
@@ -3418,16 +3553,19 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
 @-ms-keyframes swashIn {
   0% {
     opacity: 0;
+    -ms-transform-style: preserve-3d;
     -ms-transform-origin: 50% 50%;
     -ms-transform: scale(0, 0);
   }
   90% {
     opacity: 1;
+    -ms-transform-style: preserve-3d;
     -ms-transform-origin: 50% 50%;
     -ms-transform: scale(0.9, 0.9);
   }
   100% {
     opacity: 1;
+    -ms-transform-style: preserve-3d;
     -ms-transform-origin: 50% 50%;
     -ms-transform: scale(1, 1);
   }
@@ -3436,16 +3574,19 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
 @-o-keyframes swashIn {
   0% {
     opacity: 0;
+    -o-transform-style: preserve-3d;
     -o-transform-origin: 50% 50%;
     -o-transform: scale(0, 0);
   }
   90% {
     opacity: 1;
+    -o-transform-style: preserve-3d;
     -o-transform-origin: 50% 50%;
     -o-transform: scale(0.9, 0.9);
   }
   100% {
     opacity: 1;
+    -o-transform-style: preserve-3d;
     -o-transform-origin: 50% 50%;
     -o-transform: scale(1, 1);
   }
@@ -3454,16 +3595,19 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
 @-webkit-keyframes swashIn {
   0% {
     opacity: 0;
+    -webkit-transform-style: preserve-3d;
     -webkit-transform-origin: 50% 50%;
     -webkit-transform: scale(0, 0);
   }
   90% {
     opacity: 1;
+    -webkit-transform-style: preserve-3d;
     -webkit-transform-origin: 50% 50%;
     -webkit-transform: scale(0.9, 0.9);
   }
   100% {
     opacity: 1;
+    -webkit-transform-style: preserve-3d;
     -webkit-transform-origin: 50% 50%;
     -webkit-transform: scale(1, 1);
   }
@@ -3472,16 +3616,19 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
 @-moz-keyframes swashIn {
   0% {
     opacity: 0;
+    -moz-transform-style: preserve-3d;
     -moz-transform-origin: 50% 50%;
     -moz-transform: scale(0, 0);
   }
   90% {
     opacity: 1;
+    -moz-transform-style: preserve-3d;
     -moz-transform-origin: 50% 50%;
     -moz-transform: scale(0.9, 0.9);
   }
   100% {
     opacity: 1;
+    -moz-transform-style: preserve-3d;
     -moz-transform-origin: 50% 50%;
     -moz-transform: scale(1, 1);
   }
@@ -3638,6 +3785,9 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
   transition: -webkit-transform .2s ease-out;
   transition: transform .2s ease-out;
   transition: transform .2s ease-out, -webkit-transform .2s ease-out;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -webkit-transform: translateY(50%);
   -ms-transform: translateY(50%);
   transform: translateY(50%);
@@ -3662,6 +3812,9 @@ header.top-wrap .main-header ul#menu li ul.submenu li.button-down .subNavRight {
 }
 
 .col-aside ul li .toggle:checked + .ln-label::after {
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -4106,12 +4259,18 @@ footer .footer-wrap .osi-notice {
 }
 
 .social-menu-wrapper ul .fab:focus, .social-menu-wrapper ul .fab:hover, .social-menu-wrapper ul .fab:active {
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -webkit-transform: skewX(-10deg);
   -ms-transform: skewX(-10deg);
   transform: skewX(-10deg);
 }
 
 .social-menu-wrapper ul .fab:focus-within {
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -webkit-transform: skewX(-10deg);
   -ms-transform: skewX(-10deg);
   transform: skewX(-10deg);

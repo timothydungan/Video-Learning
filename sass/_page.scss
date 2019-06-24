@@ -85,6 +85,9 @@ a {
   position          : relative;
   width             : $wrapper-width;
   left              : $wrapper-left;
+  -webkit-transform-style     : preserve-3d;
+      -ms-transform-style     : preserve-3d;
+          transform-style     : preserve-3d;
   -webkit-transform : translateX($wrapper-transform-translateX);
       -ms-transform : translateX($wrapper-transform-translateX);
           transform : translateX($wrapper-transform-translateX);

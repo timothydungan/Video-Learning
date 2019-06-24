@@ -4,10 +4,9 @@
 /* CTAs -------------------------- */
 
 .main-cta {
+  @include flexed;
   width                 : $main-cta-width;
   height                : $main-cta-height;
-  display               : inline-flex;
-  flex-direction        : row;
   padding-top           : $vertical-margin-spacing;
   background-repeat     : no-repeat;
   background-position   : center;
@@ -100,6 +99,9 @@
   background-position   : center;
   background-size       : 100% 100%;
   background-image      : svgParams(main-cta, $cta-svg-color);
+  -webkit-transform-style     : preserve-3d;
+      -ms-transform-style     : preserve-3d;
+          transform-style     : preserve-3d;
   -webkit-transform     : rotate(180deg);
       -ms-transform     : rotate(180deg);
           transform     : rotate(180deg);
@@ -132,6 +134,9 @@
     position            : absolute;
     margin-top          : $big-cta-pitch-margin-top;
     margin-left         : $big-cta-pitch-margin-left;
+    -webkit-transform-style     : preserve-3d;
+        -ms-transform-style     : preserve-3d;
+            transform-style     : preserve-3d;
     -webkit-transform   : rotate(180deg);
         -ms-transform   : rotate(180deg);
             transform   : rotate(180deg);
@@ -245,6 +250,9 @@
     background-position : center;
     background-size     : 100% 100%;
     background-image    : svgParams(entry-cta, $cta-svg-color);
+    -webkit-transform-style     : preserve-3d;
+        -ms-transform-style     : preserve-3d;
+            transform-style     : preserve-3d;
     -webkit-transform   : translateY(-50%);
         -ms-transform   : translateY(-50%);
             transform   : translateY(-50%);
@@ -298,6 +306,9 @@
     background-position : center;
     background-size     : 100% 100%;
     background-image    : svgParams(entry-cta, $cta-svg-color);
+    -webkit-transform-style     : preserve-3d;
+        -ms-transform-style     : preserve-3d;
+            transform-style     : preserve-3d;
     -webkit-transform   : rotate(180deg);
         -ms-transform   : rotate(180deg);
             transform   : rotate(180deg);
@@ -321,6 +332,9 @@
 
     p {
       margin-top        : $completed-files-cta-p-margin-top;
+      -webkit-transform-style     : preserve-3d;
+          -ms-transform-style     : preserve-3d;
+              transform-style     : preserve-3d;
       -webkit-transform : rotate(180deg);
           -ms-transform : rotate(180deg);
               transform : rotate(180deg);
@@ -371,9 +385,14 @@
     height              : calc(#{$signup-button-height}          - 14px);
   };
   @include screen900above {
-    -webkit-transform     : translateY(-50%);
-        -ms-transform     : translateY(-50%);
-            transform     : translateY(-50%);
+    position            : relative;
+    top                 : -50%;
+    @include browser-hacks-sf {
+      padding-left      : env(safe-area-inset-left);
+      padding-right     : env(safe-area-inset-right);
+      padding-top       : env(safe-area-inset-top);
+      padding-bottom    : env(safe-area-inset-bottom);
+    }
   }
   @include screen900 {
     height              : calc(#{$signup-button-height}          - 20px);
@@ -514,6 +533,9 @@
     font-weight         : $cta-pitch-font-weight;
     margin-top          : $signup-button-p-margin-top;
     line-height         : $fixed-line-height;
+    -webkit-transform-style     : preserve-3d;
+        -ms-transform-style     : preserve-3d;
+            transform-style     : preserve-3d;
     -webkit-transform   : rotate(180deg);
         -ms-transform   : rotate(180deg);
             transform   : rotate(180deg);
@@ -623,6 +645,9 @@
   background-position   : center;
   background-size       : 100% 100%;
   background-image      : svgParams(main-button-0, $cta-svg-color, $svg-secondary-color, $svg-border-color);
+  -webkit-transform-style     : preserve-3d;
+      -ms-transform-style     : preserve-3d;
+          transform-style     : preserve-3d;
   -webkit-transform     : rotate(180deg);
       -ms-transform     : rotate(180deg);
           transform     : rotate(180deg);
@@ -649,6 +674,9 @@
   };
 
   div {
+    -webkit-transform-style     : preserve-3d;
+        -ms-transform-style     : preserve-3d;
+            transform-style     : preserve-3d;
     -webkit-transform   : rotate(180deg);
         -ms-transform   : rotate(180deg);
             transform   : rotate(180deg);
@@ -720,6 +748,9 @@
   background-position   : center;
   background-size       : 100% 100%;
   background-image      : svgParams(main-button-0, $cta-svg-color, $svg-secondary-color, $svg-border-color);
+  -webkit-transform-style     : preserve-3d;
+      -ms-transform-style     : preserve-3d;
+          transform-style     : preserve-3d;
   @include screen1000 {
     margin-top          : calc(#{$affiliate-cta-wrapper-margin-top}  -  3%);
     margin-left         : calc(#{$affiliate-cta-wrapper-margin-left} +  5%);
@@ -755,6 +786,9 @@
     font-weight         : $cta-pitch-font-weight;
     margin              : $affiliate-cta-p-margins;
     line-height         : $fixed-line-height;
+    -webkit-transform-style     : preserve-3d;
+        -ms-transform-style     : preserve-3d;
+            transform-style     : preserve-3d;
     @include screen900above {
       -webkit-transform : rotate(-90deg);
           -ms-transform : rotate(-90deg);
